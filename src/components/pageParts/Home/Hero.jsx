@@ -2,11 +2,11 @@ import CornerHexagons from '../../../components/CornerHexagons.svg?react'
 export default function Hero() {
   return (
     <div className=''>
-        <div className='relative pt-60'>
+        <div className='relative isolate overflow-hidden pt-60'>
           <img 
             src='src/assets/images/Engine.jpg'
             alt='front side of engine block'
-            className='absolute inset-0 w-full blur-sm -z-10 brightness-[20%]'
+            className='absolute inset-0 -z-10 h-full w-full object-cover brightness-[30%]'
           />
           <div
           className="absolute -z-10 transform-gpu"
@@ -16,7 +16,7 @@ export default function Hero() {
         </div>
         <div className="mx-auto max-w-6xl py-20">
           <div className="text-center">
-            <h1 className=" text-white sm:text-7xl uppercase bold font-Urbanist font-black">
+            <h1 className=" text-white text-3xl md:text-5xl lg:text-7xl uppercase bold font-Urbanist font-black">
               Breakdowns won&apos;t<br />break you down<br /><br />with your Topeka, KS<br />high end mechanics
             </h1>
             <div className="pb-40 pt-20 flex items-center justify-center gap-x-6 font-Play font-bold">

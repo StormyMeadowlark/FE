@@ -59,15 +59,15 @@ export default QuickLinks;
 function MobileQuickLinks() {
     return(
         <div className='py-6 flex'>
-            <a href='#' className='-mx-3 block rounded-lg px-6 py-2.5 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
+            <a href='#' className='block rounded-lg px-4 py-4 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
                 <span className='sr-only'>Log-in or create account</span>
                 <UserIcon className='h-7 w-7 hover:fill-[#00FF00]' aria-hidden='true' stroke='#00FF00' />
             </a>
-            <a href='#' className='-mx-3 block rounded-lg px-6 py-2.5 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
+            <a href='#' className='block rounded-lg px-4 py-4 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
                 <span className='sr-only'>Schedule an online appointment</span>
                 <CalendarIcon className='h-7 w-7 hover:fill-[#00FF00]' aria-hidden='true' stroke='#00FF00' />
             </a>
-            <a href='#' className='-mx-3 block rounded-lg px-6 py-2.5 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
+            <a href='#' className='block rounded-lg px-4 py-4 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
                 <span className='sr-only'>Log-in or create account</span>
                 <BanknotesIcon className='h-7 w-7 hover:fill-[#00FF00]' aria-hidden='true' stroke='#00FF00' />
             </a>
