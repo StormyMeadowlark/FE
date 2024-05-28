@@ -98,7 +98,7 @@ function ServiceOfferings() {
                 aria-hidden="true"
                 className= "relative h-[100%] w-[100%] hexagon brightness-[50%] hover:brightness-[30%] transition linear blur-[2px] hover:blur-none"
                 />
-                <p className="lg:w-full xl:text-3xl lg:text-xl md:text-lg sm:text-md z-50 lg:-translate-y-[210%] md:-translate-y-36">
+                <p className="lg:w-full xl:text-3xl lg:text-xl md:text-lg sm:text-md z-50 -translate-y-36">
                   Remove & Replace
                 </p>
               </button>
@@ -145,7 +145,7 @@ function ServiceOfferings() {
               </button>
             </div>
           </div>
-          <div className="md:flex justify-center px-[25%]">
+          <div className="md:flex justify-center md:px-[25%]">
             <div className="flex flex-1 basis-1/4">
               <button className="px-3 sm:my-3 lg:my-0 ">
                 <img 

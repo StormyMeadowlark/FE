@@ -43,12 +43,12 @@ export default function CustomerCategories() {
       <section className="relative -top-40 z-10 mx-auto max-w-7xl px-6 lg:px-8" aria-labelledby="contact-heading">
         <h2 className="sr-only" id="Customer Experience">
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8 gap-y-20">
           {supportLinks.map((link) => (
-            <div key={link.name}>
+            <div key={link.name} className=''>
               <div className="bg-[#777777] shadow-xl shadow-black rounded-2xl">
-                <div className="inline-block -mb-8 -translate-y-12 hexagon -translate-x-4 bg-[#00FF00] p-5 shadow-lg">
-                  <link.icon className="h-16 w-16 text-[#333333]" aria-hidden="true" />
+                <div className="inline-block -mb-8 -translate-y-12 hexagon -translate-x-4 lg:bg-[#00FF00] bg-[#777777] p-5 shadow-lg">
+                  <link.icon className="h-16 w-16 lg:text-[#333333] text-[#00FF00]" aria-hidden="true" />
                 </div>
                 <div className="px-6 pb-8 md:px-8">
                   <h3 className="text-2xl font-Urbanist font-medium tracking-wider text-white">{link.name}</h3>
