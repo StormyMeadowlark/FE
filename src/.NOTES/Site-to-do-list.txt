@@ -1,0 +1,2 @@
+when making back end. ensure users can change theme of their profile
+how to add registered trademark symbol after FICO

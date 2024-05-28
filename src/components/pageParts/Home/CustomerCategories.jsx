@@ -1,0 +1,69 @@
+import { TruckIcon, UsersIcon, UserGroupIcon } from '@heroicons/react/24/outline'
+
+const supportLinks = [
+  {
+    name: 'Retail',
+    href: '#',
+    description:
+      'Benefits of HEM Retail Over Competition',
+    icon: UsersIcon,
+    experience: 'Retail Experience'
+  },
+  {
+    name: 'Dealership',
+    href: '#',
+    description:
+      'Benefits of HEM Dealership Over Competition',
+    icon: TruckIcon,
+    experience: 'Dealership Experience'
+  },
+  {
+    name: 'Fleet & Other',
+    href: '#',
+    description:
+      'Benefits of HEM Fleet & Other Over Competition.',
+    icon: UserGroupIcon,
+    experience: 'Fleet & Other Experience',
+  },
+]
+
+export default function CustomerCategories() {
+  return (
+    <div className='bg-[#00ff00]'>
+      {/* Header */}
+      <div className="relative bg-[#333333] py-20">
+        <div className="relative mx-auto max-w-7xl ">
+          <h1 className="text-4xl py-10 text-stroke text-stroke-fill-black text-stroke-[#00ff00] md:text-5xl lg:text-6xl uppercase font-Bungee ">Where ever you come from</h1>
+          <p className="max-w-3xl text-xl text-[#dddddd] pb-40 font-Urbanist tracking-wider">
+            Since opening in 2020 our technicians have done repairs on all types of vehicles. From firetrucks & trailers to cars, trucks, SUVs, & more HEM Automotive will give your vehicles the care they deserve & get the job done... Regardless of how many you have!
+          </p>
+        </div>
+      </div>
+      {/* Overlapping cards */}
+      <section className="relative -top-40 z-10 mx-auto max-w-7xl px-6 lg:px-8" aria-labelledby="contact-heading">
+        <h2 className="sr-only" id="Customer Experience">
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8">
+          {supportLinks.map((link) => (
+            <div key={link.name}>
+              <div className="bg-[#777777] shadow-xl shadow-black rounded-2xl">
+                <div className="inline-block -mb-8 -translate-y-12 hexagon -translate-x-4 bg-[#00FF00] p-5 shadow-lg">
+                  <link.icon className="h-16 w-16 text-[#333333]" aria-hidden="true" />
+                </div>
+                <div className="px-6 pb-8 md:px-8">
+                  <h3 className="text-2xl font-Urbanist font-medium tracking-wider text-white">{link.name}</h3>
+                  <p className="mt-4 text-lg text-black font-Urbanist tracking-wide">{link.description}</p>
+                </div>
+                <div className="silverbg45 rounded-2xl p-6 md:px-8 hover:scale-[98%] shadow-lg shadow-[#222222] text-white hover:text-[#00ff00] border-b border-[#00ff00]">
+                  <a href={link.href} className="text-base font-Play font-semibold tracking-wide ">
+                    {link.experience}
+                  </a>
+                </div>
+              </div>
+              </div>
+            ))}
+        </div>
+      </section>
+    </div>
+  )
+}
