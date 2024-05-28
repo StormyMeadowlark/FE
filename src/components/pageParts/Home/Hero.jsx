@@ -22,12 +22,12 @@ export default function Hero() {
             <div className="pb-40 pt-20 flex items-center justify-center gap-x-6 font-Play font-bold">
               <a
                 href="#"
-                className="rounded-md bg-[#00ff00] px-3.5 py-2.5 text-2xl font-semibold text-[#333333] hover:text-white shadow-lg shadow-black hover:bg-[#00cc00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:scale-[98%] focus-visible:bg-[#00dd00]"
+                className="rounded-md bg-[#00ff00] px-3.5 py-2.5 text-lg lg:text-2xl font-semibold text-[#333333] hover:text-white shadow-lg shadow-black hover:bg-[#00cc00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:scale-[98%] focus-visible:bg-[#00dd00] "
               >
-                Schedule Online
+                Call to Schedule
               </a>
-              <a href="#" className="text-lg font-semibold leading-6 text-white hover:text-[#00ff00]">
-                Build Estimate <span aria-hidden="true"></span>
+              <a href="#" className="text-sm lg:text-xl font-semibold leading-6 text-white hover:text-[#00ff00]">
+                 <span aria-hidden="true">View Services</span>
               </a>
             </div>
           </div>
