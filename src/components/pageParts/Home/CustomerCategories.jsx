@@ -7,7 +7,8 @@ const supportLinks = [
     description:
       'Benefits of HEM Retail Over Competition',
     icon: UsersIcon,
-    experience: 'Retail Experience'
+    experience: 'Retail Experience',
+    image: 'src/assets/images/Retail.jpg',
   },
   {
     name: 'Dealership',
@@ -15,7 +16,8 @@ const supportLinks = [
     description:
       'Benefits of HEM Dealership Over Competition',
     icon: TruckIcon,
-    experience: 'Dealership Experience'
+    experience: 'Dealership Experience',
+    image: 'src/assets/images/Dealership.jpg',
   },
   {
     name: 'Fleet & Other',
@@ -24,6 +26,7 @@ const supportLinks = [
       'Benefits of HEM Fleet & Other Over Competition.',
     icon: UserGroupIcon,
     experience: 'Fleet & Other Experience',
+    image: 'src/assets/images/Fleet.jpg',
   },
 ]
 
@@ -40,26 +43,32 @@ export default function CustomerCategories() {
         </div>
       </div>
       {/* Overlapping cards */}
-      <section className="relative -top-40 z-10 mx-auto max-w-7xl px-6 lg:px-8" aria-labelledby="contact-heading">
+      <section className="relative  z-10 mx-auto max-w-7xl px-6 lg:px-8" aria-labelledby="contact-heading">
         <h2 className="sr-only" id="Customer Experience">
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8 gap-y-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8 -translate-y-1/4">
           {supportLinks.map((link) => (
             <div key={link.name} className=''>
-              <div className="bg-[#777777] shadow-xl shadow-black rounded-2xl">
+              <img   
+                src={link.image} 
+                alt=""
+                aria-hidden="true"
+                className='brightness-[30%] rounded-md' 
+              />
+              <div className=" -translate-y-1/2 h-full">
                 <div className="inline-block -mb-8 -translate-y-12 hexagon -translate-x-4 lg:bg-[#00FF00] bg-[#777777] p-5 shadow-lg">
                   <link.icon className="h-16 w-16 lg:text-[#333333] text-[#00FF00]" aria-hidden="true" />
                 </div>
                 <div className="px-6 pb-8 md:px-8">
                   <h3 className="text-2xl font-Urbanist font-medium tracking-wider text-white">{link.name}</h3>
-                  <p className="mt-4 text-lg text-black font-Urbanist tracking-wide">{link.description}</p>
+                  <p className="mt-4 text-lg text-[#cccccc] font-Urbanist tracking-wide">{link.description}</p>
                 </div>
-                <div className="silverbg45 rounded-2xl p-6 md:px-8 hover:scale-[98%] shadow-lg shadow-[#222222] text-white hover:text-[#00ff00] border-b border-[#00ff00]">
+                <div className="silverbg45 rounded-md p-6 md:px-8 hover:scale-[98%] shadow-lg shadow-[#222222] text-white hover:text-[#00ff00] border-b border-[#00ff00]">
                   <a href={link.href} className="text-base font-Play font-semibold tracking-wide ">
                     {link.experience}
                   </a>
                 </div>
-              </div>
+                </div>
               </div>
             ))}
         </div>
