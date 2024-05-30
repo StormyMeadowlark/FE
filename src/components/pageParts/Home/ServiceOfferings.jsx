@@ -1,5 +1,148 @@
-function ServiceOfferings() {
+import { LinkIcon } from '@heroicons/react/24/outline'
+import useHover from '/src/hooks/useHover.jsx'
+const Services = [
+  {
+    index: 1,
+    title: 'Preventative Maintenance',
+    src: 'OilEngine.jpg',
+    href: '#',
+    beforeHoverVar: beforeHover(),
+    afterHoverVar: afterHover(),
+  },
+  {
+    index: 2,
+    title: 'Diagnostics',
+    src: 'Diagnostics.jpg',
+    href: '#',
+    beforeHoverVar: beforeHover(),
+    afterHoverVar: afterHover(),
+  },
+  {
+    index: 3,
+    title: 'Wheels & Tires',
+    src: 'Tire2.jpeg',
+    href: '#',
+    beforeHoverVar: beforeHover(),
+    afterHoverVar: afterHover(),
+  },
+  {
+    index: 4,
+    title: 'Alignments',
+    src: 'Alignment2.jpg',
+    href: '#',
+    beforeHoverVar: beforeHover(),
+    afterHoverVar: afterHover(),
+  },
+  {
+    index: 5,
+    title: 'Brakes',
+    src: 'Brake3.jpg',
+    href: '#',
+    beforeHoverVar: beforeHover(),
+    afterHoverVar: afterHover(),
+  },
+  {
+    index: 6,
+    title: 'Steering & Suspension',
+    src: 'SteeringSuspension.jpg',
+    href: '#',
+    beforeHoverVar: beforeHover(),
+    afterHoverVar: afterHover(),
+  },
+  {
+    index: 7,
+    title: 'Remove & Replace',
+    src: 'EngineReplace.jpeg',
+    href: '#',
+    beforeHoverVar: beforeHover(),
+    afterHoverVar: afterHover(),
+  },
+  {
+    index: 8,
+    title: 'A/C & Heating',
+    src: 'HeatingAC.jpg',
+    href: '#',
+    beforeHoverVar: beforeHover(),
+    afterHoverVar: afterHover(),
+  },
+  {
+    index: 9,
+    title: 'Electrical',
+    src: 'Electrical.jpg',
+    href: '#',
+    beforeHoverVar: beforeHover(),
+    afterHoverVar: afterHover(),
+  },
+  {
+    index: 10,
+    title: 'Economy & Light Duty Diesel',
+    src: 'EconomyLightDuty.jpg',
+    href: '#',
+    beforeHoverVar: beforeHover(),
+    afterHoverVar: afterHover(),
+  },
+  {
+    index: 11,
+    title: 'Used Vehicle Inspection',
+    src: 'Inspection.jpg',
+    href: '#',
+    beforeHoverVar: beforeHover(),
+    afterHoverVar: afterHover(),
+  },
+  {
+    index: 12,
+    title: 'All Services',
+    src: 'AllServices.jpeg',
+    href: '#',
+    beforeHoverVar: beforeHover(),
+    afterHoverVar: afterHover(),
+  },
+]
+function beforeHover() {
+  return(
+    <div>
+    {Services.map((service) => (
+      <button key={service.index} href={service.href} className="px-3 sm:my-3 lg:my-0">
+        <img 
+          src={getServiceSrc(service)}
+          alt=" "
+          aria-hidden="true"
+          className= "relative h-[100%] w-[100%] hexagon brightness-[50%] transition linear blur-[2px]"
+        />
+        {service.title}
+      </button>
+    ))}
+    </div>
+  )
+}
 
+function getServiceSrc(service) {
+  return(
+    "src/assets/images/" +
+    service.src
+  )
+}
+
+
+function afterHover() {
+  return(
+    <div>
+    {Services.map((service) => (
+      <button key={service.index} href={service.href} className="px-3 sm:my-3 lg:my-0">
+        <img 
+          src={getServiceSrc(service)}
+          alt=" "
+          aria-hidden="true"
+          className= "relative h-[100%] w-[100%] hexagon brightness-[30%] transition linear blur-none"
+        />
+        {service.title}
+      </button>
+    ))}
+    </div>
+  )
+}
+
+function ServiceOfferings() {
     return(
       <div className="px-2 lg:px-[20%]  bg-[#00ff00] py-40 relative text-white">
         <section className="bg-[#333333] shadow-xl shadow-black flex flex-col md:px-10 lg:px-20 px-2 text-center md:text-left rounded-md">
