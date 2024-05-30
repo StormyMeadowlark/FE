@@ -24,7 +24,6 @@ function Home() {
             <CustomerCategories />
             <OverviewIcons />
             <div className='bg-[#333333]'>
-                <AccountCallToAction />
                 <HighlightedMakesAndModels />
             </div>
             <BrandsWeWorkWith />

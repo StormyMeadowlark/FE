@@ -16,10 +16,12 @@ export default {
       Urbanist: "Urbanist",
       Bungee: "Bungee",
     },
+  
   },
   plugins: [
     require('@tailwindcss/forms'),
     require("@designbycode/tailwindcss-text-stroke"),
+    require("@xpd/tailwind-3dtransforms"),
   ],
 }
 

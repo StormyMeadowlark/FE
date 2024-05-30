@@ -93,7 +93,7 @@ function ServiceOfferings() {
             <div className="flex flex-1 basis-1/4">
               <button className="px-3 sm:my-3 lg:my-0">
                 <img 
-                src="src/assets/images/Engine.jpg" 
+                src="src/assets/images/EngineReplace.jpeg" 
                 alt=""
                 aria-hidden="true"
                 className= "relative h-[100%] w-[100%] hexagon brightness-[50%] hover:brightness-[30%] transition linear blur-[2px] hover:blur-none"

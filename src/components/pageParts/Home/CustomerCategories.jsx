@@ -46,7 +46,7 @@ export default function CustomerCategories() {
       <section className="relative  z-10 mx-auto max-w-7xl px-6 lg:px-8" aria-labelledby="contact-heading">
         <h2 className="sr-only" id="Customer Experience">
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8 -translate-y-1/4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8 lg:-translate-y-1/4 -translate-y-36">
           {supportLinks.map((link) => (
             <div key={link.name} className=''>
               <img   
@@ -55,8 +55,8 @@ export default function CustomerCategories() {
                 aria-hidden="true"
                 className='brightness-[30%] rounded-md' 
               />
-              <div className=" -translate-y-1/2 h-full">
-                <div className="inline-block -mb-8 -translate-y-12 hexagon -translate-x-4 lg:bg-[#00FF00] bg-[#777777] p-5 shadow-lg">
+              <div className="-translate-y-full -mb-40">
+                <div className="lg:visible hidden lg:inline-block -mb-8 -translate-y-12 hexagon -translate-x-4 lg:bg-[#00FF00] bg-[#777777] p-5 shadow-lg">
                   <link.icon className="h-16 w-16 lg:text-[#333333] text-[#00FF00]" aria-hidden="true" />
                 </div>
                 <div className="px-6 pb-8 md:px-8">
