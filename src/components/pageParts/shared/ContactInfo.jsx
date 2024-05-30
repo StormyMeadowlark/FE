@@ -1,35 +1,114 @@
 import '../../../App.css'
 import { PhoneIcon, ClockIcon, MapPinIcon, HandThumbUpIcon } from '@heroicons/react/24/outline'
+import useHover from '../../../hooks/useHover';
 
 function ContactInfo() {
+  const [PhoneNumberHovering, PhoneNumberHoveringProps] = useHover();
+  const PhoneNumberBeforeHovering =  PhoneNumberBefore();
+  const PhoneNumberAfterHovering = PhoneNumberAfter();
+  const [HoursHovering, HoursHoveringProps] = useHover();
+  const HoursBeforeHovering =  HoursBefore();
+  const HoursAfterHovering = HoursAfter();
+  const [LocationHovering, LocationHoveringProps] = useHover();
+  const LocationBeforeHovering =  LocationBefore();
+  const LocationAfterHovering = LocationAfter();
+  const [SocialsHovering, SocialsHoveringProps] = useHover();
+  const SocialsBeforeHovering =  SocialsBefore();
+  const SocialsAfterHovering = SocialsAfter();
     return(
         <div className='flex gap-x-6 pb-8 -mt-10 justify-center text-[#eeeeee]'>
-            <div className='hidden lg:flex lg:items-center'>
-                <PhoneIcon className=' w-6 h-6 mr-3 hover:fill-[#00FF00] ease-linear duration-150' aria-hidden='true' stroke='#00FF00' opacity={.7} />
-                <address className='text-center'>
-                  <a className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]' href='#'>785.730.2900</a>
-                </address>
-            </div>
-            <div className='hidden lg:flex lg:items-center'>
-                <ClockIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} />
+            <button {...PhoneNumberHoveringProps} className='hidden lg:flex lg:items-center'>
+              {PhoneNumberHovering ? PhoneNumberAfterHovering : PhoneNumberBeforeHovering}
+              <address className='text-center'>
+                <a className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]' href='#'>785.730.2900</a>
+              </address>
+            </button>
+            <button {...HoursHoveringProps} className='hidden lg:flex lg:items-center'>
+                {HoursHovering ? HoursAfterHovering : HoursBeforeHovering}
                 <address className='text-center'>
                   <a className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]' href='#'>Monday - Friday<br />8:00 am - 4:00 pm </a>
                 </address>
-            </div>
-            <div className='hidden lg:flex lg:items-center'>
-                <MapPinIcon className=' w-6 h-6 mr-3 hover:fill-[#00FF00] ease-linear duration-150' aria-hidden='true' stroke='#00FF00' opacity={.7} />
+            </button>
+            <button {...LocationHoveringProps} className='hidden lg:flex lg:items-center'>
+                {LocationHovering ? LocationAfterHovering : LocationBeforeHovering}
                 <address className='text-center'>
                   <a className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]' href='#'>315 SW 32nd Terrace<br />Topeka, KS 66611</a>
                 </address>
-            </div>
-            <div className='hidden lg:flex text-center lg:items-center'>
-                <HandThumbUpIcon className='w-6 h-6 mr-3 hover:fill-[#00FF00] ease-linear duration-150' aria-hidden='true' stroke='#00FF00' opacity={.7} />
+            </button>
+            <button {...SocialsHoveringProps} className='hidden lg:flex text-center lg:items-center'>
+                {SocialsHovering ? SocialsAfterHovering : SocialsBeforeHovering}
                 <a className='text-[12px] focus:outline focus:outline-[#00FF00]' href='#'>
                   Socials
                 </a>
-            </div>
+            </button>
         </div>
     )
 }
+
+
+function PhoneNumberBefore() {
+  return(
+    <div>
+      <PhoneIcon className=' w-6 h-6 mr-3 ease-linear duration-150' aria-hidden='true' stroke='#00FF00' opacity={.7} />
+    </div>
+  )
+}
+function PhoneNumberAfter() {
+  return(
+    <div>
+      <PhoneIcon className=' w-6 h-6 mr-3 ease-linear duration-150' aria-hidden='true' stroke='#00FF00' opacity={.7} fill='#00FF00' />
+    </div>
+  )
+}
+
+function HoursBefore() {
+  return(
+    <div>
+      <ClockIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} />
+    </div>
+  )
+}
+
+function HoursAfter() {
+  return(
+    <div>
+      <ClockIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} fill='#00FF00' />
+    </div>
+  )
+}
+
+function LocationBefore() {
+  return(
+    <div>
+      <MapPinIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} />
+    </div>
+  )
+}
+
+function LocationAfter() {
+  return(
+    <div>
+      <MapPinIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} fill='#00FF00' />
+    </div>
+  )
+}
+function SocialsBefore() {
+  return(
+    <div>
+      <HandThumbUpIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} />
+    </div>
+  )
+}
+
+function SocialsAfter() {
+  return(
+    <div>
+      <HandThumbUpIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} fill='#00FF00' />
+    </div>
+  )
+}
+
+
+
 
 export default ContactInfo;

@@ -25,9 +25,9 @@
 .gallery{
     position:relative;
     width:300px;
-    height:200px;
+    height:100px;
     transform-style:preserve-3d;
-    animation:rotate 35s linear infinite;
+    animation:rotate 120s linear infinite;
   }
   
   @keyframes rotate{
@@ -46,7 +46,7 @@
     height:100%;
     transform-origin:center;
     transform-style:preserve-3d;
-    transform:rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+    transform:rotateY(calc(var(--i) * 22.5deg)) translateZ(760px);
   }
   
   .gallery span img{

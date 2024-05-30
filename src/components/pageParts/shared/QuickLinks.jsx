@@ -1,58 +1,70 @@
-import { useState } from 'react'
-import '../../../App.css'
+import useHover from '../../../hooks/useHover';
 import { UserIcon, CalendarIcon, BanknotesIcon } from '@heroicons/react/24/outline'
 
-const quickLinks = [
-    {
-        srOnly: 'Log-In or create account',
-        icon: UserIcon,
-        href: 'www.google.com',
-        before: 'transparent',
-        after: '#00FF00',
-    },
-    {
-        srOnly: 'schedule appointment online',
-        icon: CalendarIcon,
-        href: 'www.facebook.com',
-        before: 'transparent',
-        after: '#00FF00',
-    },
-    {
-        srOnly: 'Pay Bill online',
-        icon: BanknotesIcon,
-        href: 'www.pinterest.com',
-        before: 'transparent',
-        after: '#00FF00',
-    },
-    
-]
-
-function useMouseHover() {
-
-    const [isHovered, setIsHovered] = useState(false);
-
-    const hoveredProps = {
-        onMouseEnter: () => setIsHovered(true),
-        onMouseLeave: () => setIsHovered(false),
-    }
-    return [isHovered, hoveredProps]
-}
-
-
 function QuickLinks() {
-    const [isHovered, hoveredProps] = useMouseHover();
+    const [UserHovering, UserHoveringProps] = useHover();
+    const [AppointmentHovering, AppointmentHoveringProps] = useHover();
+    const [PaymentHovering, PaymentHoveringProps] = useHover();
+    const UserBeforeHover = UserBefore();
+    const AppointmentBeforeHover = AppointmentBefore();
+    const PaymentBeforeHover = PaymentBefore();
+    const UserAfterHover = UserAfter();
+    const AppointmentAfterHover = AppointmentAfter();
+    const PaymentAfterHover = PaymentAfter();
     return(
         <div className='hidden lg:flex lg:flex-1 lg:justify-end '>
-            {quickLinks.map((link) => (
-                <button key={link.srOnly} href={link.href} className='p-2 focus:outline focus:outline-[#00FF00]'>
-                    <span className='sr-only'>{link.srOnly}</span>
-                    
-                    <link.icon {...hoveredProps} className='h-7 w-7' aria-hidden='true' stroke='#00FF00' fill={isHovered ? (link.after) : (link.before)} />
+                <button {...UserHoveringProps} href='#' className='p-2 focus:outline focus:outline-[#00FF00]'>
+                    <span className='sr-only'>Log-In or Create Account</span>
+                    {UserHovering ? UserAfterHover : UserBeforeHover}
                 </button>
-            ))}
+                <button {...AppointmentHoveringProps} href='#' className='p-2 focus:outline focus:outline-[#00FF00]'>
+                    <span className='sr-only'>Log-In or Create Account</span>
+                    {AppointmentHovering ? AppointmentAfterHover : AppointmentBeforeHover}
+                </button>
+                <button {...PaymentHoveringProps} href='#' className='p-2 focus:outline focus:outline-[#00FF00]'>
+                    <span className='sr-only'>Log-In or Create Account</span>
+                    {PaymentHovering ? PaymentAfterHover : PaymentBeforeHover}
+                </button>
         </div>
     )
 }
+
+function UserBefore() {
+    return(
+        <UserIcon className='h-7 w-7' aria-hidden='true' stroke='#00FF00' fill='transparent' />
+    )
+}
+
+function UserAfter() {
+    return(
+        <UserIcon className='h-7 w-7' aria-hidden='true' stroke='#00FF00' fill='#00ff00' />
+    )
+}
+
+function AppointmentBefore() {
+    return(
+        <CalendarIcon className='h-7 w-7' aria-hidden='true' stroke='#00FF00' fill='transparent' />
+    )
+}
+
+function AppointmentAfter() {
+    return(
+        <CalendarIcon className='h-7 w-7' aria-hidden='true' stroke='#00FF00' fill='#00ff00' />
+    )
+}
+
+function PaymentBefore() {
+    return(
+        <BanknotesIcon className='h-7 w-7' aria-hidden='true' stroke='#00FF00' fill='transparent' />
+    )
+}
+
+function PaymentAfter() {
+    return(
+        <BanknotesIcon className='h-7 w-7' aria-hidden='true' stroke='#00FF00' fill='#00ff00' />
+    )
+}
+
 
 export default QuickLinks;
 
