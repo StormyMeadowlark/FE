@@ -16,7 +16,7 @@ export default function Hero() {
         </div>
         <div className="mx-auto max-w-6xl py-20">
           <div className="text-center">
-            <h1 className=" text-white text-3xl md:text-5xl lg:text-7xl uppercase bold font-Urbanist font-black">
+            <h1 className=" text-white px-8 md:px-4 lg:px-0 text-3xl md:text-5xl lg:text-7xl uppercase bold font-Urbanist font-black">
               Breakdowns won&apos;t<br />break you down<br /><br />with your Topeka, KS<br />high end mechanics
             </h1>
             <div className="pb-40 pt-20 flex items-center justify-center gap-x-6 font-Play font-bold">

@@ -21,15 +21,15 @@ function OverviewIcons() {
                         Service Overview
                     </h2>
                     <div {...QualityHoveringProps}>
-                        <div className='relative uppercase pt-8 font-Bungee text-8xl text-stroke text-stroke-fill-transparent text-stroke-[#00ff00] px-20 hover:text-stroke-fill-transparent transition ease-linear'>Quality,</div>
+                        <div className='relative uppercase pt-8 font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-transparent text-stroke-[#00ff00] md:px-20 hover:text-stroke-fill-transparent transition ease-linear'>Quality,</div>
                         {QualityHoving ? QualityCardShowing : " "}
                     </div>
                     <div {...ConvenienceHoveringProps}>
-                        <div className='relative uppercase pt-8 font-Bungee text-8xl text-stroke text-stroke-fill-transparent text-stroke-[#00ff00] px-20 hover:text-stroke-fill-transparent transition ease-linear'>Convenience,</div>
+                        <div className='relative uppercase pt-8 font-Bungee lg:text-8xl md:text-6xl text-3xl text-stroke text-stroke-fill-transparent text-stroke-[#00ff00] md:px-20 hover:text-stroke-fill-transparent transition ease-linear'>Convenience,</div>
                         {ConvenienceHovering ? ConvenienceCardShowing : " "}
                     </div>
                     <div {...AffordabilityHoveringProps}>
-                        <div className='relative uppercase pt-8 font-Bungee text-8xl text-stroke text-stroke-fill-transparent text-stroke-[#00ff00] px-20 hover:text-stroke-fill-transparent transition ease-linear'>Affordability.</div>
+                        <div className='relative uppercase pt-8 font-Bungee lg:text-8xl md:text-6xl text-3xl text-stroke text-stroke-fill-transparent text-stroke-[#00ff00] md:px-20 hover:text-stroke-fill-transparent transition ease-linear'>Affordability.</div>
                         {AffordabilityHovering ? AffordabilityCardShowing : " "}
                         </div>
                     </div>

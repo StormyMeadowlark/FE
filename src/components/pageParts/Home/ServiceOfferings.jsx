@@ -1,8 +1,8 @@
 function ServiceOfferings() {
 
     return(
-      <div className="sm:px-8 lg:px-[20%]  bg-[#00ff00] py-40 relative text-white">
-        <section className="bg-[#333333] shadow-xl shadow-black flex flex-col px-20 rounded-md">
+      <div className="px-2 lg:px-[20%]  bg-[#00ff00] py-40 relative text-white">
+        <section className="bg-[#333333] shadow-xl shadow-black flex flex-col md:px-10 lg:px-20 px-2 text-center md:text-left rounded-md">
           <h2 className="relative pt-20 flex text-6xl font-Bungee text-stroke text-stroke-fill-black text-stroke-[#00ff00]">
             We Offer You
           </h2>
