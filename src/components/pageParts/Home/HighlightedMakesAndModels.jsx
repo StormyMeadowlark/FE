@@ -13,11 +13,9 @@ export default function HighlightedMakesAndModels() {
   const Pic3AfterVar = Pic3After();
   const Pic4BeforeVar = Pic4Before();
   const Pic4AfterVar = Pic4After();
-    return (
-      <div className="overflow-hidden py-40 bg-[#333333]">
-        <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
-            <div className="lg:col-end-1 lg:w-full lg:max-w-2xl lg:pb-8">
+  return (
+      <div className="px-10 lg:max-w-7xl overflow-hidden sm:py-10 lg:py-40 bg-[#333333] lg:flex mx-auto">
+            <div className="flex flex-col">
               <h2 className="text-3xl py-10 text-stroke text-stroke-black text-stroke-fill-[#00ff00] lg:text-7xl uppercase font-Bungee">Highlighted Makes & Models</h2>
               <p className="font-Urbanist tracking-wide font-medium text-xl  text-white">
                 Although we do service almost every make & model manufactured after 2000, we do see certain vehicles in the shop more frequently.
@@ -34,25 +32,23 @@ export default function HighlightedMakesAndModels() {
                 </a>
               </div>
             </div>
-            <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
-              <button {...Pic1HoveringProps} className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
+            <div className="">
+              <button {...Pic1HoveringProps} className="mt-8 lg:mt-72 lg:w-[80%]">
                 {Pic1Hovering ? Pic1AfterVar : Pic1BeforeVar}
               </button>
-              <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
-                <button {...Pic2HoveringProps} className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
+              <div className="">
+                <button {...Pic2HoveringProps} className="">
                   {Pic2Hovering ? Pic2AfterVar : Pic2BeforeVar}
                 </button>
-                <button {...Pic3HoveringProps} className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
+                <button {...Pic3HoveringProps} className="">
                   {Pic3Hovering ? Pic3AfterVar : Pic3BeforeVar}
                 </button>
-                <button {...Pic4HoveringProps}  className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
+                <button {...Pic4HoveringProps}  className="">
                   {Pic4Hovering ? Pic4AfterVar : Pic4BeforeVar}
                 </button>
               </div>
             </div>
           </div>
-        </div>
-      </div>
     )
   }  
 
@@ -62,7 +58,7 @@ function Pic1Before() {
     <div>
       <img src="src/assets/images/Jeep.jpg"
         alt=""
-        className="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover hexagon "
+        className="aspect-[7/5] hexagon"
       />
       <p className="-translate-y-56 text-2xl font-urbanist text-transparent">
         \s
@@ -81,7 +77,7 @@ function Pic1After() {
     <div className="text-white">
       <img src="src/assets/images/Jeep.jpg"
         alt=""
-        className="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover hexagon brightness-50"
+        className="aspect-[7/5] hexagon brightness-50"
       />
       <p className="-translate-y-56 text-2xl font-urbanist ">
         Vehicles with XYZ Engine
