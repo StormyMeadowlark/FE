@@ -8,7 +8,7 @@ import Logo from "../../../components/limeGreenAndBlackLogo.svg?react"
           Footer
         </h2>
         <div className="border-y border-black silverbg shadow-xl shadow-black outline outline-black justify-content-center py-20">
-          <div className="flex max-w-7xl mx-auto">
+          <div className="md:flex max-w-7xl mx-auto">
             <div className="flex justify-start">
               <h3 className="text-6xl text-stroke-black text-stroke text-stroke-fill-[#00ff00] sm:text-4xl md:text-5xl lg:text-6xl uppercase font-Bungee">Stay in the know</h3>
             </div>
@@ -23,7 +23,7 @@ import Logo from "../../../components/limeGreenAndBlackLogo.svg?react"
                   id="email-address"
                   autoComplete="email"
                   required
-                  className="rounded-2xl bg-[#333333] border-b border-[#00ff00] font-Play pr-52 mr-2 py-4"
+                  className="rounded-2xl bg-[#333333] border-b border-[#00ff00] font-Play md:pr-52 mr-2 py-4"
                   placeholder="Email Address"
                 />
                 <div className="text-sm font-Play inline-flex">

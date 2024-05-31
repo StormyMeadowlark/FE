@@ -2,7 +2,7 @@ import { TestimonialCarousel } from '../shared/Carousel'
 
 function Testimonials() {
     return(
-        <div className="relative flex flex-col py-20 bg-[#333333] px-20">
+        <div className="relative flex flex-col py-20 bg-[#333333] px-20 overflow-hidden">
             <div className="relative mx-auto max-w-7xl">
                 <div className="justify-center pb-10 ">
                     <h3 className="text-6xl text-stroke-black text-stroke text-stroke-fill-white sm:text-4xl md:text-5xl lg:text-6xl uppercase  font-Bungee">Experience<br />

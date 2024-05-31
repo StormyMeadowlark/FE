@@ -17,7 +17,7 @@ function OverviewIcons() {
     const AffordabilityCardAfter = AffordabilityCardsAfter()
 
     return(
-        <div className='bg-[#111111] py-20 '>
+        <div className='bg-[#111111] py-20 overflow-hidden'>
             <section className="relative z-10 mx-auto px-6 lg:px-8 max-w-7xl" aria-labelledby="landing-page-section">
                 <div>
                     <h2 className="sr-only" id="contact-heading">
