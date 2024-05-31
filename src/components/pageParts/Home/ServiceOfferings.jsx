@@ -1,4 +1,3 @@
-import { LinkIcon } from '@heroicons/react/24/outline'
 import useHover from '/src/hooks/useHover.jsx'
 const Services = [
   {
@@ -6,113 +5,87 @@ const Services = [
     title: 'Preventative Maintenance',
     src: 'OilEngine.jpg',
     href: '#',
-    beforeHoverVar: beforeHover(),
-    afterHoverVar: afterHover(),
   },
   {
     index: 2,
     title: 'Diagnostics',
     src: 'Diagnostics.jpg',
     href: '#',
-    beforeHoverVar: beforeHover(),
-    afterHoverVar: afterHover(),
   },
   {
     index: 3,
     title: 'Wheels & Tires',
     src: 'Tire2.jpeg',
     href: '#',
-    beforeHoverVar: beforeHover(),
-    afterHoverVar: afterHover(),
   },
   {
     index: 4,
     title: 'Alignments',
     src: 'Alignment2.jpg',
     href: '#',
-    beforeHoverVar: beforeHover(),
-    afterHoverVar: afterHover(),
   },
   {
     index: 5,
     title: 'Brakes',
     src: 'Brake3.jpg',
     href: '#',
-    beforeHoverVar: beforeHover(),
-    afterHoverVar: afterHover(),
   },
   {
     index: 6,
     title: 'Steering & Suspension',
     src: 'SteeringSuspension.jpg',
     href: '#',
-    beforeHoverVar: beforeHover(),
-    afterHoverVar: afterHover(),
   },
   {
     index: 7,
     title: 'Remove & Replace',
     src: 'EngineReplace.jpeg',
     href: '#',
-    beforeHoverVar: beforeHover(),
-    afterHoverVar: afterHover(),
   },
   {
     index: 8,
     title: 'A/C & Heating',
     src: 'HeatingAC.jpg',
     href: '#',
-    beforeHoverVar: beforeHover(),
-    afterHoverVar: afterHover(),
   },
   {
     index: 9,
     title: 'Electrical',
     src: 'Electrical.jpg',
     href: '#',
-    beforeHoverVar: beforeHover(),
-    afterHoverVar: afterHover(),
   },
   {
     index: 10,
     title: 'Economy & Light Duty Diesel',
     src: 'EconomyLightDuty.jpg',
     href: '#',
-    beforeHoverVar: beforeHover(),
-    afterHoverVar: afterHover(),
   },
   {
     index: 11,
     title: 'Used Vehicle Inspection',
     src: 'Inspection.jpg',
     href: '#',
-    beforeHoverVar: beforeHover(),
-    afterHoverVar: afterHover(),
   },
   {
     index: 12,
     title: 'All Services',
     src: 'AllServices.jpeg',
     href: '#',
-    beforeHoverVar: beforeHover(),
-    afterHoverVar: afterHover(),
   },
 ]
-function beforeHover() {
+
+const BeforeHover = "relative h-[100%] w-[100%] hexagon brightness-[50%] transition linear blur-[2px]"
+function beforeHover(service) {
   return(
-    <div>
-    {Services.map((service) => (
       <button key={service.index} href={service.href} className="px-3 sm:my-3 lg:my-0">
         <img 
-          src={getServiceSrc(service)}
+          src={getServiceSrc()}
           alt=" "
           aria-hidden="true"
           className= "relative h-[100%] w-[100%] hexagon brightness-[50%] transition linear blur-[2px]"
         />
         {service.title}
       </button>
-    ))}
-    </div>
   )
 }
 
@@ -124,10 +97,9 @@ function getServiceSrc(service) {
 }
 
 
-function afterHover() {
+function afterHover(service) {
   return(
     <div>
-    {Services.map((service) => (
       <button key={service.index} href={service.href} className="px-3 sm:my-3 lg:my-0">
         <img 
           src={getServiceSrc(service)}
@@ -137,7 +109,6 @@ function afterHover() {
         />
         {service.title}
       </button>
-    ))}
     </div>
   )
 }
