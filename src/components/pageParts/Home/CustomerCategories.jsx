@@ -5,7 +5,7 @@ const supportLinks = [
     name: 'Retail',
     href: '#',
     description:
-      'Benefits of HEM Retail Over Competition',
+      'Explore the benefits of being an HEM Automotive Retail Customer',
     icon: UsersIcon,
     experience: 'Retail Experience',
     image: 'src/assets/images/Retail.jpg',
@@ -14,7 +14,7 @@ const supportLinks = [
     name: 'Dealership',
     href: '#',
     description:
-      'Benefits of HEM Dealership Over Competition',
+      'Special pricing & more when your dealership uses HEM Automotive',
     icon: TruckIcon,
     experience: 'Dealership Experience',
     image: 'src/assets/images/Dealership.jpg',
@@ -23,7 +23,7 @@ const supportLinks = [
     name: 'Fleet & Other',
     href: '#',
     description:
-      'Benefits of HEM Fleet & Other Over Competition.',
+      'We work with fleets in all shapes & forms. See what we can offer your fleet today!',
     icon: UserGroupIcon,
     experience: 'Fleet & Other Experience',
     image: 'src/assets/images/Fleet.jpg',
