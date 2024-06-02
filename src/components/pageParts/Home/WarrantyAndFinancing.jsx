@@ -122,7 +122,7 @@ import {
                 <div className='rounded-full px-3 py-1 mt-4 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 shadow-xl shadow-black border-b border-[#00ff00] hover:scale-[98%] font-Play'>
                   Been to the shop recently? { ' ' }
                   <a href="#" className="font-semibold text-white">
-                    <span className="absolute inset-0" aria-hidden="true" />
+                    <span className="inset-0" aria-hidden="true" />
                       Activate Your Warranty Here
                   </a>
                 </div>
@@ -168,7 +168,7 @@ import {
               <img
                 className="relative mx-auto"
                 width={490}
-                src="https://tailwindui.com/img/features/feature-example-1.png"
+                src="/src/assets/images/FactorMotorPartsBothLogos.png"
                 alt=""
               />
             </div>
@@ -209,7 +209,7 @@ import {
                   Interested in Financing?{ '  ' }
                   
                   <a href="#" className="font-semibold text-white">
-                  <span className="absolute inset-0" aria-hidden="true" />
+                  <span className="inset-0" aria-hidden="true" />
                     Click Here to Apply
                   </a>
                 </p>
@@ -256,7 +256,7 @@ import {
                 <img
                   className="relative mx-auto"
                   width={490}
-                  src="https://tailwindui.com/img/features/feature-example-2.png"
+                  src="/src/assets/images/Snap.png"
                   alt=""
                 />
               </div>
