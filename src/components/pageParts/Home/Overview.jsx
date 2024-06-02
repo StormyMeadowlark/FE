@@ -17,7 +17,7 @@ function OverviewIcons() {
     const AffordabilityCardAfter = AffordabilityCardsAfter()
 
     return(
-        <div className='bg-[#111111] py-20 overflow-hidden'>
+        <div className='bg-[#111111] py-8 overflow-hidden'>
             <section className="relative z-10 mx-auto px-6 lg:px-8 max-w-7xl" aria-labelledby="landing-page-section">
                 <div>
                     <h2 className="sr-only" id="contact-heading">
@@ -56,7 +56,7 @@ function QualityCardsAfter() {
         <section className="relative z-10 mx-auto max-w-5xl text-white" aria-labelledby="landing-page-section">
             <div className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-[#00ff00] text-stroke-[#00ff00] transition ease-linear'>Quality,
             </div>
-            <div className='pt-14 border-t border-[#00ff00] text-stroke-white lowercase text-stroke text-stroke-fill-white font-Urbanist text-xl font-light md:flex'>
+            <div className='pt-8 border-t border-[#00ff00] text-stroke-white lowercase text-stroke text-stroke-fill-white font-Urbanist text-xl font-light md:flex'>
                 <div className="flex flex-col rounded-md bg-[#333333] shadow-xl shadow-[#111111] border-b border-[#00ff00]/50 sentence-case text-[#dddddd] mr-8 mt-8">
                     <div className="relative flex-1 px-6 pb-8 md:px-8">
                         <div className="inline-block -translate-y-12 bg-[#00ff00] lg:p-5 p-3 -translate-x-10 hexagon">

@@ -3,18 +3,6 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
-const brands = [
-  { name: 'SCHEDULE', href: '#' },
-  { name: 'ESTIMATE', href: '#' },
-  { name: 'SERVICE', href: '#' },
-  { name: 'SALES', href: '#' },
-  { name: 'FAQ', href: '#' },
-  { name: 'ABOUT', href: '#' },
-  { name: 'CONTACT', href: '#' },
-  { name: 'SHOP', href: '#' },
-  { name: 'AUTO SCHOOL', href: '#' },
-] 
-
 class BrandCarousel extends React.Component {
   render() {
     return (

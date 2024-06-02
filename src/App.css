@@ -43,7 +43,7 @@
   .gallery span{
     position:absolute;
     width:100%;
-    height:100%;
+    height:50%;
     transform-origin:center;
     transform-style:preserve-3d;
     transform:rotateY(calc(var(--i) * 22.5deg)) translateZ(760px);

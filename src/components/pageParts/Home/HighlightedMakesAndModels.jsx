@@ -15,9 +15,9 @@ export default function HighlightedMakesAndModels() {
   const Pic4AfterVar = Pic4After();
   return (
     <div>
-      <div className="px-10 lg:max-w-7xl overflow-hidden sm:pt-10 lg:pt-40 bg-[#333333] lg:flex mx-auto">
-            <div className="flex flex-col">
-              <h2 className="text-3xl py-10 text-stroke text-stroke-black text-stroke-fill-[#00ff00] lg:text-7xl uppercase font-Bungee">Highlighted Makes & Models</h2>
+      <div className="px-10 lg:max-w-7xl overflow-hidden sm:pt-10 lg:pt-8 bg-[#333333] lg:flex mx-auto">
+            <div className="flex flex-col flex-1 basis-1/2">
+              <h2 className="text-3xl pb-4 text-stroke text-stroke-black text-stroke-fill-[#00ff00] lg:text-5xl uppercase font-Bungee">Highlighted Makes & Models</h2>
               <p className="font-Urbanist tracking-wide font-medium text-xl  text-white">
                 Although we do service almost every make & model manufactured after 2000, we do see certain vehicles in the shop more frequently.
               </p>
@@ -33,7 +33,7 @@ export default function HighlightedMakesAndModels() {
                 </a>
               </div>
             </div>
-              <button {...Pic1HoveringProps} aria-label='Learn more about what commonly brings Jeep Grand Cherokees & similar vehicles into the shop' className="mt-8 lg:px-10">
+              <button {...Pic1HoveringProps} aria-label='Learn more about what commonly brings Jeep Grand Cherokees & similar vehicles into the shop' className="mt-8 lg:px-10 lg:flex lg:basis-1/2">
                 {Pic1Hovering ? Pic1AfterVar : Pic1BeforeVar}
               </button>
           </div>

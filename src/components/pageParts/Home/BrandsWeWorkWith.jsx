@@ -2,11 +2,11 @@
 function BrandsWeWorkWith() {
     return(
       <div className=" bg-[#00ff00]">
-        <section className="flex mx-auto mb-10 text-4xl py-10 text-stroke text-stroke-fill-[333333] text-stroke-white md:text-5xl lg:text-6xl uppercase font-Bungee max-w-7xl">
+        <section className="flex mx-auto text-4xl py-4 text-stroke text-stroke-fill-[333333] text-stroke-white md:text-5xl lg:text-6xl uppercase font-Bungee max-w-7xl">
           <p className="flex flex-1 justify-center">Brands we work with</p>
         </section>
-      <div className="grid place-items-center bg-[#00ff00] h-96 -mt-20 max-w-7xl mx-auto overflow-hidden"> 
-        <div className="gallery w-[300px] h-[200px]">
+      <div className="grid place-items-center bg-[#00ff00] max-w-7xl mx-auto overflow-hidden pb-4 object-scale-down"> 
+        <div className="gallery w-[300px] h-[50px] py-4">
           <span style={{"--i":1}}>
             <img className="" src="src/assets/images/Affordability.jpg" alt="" />
           </span>

@@ -38,12 +38,12 @@ function ServiceOfferings() {
   const AllAfterHover = AllAfter()
 
     return(
-      <div className="px-2 lg:px-[20%]  bg-[#00ff00] py-40 relative text-white">
-        <section className="bg-[#333333] shadow-xl shadow-black flex flex-col md:px-10 lg:px-20 px-2 text-center md:text-left rounded-md">
+      <div className="px-2 lg:px-[5%]  bg-[#00ff00] pb-8 relative text-white">
+        <section className="bg-[#333333] shadow-xl shadow-black flex flex-col md:px-10  px-2 text-center md:text-left rounded-md">
           <h2 className="relative pt-20 flex text-6xl font-Bungee text-stroke text-stroke-fill-black text-stroke-[#00ff00]">
             We Offer You
           </h2>
-          <p className="relative max-w-3xl text-xl text-[#eeeeee] pt-10 pb-4 font-Urbanist tracking-wider">Full service repair & maintenance for most models manufactured after 2000. Just call us for older vehicles or other items with wheels, it isn&apos;t like we can&apos;t work on them... you just have to draw the line somewhere. </p>
+          <p className="relative max-w-7xl text-xl text-[#eeeeee] pt-10 pb-4 font-Urbanist tracking-wider">Full service repair & maintenance for most models manufactured after 2000. Just call us for older vehicles or other items with wheels, it isn&apos;t like we can&apos;t work on them... you just have to draw the line somewhere. </p>
         </section>
         <section className="py-10 px-20">
           <div className="md:flex md:px-[12%] sm:px-0">

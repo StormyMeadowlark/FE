@@ -12,13 +12,13 @@ function NavBar() {
 
     return (
         <div className='absolute top-0 inset-x-0 z-50 bg-black/50 font-Play'>
-            <header className='px-3 pt-4 pb-8'>
+            <header className='px-3'>
                 <nav className='flex flex-1 items-center justify-evenly
                 ' aria-label='Global'>
                     <div className=''>
                         <a href='#' className='flex flex-1 focus:outline focus:outline-[#00FF00]'>
                             <span className='sr-only'>H.E.M Automotive</span>
-                            <Logo className='hover:scale-[110%] duration-200 ease-in-out' />
+                            <Logo className='scale-75 hover:scale-[80%] duration-200 ease-in-out outline' />
                         </a>
                     </div>
                     <div>

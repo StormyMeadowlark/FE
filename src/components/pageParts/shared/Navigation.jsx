@@ -1,6 +1,5 @@
 import '../../../App.css'
 import useHover from '../../../hooks/useHover'
-import GearWrenchIcon from '../../GearAndWrenchFromLogo.svg?react'
 
 const navigation = [
     { name: 'SERVICE', href: '#' },
@@ -18,7 +17,7 @@ const autoSchool = { name: 'AUTO SCHOOL', href: '#', }
 function Navigation() {
   const [hovering, hoveringProps] = useHover()
   return(
-    <div className='hidden lg:flex lg:gap-x-6 lg:align-bottom lg:justify-evenly'>
+    <div className='hidden lg:flex lg:gap-x-6 lg:align-bottom lg:justify-evenly lg:py-0 lg:my-0'>
     <div className=''>
         <a {...hoveringProps} key={service.name} href={service.href} className='text-lg text-bold text-white text-center border-y border-[#000000]/0 hover:border-y hover:border-[#00FF00] focus:outline focus:outline-[#00FF00] duration-100 ease-linear'>
           {hovering ? service.name : service.name}
@@ -58,7 +57,7 @@ function MobileNavigation() {
             <a
               key={item.name}
               href={item.href}
-              className=" focus:outline focus:outline-[#00FF00] block rounded-lg px-4 text-base font-semibold text-[#eeeeee]"
+              className=" focus:outline focus:outline-[#00FF00] block rounded-lg px-4 text-lg font-semibold text-[#eeeeee]"
             >
               {item.name}
           </a>

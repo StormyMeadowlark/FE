@@ -109,7 +109,7 @@ export default function CarfaxAndBBB() {
           <div className="mt-12 sm:mt-16 lg:mt-0">
             <div className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
               <img
-                className="w-full lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                className="lg:absolute lg:left-0 lg:h-full lg:w-auto max-w-[100vw]"
                 src="src/assets/images/BestOfBest.png"
                 alt="Inbox user interface"
               />

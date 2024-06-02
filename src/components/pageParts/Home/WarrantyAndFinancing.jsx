@@ -48,7 +48,7 @@ import {
   
   export default function WarrantyAndFinancing() {
     return (
-      <div className="overflow-hidden bg-[#333333] pt-40 pb-20 f text-white px-20">
+      <div className="overflow-hidden bg-[#333333] pb-10 text-white px-20">
         <div className="relative mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8">
           <svg
             className="absolute left-full hidden -translate-x-1/2 -translate-y-1/4 transform lg:block"
@@ -74,7 +74,7 @@ import {
           </svg>
   
           <div className="relative max-w-7xl">
-            <h2 className="pt-10 pb-8 lg:text-7xl lg:max-w-5xl text-stroke text-stroke-fill-[#00ff00] text-stroke-black sm:text-4xl font-Bungee">
+            <h2 className="pt-8 pb-4 lg:text-5xl lg:max-w-5xl text-stroke text-stroke-fill-[#00ff00] text-stroke-black sm:text-4xl font-Bungee">
               we&apos;ve got you covered,<br />backed by the names you trust
             </h2>
             <div className='flex flex-1 justify-between pt-4 pb-8'>

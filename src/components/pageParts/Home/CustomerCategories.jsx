@@ -5,7 +5,7 @@ const supportLinks = [
     name: 'Retail',
     href: '#',
     description:
-      'Explore the benefits of being an HEM Automotive Retail Customer',
+      'Explore the benefits of being an HEM Automotive Retail Customer.',
     icon: UsersIcon,
     experience: 'Retail Experience',
     image: 'src/assets/images/Retail.jpg',
@@ -14,7 +14,7 @@ const supportLinks = [
     name: 'Dealership',
     href: '#',
     description:
-      'Special pricing & more when your dealership uses HEM Automotive',
+      'Special pricing & more when your dealership uses HEM Automotive.',
     icon: TruckIcon,
     experience: 'Dealership Experience',
     image: 'src/assets/images/Dealership.jpg',
@@ -23,7 +23,7 @@ const supportLinks = [
     name: 'Fleet & Other',
     href: '#',
     description:
-      'We work with fleets in all shapes & forms. See what we can offer your fleet today!',
+      'We work with fleets in all shapes & forms.',
     icon: UserGroupIcon,
     experience: 'Fleet & Other Experience',
     image: 'src/assets/images/Fleet.jpg',
@@ -36,8 +36,8 @@ export default function CustomerCategories() {
       {/* Header */}
       <div className="relative bg-[#333333] py-20">
         <div className="relative mx-auto max-w-7xl ">
-          <h1 className="text-4xl py-10 text-stroke text-stroke-fill-black text-stroke-[#00ff00] md:text-5xl lg:text-6xl uppercase font-Bungee ">Where ever you come from</h1>
-          <p className="max-w-3xl text-xl text-[#dddddd] pb-40 font-Urbanist tracking-wider">
+          <h1 className="text-3xl text-stroke text-stroke-fill-black text-stroke-[#00ff00] md:text-5xl uppercase font-Bungee ">Where ever you come from</h1>
+          <p className="max-w-3xl text-xl text-[#dddddd] pb-14 font-Urbanist tracking-wider">
             Since opening in 2020 our technicians have done repairs on all types of vehicles. From firetrucks & trailers to cars, trucks, SUVs, & more HEM Automotive will give your vehicles the care they deserve & get the job done... Regardless of how many you have!
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function CustomerCategories() {
       <section className="relative  z-10 mx-auto max-w-7xl px-6 lg:px-8" aria-labelledby="contact-heading">
         <h2 className="sr-only" id="Customer Experience">
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8 lg:-translate-y-1/4 -translate-y-36">
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8 lg:-translate-y-10 -translate-y-36">
           {supportLinks.map((link) => (
             <div key={link.name} className=''>
               <img   
