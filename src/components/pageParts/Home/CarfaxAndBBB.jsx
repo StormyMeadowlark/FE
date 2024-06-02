@@ -2,10 +2,10 @@ import { BellAlertIcon, StarIcon, KeyIcon } from '@heroicons/react/24/outline'
 
 export default function CarfaxAndBBB() {
   return (
-    <div className="relative overflow-hidden bg-[#00ff00] pt-20">
-      <div className="relative">
+    <div className="relative overflow-hidden bg-[#00ff00] pt-20 ">
+      <div className="relative justify-center ">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-          <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 lg:py-16">
+          <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:px-0 lg:py-16">
             <div>
               <div>
                 <span className="flex h-16 w-16 items-center justify-center hexagon bg-[#333333] text-[White]">
@@ -29,11 +29,11 @@ export default function CarfaxAndBBB() {
             </div>
           </div>
           <div className="mt-20 sm:mt-16 lg:mt-0">
-            <div className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
+            <div className=" lg:relative lg:h-full">
               <img
-                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                src="https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg"
-                alt="Inbox user interface"
+                className="w-full lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                src="/src/assets/images/CarFax.png"
+                alt=""
               />
             </div>
           </div>
@@ -64,11 +64,11 @@ export default function CarfaxAndBBB() {
               </div>
             </div>
           </div>
-          <div className="mt-12 sm:mt-16 lg:mt-0">
-            <div className=" pr-6 md:-ml-16 lg:relative lg:m-0 lg:h-full lg:px-10">
+          <div className="mt-12 sm:mt-16 lg:flex lg:flex-1 lg:justify-center">
+            <div className="pr-6 md:-ml-16 lg:relative lg:h-full lg:px-10 lg:flex lg:flex-1">
               <img
-                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-7xl"
-                src="https://tailwindui.com/img/component-images/inbox-app-screenshot-2.jpg"
+                className="lg:absolute lg:right-0 lg:w-auto"
+                src="/src/assets/images/BBB.png"
                 alt="Customer profile user interface"
               />
             </div>
@@ -109,8 +109,8 @@ export default function CarfaxAndBBB() {
           <div className="mt-12 sm:mt-16 lg:mt-0">
             <div className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
               <img
-                className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                src="https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg"
+                className="w-full lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                src="src/assets/images/BestOfBest.png"
                 alt="Inbox user interface"
               />
             </div>
