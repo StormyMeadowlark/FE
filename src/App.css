@@ -36,7 +36,7 @@
     }
     
     to{
-      transform:perspective(1200px) rotateY(360deg);
+      transform:perspective(1200px) rotateY(-360deg);
     }
   }
   
