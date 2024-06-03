@@ -18,7 +18,7 @@ function NavBar() {
                     <div className=''>
                         <a href='#' className='flex flex-1 focus:outline focus:outline-[#00FF00]'>
                             <span className='sr-only'>H.E.M Automotive</span>
-                            <Logo className='scale-75 hover:scale-[80%] duration-200 ease-in-out outline' />
+                            <Logo className='scale-75 hover:scale-[80%] duration-200 ease-in-out' />
                         </a>
                     </div>
                     <div>

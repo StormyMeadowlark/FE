@@ -1,9 +1,5 @@
-
-import DirtyCar from '../../../assets/svgIcons/DirtyCarIcon.svg?react'
-import GoodHand from '../../../assets/svgIcons/GoodHandIcon.svg?react'
-import GearsAndChain from '../../../assets/svgIcons/TimingChainIcon.svg?react'
 import useHover from "../../../hooks/useHover";
-
+import ListOverview from '../shared/ListOverView';
 
 function OverviewIcons() {
     const[QualityHoving, QualityHoveringProps] = useHover();
@@ -43,7 +39,7 @@ function OverviewIcons() {
 function QualityCardsBefore() {
     return(
         <section className="relative z-10 mx-auto max-w-5xl text-white" aria-labelledby="landing-page-section">
-            <h1 className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-transparent text-stroke-[#00ff00] hover:text-stroke-fill-transparent transition ease-linear'>Quality,
+            <h1 className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-transparent text-stroke-[#00ff00] hover:text-stroke-fill-transparent transition ease-linear pb-4'>Quality,
             </h1>
     </section>
 
@@ -51,39 +47,36 @@ function QualityCardsBefore() {
 }
 
 function QualityCardsAfter() {
+    const overviewCardsQuality =  [
+        {
+            title: 'Quality1',
+            name: 'OEM or After-market',
+            image: '',
+            description: 'Because sometimes Aluminum holds up better than plastic.',
+    
+        },
+        {
+            title: 'Quality2',
+            name: 'Protection Inside & out',
+            image: '',
+            description: 'Because mechanics get dirty, but your car shouldn&apos;t.',
+    
+        },
+        {
+            title: 'Quality3',
+            name: 'Your vehicle in good hand',
+            image: '',
+            description: 'because we know your vehicle like the back of ours',
+    
+        },
+    ]
     return(
         <div className=''>
         <section className="relative z-10 mx-auto max-w-5xl text-white" aria-labelledby="landing-page-section">
-            <div className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-[#00ff00] text-stroke-[#00ff00] transition ease-linear'>Quality,
+            <div className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-[#00ff00] text-stroke-[#00ff00] transition ease-linear pb-4'>Quality,
             </div>
-            <div className='pt-8 border-t border-[#00ff00] text-stroke-white lowercase text-stroke text-stroke-fill-white font-Urbanist text-xl font-light md:flex'>
-                <div className="flex flex-col rounded-md bg-[#333333] shadow-xl shadow-[#111111] border-b border-[#00ff00]/50 sentence-case text-[#dddddd] mr-8 mt-8">
-                    <div className="relative flex-1 px-6 pb-8 md:px-8">
-                        <div className="inline-block -translate-y-12 bg-[#00ff00] lg:p-5 p-3 -translate-x-10 hexagon">
-                            <GearsAndChain className="md:w-12 w-8" aria-hidden="true" />
-                        </div>
-                        <h3 className="lg:text-xl font-medium text-white uppercase -mt-10 font-Urbanist tracking-wide text-wrap">OEM or After-market</h3>
-                        <p className="lg:text-normal text-sm mt-4 font-Urbanist tracking-wide text-stroke-[#dddddd] text-stroke text-stroke-fill-[#dddddd] font-extralight">Because sometimes Aluminum holds up better than plastic.</p>
-                    </div>
-                </div>
-                <div className="flex flex-col rounded-md bg-[#333333] shadow-xl shadow-[#111111] border-b border-[#00ff00]/50 sentence-case text-[#dddddd] mr-8 md:mt-8 mt-14">
-                    <div className="relative flex-1 px-6 pb-8 md:px-8">
-                        <div className="inline-block -translate-y-12 bg-[#00ff00] lg:p-5 p-3 -translate-x-10 hexagon">
-                            <DirtyCar className="md:w-12 w-8" aria-hidden="true" />
-                        </div>
-                        <h3 className="lg:text-xl font-medium text-white uppercase -mt-10 font-Urbanist tracking-wide text-wrap">Protection Inside & out</h3>
-                        <p className="lg:text-normal text-sm mt-4 font-Urbanist tracking-wide text-stroke-[#dddddd] text-stroke text-stroke-fill-[#dddddd] font-extralight">Because mechanics get dirty, but your car shouldn&apos;t.</p>
-                    </div>
-                </div>
-                <div className="flex flex-col rounded-md bg-[#333333] shadow-xl shadow-[#111111] border-b border-[#00ff00]/50 sentence-case text-[#dddddd] md:mt-8 mt-14">
-                    <div className="relative flex-1 px-6 pb-8 md:px-8">
-                        <div className="inline-block -translate-y-12 bg-[#00ff00] lg:p-5 p-3 -translate-x-10 hexagon">
-                            <GoodHand className="md:w-12 w-8" aria-hidden="true" />
-                        </div>
-                        <h3 className="lg:text-xl font-medium text-white uppercase -mt-10 font-Urbanist tracking-wide text-wrap">Your vehicle in good hands</h3>
-                        <p className="lg:text-normal text-sm mt-4 font-Urbanist tracking-wide text-stroke-[#dddddd] text-stroke text-stroke-fill-[#dddddd] font-extralight">because we know your vehicle like the back of ours</p>
-                    </div>
-                </div>
+            <div>
+                <ListOverview OverviewCards={overviewCardsQuality} />
             </div>
     </section>
     </div>
@@ -93,7 +86,7 @@ function QualityCardsAfter() {
 function ConvenienceCardsBefore() {
     return(
         <section className="relative z-10 mx-auto max-w-5xl text-white" aria-labelledby="landing-page-section">
-            <div className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-transparent text-stroke-[#00ff00] hover:text-stroke-fill-transparent transition ease-linear'>Convenience,
+            <div className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-transparent text-stroke-[#00ff00] hover:text-stroke-fill-transparent transition ease-linear pb-4'>Convenience,
             </div>
     </section>
 
@@ -101,39 +94,36 @@ function ConvenienceCardsBefore() {
 }
 
 function ConvenienceCardsAfter() {
+    const overviewCardsConvenience =  [
+        {
+            title: 'Convenience1',
+            name: 'Maintenance Reminders',
+            image: '',
+            description: 'Through CarFax for now, a better experience is coming soon!',
+    
+        },
+        {
+            title: 'Convenience2',
+            name: 'Around the Clock Pick-up & Drop-off',
+            image: '',
+            description: 'Just let us know at your appointment & we will let you know what to do.',
+    
+        },
+        {
+            title: 'Convenience3',
+            name: 'Additional Features Are Coming Soon',
+            image: '',
+            description: 'More convenience for you via online scheduling & branded appointment reminders.',
+    
+        },
+    ]
     return(
         <div className=''>
         <section className="relative z-10 mx-auto max-w-5xl text-white" aria-labelledby="landing-page-section">
-            <div className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-[#00ff00] text-stroke-[#00ff00] transition ease-linear'>Convenience,
+            <div className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-[#00ff00] text-stroke-[#00ff00] transition ease-linear pb-4'>Convenience,
             </div>
-            <div className='pt-14 border-t border-[#00ff00] text-stroke-white lowercase text-stroke text-stroke-fill-white font-Urbanist text-xl font-light md:flex'>
-                <div className="flex flex-col rounded-md bg-[#333333] shadow-xl shadow-[#111111] border-b border-[#00ff00]/50 sentence-case text-[#dddddd] mr-8 mt-8">
-                    <div className="relative flex-1 px-6 pb-8 md:px-8">
-                        <div className="inline-block -translate-y-12 bg-[#00ff00] lg:p-5 p-3 -translate-x-10 hexagon">
-                            <GearsAndChain className="md:w-12 w-8" aria-hidden="true" />
-                        </div>
-                        <h3 className="lg:text-xl font-medium text-white uppercase -mt-10 font-Urbanist tracking-wide text-wrap">Maintenance Reminders</h3>
-                        <p className="lg:text-normal text-sm mt-4 font-Urbanist tracking-wide text-stroke-[#dddddd] text-stroke text-stroke-fill-[#dddddd] font-extralight">Through CarFax for now, a better experience is coming soon!</p>
-                    </div>
-                </div>
-                <div className="flex flex-col rounded-md bg-[#333333] shadow-xl shadow-[#111111] border-b border-[#00ff00]/50 sentence-case text-[#dddddd] mr-8 md:mt-8 mt-14">
-                    <div className="relative flex-1 px-6 pb-8 md:px-8">
-                        <div className="inline-block -translate-y-12 bg-[#00ff00] lg:p-5 p-3 -translate-x-10 hexagon">
-                            <DirtyCar className="md:w-12 w-8" aria-hidden="true" />
-                        </div>
-                        <h3 className="lg:text-xl font-medium text-white uppercase -mt-10 font-Urbanist tracking-wide text-wrap">Around the Clock Pick-up & Drop-off</h3>
-                        <p className="lg:text-normal text-sm mt-4 font-Urbanist tracking-wide text-stroke-[#dddddd] text-stroke text-stroke-fill-[#dddddd] font-extralight">Just let us know at your appointment & we will let you know what to do.</p>
-                    </div>
-                </div>
-                <div className="flex flex-col rounded-md bg-[#333333] shadow-xl shadow-[#111111] border-b border-[#00ff00]/50 sentence-case text-[#dddddd] md:mt-8 mt-14">
-                    <div className="relative flex-1 px-6 pb-8 md:px-8">
-                        <div className="inline-block -translate-y-12 bg-[#00ff00] lg:p-5 p-3 -translate-x-10 hexagon">
-                            <GoodHand className="md:w-12 w-8" aria-hidden="true" />
-                        </div>
-                        <h3 className="lg:text-xl font-medium text-white uppercase -mt-10 font-Urbanist tracking-wide text-wrap">Additional Features Are  Coming Soon</h3>
-                        <p className="lg:text-normal text-sm mt-4 font-Urbanist tracking-wide text-stroke-[#dddddd] text-stroke text-stroke-fill-[#dddddd] font-extralight">More convenience for you via online scheduling & branded appointment reminders.</p>
-                    </div>
-                </div>
+            <div>
+                <ListOverview OverviewCards = {overviewCardsConvenience} />
             </div>
     </section>
     </div>
@@ -144,7 +134,7 @@ function ConvenienceCardsAfter() {
 function AffordabilityCardsBefore() {
     return(
         <section className="relative z-10 mx-auto max-w-5xl text-white" aria-labelledby="landing-page-section">
-            <div className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-transparent text-stroke-[#00ff00]'>Affordability.
+            <div className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-transparent text-stroke-[#00ff00] pb-4'>Affordability.
             </div>
         </section>
 
@@ -152,39 +142,36 @@ function AffordabilityCardsBefore() {
 }
 
 function AffordabilityCardsAfter() {
+    const overviewCardsAffordability =  [
+        {
+            title: 'Affordability1',
+            name: 'amenities like a dealership without the price',
+            image: '',
+            description: 'Because we like clean restrooms, free-wifi, snacks & drinks, too',
+    
+        },
+        {
+            title: 'Affordability2',
+            name: 'Financing',
+            image: '',
+            description: 'No joke, up to $5000 through SNAP! Financing. Interested? Keep scrolling for more info.'
+    
+        },
+        {
+            title: 'Affordability3',
+            name: 'More Features',
+            image: '',
+            description: 'We have a website now! But we can do better. Online estimates & bill pay coming soon..',
+    
+        },
+    ]
     return(
         <div className=''>
         <section className="relative z-10 mx-auto max-w-5xl text-white" aria-labelledby="landing-page-section">
-            <div className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-[#00ff00] text-stroke-[#00ff00] transition ease-linear'>Affordability.
+            <div className='relative uppercase font-Bungee text-3xl md:text-6xl lg:text-8xl  text-stroke text-stroke-fill-[#00ff00] text-stroke-[#00ff00] transition ease-linear pb-4'>Affordability.
             </div>
-            <div className='pt-14 border-t border-[#00ff00] text-stroke-white lowercase text-stroke text-stroke-fill-white font-Urbanist text-xl font-light md:flex'>
-                <div className="flex flex-col rounded-md bg-[#333333] shadow-xl shadow-[#111111] border-b border-[#00ff00]/50 sentence-case text-[#dddddd] mr-8 mt-8">
-                    <div className="relative flex-1 px-6 pb-8 md:px-8">
-                        <div className="inline-block -translate-y-12 bg-[#00ff00] lg:p-5 p-3 -translate-x-10 hexagon">
-                            <GearsAndChain className="md:w-12 w-8" aria-hidden="true" />
-                        </div>
-                        <h3 className="lg:text-xl font-medium text-white uppercase -mt-10 font-Urbanist tracking-wide text-wrap">amenities like a dealership without the price</h3>
-                        <p className="lg:text-normal text-sm mt-4 font-Urbanist tracking-wide text-stroke-[#dddddd] text-stroke text-stroke-fill-[#dddddd] font-extralight">Because sometimes Aluminum holds up better than plastic.</p>
-                    </div>
-                </div>
-                <div className="flex flex-col rounded-md bg-[#333333] shadow-xl shadow-[#111111] border-b border-[#00ff00]/50 sentence-case text-[#dddddd] mr-8 md:mt-8 mt-14">
-                    <div className="relative flex-1 px-6 pb-8 md:px-8">
-                        <div className="inline-block -translate-y-12 bg-[#00ff00] lg:p-5 p-3 -translate-x-10 hexagon">
-                            <DirtyCar className="md:w-12 w-8" aria-hidden="true" />
-                        </div>
-                        <h3 className="lg:text-xl font-medium text-white uppercase -mt-10 font-Urbanist tracking-wide text-wrap">Financing</h3>
-                        <p className="lg:text-normal text-sm mt-4 font-Urbanist tracking-wide text-stroke-[#dddddd] text-stroke text-stroke-fill-[#dddddd] font-extralight">No joke, up to $5000 through SNAP! Financing. Interested?<br />Click Here to Learn more.</p>
-                    </div>
-                </div>
-                <div className="flex flex-col rounded-md bg-[#333333] shadow-xl shadow-[#111111] border-b border-[#00ff00]/50 sentence-case text-[#dddddd] md:mt-8 mt-14">
-                    <div className="relative flex-1 px-6 pb-8 md:px-8">
-                        <div className="inline-block -translate-y-12 bg-[#00ff00] lg:p-5 p-3 -translate-x-10 hexagon">
-                            <GoodHand className="md:w-12 w-8" aria-hidden="true" />
-                        </div>
-                        <h3 className="lg:text-xl font-medium text-white uppercase -mt-10 font-Urbanist tracking-wide text-wrap">More Features</h3>
-                        <p className="lg:text-normal text-sm mt-4 font-Urbanist tracking-wide text-stroke-[#dddddd] text-stroke text-stroke-fill-[#dddddd] font-extralight">We have a website now! But we can do better. Online estimates & bill pay coming soon.</p>
-                    </div>
-                </div>
+            <div>
+                <ListOverview OverviewCards = {overviewCardsAffordability} />
             </div>
     </section>
     </div>

@@ -1,13 +1,78 @@
-import { ClockIcon, PhoneIcon, MapPinIcon, HandThumbUpIcon } from "@heroicons/react/24/outline"
-import Logo from "../../../components/limeGreenAndBlackLogo.svg?react"
-  export default function Footer() {
+import { ClockIcon, PhoneIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import Logo from "../../../components/limeGreenAndBlackLogo.svg?react";
+import List from "./Socials";
+import FacebookIcon from "../../../assets/svgIcons/FacebookIcon.svg?react";
+import YouTubeIcon from "../../../assets/svgIcons/YouTubeIcon.svg?react";
+import TikTokIcon from "../../../assets/svgIcons/TikTokIcon.svg?react";
+import TwitterIcon from"../../../assets/svgIcons/TwitterIcon.svg?react";
+import InstagramIcon from "../../../assets/svgIcons/InstagramIcon.svg?react";
 
+  export default function Footer() {
+    const socials = [
+      {
+          title: 'Facebook',
+          href: '#',
+          icon: FacebookIcon,
+      },
+      {
+          title: 'Youtube',
+          href: '#',
+          icon: YouTubeIcon,
+          
+  
+      },
+      {
+          title: 'Tiktok',
+          href: '#',
+          icon: TikTokIcon,
+      },
+      {
+          title: 'X',
+          href: '#',
+          icon: TwitterIcon,
+      },
+      {
+          title: 'Instagram',
+          href: '#',
+          icon: InstagramIcon,
+      },
+  ]
+
+  const reviews = [
+    {
+        title: 'Facebook',
+        href: '#',
+        icon: FacebookIcon,
+    },
+    {
+        title: 'Youtube',
+        href: '#',
+        icon: YouTubeIcon,
+        
+
+    },
+    {
+        title: 'Tiktok',
+        href: '#',
+        icon: TikTokIcon,
+    },
+    {
+        title: 'X',
+        href: '#',
+        icon: TwitterIcon,
+    },
+    {
+        title: 'Instagram',
+        href: '#',
+        icon: InstagramIcon,
+    },
+]
     return (
       <footer className="bg-[#333333]" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
-        <div className="border-y border-black silverbg shadow-xl shadow-black outline outline-black justify-content-center py-20">
+        <div className="border-y border-black silverbg shadow-xl shadow-black outline outline-black justify-content-center py-8">
           <div className="md:flex max-w-7xl mx-auto">
             <div className="flex justify-start">
               <h3 className="text-6xl text-stroke-black text-stroke text-stroke-fill-[#00ff00] sm:text-4xl md:text-5xl lg:text-6xl uppercase font-Bungee">Stay in the know</h3>
@@ -50,7 +115,7 @@ import Logo from "../../../components/limeGreenAndBlackLogo.svg?react"
 
 
 
-      <div className="max-w-7xl mx-auto text-white font-Play py-20">
+      <div className="max-w-7xl mx-auto text-white font-Play py-8">
         <div className="flex flex-1 justify-between">
           <div className="flex basis-3/4">
             <div>
@@ -82,7 +147,7 @@ import Logo from "../../../components/limeGreenAndBlackLogo.svg?react"
 
 
 
-            <div className="my-10">
+            <div>
               <div className='flex flex-col align-middle text-[#eeeeee]'>
                 <div className='hidden lg:flex lg:items-center pb-4'>
                   <PhoneIcon className=' w-6 h-6 mr-3 hover:fill-[#00FF00] ease-linear duration-150' aria-hidden='true' stroke='#00FF00' />
@@ -111,16 +176,19 @@ import Logo from "../../../components/limeGreenAndBlackLogo.svg?react"
 
 
 
+      <div className='bg-[#777777] py-2 text-[#00ff00] text-center flex justify-center shadow-inner shadow-[#00ff00]'>
+        <div className="flex justify-between basis-[80rem] max-w-7xl">
+          <div>
+            <List socials={socials} />
+          </div>
+          <div>
+            <List socials={reviews} />
+          </div>
+        </div>
+      </div>
 
 
-
-
-
-
-
-
-
-
+      
       <div className="border-t border-[#00ff00] silverbg py-2">
         <div className="max-w-7xl mx-auto flex">
           <div className="flex flex-1 justify-between">

@@ -1,4 +1,6 @@
 import CornerHexagons from '../../../components/CornerHexagons.svg?react'
+import GreenButton from '../../../utils/greenButton'
+import HeaderTwo from './header2'
 export default function Hero() {
   return (
     <div className=''>
@@ -16,16 +18,9 @@ export default function Hero() {
         </div>
         <div className="mx-auto max-w-6xl py-20">
           <div className="text-center">
-            <h1 className=" text-white px-8 md:px-4 lg:px-0 text-3xl md:text-5xl lg:text-7xl uppercase bold font-Urbanist font-black">
-              Breakdowns won&apos;t<br />break you down<br /><br />with your Topeka, KS<br />high end mechanics
-            </h1>
+              <HeaderTwo textOne='Breakdowns won&apos;t' textTwo='break you down' textThree='with your topeka, ks' textFour='High End Mechanics' />
             <div className=" pt-20 flex items-center justify-center gap-x-6 font-Play font-bold">
-              <a
-                href="#"
-                className="rounded-sm bg-[#00ff00] px-3.5 py-2.5 text-lg lg:text-2xl font-semibold text-[#333333] hover:text-white shadow-lg shadow-black hover:bg-[#00cc00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:scale-[98%] focus-visible:bg-[#00dd00] "
-              >
-                Call to Schedule
-              </a>
+            <GreenButton href='#' textarea='Call to Schedule' />
               <a href="#" className="text-sm lg:text-xl font-semibold leading-6 text-white hover:text-[#00ff00]">
                  <span aria-hidden="true">View Services</span>
               </a>
