@@ -6,6 +6,7 @@ import Logo from './limeGreenAndBlackLogo.svg?react'
 import ContactInfo from './pageParts/shared/ContactInfo'
 import Navigation, { MobileNavigation } from './pageParts/shared/Navigation'
 import QuickLinks, { MobileQuickLinks } from './pageParts/shared/QuickLinks'
+import { Link } from 'react-router-dom'
 
 function NavBar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -16,10 +17,10 @@ function NavBar() {
                 <nav className='flex flex-1 items-center justify-evenly
                 ' aria-label='Global'>
                     <div className=''>
-                        <a href='#' className='flex flex-1 focus:outline focus:outline-[#00FF00]'>
+                        <Link to='/' className='flex flex-1 focus:outline focus:outline-[#00FF00]'>
                             <span className='sr-only'>H.E.M Automotive</span>
                             <Logo className='scale-75 hover:scale-[80%] duration-200 ease-in-out' />
-                        </a>
+                        </Link>
                     </div>
                     <div>
                         <ContactInfo />

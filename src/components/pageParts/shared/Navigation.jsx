@@ -1,47 +1,48 @@
 import '../../../App.css'
 import useHover from '../../../hooks/useHover'
+import { NavLink } from 'react-router-dom'
 
 const navigation = [
-    { name: 'SERVICE', href: '#' },
-    { name: 'FAQ', href: '#' },
-    { name: 'ABOUT', href: '#' },
-    { name: 'CONTACT', href: '#' },
-    { name: 'AUTO SCHOOL', href: '#' },
+    { name: 'SERVICE', href: 'Services' },
+    { name: 'FAQ', href: 'Faq' },
+    { name: 'ABOUT', href: 'About' },
+    { name: 'CONTACT', href: 'Contact' },
+    { name: 'AUTO SCHOOL', href: 'AutoSchool' },
   ]
-const service = { name: 'SERVICE', href: '#', }
-const factAnswerQuestion = { name: 'FAQ', href: '#', } 
-const about = { name: 'ABOUT', href: '#', } 
-const contact = { name: 'CONTACT', href: '#', } 
-const autoSchool = { name: 'AUTO SCHOOL', href: '#', }
+const service = { name: 'SERVICE', href: 'Services', }
+const factAnswerQuestion = { name: 'FAQ', href: 'Faq', } 
+const about = { name: 'ABOUT', href: 'About', } 
+const contact = { name: 'CONTACT', href: 'Contact', } 
+const autoSchool = { name: 'AUTO SCHOOL', href: 'AutoSchool', }
  
 function Navigation() {
   const [hovering, hoveringProps] = useHover()
   return(
     <div className='hidden lg:flex lg:gap-x-6 lg:align-bottom lg:justify-evenly lg:py-0 lg:my-0'>
     <div className=''>
-        <a {...hoveringProps} key={service.name} href={service.href} className='text-lg text-bold text-white text-center border-y border-[#000000]/0 hover:border-y hover:border-[#00FF00] focus:outline focus:outline-[#00FF00] duration-100 ease-linear'>
+        <NavLink to={service.href} {...hoveringProps} key={service.name} className='text-lg text-bold text-white text-center border-y border-[#000000]/0 hover:border-y hover:border-[#00FF00] focus:outline focus:outline-[#00FF00] duration-100 ease-linear active:scale-[98%]'>
           {hovering ? service.name : service.name}
-        </a>
+        </NavLink>
     </div>
     <div className=''>
-        <a key={factAnswerQuestion.name} href={factAnswerQuestion.href} className='text-lg text-bold text-white text-center border-y border-[#000000]/0 hover:border-y hover:border-[#00FF00] focus:outline focus:outline-[#00FF00] duration-100 ease-linear'>
+        <NavLink to={factAnswerQuestion.href} key={factAnswerQuestion.name}  className='text-lg text-bold text-white text-center border-y border-[#000000]/0 hover:border-y hover:border-[#00FF00] focus:outline focus:outline-[#00FF00] duration-100 ease-linear'>
           {factAnswerQuestion.name}
-        </a>
+        </NavLink>
     </div>
     <div className=''>
-        <a key={about.name} href={about.href} className='text-lg text-bold text-white text-center border-y border-[#000000]/0 hover:border-y hover:border-[#00FF00] focus:outline focus:outline-[#00FF00] duration-100 ease-linear'>
+        <NavLink to={about.href} key={about.name} className='text-lg text-bold text-white text-center border-y border-[#000000]/0 hover:border-y hover:border-[#00FF00] focus:outline focus:outline-[#00FF00] duration-100 ease-linear'>
           {about.name}
-        </a>
+        </NavLink>
     </div>
     <div className=''>
-        <a key={contact.name} href={contact.href} className='text-lg text-bold text-white text-center border-y border-[#000000]/0 hover:border-y hover:border-[#00FF00] focus:outline focus:outline-[#00FF00] duration-100 ease-linear'>
+        <NavLink to={contact.href} key={contact.name} className='text-lg text-bold text-white text-center border-y border-[#000000]/0 hover:border-y hover:border-[#00FF00] focus:outline focus:outline-[#00FF00] duration-100 ease-linear'>
           {contact.name}
-        </a>
+        </NavLink>
     </div>
     <div className=''>
-        <a key={autoSchool.name} href={autoSchool.href} className='text-lg text-bold text-white text-center border-y border-[#000000]/0 hover:border-y hover:border-[#00FF00] focus:outline focus:outline-[#00FF00] duration-100 ease-linear'>
+        <NavLink  to={autoSchool.href} key={autoSchool.name} className='text-lg text-bold text-white text-center border-y border-[#000000]/0 hover:border-y hover:border-[#00FF00] focus:outline focus:outline-[#00FF00] duration-100 ease-linear'>
           {autoSchool.name}
-        </a>
+        </NavLink>
     </div>
 
     </div>
@@ -54,13 +55,13 @@ function MobileNavigation() {
   return(
         <div className="py-4 space-y-4">
           {navigation.map((item) => (
-            <a
+            <NavLink
               key={item.name}
-              href={item.href}
+              to={item.href}
               className=" focus:outline focus:outline-[#00FF00] block rounded-lg px-4 text-lg font-semibold text-[#eeeeee]"
             >
               {item.name}
-          </a>
+          </NavLink>
         ))}
       </div>
   )

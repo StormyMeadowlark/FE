@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import CornerHexagons from '../../../components/CornerHexagons.svg?react'
 import GreenButton from '../../../utils/greenButton'
 import HeaderTwo from './header2'
@@ -20,10 +21,10 @@ export default function Hero() {
           <div className="text-center">
               <HeaderTwo textOne='Breakdowns won&apos;t' textTwo='break you down' textThree='with your topeka, ks' textFour='High End Mechanics' />
             <div className=" pt-20 flex items-center justify-center gap-x-6 font-Play font-bold">
-            <GreenButton href='#' textarea='Call to Schedule' />
-              <a href="#" className="text-sm lg:text-xl font-semibold leading-6 text-white hover:text-[#00ff00]">
+            <GreenButton href={'Contact'} textarea='Contact Today' />
+              <Link to={"Services"} className="text-sm lg:text-xl font-semibold leading-6 text-white hover:text-[#00ff00]">
                  <span aria-hidden="true">View Services</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

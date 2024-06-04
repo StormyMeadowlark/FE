@@ -5,62 +5,62 @@ function ServiceOfferings() {
   const services= [
     {
       title: 'Preventative Maintenance',
-      href: '#',
+      href: 'Preventative-maintenance',
       icon: "src/assets/images/OilEngine.jpg",
     },
     {
       title: 'Diagnostics',
-      href: '#',
+      href: 'Services/Diagnostics',
       icon: "src/assets/images/Diagnostics.jpg",
     },
     {
       title: 'Tires',
-      href: '#',
+      href: '',
       icon: 'src/assets/images/Tire2.jpeg',
     },
     {
       title: 'Alignments',
-      href: '#',
+      href: '',
       icon: 'src/assets/images/Alignment2.jpg',
     },
     {
       title: 'Brakes',
-      href: '#',
+      href: '',
       icon: 'src/assets/images/Brake3.jpg',
     },
     {
       title: 'Steering & Suspension',
-      href: '#',
+      href: '',
       icon: 'src/assets/images/SteeringSuspension.jpg',
     },
     {
       title: 'Remove & Replace',
-      href: '#',
+      href: '',
       icon: 'src/assets/images/EngineReplace.jpeg',
     },
     {
       title: 'A/C & Heating',
-      href: '#',
+      href: '',
       icon: 'src/assets/images/HeatingAC.jpg',
     },
     {
       title: 'Electrical',
-      href: '#',
+      href: '',
       icon: 'src/assets/images/Electrical.jpg',
     },
     {
       title: 'Economy & Light Duty Diesel',
-      href: '#',
+      href: '',
       icon: '/src/assets/images/EconomyLightDuty.jpg',
     },
     {
       title: 'Used Vehicle Inspections',
-      href: '#',
+      href: '',
       icon: 'src/assets/images/Inspection.jpg',
     },
     {
       title: 'All Services',
-      href: '#',
+      href: '',
       icon: 'src/assets/images/AllServices.jpeg',
     },
   ]
