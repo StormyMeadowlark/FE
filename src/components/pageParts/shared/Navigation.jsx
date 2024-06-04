@@ -3,17 +3,17 @@ import useHover from '../../../hooks/useHover'
 import { NavLink } from 'react-router-dom'
 
 const navigation = [
-    { name: 'SERVICE', href: 'Services' },
-    { name: 'FAQ', href: 'Faq' },
-    { name: 'ABOUT', href: 'About' },
-    { name: 'CONTACT', href: 'Contact' },
-    { name: 'AUTO SCHOOL', href: 'AutoSchool' },
+    { name: 'SERVICE', href: 'services' },
+    { name: 'FAQ', href: 'saq' },
+    { name: 'ABOUT', href: 'about' },
+    { name: 'CONTACT', href: 'contact' },
+    { name: 'AUTO SCHOOL', href: 'auto-school' },
   ]
-const service = { name: 'SERVICE', href: 'Services', }
-const factAnswerQuestion = { name: 'FAQ', href: 'Faq', } 
-const about = { name: 'ABOUT', href: 'About', } 
-const contact = { name: 'CONTACT', href: 'Contact', } 
-const autoSchool = { name: 'AUTO SCHOOL', href: 'AutoSchool', }
+const service = { name: 'SERVICE', href: 'services', }
+const factAnswerQuestion = { name: 'FAQ', href: 'faq', } 
+const about = { name: 'ABOUT', href: 'about', } 
+const contact = { name: 'CONTACT', href: 'contact', } 
+const autoSchool = { name: 'AUTO SCHOOL', href: 'auto-school', }
  
 function Navigation() {
   const [hovering, hoveringProps] = useHover()

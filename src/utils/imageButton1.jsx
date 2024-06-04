@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function ImageLinkOne({href, icon, title}) {
     return(
-        <Link to={href}>
+        <Link to={`services/${href}`}>
             <img  
                 src={icon}
                 alt=""

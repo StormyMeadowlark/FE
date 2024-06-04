@@ -5,7 +5,7 @@ import HeaderOne from '../../../utils/header1'
 const supportLinks = [
   {
     name: 'Retail',
-    href: '#',
+    href: 'retail',
     description:
       'Explore the benefits of being an HEM Automotive Retail Customer.',
     icon: UsersIcon,
@@ -14,7 +14,7 @@ const supportLinks = [
   },
   {
     name: 'Dealership',
-    href: '#',
+    href: 'used-car-dealership',
     description:
       'Special pricing & more when your dealership uses HEM Automotive.',
     icon: TruckIcon,
@@ -23,7 +23,7 @@ const supportLinks = [
   },
   {
     name: 'Fleet & Other',
-    href: '#',
+    href: 'fleet-and-other',
     description:
       'We work with fleets in all shapes & forms.',
     icon: UserGroupIcon,

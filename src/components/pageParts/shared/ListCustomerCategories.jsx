@@ -10,12 +10,14 @@ export default function ListCustomerCategories(props) {
               aria-hidden="true"
               className='brightness-[30%] rounded-md' 
             />
-            <div className="-translate-y-full lg:-mb-56 -mb-40 ">
+            <div className="-translate-y-full lg:-mb-56 -mb-40">
               <div className="px-6 pb-8 md:px-8">
                 <h3 className="text-2xl font-Urbanist font-medium tracking-wider text-white">{link.name}</h3>
                 <p className="mt-4 text-lg text-[#cccccc] font-Urbanist tracking-wide">{link.description}</p>
               </div>
-              <SilverButton href={link.href} text={link.experience} />
+              <div className="">
+                <SilverButton href={`experience/${link.href}`} text={link.experience} />
+              </div>
               </div>
             </div>
           ))}
