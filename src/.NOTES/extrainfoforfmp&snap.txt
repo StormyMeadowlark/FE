@@ -1,0 +1,140 @@
+import {
+    BoltIcon,
+    CurrencyDollarIcon,
+    GlobeAmericasIcon,
+    CreditCardIcon,
+    ClipboardDocumentListIcon,
+  } from '@heroicons/react/24/outline'
+  
+  const transferFeatures = [
+    {
+      id: 1,
+      name: 'No cost',
+      description:
+        "They say nothing in life is free of cost. Except this warranty. Really. A 12 month / 12,000 mile warranty on parts & the best part it's free",
+      icon: CurrencyDollarIcon,
+    },
+    {
+      id: 2,
+      name: '35,000 participating shops',
+      description:
+        "After your warranty is registered, it's just one call from anywhere in the U.S. & you will be on your way to a repaired car.",
+      icon: GlobeAmericasIcon,
+    },
+    {
+      id: 3,
+      name: 'Roadside Assistance',
+      description:
+        "The one call convenience doesn't end at repairing your vehicle, it also boasts a suite of roadside assistance, Services include towing, lock-out, flat tire changing, fuel, oil, fluid & water deliver service, & jump starts",
+      icon: BoltIcon,
+    },
+  ]
+  const communicationFeatures = [
+    {
+      id: 1,
+      name: 'No Credit Needed',
+      description:
+        "And no hit to your FICO® Score. All you need is a phone number, email address, checking account, steady income of at least $750, and able to enter into a legal contract",
+      icon: CreditCardIcon,
+    },
+    {
+      id: 2,
+      name: 'More Ways to Pay',
+      description:
+        "Each situation is unique which is why your goals depends on how you pay. Choose the lowest overall cost, most flexible, or lowest payment option. Sometimes life gets you downs, but with all these repayment options, it doesn't have too",
+      icon: ClipboardDocumentListIcon,
+    },
+  ]
+
+
+                <dl className="mt-20 space-y-10 font-Urbanist tracking-wide">
+                {transferFeatures.map((item) => (
+                  <div key={item.id} className="relative shadow-xl shadow-[#222222]">
+                    <dt>
+                      <div className="flex h-16 w-16 items-center justify-center hexagon bg-[#00ff00] text-black -ml-8">
+                        <item.icon className="h-12 w-12" aria-hidden="true" />
+                      </div>
+                      <p className="px-10 -mt-8 pt-4 text-xl rounded-t-2xl bg-[#777777] text-[#00ff00] ">{item.name}</p>
+                    </dt>
+                    <dd className="px-10 border-b border-[#00ff00]/50 pb-4 rounded-b-2xl bg-[#777777] text-white shadow-xl shadow-[#222222]">{item.description}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+  
+            <div className="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
+              <svg
+                className="absolute left-1/2 -translate-x-1/2 translate-y-16 transform lg:hidden"
+                width={784}
+                height={404}
+                fill="none"
+                viewBox="0 0 784 404"
+              >
+                <defs>
+                  <pattern
+                    id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
+                    x={0}
+                    y={0}
+                    width={20}
+                    height={20}
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+                  </pattern>
+                </defs>
+                <rect width={784} height={404} fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)" />
+              </svg>
+              <img
+                className="relative mx-auto"
+                width={490}
+                src="/src/assets/images/FactorMotorPartsBothLogos.png"
+                alt=""
+              />
+            </div>
+          </div>
+    
+                <dl className="mt-20 space-y-10 font-Urbanist tracking-wide">
+                  {communicationFeatures.map((item) => (
+                    <div key={item.id} className="relative shadow-xl shadow-[#222222]">
+                      <dt>
+                        <div className="flex h-16 w-16 items-center justify-center hexagon bg-[#00ff00] text-black -ml-8">
+                          <item.icon className="h-12 w-12" aria-hidden="true" />
+                        </div>
+                        <p className="px-10 -mt-8 pt-4 text-xl rounded-t-2xl bg-[#777777] text-[#00ff00] ">{item.name}</p>
+                      </dt>
+                      <dd className="px-10 border-b border-[#00ff00]/50 pb-4 rounded-b-2xl bg-[#777777] text-white shadow-xl shadow-[#222222]">{item.description}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+  
+              <div className="relative -mx-4 mt-10 lg:col-start-1 lg:mt-0">
+                <svg
+                  className="absolute left-1/2 -translate-x-1/2 translate-y-16 transform lg:hidden"
+                  width={784}
+                  height={404}
+                  fill="none"
+                  viewBox="0 0 784 404"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <pattern
+                      id="e80155a9-dfde-425a-b5ea-1f6fadd20131"
+                      x={0}
+                      y={0}
+                      width={20}
+                      height={20}
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+                    </pattern>
+                  </defs>
+                  <rect width={784} height={404} fill="url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)" />
+                </svg>
+                <img
+                  className="relative mx-auto"
+                  width={490}
+                  src="/src/assets/images/Snap.png"
+                  alt=""
+                />
+              </div>
