@@ -1,9 +1,9 @@
-import { BellAlertIcon, StarIcon, KeyIcon } from '@heroicons/react/24/outline'
+import { KeyIcon } from '@heroicons/react/24/outline'
 
 export default function CarfaxAndBBB() {
   return (
-    <div className="relative overflow-hidden bg-[#00ff00] pt-20 ">
-      <div className="relative mt-20 pb-20">
+    <div className="relative overflow-hidden bg-[#00ff00]">
+      <div className="relative mt-8 pb-8">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
           <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 lg:py-16">
             <div>
