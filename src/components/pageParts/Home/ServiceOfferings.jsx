@@ -1,5 +1,6 @@
 import useHover from "../../../hooks/useHover"
 import ListServices from "../shared/ListServices"
+import HeaderOne from "../../../utils/header1"
 function ServiceOfferings() {
   const services= [
     {
@@ -69,9 +70,7 @@ function ServiceOfferings() {
       <div className="relative bg-[#00ff00]">
         <div className="bg-[#333333] py-20">
         <div className="relative mx-auto max-w-7xl ">
-          <h1 className="text-3xl text-stroke text-stroke-fill-black text-stroke-[#00ff00] md:text-5xl uppercase font-Bungee ">
-            We Offer You
-          </h1>
+          <HeaderOne textOne='We offer You' />
           <p className="relative max-w-7xl text-xl text-[#eeeeee] py-4 font-Urbanist tracking-wider">Full service repair & maintenance for most models manufactured after 2000. Just call us for older vehicles or other items with wheels, it isn&apos;t like we can&apos;t work on them... you just have to draw the line somewhere. </p>
         </div>
         </div>

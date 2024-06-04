@@ -1,5 +1,5 @@
 import useHover from "../../../hooks/useHover";
-
+import GreenButtonSmall from "../../../utils/GreenButtonSmall";
 export default function HighlightedMakesAndModels() {
   const[Pic1Hovering, Pic1HoveringProps] = useHover();
   const[Pic2Hovering, Pic2HoveringProps] = useHover();
@@ -13,40 +13,37 @@ export default function HighlightedMakesAndModels() {
   const Pic3AfterVar = Pic3After();
   const Pic4BeforeVar = Pic4Before();
   const Pic4AfterVar = Pic4After();
+  const title = 'Highlighted Makes & Model'
+  const subtitle = 'Although we do service almost every mak & model manufactured after 2000, we do see certain vehicles in teh shop more frequently.'
+  const subsubtitle = 'Here to keep you on the road. Hover over the images to see what commonly brings these vehicles to the shop!'
   return (
     <div>
       <div className="px-10 lg:max-w-7xl overflow-hidden sm:pt-10 lg:pt-8 bg-[#333333] lg:flex mx-auto">
             <div className="flex flex-col flex-1 basis-1/2">
-              <h2 className="text-3xl pb-4 text-stroke text-stroke-black text-stroke-fill-[#00ff00] lg:text-5xl uppercase font-Bungee">Highlighted Makes & Models</h2>
-              <p className="font-Urbanist tracking-wide font-medium text-xl  text-white">
-                Although we do service almost every make & model manufactured after 2000, we do see certain vehicles in the shop more frequently.
+              <h2 className="text-3xl pb-4 text-stroke text-stroke-black text-stroke-fill-[#00ff00] lg:text-5xl uppercase font-Bungee">{title}</h2>
+              <p className="font-Urbanist tracking-wide font-medium text-xl  text-white">{subtitle}
               </p>
               <p className="mt-6 text-[#cccccc] font-Urbanist tracking-wide">
-                Here to keep you on the road. Hover over the images to see what commonly brings these vehicles to the shop!
+                {subsubtitle}
               </p>
-              <div className="mt-10 flex">
-                <a
-                  href="#"
-                  className="inline-flex rounded-sm bg-[#00ff00] px-3.5 py-2.5 text-lg font-semibold text-[#333333] shadow-lg hover:bg-[#00cc00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-[#00dd00] font-Play shadow-black hover:text-white hover:scale-[98%]"
-                >
-                  View All Makes
-                </a>
+              <div className="pt-4">
+                <GreenButtonSmall href={'#'} text={'View All Makes'}  />
               </div>
             </div>
-              <button {...Pic1HoveringProps} aria-label='Learn more about what commonly brings Jeep Grand Cherokees & similar vehicles into the shop' className="mt-8 lg:px-10 lg:flex lg:basis-1/2">
+              <div {...Pic1HoveringProps} aria-label='Learn more about what commonly brings Jeep Grand Cherokees & similar vehicles into the shop' className="mt-8 lg:px-10 lg:flex lg:basis-1/2">
                 {Pic1Hovering ? Pic1AfterVar : Pic1BeforeVar}
-              </button>
+              </div>
           </div>
           <div className="lg:flex max-w-7xl mx-auto -mt-20 lg:mt-0">
-          <button {...Pic2HoveringProps} aria-label='Learn more about what commonly brings Dodge 2500 & similar vehicles into the shop' className="lg:top-4 lg:translate-x-16 px-10 lg:w-[350rem]">
+          <div {...Pic2HoveringProps} aria-label='Learn more about what commonly brings Dodge 2500 & similar vehicles into the shop' className="lg:top-4 lg:translate-x-16 px-10 lg:w-[350rem]">
             {Pic2Hovering ? Pic2AfterVar : Pic2BeforeVar}
-          </button>
-          <button {...Pic3HoveringProps} aria-label='' className="lg:-translate-y-1/4 px-10 ">
+          </div>
+          <div {...Pic3HoveringProps} aria-label='' className="lg:-translate-y-1/4 px-10 ">
             {Pic3Hovering ? Pic3AfterVar : Pic3BeforeVar}
-          </button>
-          <button {...Pic4HoveringProps} aria-label='' className="px-10 lg:-translate-y-14">
+          </div>
+          <div {...Pic4HoveringProps} aria-label='' className="px-10 lg:-translate-y-14">
             {Pic4Hovering ? Pic4AfterVar : Pic4BeforeVar}
-          </button>
+          </div>
         </div>
         </div>
     )
@@ -63,8 +60,8 @@ function Pic1Before() {
       <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist text-transparent" aria-hidden='true'>
         2010 - present<br />Chrysler 3.6L PentaStar Engine<br />Oil Filter Housing
       </p>
-      <button className="text-transparent -translate-y-40 text-sm md:text-xl md:-translate-y-52" aria-hidden='true'>Still Learning 
-      </button>
+      <div className="text-transparent -translate-y-40 text-sm md:text-xl md:-translate-y-52" aria-hidden='true'>Still Learning 
+      </div>
     </div>
   )
 }
@@ -82,7 +79,7 @@ function Pic1After() {
       <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist ">
         2010 - present<br />3.6L PentaStar Engine<br />Oil filter housing
       </p>
-      <button {...Button1HoveringProps} className="-translate-y-40 text-sm md:text-xl md:-translate-y-52 " aria-label="Click here to Call Now">{Button1Hovering ? ButtonAfterVar : ButtonBeforeVar }</button>
+      <div {...Button1HoveringProps} className="-translate-y-40 text-sm md:text-xl md:-translate-y-52 " aria-label="Click here to Call Now">{Button1Hovering ? ButtonAfterVar : ButtonBeforeVar }</div>
     </div>
   )
 }
@@ -97,8 +94,8 @@ function Pic2Before() {
       <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-[13.75rem] font-urbanist text-transparent" aria-hidden='true'>
       Vehicles with XYZ Engine
       </p>
-      <button className="text-transparent -translate-y-40 text-sm md:text-xl md:-translate-y-[13.5rem]" aria-hidden='true'>call to schedule now 
-      </button>
+      <div className="text-transparent -translate-y-40 text-sm md:text-xl md:-translate-y-[13.5rem]" aria-hidden='true'>call to schedule now 
+      </div>
     </div>
   )
 }
@@ -116,7 +113,7 @@ function Pic2After() {
       <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-[13.75rem] font-urbanist ">
         Years<br />Chrysler 5.7L V8 Hemi<br />Camshaft, lifter, valves, MDS delete
       </p>
-      <button {...Button1HoveringProps} className="-translate-y-40 text-sm md:text-xl md:-translate-y-[13.5rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-[#00dd00]" aria-label="Click Here to Call Now">{Button1Hovering ? ButtonAfterVar : ButtonBeforeVar }</button>
+      <div {...Button1HoveringProps} className="-translate-y-40 text-sm md:text-xl md:-translate-y-[13.5rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-[#00dd00]" aria-label="Click Here to Call Now">{Button1Hovering ? ButtonAfterVar : ButtonBeforeVar }</div>
     </div>
   )
 }
@@ -132,8 +129,8 @@ function Pic3Before() {
       <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist text-transparent">
       Vehicles with XYZ Engine
       </p>
-      <button className="text-transparent -translate-y-40 text-sm md:text-xl md:-translate-y-52">call to schedule now 
-      </button>
+      <div className="text-transparent -translate-y-40 text-sm md:text-xl md:-translate-y-52">call to schedule now 
+      </div>
     </div>
   )
 }
@@ -151,7 +148,7 @@ function Pic3After() {
       <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist ">
         Vehicles with XYZ Engine
       </p>
-      <button {...Button1HoveringProps} className="-translate-y-40 text-sm md:text-xl md:-translate-y-52">{Button1Hovering ? ButtonAfterVar : ButtonBeforeVar }</button>
+      <div {...Button1HoveringProps} className="-translate-y-40 text-sm md:text-xl md:-translate-y-52">{Button1Hovering ? ButtonAfterVar : ButtonBeforeVar }</div>
     </div>
   )
 }
@@ -167,8 +164,8 @@ function Pic4Before() {
       <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist text-transparent">
       Vehicles with XYZ Engine
       </p>
-      <button className="text-transparent -translate-y-40 text-sm md:text-xl md:-translate-y-52">call to schedule now 
-      </button>
+      <div className="text-transparent -translate-y-40 text-sm md:text-xl md:-translate-y-52">call to schedule now 
+      </div>
     </div>
   )
 }
@@ -186,7 +183,7 @@ function Pic4After() {
       <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist ">
         Vehicles with XYZ Engine
       </p>
-      <button {...Button1HoveringProps} className="-translate-y-40 text-sm md:text-xl md:-translate-y-52">{Button1Hovering ? ButtonAfterVar : ButtonBeforeVar }</button>
+      <div {...Button1HoveringProps} className="-translate-y-40 text-sm md:text-xl md:-translate-y-52">{Button1Hovering ? ButtonAfterVar : ButtonBeforeVar }</div>
     </div>
   )
 }
