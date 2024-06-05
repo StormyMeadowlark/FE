@@ -1,67 +1,79 @@
 import useHover from "../../../hooks/useHover"
 import ListServices from "../shared/ListServices"
 import HeaderOne from "../../../utils/header1"
+import CheckOil from "/src/assets/images/OilEngine.jpg?react"
+import Diagnostics from "/src/assets/images/Diagnostics.jpg?react"
+import Tires from '/src/assets/images/Tire2.jpeg?react'
+import Alignment from '/src/assets/images/Alignment2.jpg?react'
+import Brakes from '/src/assets/images/Brake3.jpg?react'
+import SteeringSuspension from '/src/assets/images/SteeringSuspension.jpg?react'
+import RemoveReplace from '/src/assets/images/EngineReplace.jpeg?react'
+import HeatAC from '/src/assets/images/HeatingAC.jpg?react'
+import Electrical from '/src/assets/images/Electrical.jpg?react'
+import EconomyDiesel from '/src/assets/images/EconomyLightDuty.jpg?react'
+import Inspection from '/src/assets/images/Inspection.jpg?react'
+import AllServices from '/src/assets/images/AllServices.jpeg?react'
 function ServiceOfferings() {
   const services= [
     {
       title: 'Preventative Maintenance',
       href: 'preventative-maintenance',
-      icon: "src/assets/images/OilEngine.jpg",
+      icon: CheckOil,
     },
     {
       title: 'Diagnostics',
       href: 'diagnostics',
-      icon: "src/assets/images/Diagnostics.jpg",
+      icon: Diagnostics,
     },
     {
       title: 'Tires',
       href: 'tires',
-      icon: 'src/assets/images/Tire2.jpeg',
+      icon: Tires,
     },
     {
       title: 'Alignments',
       href: 'alignments',
-      icon: 'src/assets/images/Alignment2.jpg',
+      icon: Alignment,
     },
     {
       title: 'Brakes',
       href: 'brakes',
-      icon: 'src/assets/images/Brake3.jpg',
+      icon: Brakes,
     },
     {
       title: 'Steering & Suspension',
       href: 'steering-and-suspension',
-      icon: 'src/assets/images/SteeringSuspension.jpg',
+      icon: SteeringSuspension,
     },
     {
       title: 'Remove & Replace',
       href: 'remove-and-replace',
-      icon: 'src/assets/images/EngineReplace.jpeg',
+      icon: RemoveReplace,
     },
     {
       title: 'A/C & Heating',
       href: 'heat-and-air',
-      icon: 'src/assets/images/HeatingAC.jpg',
+      icon: HeatAC,
     },
     {
       title: 'Electrical',
       href: 'electrical',
-      icon: 'src/assets/images/Electrical.jpg',
+      icon: Electrical,
     },
     {
       title: 'Economy & Light Duty Diesel',
       href: 'economy-and-light-duty-diesel',
-      icon: '/src/assets/images/EconomyLightDuty.jpg',
+      icon: EconomyDiesel,
     },
     {
       title: 'Used Vehicle Inspections',
       href: 'used-vehicle-inspection',
-      icon: 'src/assets/images/Inspection.jpg',
+      icon: Inspection,
     },
     {
       title: 'All Services',
       href: '',
-      icon: 'src/assets/images/AllServices.jpeg',
+      icon: AllServices,
     },
   ]
 

@@ -1,5 +1,5 @@
 import useHover from "../../../hooks/useHover";
-
+import Deals1 from "/src/assets/images/SimpleVehicleMaintenance.jpg?react"
 
 function OnlineDeals() {
     const[Hex1Hovering, Hex1HoveringProps] = useHover();
@@ -42,7 +42,7 @@ function Offer1Before() {
     return(
         <div>
             <div className="hexagon">
-                <img src="/src/assets/images/SimpleVehicleMaintenance.jpg" alt="" className="object-cover brightness-[30%]"/>
+                <img src={Deals1} alt="" className="object-cover brightness-[30%]"/>
             </div>
             <div className="lg:-translate-y-36 -translate-y-48 md:-translate-y-36 flex flex-1 flex-col lg:block md:text-base lg:text-xl">
                 <p>Full Synthetic Dexos Oil Change</p>
@@ -56,7 +56,7 @@ function Offer2Before() {
     return(
         <div>
             <div className="hexagon">
-                <img src="/src/assets/images/SimpleVehicleMaintenance.jpg" alt="" className="object-cover brightness-[30%]"/>
+                <img src={Deals1} alt="" className="object-cover brightness-[30%]"/>
             </div>
             <div className="lg:-translate-y-36 -translate-y-48 md:-translate-y-36 flex flex-1 flex-col lg:block md:text-base lg:text-xl">
                 <p>Full Synthetic Dexos Oil Change</p>
@@ -70,7 +70,7 @@ function Offer3Before() {
     return(
         <div>
             <div className="hexagon">
-                <img src="/src/assets/images/SimpleVehicleMaintenance.jpg" alt="" className="object-cover brightness-[30%]"/>
+                <img src={Deals1} alt="" className="object-cover brightness-[30%]"/>
             </div>
             <div className="lg:-translate-y-36 -translate-y-48 md:-translate-y-36 flex flex-1 flex-col lg:block md:text-base lg:text-xl">
                 <p>Full Synthetic Dexos Oil Change</p>
@@ -84,7 +84,7 @@ function Offer1After() {
     return(
         <div>
             <div className="hexagon">
-                <img src="/src/assets/images/SimpleVehicleMaintenance.jpg" alt="" className="object-cover brightness-[30%]"/>
+                <img src={Deals1} alt="" className="object-cover brightness-[30%]"/>
             </div>
             <div className="lg:-translate-y-36 -translate-y-48 md:-translate-y-36 flex flex-1 flex-col lg:block md:text-base lg:text-xl">
                 <p>legal</p>
@@ -98,7 +98,7 @@ function Offer2After() {
     return(
         <div>
             <div className="hexagon">
-                <img src="/src/assets/images/SimpleVehicleMaintenance.jpg" alt="" className="object-cover brightness-[30%]"/>
+                <img src={Deals1} alt="" className="object-cover brightness-[30%]"/>
             </div>
             <div className="lg:-translate-y-36 -translate-y-48 md:-translate-y-36 flex flex-1 flex-col lg:block md:text-base lg:text-xl">
                 <p>legal</p>
@@ -112,7 +112,7 @@ function Offer3After() {
     return(
         <div>
             <div className="hexagon">
-                <img src="/src/assets/images/SimpleVehicleMaintenance.jpg" alt="" className="object-cover brightness-[30%]"/>
+                <img src={Deals1} alt="" className="object-cover brightness-[30%]"/>
             </div>
             <div className="lg:-translate-y-36 -translate-y-48 md:-translate-y-36 flex flex-1 flex-col lg:block md:text-base lg:text-xl">
                 <p>legal</p>

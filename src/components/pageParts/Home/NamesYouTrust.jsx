@@ -1,4 +1,10 @@
 import { Link } from "react-router-dom";
+import FMP from '/src/assets/images/FactoryMotorPartsPartnersNetwork.png?react'
+import Snap from '/src/assets/images/SnapLogo.png?react'
+import CarFax from '/src/assets/images/CarFax.png?react'
+import Tools from "/src/assets/images/tools.jpg?react"
+import Car from "/src/assets/images/Quality2.jpg?react"
+import HexagonThing from "/src/assets/images/Convenience2.jpg"
 
   export default function NamesYouTrust() {
     return (
@@ -33,21 +39,21 @@ import { Link } from "react-router-dom";
             <div className='flex flex-1 justify-between pt-4 pb-8'>
               <Link to='https://fmppartnersnetwork.com/register-warranty/' className='flex basis-1/4 px-3'>
                 <img 
-                  src='/src/assets/images/FactoryMotorPartsPartnersNetwork.png'
+                  src={FMP}
                   alt='Factory Motor Parts Logo'
                   className=''
                 />
               </Link>
               <Link to="https://snapf.in/fcWxYYK" className='flex basis-1/4 px-3'>
                 <img 
-                  src='/src/assets/images/SnapLogo.png'
+                  src={Snap}
                   alt='Snap Financing Logo'
                   className='bg-[#777777] rounded-full'
                 />
               </Link>
               <Link to='https://www.carfax.com/Reviews-HEM-Automotive-Topeka-KS_AUBYLTNNVJ' className='flex basis-1/4 px-3'>
                 <img 
-                  src='/src/assets/images/CarFax.png'
+                  src={CarFax}
                   alt='CarFax Car Care Service Center Logo'
                   className=''
                 />
@@ -75,7 +81,7 @@ import { Link } from "react-router-dom";
             </div>
             <div>
               <img 
-              src="/src/assets/images/Convenience2.jpg"
+              src={HexagonThing}
               className="hexagon aspect-[6/5]"
               />
             </div>
@@ -121,7 +127,7 @@ import { Link } from "react-router-dom";
               </div>
             </div>
             <img 
-              src="/src/assets/images/tools.jpg"
+              src={Tools}
               className="hexagon aspect-[6/5]"
               />
           </div>
@@ -144,7 +150,7 @@ import { Link } from "react-router-dom";
             </div>
             <div>
               <img 
-              src="/src/assets/images/Quality2.jpg"
+              src={Car}
               className="hexagon aspect-[6/5] z-10"
               />
             </div>

@@ -1,6 +1,9 @@
 import { TruckIcon, UsersIcon, UserGroupIcon } from '@heroicons/react/24/outline'
 import ListCustomerCategories from '../shared/ListCustomerCategories'
 import HeaderOne from '../../../utils/header1'
+import Retail from '/src/assets/images/Retail.jpg?react'
+import Dealership from '/src/assets/images/Dealership.jpg?react'
+import Fleet from '/src/assets/images/Fleet.jpg?react'
 
 const supportLinks = [
   {
@@ -10,7 +13,7 @@ const supportLinks = [
       'Explore the benefits of being an HEM Automotive Retail Customer.',
     icon: UsersIcon,
     experience: 'Retail Experience',
-    image: 'src/assets/images/Retail.jpg',
+    image: {Retail},
   },
   {
     name: 'Dealership',
@@ -19,7 +22,7 @@ const supportLinks = [
       'Special pricing & more when your dealership uses HEM Automotive.',
     icon: TruckIcon,
     experience: 'Dealership Experience',
-    image: 'src/assets/images/Dealership.jpg',
+    image: {Dealership},
   },
   {
     name: 'Fleet & Other',
@@ -28,7 +31,7 @@ const supportLinks = [
       'We work with fleets in all shapes & forms.',
     icon: UserGroupIcon,
     experience: 'Fleet & Other Experience',
-    image: 'src/assets/images/Fleet.jpg',
+    image: {Fleet},
   },
 ]
 

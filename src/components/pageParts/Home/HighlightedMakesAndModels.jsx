@@ -1,5 +1,7 @@
 import useHover from "../../../hooks/useHover";
 import GreenButtonSmall from "../../../utils/GreenButtonSmall";
+import Jeep from "/src/assets/images/Jeep.jpg?react";
+import Truck from "/src/assets/images/Truck.jpg?react";
 export default function HighlightedMakesAndModels() {
   const[Pic1Hovering, Pic1HoveringProps] = useHover();
   const[Pic2Hovering, Pic2HoveringProps] = useHover();
@@ -53,7 +55,7 @@ function Pic1Before() {
   
   return(
     <div>
-      <img src="src/assets/images/Jeep.jpg"
+      <img src={Jeep}
         alt="Image of Jeep Grand Cherokee driving down a fall city road"
         className="aspect-[6/5]  hexagon"
       />
@@ -69,7 +71,7 @@ function Pic1Before() {
 function Pic1After() {
   return(
     <div className="text-white">
-      <img src="src/assets/images/Jeep.jpg"
+      <img src={Jeep}
         className="aspect-[6/5] hexagon brightness-50"
         aria-hidden='true'
       />
@@ -83,7 +85,7 @@ function Pic1After() {
 function Pic2Before() {
   return(
     <div className="">
-      <img src="src/assets/images/Truck.jpg"
+      <img src={Truck}
         aria-hidden='true'
         className="aspect-[6/5] hexagon "
       />
@@ -97,7 +99,7 @@ function Pic2Before() {
 function Pic2After() {
   return(
     <div className="text-white">
-      <img src="src/assets/images/Truck.jpg"
+      <img src={Truck}
         aria-hidden='true'
         className="aspect-[6/5] hexagon brightness-50"
       />
@@ -112,7 +114,7 @@ function Pic2After() {
 function Pic3Before() {
   return(
     <div className="lg:translate-x-5 lg:-translate-y-8">
-      <img src="src/assets/images/Jeep.jpg"
+      <img src={Jeep}
         alt=""
         className="aspect-[6/5] hexagon "
       />
@@ -126,7 +128,7 @@ function Pic3Before() {
 function Pic3After() {
   return(
     <div className="text-white lg:translate-x-5 lg:-translate-y-8">
-      <img src="src/assets/images/Jeep.jpg"
+      <img src={Jeep}
         alt=""
         className="aspect-[6/5] hexagon brightness-50"
       />
@@ -141,7 +143,7 @@ function Pic3After() {
 function Pic4Before() {
   return(
     <div className="lg:-translate-y-4">
-      <img src="src/assets/images/Jeep.jpg"
+      <img src={Jeep}
         alt=""
         className="aspect-[6/5] hexagon "
       />
@@ -157,7 +159,7 @@ function Pic4Before() {
 function Pic4After() {
   return(
     <div className="text-white lg:-translate-y-4">
-      <img src="src/assets/images/Jeep.jpg"
+      <img src={Jeep}
         alt=""
         className="aspect-[6/5] hexagon brightness-50"
       />

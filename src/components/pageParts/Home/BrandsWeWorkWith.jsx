@@ -1,4 +1,9 @@
 
+import Affordability from "/src/assets/images/Affordability.jpg?react"
+import Alignment from "/src/assets/images/Alignment.jpg?react"
+import Alignment2 from "/src/assets/images/Alignment2.jpg?react"
+import AllServices from "/src/assets/images/AllServices.jpeg?react"
+import Brakes from "/src/assets/images/Brakes.jpg?react"
 function BrandsWeWorkWith() {
     return(
       <div className=" bg-[#00ff00]">
@@ -8,52 +13,19 @@ function BrandsWeWorkWith() {
       <div className="grid place-items-center bg-[#00ff00] max-w-7xl mx-auto overflow-hidden pb-4 object-scale-down"> 
         <div className="gallery w-[300px] h-[50px] py-4">
           <span style={{"--i":1}}>
-            <img className="" src="src/assets/images/Affordability.jpg" alt="" />
+            <img className="" src={Affordability} alt="" />
           </span>
           <span style={{"--i":2}}>
-            <img className="" src="src/assets/images/Alignment.jpg" alt="" />
+            <img className="" src={Alignment} alt="" />
           </span>
           <span style={{"--i":3}}>
-            <img className="" src="src/assets/images/Alignment2.jpg"  alt="" />
+            <img className="" src={Alignment2}  alt="" />
           </span>
           <span style={{"--i":4}}>
-            <img className="" src="src/assets/images/AllServices.jpeg" alt="" />
+            <img className="" src={AllServices} alt="" />
           </span>
           <span style={{"--i":5}}>
-            <img className="" src="src/assets/images/Brakes.jpg"  alt="" />
-          </span>
-          <span style={{"--i":6}}>
-            <img className="" src="src/assets/images/Brakes2.JPG"  alt="" />
-          </span>
-          <span style={{"--i":7}}>
-            <img className="" src="src/assets/images/Brake3.jpg" alt="" />
-          </span>
-          <span style={{"--i":8}}>
-            <img className="" src="src/assets/images/CAR.png"  alt="" />
-          </span>
-          <span style={{"--i":9}}>
-            <img className="" src="src/assets/images/Convenience.jpg" alt="" />
-          </span>
-          <span style={{"--i":10}}>
-            <img className="" src="src/assets/images/Convenience2.jpg" alt="" />
-          </span>
-          <span style={{"--i":11}}>
-            <img className="" src="src/assets/images/Dealership.jpg"  alt="" />
-          </span>
-          <span style={{"--i":12}}>
-            <img className="" src="src/assets/images/Diagnostics.jpg" alt="" />
-          </span>
-          <span style={{"--i":13}}>
-            <img className="" src="src/assets/images/EconomyLightDuty.jpg"  alt="" />
-          </span>
-          <span style={{"--i":14}}>
-            <img className="" src="src/assets/images/Electrical.jpg"  alt="" />
-          </span>
-          <span style={{"--i":15}}>
-            <img className="" src="src/assets/images/Engine.jpg" alt="" />
-          </span>
-          <span style={{"--i":16}}>
-            <img className="" src="src/assets/images/EngineReplace.jpeg"  alt="" />
+            <img className="" src={Brakes}  alt="" />
           </span>
 </div>
 </div>

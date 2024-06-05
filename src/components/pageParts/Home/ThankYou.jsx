@@ -1,5 +1,6 @@
 import { KeyIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
+import {BestOfBestAutoRepair} from "/src/assets/images/BestOfBest.png?react"
 
 export default function ThankYou() {
   return (
@@ -39,7 +40,7 @@ export default function ThankYou() {
             <div className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
               <img
                 className="lg:absolute lg:left-0 lg:h-full lg:w-auto max-w-[100vw]"
-                src="src/assets/images/BestOfBest.png"
+                src={BestOfBestAutoRepair}
                 alt="Best of the Best 2022 Finalist"
               />
             </div>

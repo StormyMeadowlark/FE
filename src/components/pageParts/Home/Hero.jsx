@@ -2,12 +2,13 @@ import { Link } from 'react-router-dom'
 import CornerHexagons from '../../../components/CornerHexagons.svg?react'
 import GreenButton from '../../../utils/greenButton'
 import HeaderTwo from './header2'
+import Engine from '/src/assets/images/Engine.jpg?react'
 export default function Hero() {
   return (
     <div className=''>
         <div className='relative isolate overflow-hidden pt-60'>
           <img 
-            src='src/assets/images/Engine.jpg'
+            src={Engine}
             alt='front side of engine block'
             className='absolute inset-0 -z-10 h-full w-full object-cover brightness-[30%]'
           />
