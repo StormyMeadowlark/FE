@@ -75,7 +75,7 @@ function Pic1After() {
         className="aspect-[6/5] hexagon brightness-50"
         aria-hidden='true'
       />
-      <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist ">
+      <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist text-center ">
         2010 - present<br />3.6L PentaStar Engine<br />Oil filter housing
       </p>
     </div>
@@ -103,7 +103,7 @@ function Pic2After() {
         aria-hidden='true'
         className="aspect-[6/5] hexagon brightness-50"
       />
-      <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-[13.75rem] font-urbanist ">
+      <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-[13.75rem] font-urbanist text-center ">
         Years<br />Chrysler 5.7L V8 Hemi<br />Camshaft, lifter, valves, MDS delete
       </p>
     </div>
@@ -132,7 +132,7 @@ function Pic3After() {
         alt=""
         className="aspect-[6/5] hexagon brightness-50"
       />
-      <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist ">
+      <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist text-transparent">
         Vehicles with XYZ Engine
       </p>
     </div>
@@ -163,7 +163,7 @@ function Pic4After() {
         alt=""
         className="aspect-[6/5] hexagon brightness-50"
       />
-      <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist ">
+      <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist text-transparent">
         Vehicles with XYZ Engine
       </p>
     </div>

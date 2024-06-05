@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "services",
-        element: <Services />,
+        element: <Home />,
         children: [
           {
             path:"services/:href",
@@ -37,19 +37,19 @@ const router = createBrowserRouter([
       },
       {
         path: "faq",
-        element: <Faq />,
+        element: <Home />,
       },
       {
         path: "about",
-        element: <About />,
+        element: <Home />,
       },      
       {
         path: "contact",
-        element: <Contact />,
+        element: <Home />,
       },
       {
         path: "auto-school",
-        element: <AutoSchool />,
+        element: <Home />,
       },
       {
         path: "experience",
@@ -63,13 +63,13 @@ const router = createBrowserRouter([
       },
       {
         path: "makes",
-        element: <Makes />,
+        element: <Home />,
       },
     ],
   },
   {
     path: "legal",
-    element: <Legal />
+    element: <Home />
   },
 ])
 

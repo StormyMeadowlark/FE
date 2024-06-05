@@ -21,12 +21,10 @@ const Home = () => {
             <div className='bg-[#333333]'>
                 <HighlightedMakesAndModels />
             </div>
-            <BrandsWeWorkWith />
             <NamesYouTrust />
             <ThankYou />
             <div className='sticky z-[100]'>
                 <Testimonials />
-                <OnlineDeals />
             </div>
         </div>
 
