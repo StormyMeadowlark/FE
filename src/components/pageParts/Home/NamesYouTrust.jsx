@@ -64,7 +64,7 @@ import { Link } from "react-router-dom";
               Don&apos;t be surprised by a breakdown. Factory Motor Parts Network Partners Warranty Program offers one call claims, roadside assistance & many other benefits. After you activate it. Activate your warranty, just go do it. 
               </p>
               <div>
-                <div className='rounded-full px-3 py-1 mt-4 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 shadow-xl shadow-black border-b border-[#00ff00] hover:scale-[98%] font-Play'>
+                <div className='rounded-full px-3 py-1 mt-4 text-sm leading-6 text-gray-400 ring-1 ring-white/10 shadow-xl shadow-black border-b border-[#00ff00] font-Play'>
                   Been to the shop recently? { ' ' }
                   <Link to="https://fmppartnersnetwork.com/register-warranty/" className="font-semibold text-white">
                     <span className="inset-0" aria-hidden="true" />
@@ -110,7 +110,7 @@ import { Link } from "react-router-dom";
                 Break downs suck when you aren&apos;t prepared, we understand. Snap Financing offers financing for parts & repairs between $300-$5000. Get approved before repairs are made with no credit hit.
                 </p>
                 <div>
-                  <p className='rounded-full px-3 py-1 mt-4 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 shadow-xl shadow-black border-b border-[#00ff00] hover:scale-[98%] font-Play'>
+                  <p className='rounded-full px-3 py-1 mt-4 text-sm leading-6 text-gray-400 ring-1 ring-white/10 shadow-xl shadow-black border-b border-[#00ff00] font-Play'>
                   Interested in Financing?{ '  ' }
                   
                   <Link to="https://snapf.in/fcWxYYK" className="font-semibold text-white">
@@ -133,7 +133,7 @@ import { Link } from "react-router-dom";
                 As a member of CarFax Car Care Service Shop Loyalty Program, you have the option to receive a monthly vehicle health dashboard, & reminders when services are due via email, after your first visit with us.
               </p>
               <div>
-                <div className='rounded-full px-3 py-1 mt-4 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 shadow-xl shadow-black border-b border-[#00ff00] hover:scale-[98%] font-Play'>
+                <div className='rounded-full px-3 py-1 mt-4 text-sm leading-6 text-gray-400 ring-1 ring-white/10 shadow-xl shadow-black border-b border-[#00ff00] font-Play'>
                   Create a CarFax Account with HEM Auto as your shop. { ' ' }
                   <Link href="https://www.carfax.com/Reviews-HEM-Automotive-Topeka-KS_AUBYLTNNVJ" className="font-semibold text-white">
                     <span className="inset-0" aria-hidden="true" />

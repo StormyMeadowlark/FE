@@ -21,13 +21,13 @@ export default function ThankYou() {
                 <div className="flex mt-6 justify-between">
                     <Link
                       to="https://www.google.com/search?q=hem+automotive"
-                      className="inline-flex rounded-md silverbg px-4 py-4 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222]  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-[#00dd00] font-Play hover:text-[#00ff00] hover:scale-[95%] text-center text-white"
+                      className="inline-flex rounded-md silverbg px-4 py-4 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222]  font-Play text-center text-white"
                     >
                       Review on Google
                     </Link>
                     <Link
                       to="https://www.yelp.com/biz/hem-automotive-topeka"
-                      className="inline-flex rounded-md silverbg px-4 py-4 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222]  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-[#00dd00] font-Play hover:text-[#00ff00] hover:scale-[95%] text-center text-white"
+                      className="inline-flex rounded-md silverbg px-4 py-4 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222] font-Play text-center text-white"
                     >
                       Review on Yelp
                     </Link>
@@ -40,7 +40,7 @@ export default function ThankYou() {
               <img
                 className="lg:absolute lg:left-0 lg:h-full lg:w-auto max-w-[100vw]"
                 src="src/assets/images/BestOfBest.png"
-                alt="Inbox user interface"
+                alt="Best of the Best 2022 Finalist"
               />
             </div>
           </div>

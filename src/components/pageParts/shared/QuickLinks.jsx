@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useHover from '../../../hooks/useHover';
 import { UserIcon, CalendarIcon, BanknotesIcon } from '@heroicons/react/24/outline'
 
@@ -13,18 +14,18 @@ function QuickLinks() {
     const PaymentAfterHover = PaymentAfter();
     return(
         <div className='hidden lg:flex lg:flex-1 lg:justify-end '>
-                <button {...UserHoveringProps} href='#' className='p-2 focus:outline focus:outline-[#00FF00]'>
+                <Link {...UserHoveringProps} to='user' className='p-2 focus:outline focus:outline-[#00FF00]'>
                     <span className='sr-only'>Log-In or Create Account</span>
                     {UserHovering ? UserAfterHover : UserBeforeHover}
-                </button>
-                <button {...AppointmentHoveringProps} href='#' className='p-2 focus:outline focus:outline-[#00FF00]'>
+                </Link>
+                <Link {...AppointmentHoveringProps} to='schedule' className='p-2 focus:outline focus:outline-[#00FF00]'>
                     <span className='sr-only'>Log-In or Create Account</span>
                     {AppointmentHovering ? AppointmentAfterHover : AppointmentBeforeHover}
-                </button>
-                <button {...PaymentHoveringProps} href='#' className='p-2 focus:outline focus:outline-[#00FF00]'>
+                </Link>
+                <Link {...PaymentHoveringProps} to='payment' className='p-2 focus:outline focus:outline-[#00FF00]'>
                     <span className='sr-only'>Log-In or Create Account</span>
                     {PaymentHovering ? PaymentAfterHover : PaymentBeforeHover}
-                </button>
+                </Link>
         </div>
     )
 }

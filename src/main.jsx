@@ -12,6 +12,7 @@ import ErrorPage from './pages/Error.jsx';
 import Home from './pages/Home.jsx';
 import Experience from './pages/Experience.jsx';
 import Makes from './pages/Makes.jsx';
+import Legal from './pages/Legal.jsx'
 
 const router = createBrowserRouter([
   {
@@ -66,7 +67,10 @@ const router = createBrowserRouter([
       },
     ],
   },
-
+  {
+    path: "legal",
+    element: <Legal />
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

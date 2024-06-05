@@ -27,7 +27,6 @@ const Home = () => {
             <div className='sticky z-[100]'>
                 <Testimonials />
                 <OnlineDeals />
-                <Footer />
             </div>
         </div>
 

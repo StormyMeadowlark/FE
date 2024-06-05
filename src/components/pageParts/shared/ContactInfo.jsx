@@ -1,6 +1,7 @@
 import '../../../App.css'
 import { PhoneIcon, ClockIcon, MapPinIcon, HandThumbUpIcon } from '@heroicons/react/24/outline'
 import useHover from '../../../hooks/useHover';
+import { Link } from 'react-router-dom';
 
 function ContactInfo() {
   const [PhoneNumberHovering, PhoneNumberHoveringProps] = useHover();
@@ -20,26 +21,26 @@ function ContactInfo() {
             <button {...PhoneNumberHoveringProps} className='hidden lg:flex lg:items-center'>
               {PhoneNumberHovering ? PhoneNumberAfterHovering : PhoneNumberBeforeHovering}
               <address className='text-center'>
-                <a className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]' href='#'>785.730.2900</a>
+                <span className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]'>785.730.2900</span>
               </address>
             </button>
             <button {...HoursHoveringProps} className='hidden lg:flex lg:items-center'>
                 {HoursHovering ? HoursAfterHovering : HoursBeforeHovering}
                 <address className='text-center'>
-                  <a className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]' href='#'>Monday - Friday<br />8:00 am - 4:00 pm </a>
+                  <span className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]'>Monday - Friday<br />8:00 am - 4:00 pm </span>
                 </address>
             </button>
             <button {...LocationHoveringProps} className='hidden lg:flex lg:items-center'>
                 {LocationHovering ? LocationAfterHovering : LocationBeforeHovering}
                 <address className='text-center'>
-                  <a className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]' href='#'>315 SW 32nd Terrace<br />Topeka, KS 66611</a>
+                  <span className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]'>315 SW 32nd Terrace<br />Topeka, KS 66611</span>
                 </address>
             </button>
             <button {...SocialsHoveringProps} className='hidden lg:flex text-center lg:items-center'>
                 {SocialsHovering ? SocialsAfterHovering : SocialsBeforeHovering}
-                <a className='text-[12px] focus:outline focus:outline-[#00FF00]' href='#'>
+                <div className='text-[12px] focus:outline focus:outline-[#00FF00]'>
                   Socials
-                </a>
+                </div>
             </button>
         </div>
     )
