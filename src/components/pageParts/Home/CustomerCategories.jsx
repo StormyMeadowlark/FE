@@ -13,7 +13,7 @@ const supportLinks = [
       'Explore the benefits of being an HEM Automotive Retail Customer.',
     icon: UsersIcon,
     experience: 'Retail Experience',
-    image: {Retail},
+    image: Retail,
   },
   {
     name: 'Dealership',
@@ -22,7 +22,7 @@ const supportLinks = [
       'Special pricing & more when your dealership uses HEM Automotive.',
     icon: TruckIcon,
     experience: 'Dealership Experience',
-    image: {Dealership},
+    image: Dealership,
   },
   {
     name: 'Fleet & Other',
@@ -31,7 +31,7 @@ const supportLinks = [
       'We work with fleets in all shapes & forms.',
     icon: UserGroupIcon,
     experience: 'Fleet & Other Experience',
-    image: {Fleet},
+    image: Fleet,
   },
 ]
 
