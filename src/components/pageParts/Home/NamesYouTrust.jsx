@@ -1,4 +1,6 @@
-  export default function WarrantyAndFinancing() {
+import { Link } from "react-router-dom";
+
+  export default function NamesYouTrust() {
     return (
       <div className="overflow-hidden bg-[#333333] pb-10 text-white px-20">
         <div className="relative mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8">
@@ -29,34 +31,27 @@
               we&apos;ve got you covered,<br />backed by the names you trust
             </h2>
             <div className='flex flex-1 justify-between pt-4 pb-8'>
-              <a href='#' className='flex basis-1/4 px-3'>
+              <Link to='https://fmppartnersnetwork.com/register-warranty/' className='flex basis-1/4 px-3'>
                 <img 
                   src='/src/assets/images/FactoryMotorPartsPartnersNetwork.png'
                   alt='Factory Motor Parts Logo'
                   className=''
                 />
-              </a>
-              <a href='#' className='flex basis-1/4 px-3'>
+              </Link>
+              <Link to="https://snapf.in/fcWxYYK" className='flex basis-1/4 px-3'>
                 <img 
                   src='/src/assets/images/SnapLogo.png'
                   alt='Snap Financing Logo'
-                  className=''
+                  className='bg-[#777777] rounded-full'
                 />
-              </a>
-              <a href='#' className='flex basis-1/4 px-3'>
+              </Link>
+              <Link to='https://www.carfax.com/Reviews-HEM-Automotive-Topeka-KS_AUBYLTNNVJ' className='flex basis-1/4 px-3'>
                 <img 
                   src='/src/assets/images/CarFax.png'
                   alt='CarFax Car Care Service Center Logo'
                   className=''
                 />
-              </a>
-              <a href='#' className='flex basis-1/4 px-3'>
-                <img 
-                  src='/src/assets/images/BBB.png'
-                  alt='CarFax Car Care Service Center Logo'
-                  className=''
-                />
-              </a>
+              </Link>
             </div>
             <p className="font-Urbanist tracking-wider font-medium text-xl text-white lg:max-w-3xl">
               As proud members of FMP Partners Network Warranty Program, SNAP Financing, CarFax Car Care Service Shop Loyalty Program & Better Business Bureau we have so much to offer!
@@ -71,10 +66,10 @@
               <div>
                 <div className='rounded-full px-3 py-1 mt-4 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 shadow-xl shadow-black border-b border-[#00ff00] hover:scale-[98%] font-Play'>
                   Been to the shop recently? { ' ' }
-                  <a href="#" className="font-semibold text-white">
+                  <Link to="https://fmppartnersnetwork.com/register-warranty/" className="font-semibold text-white">
                     <span className="inset-0" aria-hidden="true" />
                       Activate Your Warranty Here
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -118,10 +113,10 @@
                   <p className='rounded-full px-3 py-1 mt-4 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 shadow-xl shadow-black border-b border-[#00ff00] hover:scale-[98%] font-Play'>
                   Interested in Financing?{ '  ' }
                   
-                  <a href="#" className="font-semibold text-white">
+                  <Link to="https://snapf.in/fcWxYYK" className="font-semibold text-white">
                   <span className="inset-0" aria-hidden="true" />
                     Click Here to Apply
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -139,11 +134,11 @@
               </p>
               <div>
                 <div className='rounded-full px-3 py-1 mt-4 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 shadow-xl shadow-black border-b border-[#00ff00] hover:scale-[98%] font-Play'>
-                  Been to the shop recently? { ' ' }
-                  <a href="#" className="font-semibold text-white">
+                  Create a CarFax Account with HEM Auto as your shop. { ' ' }
+                  <Link href="https://www.carfax.com/Reviews-HEM-Automotive-Topeka-KS_AUBYLTNNVJ" className="font-semibold text-white">
                     <span className="inset-0" aria-hidden="true" />
-                      Activate Your Reminders Here
-                  </a>
+                      Activate Reminders Here.
+                  </Link>
                 </div>
               </div>
             </div>

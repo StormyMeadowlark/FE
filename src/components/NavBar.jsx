@@ -43,10 +43,10 @@ function NavBar() {
                     <div className='fixed inset-0 z-10' />
                     <Dialog.Panel className="fixed inset-y-0 right-0 z-[100] w-full overflow-y-auto bg-[#333333] py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
                         <div className="flex items-center justify-between">
-                            <a href="#" className="p-1.5 focus:outline focus:outline-[#00FF00]">
+                            <Link to='/' className="p-1.5 focus:outline focus:outline-[#00FF00]">
                                 <span className="sr-only">H.E.M Automotive</span>
                                 <Logo className='w-[100%] hover:scale-[110%]' />
-                            </a>
+                            </Link>
                             <button type="button" className="rounded-md p-2.5 text-gray-400 focus:outline focus:outline-[#00FF00]"
                                 onClick={() => setMobileMenuOpen(false)}
                             >

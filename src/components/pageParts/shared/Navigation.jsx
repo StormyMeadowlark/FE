@@ -55,13 +55,13 @@ function MobileNavigation() {
   return(
         <div className="py-4 space-y-4">
           {navigation.map((item) => (
-            <NavLink
+            <Link
               key={item.name}
               to={item.href}
               className=" focus:outline focus:outline-[#00FF00] block rounded-lg px-4 text-lg font-semibold text-[#eeeeee]"
             >
               {item.name}
-          </NavLink>
+          </Link>
         ))}
       </div>
   )

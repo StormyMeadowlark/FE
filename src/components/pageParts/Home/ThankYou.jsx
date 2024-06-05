@@ -1,6 +1,7 @@
 import { KeyIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 
-export default function CarfaxAndBBB() {
+export default function ThankYou() {
   return (
     <div className="relative overflow-hidden bg-[#00ff00]">
       <div className="relative mt-8 pb-8">
@@ -18,18 +19,18 @@ export default function CarfaxAndBBB() {
                   Seriously, we appreciate you! In 2022 you voted & we were an Auto Repair finalist for the Best of the Best in Topeka, KS. Keep being awesome & lets go for winner in 2025! For now be awesome & leave us a review!
                 </p>
                 <div className="flex mt-6 justify-between">
-                    <a
-                      href="#"
-                      className="inline-flex rounded-md silverbg45 px-4 py-4 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222]  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-[#00dd00] font-Play hover:text-[#00ff00] hover:scale-[95%] text-center text-white"
+                    <Link
+                      to="https://www.google.com/search?q=hem+automotive"
+                      className="inline-flex rounded-md silverbg px-4 py-4 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222]  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-[#00dd00] font-Play hover:text-[#00ff00] hover:scale-[95%] text-center text-white"
                     >
                       Review on Google
-                    </a>
-                    <a
-                      href="#"
-                      className="inline-flex rounded-md silverbg45 px-4 py-4 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222]  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-[#00dd00] font-Play hover:text-[#00ff00] hover:scale-[95%] text-center text-white"
+                    </Link>
+                    <Link
+                      to="https://www.yelp.com/biz/hem-automotive-topeka"
+                      className="inline-flex rounded-md silverbg px-4 py-4 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222]  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-[#00dd00] font-Play hover:text-[#00ff00] hover:scale-[95%] text-center text-white"
                     >
                       Review on Yelp
-                    </a>
+                    </Link>
                 </div>
               </div>
             </div>
