@@ -104,7 +104,7 @@ function Pic2After() {
         className="aspect-[6/5] hexagon brightness-50"
       />
       <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-[13.75rem] font-urbanist text-center ">
-        Years<br />Chrysler 5.7L V8 Hemi<br />Camshaft, lifter, valves, MDS delete
+        <br />Chrysler 5.7L V8 Hemi<br />Camshaft, lifter, valves, MDS delete
       </p>
     </div>
   )
