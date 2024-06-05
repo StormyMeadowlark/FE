@@ -1,6 +1,6 @@
 import { KeyIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
-import {BestOfBestAutoRepair} from "/src/assets/images/BestOfBest.png?react"
+import BestOfBestAutoRepair from "/src/assets/images/BestOfBest.png?react"
 
 export default function ThankYou() {
   return (
