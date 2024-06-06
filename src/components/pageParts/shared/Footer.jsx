@@ -59,95 +59,142 @@ import { Link } from "react-router-dom";
 
 ]
     return (
-      <footer className="bg-[#333333] shadow-inner shadow-white" aria-labelledby="footer-heading">
+      <footer
+        className="bg-[#333333] shadow-inner shadow-white"
+        aria-labelledby="footer-heading"
+      >
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
-      <div className="max-w-7xl mx-auto text-white font-Play py-8">
-        <div className="flex flex-1 justify-between">
-          <div className="flex basis-3/4">
-            <div>
-              <Logo />
-            </div>
-            <div>
-              <div className='translate-y-6 flex flex-col px-10 text-4xl'>
-                    <div className="py-1">
-                      <a href='services' className='text-md text-bold text-white text-center'>SERVICE</a>
-                    </div>
-                    <div className="py-1">
-                      <a href='faq' className='text-md text-bold text-white text-center'>FAQ</a>
-                    </div>
-                    <div className="py-1">
-                      <a href='contact' className='text-md text-bold text-white text-center'>CONTACT</a>
-                    </div>
-                    <div className="py-1">
-                      <a href='auto-school' className='text-md text-bold text-white text-center'>AUTO SCHOOL</a>
-                    </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-
-
-
-
-            <div>
-              <div className='flex flex-col align-middle text-[#eeeeee]'>
-                <div className='hidden lg:flex lg:items-center pb-4'>
-                  <PhoneIcon className=' w-6 h-6 mr-3' aria-hidden='true' stroke='#00FF00' />
-                  <address>
-                    <span className='not-italic text-xl' href='#'>785.730.2900</span>
-                  </address>
-                </div>
-                <div className='hidden lg:flex lg:items-center pb-4'>
-                  <ClockIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' />
-                  <address>
-                    <span className='not-italic text-xl' href='#'>Monday - Friday<br />8:00 am - 4:00 pm </span>
-                  </address>
-                </div>
-                <div className='hidden lg:flex lg:items-center'>
-                  <MapPinIcon className=' w-6 h-6 mr-3' aria-hidden='true' stroke='#00FF00' />
-                  <address>
-                    <div className='not-italic text-xl' href='#'>315 SW 32nd Terrace<br />Topeka, KS 66611</div>
-                  </address>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-      <div className='bg-[#222222] py-2.5 text-[#00ff00] text-center flex justify-center shadow-inner shadow-[#00ff00]'>
-        <div className="flex justify-between basis-[80rem] max-w-7xl">
-          <div>
-            <List socials={socials} />
-          </div>
-          <div>
-            <List socials={reviews} />
-          </div>
-        </div>
-      </div>
-      <div className="border-t border-[#00ff00] silverbg py-2">
-        <div className="max-w-7xl mx-auto flex">
-          <div className="flex flex-1 justify-between">
-            <div>
-              <Link className="font-Play text-[#00ff00] tracking-wide" to='https://www.stormymeadowlark.com'>Website Designed & Maintained by:<br /> Stormy Meadowlark Design Co.</Link>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div className="flex justify-end">
-                <Link className="text-sm font-Play tracking-wide" to="legal">Legal</Link>
+        <div className="max-w-7xl mx-auto text-white font-Play md:py-8">
+          <div className="flex flex-1 justify-center">
+            <div className="flex flex-1">
+              <div>
+                <Logo />
               </div>
               <div>
-                <h3 className="text-sm text-Play tracking-wide">&copy; 2024 HEM AUTO LLC</h3>
+                <div className="flex flex-col px-10 text-4xl">
+                  <div className="py-1">
+                    <a
+                      href="services"
+                      className="text-xl text-bold text-white text-center"
+                    >
+                      SERVICE
+                    </a>
+                  </div>
+                  <div className="py-1">
+                    <a
+                      href="faq"
+                      className="text-xl text-bold text-white text-center"
+                    >
+                      FAQ
+                    </a>
+                  </div>
+                  <div className="py-1">
+                    <a
+                      href="contact"
+                      className="text-xl text-bold text-white text-center "
+                    >
+                      CONTACT
+                    </a>
+                  </div>
+                  <div className="py-1">
+                    <a
+                      href="auto-school"
+                      className="text-xl text-bold text-white text-center"
+                    >
+                      AUTO SCHOOL
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="flex flex-col align-middle text-[#eeeeee]">
+                <div className="hidden lg:flex lg:items-center pb-4">
+                  <PhoneIcon
+                    className=" w-6 h-6 mr-3"
+                    aria-hidden="true"
+                    stroke="#00FF00"
+                  />
+                  <address>
+                    <span className="not-italic text-xl" href="#">
+                      785.730.2900
+                    </span>
+                  </address>
+                </div>
+                <div className="hidden lg:flex lg:items-center pb-4">
+                  <ClockIcon
+                    className="w-6 h-6 mr-3 justify-center"
+                    aria-hidden="true"
+                    stroke="#00FF00"
+                  />
+                  <address>
+                    <span className="not-italic text-xl" href="#">
+                      Monday - Friday
+                      <br />
+                      8:00 am - 4:00 pm{" "}
+                    </span>
+                  </address>
+                </div>
+                <div className="hidden lg:flex lg:items-center">
+                  <MapPinIcon
+                    className=" w-6 h-6 mr-3"
+                    aria-hidden="true"
+                    stroke="#00FF00"
+                  />
+                  <address>
+                    <div className="not-italic text-xl" href="#">
+                      315 SW 32nd Terrace
+                      <br />
+                      Topeka, KS 66611
+                    </div>
+                  </address>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
-  )
+        <div className="bg-[#222222] py-2.5 text-[#00ff00] text-center flex justify-center shadow-inner shadow-[#00ff00]">
+          <div className="flex justify-between basis-[80rem] max-w-7xl">
+            <div>
+              <List socials={socials} />
+            </div>
+            <div>
+              <List socials={reviews} />
+            </div>
+          </div>
+        </div>
+        <div className="border-t border-[#00ff00] silverbg py-2">
+          <div className="max-w-7xl mx-auto flex">
+            <div className="flex flex-1 justify-between">
+              <div>
+                <Link
+                  className="font-Play text-[#00ff00] tracking-wide"
+                  to="https://www.stormymeadowlark.com"
+                >
+                  Website Designed & Maintained by:
+                  <br /> Stormy Meadowlark Design Co.
+                </Link>
+              </div>
+            </div>
+            <div>
+              <div>
+                <div className="flex justify-end">
+                  <Link className="text-sm font-Play tracking-wide" to="legal">
+                    Legal
+                  </Link>
+                </div>
+                <div>
+                  <h3 className="text-sm text-Play tracking-wide">
+                    &copy; 2024 HEM AUTO LLC
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    );
 }

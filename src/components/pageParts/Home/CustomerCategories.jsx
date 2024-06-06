@@ -39,7 +39,7 @@ export default function CustomerCategories() {
   return (
     <div className='bg-[#00ff00]'>
       {/* Header */}
-      <div className="relative bg-[#333333] py-20">
+      <div className="relative bg-[#333333] py-20 px-10">
         <div className="relative mx-auto max-w-7xl ">
           <HeaderOne textOne='Where ever you come from' />
           <p className="relative max-w-7xl text-xl text-[#eeeeee] pt-4 font-Urbanist tracking-wider">
@@ -48,7 +48,7 @@ export default function CustomerCategories() {
         </div>
       </div>
       {/* Overlapping cards */}
-      <section className="relative  z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-10" aria-labelledby="contact-heading">
+      <section className="relative  z-10 mx-auto max-w-7xl px-6 lg:px-8 md:pt-10 pt-20" aria-labelledby="contact-heading">
         <h2 className="sr-only" id="Customer Experience">
         </h2>
         <ListCustomerCategories supportLinks={supportLinks} />

@@ -4,7 +4,7 @@ export default function List(props) {
         <ul className="flex justify-evenly">
             {props.socials.map((social) => {
                 return (
-                    <li key={social.title} className='px-2'>
+                    <li key={social.title} className='lg:px-2 px-0.5'>
                         <Link href={social.href}>
                                 {social.icon()}
                         </Link>

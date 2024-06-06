@@ -16,13 +16,13 @@ export default function HighlightedMakesAndModels() {
   const Pic4BeforeVar = Pic4Before();
   const Pic4AfterVar = Pic4After();
   const title = 'Highlighted Makes & Model'
-  const subtitle = 'Although we do service almost every mak & model manufactured after 2000, we do see certain vehicles in teh shop more frequently.'
+  const subtitle = 'Although we do service almost every make & model manufactured after 2000, we do see certain vehicles in the shop more frequently.'
   const subsubtitle = 'Here to keep you on the road. Hover over the images to see what commonly brings these vehicles to the shop!'
   return (
     <div>
       <div className="px-10 lg:max-w-7xl overflow-hidden sm:pt-10 lg:pt-8 bg-[#333333] lg:flex mx-auto">
             <div className="flex flex-col flex-1 basis-1/2">
-              <h2 className="text-3xl pb-4 text-stroke text-stroke-black text-stroke-fill-[#00ff00] lg:text-5xl uppercase font-Bungee">{title}</h2>
+              <h2 className="text-3xl py-4 text-stroke text-stroke-black text-stroke-fill-[#00ff00] lg:text-5xl uppercase font-Bungee">{title}</h2>
               <p className="font-Urbanist tracking-wide font-medium text-xl  text-white">{subtitle}
               </p>
               <p className="mt-6 text-[#cccccc] font-Urbanist tracking-wide">
