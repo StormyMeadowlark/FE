@@ -1,15 +1,56 @@
 <!doctype html>
 <html lang="en">
   <head>
-      <!-- Google tag (gtag.js) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+        gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+      });
+      </script>
+            <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16495631825"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+
       gtag('js', new Date());
 
       gtag('config', 'AW-16495631825');
     </script>
+    <!-- Create one update function for each consent parameter -->
+<script>
+  function consentGrantedAdStorage() {
+    gtag('consent', 'update', {
+      'ad_storage': 'granted'
+    });
+  }
+</script>
+<script>
+  function consentGrantedAdUserData() {
+    gtag('consent', 'update', {
+      'ad_user_data': 'granted'
+    });
+  }
+</script>
+<script>
+  function consentGrantedAdPersonalization() {
+    gtag('consent', 'update', {
+      'ad_personalization': 'granted'
+    });
+  }
+</script>
+<script>
+  function consentGrantedAnalyticsStorage() {
+    gtag('consent', 'update', {
+      'analytics_storage': 'granted'
+    });
+  }
+</script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/components/GearAndWrenchFromLogo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -3,7 +3,6 @@ import Footer from "../components/pageParts/shared/Footer"
 const Legal = () => {
     return (
       <div className="bg-[#333333] text-white ">
-        <NavBar />
         <div className="pt-52 px-10 justify-center flex">
           <div className="max-w-7xl">
             <p className="text-center font-Bungee text-7xl text-stroke text-stroke-fill-[#00ff00] text-stroke-[#222222] pt-10">
@@ -317,7 +316,6 @@ const Legal = () => {
             </ul>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

@@ -16,7 +16,7 @@ import Legal from './pages/Legal.jsx'
 
 const router = createBrowserRouter([
   {
-    path:"/",
+    path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
@@ -30,10 +30,10 @@ const router = createBrowserRouter([
         element: <ErrorPage />,
         children: [
           {
-            path:"services/:href",
+            path: "services/:href",
             element: <ErrorPage />,
-          }
-        ]
+          },
+        ],
       },
       {
         path: "faq",
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <ErrorPage />,
-      },      
+      },
       {
         path: "contact",
         element: <ErrorPage />,
@@ -56,22 +56,22 @@ const router = createBrowserRouter([
         element: <Experience />,
         children: [
           {
-            path:"experience/:href",
+            path: "experience/:href",
             element: <Experience />,
-          }
-        ]
+          },
+        ],
       },
       {
         path: "makes",
         element: <ErrorPage />,
       },
+      {
+        path: "legal",
+        element: <Legal />,
+      },
     ],
   },
-  {
-    path: "legal",
-    element: <Legal />
-  },
-])
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
