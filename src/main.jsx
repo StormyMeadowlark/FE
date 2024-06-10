@@ -69,7 +69,7 @@ const router = createBrowserRouter([
   },
   {
     path: "legal",
-    element: <ErrorPage />
+    element: <Legal />
   },
 ])
 

@@ -79,8 +79,7 @@ import HexagonThing from "/src/assets/images/Convenience2.jpg"
             </div>
             <p className="font-Urbanist tracking-wider font-medium text-xl text-white lg:max-w-3xl">
               As proud members of FMP Partners Network Warranty Program, SNAP
-              Financing, CarFax Car Care Service Shop Loyalty Program & Better
-              Business Bureau we have so much to offer!
+              Financing, & CarFax Car Care Service Shop Loyalty Program we have so much to offer!
             </p>
           </div>
           <div className="relative mt-12 lg:mt-0 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">

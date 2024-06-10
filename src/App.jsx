@@ -1,4 +1,3 @@
-import Home from './pages/Home.jsx'
 import NavBar from './components/NavBar.jsx';
 import Footer from './components/pageParts/shared/Footer.jsx';
 import { Outlet } from 'react-router-dom';
