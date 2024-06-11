@@ -1,56 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-
-        gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied',
-      });
-      </script>
-            <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16495631825"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-
-      gtag('js', new Date());
-
-      gtag('config', 'AW-16495631825');
-    </script>
-    <!-- Create one update function for each consent parameter -->
-<script>
-  function consentGrantedAdStorage() {
-    gtag('consent', 'update', {
-      'ad_storage': 'granted'
-    });
-  }
-</script>
-<script>
-  function consentGrantedAdUserData() {
-    gtag('consent', 'update', {
-      'ad_user_data': 'granted'
-    });
-  }
-</script>
-<script>
-  function consentGrantedAdPersonalization() {
-    gtag('consent', 'update', {
-      'ad_personalization': 'granted'
-    });
-  }
-</script>
-<script>
-  function consentGrantedAnalyticsStorage() {
-    gtag('consent', 'update', {
-      'analytics_storage': 'granted'
-    });
-  }
-</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5FWFX73W');</script>
+    <!-- End Google Tag Manager -->  
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/components/GearAndWrenchFromLogo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,6 +17,10 @@
     <link href="./App.css" rel="stylesheet" /> 
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FWFX73W"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="./src/main.jsx"></script>
   </body>
