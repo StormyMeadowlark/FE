@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import FMP from '/src/assets/images/FactoryMotorPartsPartnersNetwork.png?react'
 import Snap from '/src/assets/images/SnapLogo.png?react'
 import CarFax from '/src/assets/images/CarFax.png?react'
-import Tools from "/src/assets/images/tools.jpg?react"
-import Car from "/src/assets/images/Quality2.jpg?react"
+import Tools from "/src/assets/images/Tools.jpg?react"
+import GreenTool from "/src/assets/images/ToolsWithGreenScrewDriver.jpg?react";
 import HexagonThing from "/src/assets/images/Convenience2.jpg"
 
   export default function NamesYouTrust() {
@@ -205,7 +205,7 @@ import HexagonThing from "/src/assets/images/Convenience2.jpg"
               </div>
             </div>
             <div>
-              <img src={Car} className="hexagon aspect-[6/5] z-10" />
+              <img src={GreenTool} className="hexagon aspect-[6/5] z-10" />
             </div>
             <svg
               className="absolute left-full hidden -translate-x-1/2 translate-y-1/4 transform lg:block z-0"
