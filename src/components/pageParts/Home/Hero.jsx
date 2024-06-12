@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import CornerHexagons from '../../../components/CornerHexagons.svg?react'
 import GreenButton from '../../../utils/greenButton'
 import HeaderTwo from './header2'
-import Engine from '/src/assets/images/Engine.jpg?react'
+import Engine from '/src/assets/images/Engine1.jpg?react'
 export default function Hero() {
   return (
     <div className=''>

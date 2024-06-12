@@ -1,7 +1,9 @@
 import useHover from "../../../hooks/useHover";
 import GreenButtonSmall from "../../../utils/GreenButtonSmall";
-import Jeep from "/src/assets/images/Jeep.jpg?react";
-import Truck from "/src/assets/images/Truck.jpg?react";
+import Jeep from "/src/assets/images/JeepGrandCherokee.jpeg?react";
+import Truck from "/src/assets/images/Ram2500.jpg?react";
+import Outlander from "/src/assets/images/Lancer.jpg?react";
+import Vehicle from "/src/assets/images/Car4.jpg?react";
 export default function HighlightedMakesAndModels() {
   const[Pic1Hovering, Pic1HoveringProps] = useHover();
   const[Pic2Hovering, Pic2HoveringProps] = useHover();
@@ -114,9 +116,9 @@ function Pic2After() {
 function Pic3Before() {
   return(
     <div className="lg:translate-x-5 lg:-translate-y-8">
-      <img src={Jeep}
+      <img src={Outlander}
         alt=""
-        className="aspect-[6/5] hexagon "
+        className="aspect-[6/5] hexagon"
       />
       <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist text-transparent">
       Vehicles with XYZ Engine
@@ -128,7 +130,7 @@ function Pic3Before() {
 function Pic3After() {
   return(
     <div className="text-white lg:translate-x-5 lg:-translate-y-8">
-      <img src={Jeep}
+      <img src={Outlander}
         alt=""
         className="aspect-[6/5] hexagon brightness-50"
       />
@@ -143,7 +145,7 @@ function Pic3After() {
 function Pic4Before() {
   return(
     <div className="lg:-translate-y-4">
-      <img src={Jeep}
+      <img src={Vehicle}
         alt=""
         className="aspect-[6/5] hexagon "
       />
@@ -159,7 +161,7 @@ function Pic4Before() {
 function Pic4After() {
   return(
     <div className="text-white lg:-translate-y-4">
-      <img src={Jeep}
+      <img src={Vehicle}
         alt=""
         className="aspect-[6/5] hexagon brightness-50"
       />
