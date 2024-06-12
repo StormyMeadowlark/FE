@@ -2,15 +2,17 @@ import { Link } from 'react-router-dom'
 import CornerHexagons from '../../../components/CornerHexagons.svg?react'
 import GreenButton from '../../../utils/greenButton'
 import HeaderTwo from './header2'
-import Engine from '/src/assets/images/Engine1.jpg?react'
+import Engine from "../../../assets/images/Engine.jpg?react"
+
 export default function Hero() {
   return (
     <div className=''>
         <div className='relative isolate overflow-hidden pt-60'>
-          <img 
-            src={Engine}
+          <img
+            src= {Engine}
             alt='front side of engine block'
             className='absolute inset-0 -z-10 h-full w-full object-cover brightness-[30%]'
+            loading='lazy'
           />
           <div
           className="absolute -z-10 transform-gpu"
