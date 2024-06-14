@@ -59,7 +59,7 @@ function QualityCardsAfter() {
             title: 'Quality2',
             name: 'Protection Inside & out',
             image: '',
-            description: 'Because mechanics get dirty, but your car shouldn&apos;t.',
+            description: "Because mechanics get dirty, but your car shouldn't.",
     
         },
         {

@@ -12,23 +12,23 @@ import NamesYouTrust from '../components/pageParts/Home/NamesYouTrust.jsx';
 import CustomerCategories from '../components/pageParts/Home/CustomerCategories.jsx'
 
 const Home = () => {
-    return(
-        <div>
-            <Hero />
-            <ServiceOfferings />
-            <CustomerCategories />
-            <OverviewIcons />
-            <div className='bg-[#333333]'>
-                <HighlightedMakesAndModels />
-            </div>
-            <NamesYouTrust />
-            <ThankYou />
-            <div className='sticky z-[100]'>
-                <Testimonials />
-            </div>
+    return (
+      <div>
+        <Hero />
+        <ServiceOfferings />
+        <CustomerCategories />
+        <OverviewIcons />
+        <div className="bg-[#333333]">
+          <HighlightedMakesAndModels />
         </div>
-
-    )
+        <NamesYouTrust />
+        <ThankYou />
+        <div className="sticky z-[100]">
+          <Testimonials />
+          <OnlineDeals />
+        </div>
+      </div>
+    );
 }
 
 export default Home;
