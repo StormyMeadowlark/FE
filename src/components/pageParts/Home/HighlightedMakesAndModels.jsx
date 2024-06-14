@@ -55,19 +55,25 @@ export default function HighlightedMakesAndModels() {
 
 function Pic1Before() {
   
-  return(
+  return (
     <div>
-      <img src={Jeep}
-        alt="Image of Jeep Grand Cherokee driving down a fall city road"
-        className="aspect-[6/5]  hexagon"
+      <img
+        src={Jeep}
+        alt="Image of Jeep in Sand"
+        className="aspect-[6/5] hexagon"
       />
-      <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist text-transparent" aria-hidden='true'>
-        2010 - present<br />Chrysler 3.6L PentaStar Engine<br />Oil Filter Housing
-      </p>
-      <div className="text-transparent -translate-y-40 text-sm md:text-xl md:-translate-y-52" aria-hidden='true'>Still Learning 
+      <div
+        className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist text-center text-transparent"
+        aria-hidden="true"
+      >
+        2010 - present
+        <br />
+        Chrysler 3.6L PentaStar Engine
+        <br />
+        Oil Filter Housing
       </div>
     </div>
-  )
+  );
 }
 
 function Pic1After() {
@@ -85,17 +91,20 @@ function Pic1After() {
 }
 
 function Pic2Before() {
-  return(
+  return (
     <div className="">
-      <img src={Truck}
-        aria-hidden='true'
-        className="aspect-[6/5] hexagon "
-      />
-      <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-[13.75rem] font-urbanist text-transparent" aria-hidden='true'>
-      Vehicles with XYZ Engine
+      <img src={Truck} aria-hidden="true" className="aspect-[6/5] hexagon " />
+      <p
+        className="-translate-y-44 text-md md:text-2xl md:-translate-y-[13.75rem] font-urbanist text-center text-transparent"
+        aria-hidden="true"
+      >
+        <br />
+        Chrysler 5.7L V8 Hemi
+        <br />
+        Camshaft, lifter, valves, MDS delete
       </p>
     </div>
-  )
+  );
 }
 
 function Pic2After() {
@@ -114,17 +123,14 @@ function Pic2After() {
 
 
 function Pic3Before() {
-  return(
+  return (
     <div className="lg:translate-x-5 lg:-translate-y-8">
-      <img src={Outlander}
-        alt=""
-        className="aspect-[6/5] hexagon"
-      />
-      <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-56 font-urbanist text-transparent">
+      <img src={Outlander} alt="" className="aspect-[6/5] hexagon" />
+      <p className="-translate-y-44 text-md md:text-2xl md:-translate-y-[13.75rem] font-urbanist text-center text-transparent">
       Vehicles with XYZ Engine
       </p>
     </div>
-  )
+  );
 }
 
 function Pic3After() {
