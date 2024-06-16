@@ -7,7 +7,7 @@ export default function ThankYou() {
     <div className="relative overflow-hidden bg-[#00ff00]">
       <div className="relative lg:mt-8 lg:pb-8 my-4">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-10">
-          <div className="mx-auto max-w-xl px-10 lg:mx-0 lg:max-w-none lg:px-0 lg:py-16">
+          <div className="mx-auto px-10 lg:mx-0 lg:max-w-none lg:px-0 lg:py-16">
             <div>
               <div>
                 <span className="flex h-16 w-16 items-center justify-center hexagon bg-[#333333] text-white">
@@ -24,7 +24,7 @@ export default function ThankYou() {
                   Keep being awesome & lets go for winner in 2025! For now be
                   awesome & leave us a review!
                 </p>
-                <div className="flex mt-6 justify-between">
+                <div className="flex mt-6 justify-center">
                   <div className="mx-4">
                     <Link
                       to="https://www.google.com/search?q=hem+automotive"
