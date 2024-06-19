@@ -48,7 +48,7 @@ export default function CustomerCategories() {
         </div>
       </div>
       {/* Overlapping cards */}
-      <section className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 md:pt-10 pt-20" aria-labelledby="contact-heading">
+      <section className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 md:pt-10 lg:py-20 pt-20" aria-labelledby="contact-heading">
         <h2 className="sr-only" id="Customer Experience">
         </h2>
         <ListCustomerCategories supportLinks={supportLinks} />

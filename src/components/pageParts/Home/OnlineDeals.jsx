@@ -8,49 +8,66 @@ function OnlineDeals() {
     const[Hex2Hovering, Hex2HoveringProps] = useHover();
     const[Hex3Hovering, Hex3HoveringProps] = useHover();
 
-    return(
-    <div className="relative lg:flex lg:flex-col py-20 lg:py-0 bg-[#00ff00] overflow-hidden">
-        <div className="relative mx-auto max-w-7xl">
+    return (
+      <div className="relative py-20 lg:py-0 bg-[#333333] overflow-hidden flex flex-1 justify-center">
+        <div className="bg-[#111111]/75 max-w-7xl m-8 p-8 lg:rounded-2xl lg:shadow-inner shadow-[#00ff00]">
+          <div className="relative mx-auto max-w-7xl">
             <div className="justify-center">
-                <h3 className="text-6xl text-stroke-[#333333] text-stroke text-stroke-fill-white sm:text-4xl md:text-5xl lg:text-6xl uppercase  font-Bungee pt-10">Exclusive online offers</h3>
-                <p className="max-w-3xl text-xl text-[#333333] font-Urbanist tracking-wider">
-                    Your reward for scrolling to the end of the page!
-                </p>
+              <h3 className="text-6xl text-stroke-[#00ff00] text-stroke text-stroke-fill-[#11111] sm:text-4xl md:text-5xl lg:text-6xl uppercase  font-Bungee pt-10">
+                Exclusive online offers
+              </h3>
+              <p className="max-w-3xl text-xl text-[#eeeeee] font-Urbanist tracking-wider">
+                Your reward for scrolling to the end of the page!
+              </p>
             </div>
-        </div>
-        <div className="pt-10 lg:grid lg:grid-cols-3 mx-auto justify-center md:pt-0 lg:pt-10 lg:max-w-7xl">
-                <div {...Hex1HoveringProps} className="text-center lg:p-4 text-xl text-white mx-8 justify-center">
-                    <p className="text-Urbanist tracking-wider">
-                        {Hex1Hovering ? Offer1After() : Offer1Before()}
-                    </p>
-                </div>
-                <div {...Hex2HoveringProps} className="text-center p-4 text-xl text-white mx-8 justify-center">
-                    <p className="text-Urbanist tracking-wider">
-                        {Hex2Hovering ? Offer2After() : Offer2Before()}
-                    </p>
-                </div>
-                <div {...Hex3HoveringProps} className="text-center p-4 text-xl text-white mx-8 justify-center">
-                    <p className="text-Urbanist tracking-wider">
-                        {Hex3Hovering ? Offer3After() : Offer3Before()}
-                    </p>
-                </div>
+          </div>
+          <div className="pt-10 md:flex mx-auto justify-center md:pt-0 lg:pt-10 lg:max-w-7xl">
+            <div
+              {...Hex1HoveringProps}
+              className="text-center lg:p-4 text-xl text-white mx-8 justify-center"
+            >
+              <p className="text-Urbanist tracking-wider">
+                {Hex1Hovering ? Offer1After() : Offer1Before()}
+              </p>
             </div>
+            <div
+              {...Hex2HoveringProps}
+              className="text-center lg:p-4 text-xl text-white mx-8 justify-center -mt-28 md:mt-0"
+            >
+              <p className="text-Urbanist tracking-wider">
+                {Hex2Hovering ? Offer2After() : Offer2Before()}
+              </p>
+            </div>
+            <div
+              {...Hex3HoveringProps}
+              className="text-center p-4 text-xl text-white mx-8 justify-center -mt-28 md:mt-0"
+            >
+              <p className="text-Urbanist tracking-wider">
+                {Hex3Hovering ? Offer3After() : Offer3Before()}
+              </p>
+            </div>
+          </div>
         </div>
-        
-    )
+      </div>
+    );
 }
 
 function Offer1Before() {
     return (
       <div>
         <div className="flex flex-1 justify-center">
-          <img src={Deals1} alt="" className="hexagon object-fit brightness-[30%] aspect-[6/5]" />
+          <img
+            src={Deals1}
+            alt=""
+            className="hexagon object-fill brightness-[30%] aspect-[6/5]"
+          />
         </div>
-        <div className="lg:-translate-y-[150%] -translate-y-48 md:-translate-y-36 flex flex-1 flex-col lg:block md:text-base lg:text-2xl lg:p-2">
-          <p>A/C Service Special</p>
-          <p className="lg:text-sm">R1234yf cooling systems</p>
+        <div className="-translate-y-48 md:-translate-y-36 flex flex-1 flex-col lg:block md:text-base lg:text-[12px] lg:p-2 text-[22px] leading-[1.2] lg:-translate-y-[120%]">
+          <p className="lg:text-3xl">A/C Service Special</p>
+          <p className="lg:text-xl">R1234yf cooling systems</p>
+          <p className="">Includes leak detection test</p>
           <p className="lg:text-3xl">$436.88 </p>
-          <p className="lg:line-through text-sm">$500</p>
+          <p className="line-through text-sm">$500</p>
         </div>
       </div>
     );
@@ -65,11 +82,12 @@ function Offer2Before() {
             className="hexagon object-fit brightness-[30%] aspect-[6/5]"
           />
         </div>
-        <div className="lg:-translate-y-[150%] -translate-y-48 md:-translate-y-36 flex flex-1 flex-col lg:block md:text-base lg:text-2xl lg:p-2">
-          <p>A/C Service Special</p>
-          <p className="lg:text-sm">R134a cooling systems</p>
-          <p className="lg:text-3xl">$147 </p>
-          <p className="lg:line-through text-sm">$300</p>
+        <div className="-translate-y-48 md:-translate-y-36 flex flex-1 flex-col lg:block md:text-base lg:text-[12px] lg:p-2 text-[22px] leading-[1.2] lg:-translate-y-[120%]">
+          <p className="lg:text-3xl">A/C Service Special</p>
+          <p className="lg:text-xl">R134a cooling systems</p>
+          <p className="">Includes leak detection test</p>
+          <p className="lg:text-3xl">$147</p>
+          <p className="line-through text-sm">$300</p>
         </div>
       </div>
     );
@@ -102,11 +120,10 @@ function Offer1After() {
             className="hexagon object-fit brightness-[30%] aspect-[6/5]"
           />
         </div>
-        <div className="lg:-translate-y-[150%] -translate-y-48 md:-translate-y-36 flex flex-1 flex-col lg:block md:text-base lg:text-sm lg:p-2">
+        <div className="lg:-translate-y-[120%] -translate-y-48 md:-translate-y-36 flex flex-1 flex-col lg:block md:text-base lg:text-[12px] p-2 text-[22px] leading-[1.2] lg:text-lg lg:leading-[2]">
           <p>
-            Price is subject to change without notice. Prices listed are cash
-            prices and dose not include shop fee or taxes. Price is for R1234fy
-            freon upto 1lb. Price includes leak detection test.
+            Price is subject to change without notice. Not including shop fee &
+            taxes, cash price for R1234fy freon upto 1lb.
           </p>
         </div>
       </div>

@@ -7,7 +7,7 @@ import CarFax from "/src/assets/images/CarFax.png?react";
 
 export default function ThankYou() {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-[#00ff00] to-[#333333] pt-10">
+    <div className="relative overflow-hidden bg-gradient-to-b from-[#111111] to-[#00ff00] pt-10">
       <div className="relative pb-8 mb-4">
         <div className='bg-[#333333]/75 lg:rounded-2xl md:shadow-xl lg:shadow-black lg:max-w-7xl mx-auto px-10 pt-10'>
           <div className="relative">
