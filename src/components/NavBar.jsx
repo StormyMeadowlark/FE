@@ -18,7 +18,7 @@ function NavBar() {
                 ' aria-label='Global'>
                     <div className=''>
                         <Link to='/' className='flex flex-1'>
-                            <span className='sr-only'>H.E.M Automotive</span>
+                            <span className='sr-only'>H.E.M. Automotive</span>
                             <Logo className='scale-75' />
                         </Link>
                     </div>
