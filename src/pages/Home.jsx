@@ -18,7 +18,6 @@ const Home = () => {
         <ServiceOfferings />
         <CustomerCategories />
         <OverviewIcons />
-        <NamesYouTrust />
         <ThankYou />
         <div className="sticky z-[100]">
           <Testimonials />
