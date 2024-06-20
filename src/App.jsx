@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 const App = () => {
   return (
     <div>
-      <div className="sticky top-0 inset-x-0 z-50 bg-black/50 font-Play">
+      <div className="sticky inset-y-0 inset-x-0 z-50 bg-black/50 font-Play">
         <NavBar />
       </div>
       <div>
