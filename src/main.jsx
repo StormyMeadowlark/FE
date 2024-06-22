@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "services",
-        element: <ErrorPage />,
+        element: <Services />,
         children: [
           {
             path: "services/:href",

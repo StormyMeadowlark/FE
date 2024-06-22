@@ -1,9 +1,13 @@
+import Hero from "../components/pageParts/Services/Hero";
+import Service from "../components/pageParts/Services/Service";
+
+
 const Services = () => {
-    return(
-        <div>
-            <h1>Hello from Services page!</h1>
-            <p>This will contain Services done by HEM AUTO</p>
-        </div>
+    return (
+      <div>
+        <Hero />
+        <Service />
+      </div>
     );
   };
 export default Services;
