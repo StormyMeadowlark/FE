@@ -5,7 +5,7 @@ export default function Faq() {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className="bg-[#333333] text-white pb-20">
-      <div className="grid md:grid-cols-2 gap-x-20 lg:grid-cols-3 mx-10 lg:mx-0">
+      <div className="grid md:grid-cols-2 gap-x-20 md:gap-x-8 lg:grid-cols-3 mx-10 lg:mx-20 outline justify-self-center">
         <Panel
           title="Where are you located?"
           isActive={activeIndex === 0}
@@ -69,7 +69,10 @@ export default function Faq() {
           isActive={activeIndex === 4}
           onShow={() => setActiveIndex(4)}
         >
-          <p className="text-lg font-Urbanist tracking-wide font-medium">Our hourly retail rate is $145. Call the shop for dealership & fleet rates.</p>
+          <p className="text-lg font-Urbanist tracking-wide font-medium">
+            Our hourly retail rate is $145. Call the shop for dealership & fleet
+            rates.
+          </p>
         </Panel>
         <Panel
           title="Do you offer alignments?"
@@ -77,7 +80,9 @@ export default function Faq() {
           onShow={() => setActiveIndex(5)}
         >
           <p className="text-lg font-Urbanist tracking-wide font-medium">
-            Yes! We have a hunter alignment lift & alignment superstars that will take your vehicle from dancing to its own tune, to dancing to yours! The cash price is $145 does not include taxes or shop fee.
+            Yes! We have a hunter alignment lift & alignment superstars that
+            will take your vehicle from dancing to its own tune, to dancing to
+            yours! The cash price is $145 does not include taxes or shop fee.
           </p>
         </Panel>
         <Panel
@@ -85,63 +90,88 @@ export default function Faq() {
           isActive={activeIndex === 6}
           onShow={() => setActiveIndex(6)}
         >
-          <p className="text-lg font-Urbanist tracking-wide font-medium">Yes, our technicians are like car whisperers.</p>
+          <p className="text-lg font-Urbanist tracking-wide font-medium">
+            Yes, our technicians are like car whisperers.
+          </p>
         </Panel>
         <Panel
           title="Do you rebuild engines?"
           isActive={activeIndex === 7}
           onShow={() => setActiveIndex(7)}
         >
-          <p className="text-lg font-Urbanist tracking-wide font-medium">We do not completely rebuild engines. We do replace camshafts, lifts, glow plugs and use Miller Precision for remanufacturing heads.</p>
+          <p className="text-lg font-Urbanist tracking-wide font-medium">
+            We do not completely rebuild engines. We do replace camshafts,
+            lifts, glow plugs and use Miller Precision for remanufacturing
+            heads.
+          </p>
         </Panel>
         <Panel
           title="Do you rebuild transmissions?"
           isActive={activeIndex === 8}
           onShow={() => setActiveIndex(8)}
         >
-          <p className="text-lg font-Urbanist tracking-wide font-medium">No, but we do service them & replace them.</p>
+          <p className="text-lg font-Urbanist tracking-wide font-medium">
+            No, but we do service them & replace them.
+          </p>
         </Panel>
         <Panel
           title="Do you sell and install wheels and tires?"
           isActive={activeIndex === 9}
           onShow={() => setActiveIndex(9)}
         >
-          <p className="text-lg font-Urbanist tracking-wide font-medium">Yes we do! We can work with tires from size to size and wheels from size to size.</p>
+          <p className="text-lg font-Urbanist tracking-wide font-medium">
+            Yes we do! We can work with tires from size to size and wheels from
+            size to size.
+          </p>
         </Panel>
         <Panel
           title="Can I drop my car off before or after hours?"
           isActive={activeIndex === 10}
           onShow={() => setActiveIndex(10)}
         >
-          <p className="text-lg font-Urbanist tracking-wide font-medium">Yes, we do ask that you talk with a service advior prior to your appointment so we can best accommodate you.</p>
+          <p className="text-lg font-Urbanist tracking-wide font-medium">
+            Yes, we do ask that you talk with a service advior prior to your
+            appointment so we can best accommodate you.
+          </p>
         </Panel>
         <Panel
           title="Do you work on vehicles older than 2000?"
           isActive={activeIndex === 11}
           onShow={() => setActiveIndex(11)}
         >
-          <p className="text-lg font-Urbanist tracking-wide font-medium">Yes we do! Please call the shop to verify your particular make, model, and year prior to your appointment.</p>
+          <p className="text-lg font-Urbanist tracking-wide font-medium">
+            Yes we do! Please call the shop to verify your particular make,
+            model, and year prior to your appointment.
+          </p>
         </Panel>
         <Panel
           title="Do you service trailers?"
           isActive={activeIndex === 12}
           onShow={() => setActiveIndex(12)}
         >
-          <p className="text-lg font-Urbanist tracking-wide font-medium">Yes we do!</p>
+          <p className="text-lg font-Urbanist tracking-wide font-medium">
+            Yes we do!
+          </p>
         </Panel>
         <Panel
           title="Do you service motorcycles?"
           isActive={activeIndex === 13}
           onShow={() => setActiveIndex(13)}
         >
-          <p className="text-lg font-Urbanist tracking-wide font-medium">Not at the moment, but it may be something to consider in the future.</p>
+          <p className="text-lg font-Urbanist tracking-wide font-medium">
+            Not at the moment, but it may be something to consider in the
+            future.
+          </p>
         </Panel>
         <Panel
           title="Can you service my fleet?"
           isActive={activeIndex === 14}
           onShow={() => setActiveIndex(14)}
         >
-          <p className="text-lg font-Urbanist tracking-wide font-medium">Yes, we can service fleets of all sizes. Give the shop a call to schedule with us today!</p>
+          <p className="text-lg font-Urbanist tracking-wide font-medium">
+            Yes, we can service fleets of all sizes. Give the shop a call to
+            schedule with us today!
+          </p>
         </Panel>
         <Panel
           title="What kind of warranty do you offer?"
@@ -198,7 +228,8 @@ export default function Faq() {
           onShow={() => setActiveIndex(16)}
         >
           <p className="text-lg font-Urbanist tracking-wide font-medium">
-            We accept cash, debit, & all major credit cards (3% fee). We currently do not accept tap to pay, or online payments.
+            We accept cash, debit, & all major credit cards (3% fee). We
+            currently do not accept tap to pay, or online payments.
           </p>
         </Panel>
       </div>
@@ -208,11 +239,20 @@ export default function Faq() {
 
 function Panel({ title, children, isActive, onShow }) {
   return (
-    <section className="panel bg-[#333333] text-white lg:max-w-[55vw] lg:mx-40">
-      
-        <h3 className="font-bold text-3xl font-Play text-[#00ff00] pt-8">{title}</h3>
-        {isActive ? <p className="pt-4">{children}</p> : <button onClick={onShow} className="silverbg45 p-2 mt-4 text-stroke text-stroke-black text-stroke-fill-[#00ff00] font-Play text-xl font-black">show me</button>}
-   
+    <section className="panel bg-[#333333] text-white lg:max-w-[55vw] ">
+      <h3 className="font-bold text-3xl font-Play text-[#00ff00] pt-8">
+        {title}
+      </h3>
+      {isActive ? (
+        <p className="pt-4">{children}</p>
+      ) : (
+        <button
+          onClick={onShow}
+          className="silverbg45 p-2 mt-4 text-stroke text-stroke-black text-stroke-fill-[#00ff00] font-Play text-xl font-black "
+        >
+          show me
+        </button>
+      )}
     </section>
   );
 }
