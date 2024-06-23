@@ -12,29 +12,6 @@ import Electrical from "/src/assets/images/Electrical.jpg?react";
 import EconomyDiesel from "/src/assets/images/EconomyLightDuty.jpg?react";
 import Inspection from "/src/assets/images/Inspection.jpg?react";
 
-function TiresDescription() {
-  return (
-    <div>
-       The tires and
-      wheels, of course! Automotive tire and wheel sales are like your car's
-      personal shopping spree, ensuring it’s always dressed to impress and ready
-      to roll with the best of them.
-      <br />
-      <br />
-      But sometimes, life throws a curveball, or in this case, a nail, right
-      into your tire. That's where tire repair swoops in like a superhero. No
-      problem! The tire experts will patch it up faster than you can
-      say 'I have a flat tire' getting you back on your way without missing a
-      beat. 
-      <br />
-      <br />
-     Tire and wheel sales, along with tire repair,
-      are all about keeping your car stylish, safe, and ready for any adventure.
-      So, give your car the red-carpet treatment it deserves - because every
-      ride deserves to feel like a star!
-    </div>
-  );
-}
 
 export default function Service() {
     return (

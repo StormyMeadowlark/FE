@@ -6,7 +6,7 @@ import App from "./App";
 import About from './pages/About.jsx';
 import Services from './pages/Services.jsx';
 import AutoSchool from './pages/AutoSchool.jsx';
-import Faq from './pages/FAQ.jsx';
+import FAQ from './pages/FAQ.jsx';
 import Contact from './pages/Contact.jsx';
 import ErrorPage from './pages/Error.jsx';
 import Home from './pages/Home.jsx';
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "faq",
-        element: <ErrorPage />,
+        element: <FAQ />,
       },
       {
         path: "about",
