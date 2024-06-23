@@ -1,13 +1,16 @@
 import NavBar from './components/NavBar.jsx';
 import Footer from './components/pageParts/shared/Footer.jsx';
 import { Outlet } from 'react-router-dom';
+import Header from './components/pageParts/shared/Header.jsx';
+import MobileNavigation from './components/pageParts/shared/MobileNavigation.jsx';
+
 
 
 const App = () => {
   return (
     <div>
       <div className="sticky inset-y-0 inset-x-0 z-50 bg-black/50 font-Play">
-        <NavBar />
+        <MobileNavigation />
       </div>
       <div>
         <Outlet />

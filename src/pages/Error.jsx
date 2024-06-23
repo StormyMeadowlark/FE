@@ -9,7 +9,6 @@ export default function ErrorPage() {
     
     return(
         <div id="error-page">
-          <NavBar />
             <div className='relative isolate overflow-hidden py-[13%] bg-black'>
           <img 
             src='/src/assets/images/Engine.jpg'
