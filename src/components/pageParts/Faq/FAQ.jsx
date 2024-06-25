@@ -1,11 +1,13 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+
 
 export default function Faq() {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className="bg-[#333333] text-white pb-20">
-      <div className="grid md:grid-cols-2 gap-x-20 md:gap-x-8 lg:grid-cols-3 mx-10 lg:mx-20 outline justify-self-center">
+      <div className="grid md:grid-cols-2 gap-x-20 md:gap-x-8 lg:grid-cols-3 mx-10 lg:mx-20 justify-self-center">
         <Panel
           title="Where are you located?"
           isActive={activeIndex === 0}
@@ -24,8 +26,12 @@ export default function Faq() {
           onShow={() => setActiveIndex(1)}
         >
           <p className="text-lg font-Urbanist tracking-wide font-medium">
-            No, however, we highly suggest you use
+            No, however, we highly suggest you use A&R Towing.
           </p>
+          <address className="text-lg font-Urbanist tracking-wide font-medium">
+            You can reach them at:{" "}
+            <span className="text-[#00FF00]">785.580.8326</span>
+          </address>
         </Panel>
         <Panel
           title="Where can I apply for financing?"
@@ -80,13 +86,13 @@ export default function Faq() {
           onShow={() => setActiveIndex(5)}
         >
           <p className="text-lg font-Urbanist tracking-wide font-medium">
-            Yes! We have a hunter alignment lift & alignment superstars that
+            Yes! We have a Hunter HawkEye Elite® alignment machine & alignment superstars that
             will take your vehicle from dancing to its own tune, to dancing to
             yours! The cash price is $145 does not include taxes or shop fee.
           </p>
         </Panel>
         <Panel
-          title="Do you do advanced diagnostics?"
+          title="Do you offer advanced diagnostics?"
           isActive={activeIndex === 6}
           onShow={() => setActiveIndex(6)}
         >
@@ -101,8 +107,15 @@ export default function Faq() {
         >
           <p className="text-lg font-Urbanist tracking-wide font-medium">
             We do not completely rebuild engines. We do replace camshafts,
-            lifts, glow plugs and use Miller Precision for remanufacturing
-            heads.
+            lifters, glow plugs, ect. We use
+            <Link
+              to="https://www.facebook.com/p/Miller-Precision-Machine-Inc-100049992863568/"
+              className="text-[#00FF00]"
+            >
+              {" "}
+              Miller Precision{" "}
+            </Link>
+            for remanufacturing heads.
           </p>
         </Panel>
         <Panel
@@ -111,17 +124,18 @@ export default function Faq() {
           onShow={() => setActiveIndex(8)}
         >
           <p className="text-lg font-Urbanist tracking-wide font-medium">
-            No, but we do service them & replace them.
+            No, but we can replace most gear box fluid & we are masters at replacing them!
           </p>
         </Panel>
         <Panel
-          title="Do you sell and install wheels and tires?"
+          title="Do you sell & install wheels & tires?"
           isActive={activeIndex === 9}
           onShow={() => setActiveIndex(9)}
         >
           <p className="text-lg font-Urbanist tracking-wide font-medium">
-            Yes we do! We can work with tires from size to size and wheels from
-            size to size.
+            Yes we do! We can work with tire sizes up to 40X14.5! Dually&apos;s &
+            tires over 35&quot; diameter are $5 extra. We are not able to service run
+            flat tires.
           </p>
         </Panel>
         <Panel
@@ -130,8 +144,7 @@ export default function Faq() {
           onShow={() => setActiveIndex(10)}
         >
           <p className="text-lg font-Urbanist tracking-wide font-medium">
-            Yes, we do ask that you talk with a service advior prior to your
-            appointment so we can best accommodate you.
+            Yes! Please talk with a service advisor prior to your appointment.
           </p>
         </Panel>
         <Panel
@@ -229,7 +242,7 @@ export default function Faq() {
         >
           <p className="text-lg font-Urbanist tracking-wide font-medium">
             We accept cash, debit, & all major credit cards (3% fee). We
-            currently do not accept tap to pay, or online payments.
+            currently do not accept online payments.
           </p>
         </Panel>
       </div>
@@ -239,18 +252,19 @@ export default function Faq() {
 
 function Panel({ title, children, isActive, onShow }) {
   return (
-    <section className="panel bg-[#333333] text-white lg:max-w-[55vw] ">
-      <h3 className="font-bold text-3xl font-Play text-[#00ff00] pt-8">
+    <section className="panel bg-[#333333] text-white lg:max-w-[55vw]">
+      <h3 className="font-bold text-3xl font-Play text-[#dddddd] pt-8">
         {title}
       </h3>
       {isActive ? (
-        <p className="pt-4">{children}</p>
+        <p className="pt-4 block">{children}</p>
       ) : (
         <button
           onClick={onShow}
-          className="silverbg45 p-2 mt-4 text-stroke text-stroke-black text-stroke-fill-[#00ff00] font-Play text-xl font-black "
+          className="p-2 mt-4 text-stroke text-stroke-black text-stroke-fill-[#00ff00] font-Play text-xl font-black flex hover:text-white focus:outline focus:outline-[#00ff00] active:outline active:outline-transparent"
         >
-          show me
+          <p>Find out</p>
+          <ChevronDownIcon className="h-7" />
         </button>
       )}
     </section>
