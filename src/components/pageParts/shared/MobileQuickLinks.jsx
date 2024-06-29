@@ -14,7 +14,7 @@ function MobileQuickLinks() {
     const PaymentAfterHover = PaymentAfter();
     return(
         <div className='md:hidden flex flex-1 justify-end '>
-                <Link {...UserHoveringProps} to='user' className='p-2 focus:outline focus:outline-[#00FF00]'>
+                <Link {...UserHoveringProps} to='user/login' className='p-2 focus:outline focus:outline-[#00FF00]'>
                     <span className='sr-only'>Log-In or Create Account</span>
                     {UserHovering ? UserAfterHover : UserBeforeHover}
                 </Link>
