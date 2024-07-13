@@ -1,5 +1,3 @@
-import NavBar from "../components/NavBar";
-import Footer from "../components/pageParts/shared/Footer"
 const Legal = () => {
     return (
       <div className="bg-[#333333] text-white ">
@@ -12,7 +10,7 @@ const Legal = () => {
               <li className="pt-8">
                 <h3 className="text-5xl font-bold pb-4">Introduction</h3>
                 <p>
-                  Hello & Welcome to the HEM Auto L.L.C. (a.k.a. HEM Automotive)
+                  Hello & Welcome to the HEM Auto L.L.C. &lpar;a.k.a. HEM Automotive&rpar;
                   privacy policy. HEM Automotive provides automotive & light
                   diesel maintenance & repair services to used motor vehicle
                   dealerships, retail motor vehicles, & fleets containing motor
@@ -30,21 +28,22 @@ const Legal = () => {
                 <p>
                   We want our privacy to be taken seriously, so we take yours
                   seriously. This policy has been developed with the following
-                  principals in mind: HEM Automotive follows a strict "no-spam"
-                  policy. Subscribers to all of our online services will not
-                  receive unsolicited messages from us. We do our best to only
-                  send completely relevant messages. The overall goal of online
-                  information collection at HEM Automotive is to improve user
-                  interaction across the site and its connected services while
-                  allowing users to have a more engaging experience. As much as
-                  possible, we try to avoid or limit the amount of irrelevant
-                  data we collect. HEM Automotive will do its best to protect
-                  your data. Some of these measures include storing data in
-                  databases on servers with protected and restricted access. We
-                  will not share your personal information to anyone without
-                  consent except to provide you the requested services. At the
-                  time the service is requested you will be asked to consent to
-                  whom your information may be shared.
+                  principals in mind: HEM Automotive follows a strict
+                  &quot;no-spam&quot; policy. Subscribers to all of our online
+                  services will not receive unsolicited messages from us. We do
+                  our best to only send completely relevant messages. The
+                  overall goal of online information collection at HEM
+                  Automotive is to improve user interaction across the site and
+                  its connected services while allowing users to have a more
+                  engaging experience. As much as possible, we try to avoid or
+                  limit the amount of irrelevant data we collect. HEM Automotive
+                  will do its best to protect your data. Some of these measures
+                  include storing data in databases on servers with protected
+                  and restricted access. We will not share your personal
+                  information to anyone without consent except to provide you
+                  the requested services. At the time the service is requested
+                  you will be asked to consent to whom your information may be
+                  shared.
                 </p>
               </li>
               <li className="pt-8">
@@ -53,21 +52,23 @@ const Legal = () => {
                 </h4>
                 <p>
                   Anytime our website has a visitor we collect information that
-                  doesn't make them directly identifiable. Information is
+                  doesn&apos;t make them directly identifiable. Information is
                   collected via cookies, web beacons and other web technologies.
                   Data can include users operating system, IP address, the
                   number of webpages visited on the site, how long each page is
                   open for, the date and time of web visits, what lead them to
-                  the site (i.e. search engine, email, advertisement, ect.) This
-                  information aids in diagnosing server problems, distribute the
-                  website, gather broad statistical data, identify areas of the
-                  website most visited. The use of this data aids in user
-                  experience and is not identified with individuals unless
-                  consent is given.
+                  the site &lpar;i.e. search engine, email, advertisement,
+                  ect.&rpar; This information aids in diagnosing server
+                  problems, distribute the website, gather broad statistical
+                  data, identify areas of the website most visited. The use of
+                  this data aids in user experience and is not identified with
+                  individuals unless consent is given.
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Voluntarily Given Personal Information</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Voluntarily Given Personal Information
+                </h4>
                 <p>
                   Certain services may require voluntarily given personal
                   information. This information may include, but is not limited
@@ -79,17 +80,19 @@ const Legal = () => {
                   appropriately to your needs, interests, and concerns. It may
                   be used to to provide information to you about the company,
                   its products, services, or to provide reminders and notices
-                  (see "opt out" below). Personally identifiable data will be
-                  used to personalize your experience on the website. This
-                  information may be gathered from a service advisor, an online
-                  chat on the websites "contact us" page, a user account
-                  registration form, email subscription form among others. All
-                  information voluntarily provided is securely stored in
-                  databases internally.
+                  &lpar;see &quot;opt out&quot; below&rpar;. Personally
+                  identifiable data will be used to personalize your experience
+                  on the website. This information may be gathered from a
+                  service advisor, an online chat on the websites &quot;contact
+                  us&quot; page, a user account registration form, email
+                  subscription form among others. All information voluntarily
+                  provided is securely stored in databases internally.
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Information Sharing and Disclosure</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Information Sharing and Disclosure
+                </h4>
                 <p>
                   As we understand the value of privacy. Any voluntarily given
                   personal information WILL NOT be voluntarily distributed or
@@ -99,33 +102,41 @@ const Legal = () => {
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Agents</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Agents
+                </h4>
                 <p>
                   While using our services HEM Automotive may share your
                   information with trusted third-party service providers who
                   assist us in operating our business, such as payment
-                  processors, marketing partners (Stormy Meadowlark LLC a.k.a
-                  Stormy Meadowlark Enterprise), and shop management software
-                  (Shop-ware). Visitors will never receive unsolicited
-                  correspondence from these parties.
+                  processors, marketing partners &lpar;Stormy Meadowlark LLC
+                  a.k.a Stormy Meadowlark Enterprise&rpar;, and shop management
+                  software &lpar;Shop-ware&rpar;. Visitors will never receive
+                  unsolicited correspondence from these parties.
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Safety & Law Compliance</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Safety & Law Compliance
+                </h4>
                 <p>
                   If required by law or as a response to a valid request by
                   public authorities your information may be disclosed.
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Business Transfers </h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Business Transfers{" "}
+                </h4>
                 <p>
                   Your data may be transferred in the event the repair shop
                   sells or transfers business assets.
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Consent</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Consent
+                </h4>
                 <p>
                   Except in the situations outlined in this Privacy Policy, you
                   will be given the opportunity to opt-out when any
@@ -134,14 +145,16 @@ const Legal = () => {
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Marketing</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Marketing
+                </h4>
                 <p>
                   To provide our customers with the best experience possible in
                   our services we may combine publicly available data about you
                   with personal you have voluntarily given to us. This
                   combination of data will be used as statistical data and could
                   potentially be used to aid in or review marketing
-                  effectiveness. Any marketing material recieved by HEM Auto
+                  effectiveness. Any marketing material received by HEM Auto
                   will contain a means to opt out. Opting out of marketing
                   material does not opt you out of important communications
                   including but not limited to customer service announcements or
@@ -149,25 +162,29 @@ const Legal = () => {
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Cookies</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Cookies
+                </h4>
                 <p>
-                  Our repair website may use a feature called a "cookie".
-                  Cookies are small files with no personal identifiable
-                  information placed on your hard drive to make sure you have
-                  the most enjoyable and customized experience possible. Our
-                  repair website uses cookies to provide you the convenience of
-                  not having to change your settings or reenter you username and
-                  password during the visit. We can also obtain information
-                  about your interests by gathering prior browsing information
-                  on the site. You can choose to disable cookies through your
-                  browser settings; however, this may affect the functionality
-                  of our website.
+                  Our repair website may use a feature called a
+                  &quot;cookie&quot;. Cookies are small files with no personal
+                  identifiable information placed on your hard drive to make
+                  sure you have the most enjoyable and customized experience
+                  possible. Our repair website uses cookies to provide you the
+                  convenience of not having to change your settings or reenter
+                  you username and password during the visit. We can also obtain
+                  information about your interests by gathering prior browsing
+                  information on the site. You can choose to disable cookies
+                  through your browser settings; however, this may affect the
+                  functionality of our website.
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Analytics</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Analytics
+                </h4>
                 <p>
-                  HEM Automotive uses “Google Analytics 4” to collect
+                  HEM Automotive uses &quot;Google Analytics 4&quot; to collect
                   information about the way you use the website. Google
                   Analytics collects information including but not limited to
                   site visit frequency, page visits during a user session, etc.
@@ -177,13 +194,15 @@ const Legal = () => {
                   rather than your name or other identifying information. We do
                   not combine the information collected through the use of
                   Google Analytics with personally identifiable information.
-                  Google’s ability to use and share information collected by
-                  Google Analytics about your visits to this site is restricted
-                  by Google Analytics.
+                  Google&apos;s ability to use and share information collected
+                  by Google Analytics about your visits to this site is
+                  restricted by Google Analytics.
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Third-Party Links</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Third-Party Links
+                </h4>
                 <p>
                   HEM Automotive maintains an independent privacy policy outside
                   of all third-party sites linked. We have no responsibility or
@@ -195,11 +214,13 @@ const Legal = () => {
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Children's Privacy</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Children&apos;s Privacy
+                </h4>
                 <p>
-                  Children's online safety and privacy are especially important
-                  to HEM Automotive. Our website and services have not been
-                  created for individuals under the age of 13. We do not
+                  Children&apos;s online safety and privacy are especially
+                  important to HEM Automotive. Our website and services have not
+                  been created for individuals under the age of 13. We do not
                   knowingly collect information from children under 13. If we
                   become aware that a child under 13 without parental consent
                   has provided or is trying to provide us with personal
@@ -208,7 +229,9 @@ const Legal = () => {
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Not in the United States</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Not in the United States
+                </h4>
                 <p>
                   Please be aware that if you view the HEM Automotive website
                   from a country that is outside of the United states, data will
@@ -217,7 +240,9 @@ const Legal = () => {
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Password </h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Password{" "}
+                </h4>
                 <p>
                   Your personal identification record created during
                   registration to the website is only accessible with the unique
@@ -226,7 +251,9 @@ const Legal = () => {
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Forums</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Forums
+                </h4>
                 <p>
                   Our Web sites may use massive online messaging technology to
                   provide forums, message boards ect. available to its users at
@@ -238,11 +265,13 @@ const Legal = () => {
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Data Security</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Data Security
+                </h4>
                 <p>
                   Despite our efforts, no method of transmission over the
                   internet or electronic storage is 100% secure. Unfortunately,
-                  it's happened to almost all of us where we get the letter
+                  it&apos;s happened to almost all of us where we get the letter
                   saying your information was obtained from a server somewhere.
                   It sucks. We do our best to mitigate the risk of that
                   happening. HEM Automotive implements a variety of security
@@ -254,7 +283,9 @@ const Legal = () => {
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Personal Data access</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Personal Data access
+                </h4>
                 <p>
                   You have the right to request a copy of the personal data HEM
                   Automotive holds about you. There is no charge for a Personal
@@ -267,7 +298,9 @@ const Legal = () => {
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Retention</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Retention
+                </h4>
                 <p>
                   HEM Automotive will hold your data for as long as necessary to
                   provide our services, comply with legal obligations, resolve
@@ -281,7 +314,9 @@ const Legal = () => {
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Updates to This Privacy Policy</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Updates to This Privacy Policy
+                </h4>
                 <p>
                   HEM Automotive reserves the right to update or change this
                   Privacy Policy at any time. We will notify you of any changes
@@ -293,7 +328,9 @@ const Legal = () => {
                 </p>
               </li>
               <li className="pt-8">
-                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">Contact Us</h4>
+                <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                  Contact Us
+                </h4>
                 <p>
                   If you have any questions about this Privacy Policy, please
                   contact us. Within your email please include your name so we
@@ -309,8 +346,8 @@ const Legal = () => {
                 <br />
                 <p className="pb-10">
                   Thank you for choosing HEM Automotive. We are committed to
-                  protecting your privacy and ensuring breakdowns won't break
-                  you down.
+                  protecting your privacy and ensuring breakdowns won&apos;t
+                  break you down.
                 </p>
               </li>
             </ul>

@@ -4,7 +4,7 @@ import List from "./Socials";
 import FacebookIcon from "../../../assets/svgIcons/FacebookIcon.svg?react";
 import YouTubeIcon from "../../../assets/svgIcons/YouTubeIcon.svg?react";
 import TikTokIcon from "../../../assets/svgIcons/TikTokIcon.svg?react";
-import TwitterIcon from"../../../assets/svgIcons/TwitterIcon.svg?react";
+import TwitterIcon from "../../../assets/svgIcons/TwitterIcon.svg?react";
 import InstagramIcon from "../../../assets/svgIcons/InstagramIcon.svg?react";
 import GoogleIcon from "../../../assets/svgIcons/GoogleIcon.svg?react";
 import CarFaxIcon from "../../../assets/svgIcons/CarFaxIcon.svg?react";
@@ -158,7 +158,7 @@ import { Link } from "react-router-dom";
         </div>
         <div className="bg-[#222222] py-2.5 text-[#00ff00] text-center flex justify-center shadow-inner shadow-[#00ff00]">
           <div className="flex justify-between basis-[80rem] max-w-7xl">
-            <div>
+            <div className="h-10">
               <List socials={socials} />
             </div>
             <div>

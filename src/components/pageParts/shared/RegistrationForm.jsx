@@ -1,57 +1,77 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "../../limeGreenAndBlackLogo.svg?react";
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
 import { useState } from "react";
+import { register } from "../../../Backend";
 
-const RegistrationForm = () => {
-  const navigate = useNavigate();
-  const [inputValue, setInputValue] = useState({ email: "", password: "", experience: "" });
-  const { email, password, experience } = inputValue;
-  const handleOnChange = (e) => {
-    const { name, value, experience } = e.target;
-    setInputValue({
-      ...inputValue,
-      [name]: value,
-    });
+function RegistrationForm() {
+
+  const [formValues, setFormValues] = useState({
+    email: "",
+    password:"",
+    confirmPassword:"",
+    error:"",
+    loading:"",
+    success:"",
+  });
+
+  const { email, password, confirmPassword, error, loading, success } = formValues;
+
+  const handleChange = name => event => {
+    setFormValues({ ...formValues, error: false, [name]: event.target.value});
   };
 
-  const handleError = (err) =>
-    toast.error(err, {
-      position: "bottom-center",
-    });
-  const handleSuccess = (msg) =>
-    toast.success(msg, { position: "bottom-center" });
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const { data } = await axios.post(
-        "http://localhost:5000/api/auth/register",
-        {
-          ...inputValue,
-        },
-        { withCredentials: true }
-      );
-      console.log(data);
-      const { success, message } = data;
-      if (success) {
-        handleSuccess(message);
-        setTimeout(() => {
-          navigate("/");
-        }, 1000);
-      } else {
-        handleError(message);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-    setInputValue({
-      ...inputValue,
-      email: "",
-      password: "",
-      experience: "Retail",
-    });
-  };
+  const onSubmit = async event => {
+    event.preventDefault();
+    setFormValues({ ...formValues, success: false, loading: true });
+    if (password !== confirmPassword) {
+      errorMessage("Passwords do not match try again")
+    } else (password === confirmPassword)
+    register({ email, password })
+      .then((data) => {
+        if (data.error) {
+          setFormValues({
+            ...formValues,
+            error: data.error,
+            loading: false,
+            success: false,
+          });
+        } else {
+          setFormValues({ ...formValues, success: true });
+        }
+      })
+      .catch();
+  }
+
+  const errorMessage = () => {
+    return (
+      <div className='error-message' style={{ display: error ? "" : "none", color: "red"}}>{error}</div>
+    )
+  }
+
+const loadingMessage = () => {
+  return (
+    loading && (
+      <div
+        className="loading-message"
+        style={{ display: error ? "" : "none", color: "red" }}
+      >
+        <div className="loading-spinner"></div>
+        <p>Loading...</p>
+      </div>
+    )
+  );
+};
+
+const successMessage = () => {
+  return (
+    success && (
+      <div>
+        <center><p className='login_redirect mt-2'>Account Created!<p>Start your High-End Experience now!</p><Link to="/login">Login</Link></p></center>
+      </div>
+    )
+  )
+}
+
   return (
     <div className="flex min-h-full flex-1 justify-center pb-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-[480px]">
@@ -66,9 +86,12 @@ const RegistrationForm = () => {
             <h2 className="mb-6 text-center text-2xl text-stroke text-stroke-black text-stroke-fill-[#00ff00] tracking-widest  font-Bungee">
               Register
             </h2>
+            {errorMessage()}
+            {loadingMessage()}
+            {successMessage()}
           </div>
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-6">
             <div>
               <label
                 htmlFor="email"
@@ -85,8 +108,7 @@ const RegistrationForm = () => {
                   autoComplete="email"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-black shadow-md shadow-black ring-1 ring-inset ring-black placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-[#00ff00] sm:text-sm sm:leading-6 bg-[#aaaaaa]"
-                  onChange={handleOnChange}
-                  value={email}
+                  onChange={handleChange("email")}
                 />
               </div>
             </div>
@@ -103,34 +125,40 @@ const RegistrationForm = () => {
                     id="password"
                     name="password"
                     type="password"
-                    value={password}
                     required
                     placeholder="••••••••••"
                     className="block w-full rounded-md border-0 py-1.5 text-black shadow-md shadow-black ring-1 ring-inset ring-black focus:ring-[#00ff00] placeholder:text-black focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-[#aaaaaa]"
                     minLength="6"
-                    onChange={handleOnChange}
+                    maxLength="100"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,100}$"
+                    onChange={handleChange("password")}
                   />
                 </div>
               </div>
 
               <div>
                 <label
-                  htmlFor="password1"
+                  htmlFor="confirmPassword"
                   className="block text-base font-medium leading-6 text-white font-Urbanist tracking-wide text-left"
                 >
                   Re-enter your password:
                 </label>
                 <div className="mt-2">
                   <input
-                    id="password1"
-                    name="password1"
+                    id="confirmPassword"
+                    name="confirmPassword"
                     type="password"
-                    value={password1}
                     required
                     placeholder="••••••••••"
                     className="block w-full rounded-md border-0 py-1.5 text-black shadow-md shadow-black ring-1 ring-inset ring-black focus:ring-[#00ff00] placeholder:text-black focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-[#aaaaaa]"
                     minLength="6"
-                    onChange={handleOnChange}
+                    maxLength="100"
+                    pattern={password}
+                    onChange={handleChange("confirmPassword")}
+                    onPaste={(e) => {
+                      e.preventDefault();
+                      false;
+                    }}
                   />
                 </div>
               </div>
@@ -150,10 +178,10 @@ const RegistrationForm = () => {
                 <input
                   type="radio"
                   id="Retail"
-                  defaultChecked
-                  name="Experience"
+                  name="customerCategory"
                   value="Retail"
                   className="focus:ring-black focus:ring-inset-0 focus:ring-0 text-black shadow-md shadow-black outline focus:outline-black focus:border focus:border-black"
+                  defaultChecked
                 />
                 <label
                   htmlFor="Retail"
@@ -166,7 +194,7 @@ const RegistrationForm = () => {
                 <input
                   type="radio"
                   id="Dealership"
-                  name="Experience"
+                  name="customerCategory"
                   value="Dealership"
                   className="focus:ring-black focus:ring-inset-0 focus:ring-0 text-black shadow-md shadow-black outline focus:outline-black focus:border focus:border-black"
                 />
@@ -181,7 +209,7 @@ const RegistrationForm = () => {
                 <input
                   type="radio"
                   id="Fleet"
-                  name="Experience"
+                  name="customerCategory"
                   value="Fleet"
                   className="focus:ring-black focus:ring-inset-0 focus:ring-0 text-black shadow-md shadow-black outline focus:outline-black focus:border focus:border-black"
                 />
@@ -196,7 +224,7 @@ const RegistrationForm = () => {
                 <input
                   type="radio"
                   id="Other"
-                  name="Experience"
+                  name="customerCategory"
                   value="Other"
                   className="focus:ring-black focus:ring-inset-0 focus:ring-0 text-black shadow-md shadow-black outline focus:outline-black focus:border focus:border-black"
                 />
@@ -214,6 +242,7 @@ const RegistrationForm = () => {
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-[#00ff00] px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-md hover:bg-[#00dd00] focus-visible:outline shadow-black hover:shadow-inner hover:shadow-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white font-Play"
+                onClick={onSubmit}
               >
                 Register for a High-End Mechanics Experience
               </button>
@@ -258,7 +287,7 @@ const RegistrationForm = () => {
           <p className="mt-10 text-center text-sm text-[#aaaaaa] font-Urbanist tracking-wider flex justify-center align-text-center">
             Already have an account?{" "}
             <Link
-              to={"/user/login"}
+              to={"/login"}
               className="font-semibold text-[#00ff00] hover:text-[#00dd00]"
             >
               <span>
@@ -267,7 +296,6 @@ const RegistrationForm = () => {
             </Link>
           </p>
         </div>
-        <ToastContainer />
       </div>
     </div>
   );

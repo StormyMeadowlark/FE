@@ -1,15 +1,10 @@
 import CornerHexagons from "../components/CornerHexagons.svg?react";
 import RegistrationForm from "../components/pageParts/shared/RegistrationForm";
-import MobileNavigation from "../components/pageParts/shared/MobileNavigation.jsx";
-
 import Engine from "../assets/images/Engine.jpg?react";
 
 export default function Register() {
   return (
     <div className="">
-      <div className="sticky inset-y-0 inset-x-0 z-50 bg-black/50 font-Play">
-        <MobileNavigation />
-      </div>
       <div className="relative isolate overflow-hidden pt-60 h-[100vh]">
         <img
           src={Engine}

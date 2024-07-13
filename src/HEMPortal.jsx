@@ -1,23 +1,19 @@
-import NavBar from "./components/NavBar.jsx";
-import Footer from "./components/pageParts/shared/Footer.jsx";
-import { Outlet } from "react-router-dom";
-import Header from "./components/pageParts/shared/Header.jsx";
-import MobileNavigation from "./components/pageParts/shared/MobileNavigation.jsx";
+import { Route, Routes } from "react-router-dom";
+import Login  from "./pages/Login";
+import User from "./pages/User";
+import Register from "./pages/Register";
 
-const HEMPortal = () => {
+function HEMPortal() {
   return (
-    <div>
-      <div className="sticky inset-y-0 inset-x-0 z-50 bg-black/50 font-Play">
-        <MobileNavigation />
-      </div>
-      <div>
-        <Outlet />
-      </div>
-      <div>
-        <Footer />
-      </div>
+    <div className="">
+      <Routes>
+        <Route path="/user" element={<User />} />
+        <Route path="/user/login" element={<Login />} />
+        <Route path="/user/register" element={<Register />} />
+      </Routes>
     </div>
   );
-};
+}
+
 
 export default HEMPortal;

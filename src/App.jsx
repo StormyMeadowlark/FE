@@ -1,7 +1,6 @@
-import NavBar from './components/NavBar.jsx';
+
 import Footer from './components/pageParts/shared/Footer.jsx';
 import { Outlet } from 'react-router-dom';
-import Header from './components/pageParts/shared/Header.jsx';
 import MobileNavigation from './components/pageParts/shared/MobileNavigation.jsx';
 
 

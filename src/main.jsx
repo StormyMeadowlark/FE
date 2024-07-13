@@ -9,6 +9,9 @@ import Services from "./pages/Services.jsx";
 import AutoSchool from "./pages/AutoSchool.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Contact from "./pages/Contact.jsx";
+import VIN from "./components/pageParts/Contact/VIN.jsx"
+import YMM from "./components/pageParts/Contact/YMM.jsx";
+import LPN from "./components/pageParts/Contact/LPN.jsx";
 import ErrorPage from "./pages/Error.jsx";
 import Home from "./pages/Home.jsx";
 import Experience from "./pages/Experience.jsx";
@@ -16,7 +19,9 @@ import Makes from "./pages/Makes.jsx";
 import Legal from "./pages/Legal.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
-import User from "./pages/User.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+
+
 
 
 const router = createBrowserRouter([
@@ -50,7 +55,21 @@ const router = createBrowserRouter([
       },
       {
         path: "contact",
-        element: <ErrorPage />,
+        element: <Contact />,
+        children: [
+          {
+            path: "contact",
+            element: <VIN />,
+          },
+          {
+            path: "contact",
+            element: <YMM />,
+          },
+          {
+            path: "contact",
+            element: <LPN />,
+          },
+        ],
       },
       {
         path: "auto-school",
@@ -74,20 +93,19 @@ const router = createBrowserRouter([
         path: "legal",
         element: <Legal />,
       },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
     ],
-  },
-  {
-    path: "user",
-    element: <User />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "user/register",
-     element: <Register />,
-  },
-  {
-    path: "user/login",
-    element: <Login />,
   },
 ]);
 

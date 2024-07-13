@@ -1,57 +1,64 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Logo from "../components/limeGreenAndBlackLogo.svg?react";
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
 import { useState } from "react";
+import { login, authenticate} from "../Backend"
 
 
-const SignInForm = () => {
-  const navigate = useNavigate();
-  const [inputValue, setInputValue] = useState({email: "", password: "",})
-  const { email, password } = inputValue;
-  const handleOnChange = (e) => {
-    const {name, value} = e.target;
-    setInputValue({
-      ...inputValue,
-      [name]: value
-    })
-  }
 
-const handleError = (err) => toast.error(err, {
-  position: "bottom-center"
-});
-const handleSuccess = (msg) => 
-  toast.success(msg, 
-    {position:"bottom-center"})
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const { data } = await axios.post("http://localhost:5000/api/auth/login",
-      {
-        ...inputValue
-      },
-      { withCredentials: true }
-    );
-    console.log(data)
-    const { success, message } = data
-    if (success) {
-      handleSuccess(message);
-      setTimeout(() =>{
-        navigate("/");
-      }, 1000)
-    } else {
-      handleError(message);
-    }
-  } catch (error) {
-    console.log(error);
-  }
-  setInputValue({
-    ...inputValue,
+export function SignInForm() {
+
+  const [values, setValues] = useState({
     email: "",
     password: "",
-  })
-}
+    error: "",
+    loading: false,
+    success: false,
+  });
+
+  const { email, password, error, loading, success} = values;
+
+  const handleChange = name => event => {
+    setValues({ ...values, error: false, [name]: event.target.value });
+  }
+
+  const onSubmit = async event => {
+    event.preventDefault();
+    setValues({ ...values, success: false, loading: true });
+    login({ email, password })
+      .then(data => {
+        if (data.error) {
+          setValues({ ...values, error: data.error, loading: false, success: false })
+        } else {
+          authenticate(data, () => {
+            setValues({ ...values, success: true });
+          })
+        }
+      })
+      .catch();
+  }
+  const errorMessage = () => {
+    return (<div className="error-message" style={{ display: error ? "" : "none", color: "red" }}>
+    {error}
+    </div>)
+  }
+
+  const loadingMessage = () => {
+    return (
+      loading && (
+        <div className="loading-message" style={{ display: error ? "" : "none", color: "red" }}>
+          <div className="loading-spinner"></div>
+          <p>Leading...</p>
+        </div>
+        
+      )
+    )
+  }
+
+
+
+
   return (
+    success ? <Navigate to="/dashboard" /> :
     <div className="flex min-h-full flex-1 flex-col justify-center pb-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-[480px]">
         <div className="bg-[#333333] px-6 py-12 shadow-[#00ff00] shadow-md sm:rounded-lg sm:px-12 ring-black ring-inset ring-2">
@@ -65,9 +72,11 @@ const handleSubmit = async (e) => {
             <h2 className="mb-6 text-center text-2xl text-stroke text-stroke-black text-stroke-fill-[#00ff00] tracking-widest  font-Bungee">
               Sign into your account
             </h2>
+            {loadingMessage()}
+            {errorMessage()}
           </div>
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-6">
             <div>
               <label
                 htmlFor="email"
@@ -84,8 +93,8 @@ const handleSubmit = async (e) => {
                   autoComplete="email"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-black shadow-md shadow-black ring-1 ring-inset ring-black focus:ring-[#00ff00] placeholder:text-black focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-[#aaaaaa] active:bg-[#aaaaaa]"
-                  onChange={handleOnChange}
                   value={email}
+                  onChange={handleChange("email")}
                 />
               </div>
             </div>
@@ -102,13 +111,13 @@ const handleSubmit = async (e) => {
                   id="password"
                   name="password"
                   type="password"
-                  value={password}
                   autoComplete="current-password"
                   required
                   placeholder="••••••••••"
                   className="block w-full rounded-md border-0 py-1.5 text-black shadow-md shadow-black ring-1 ring-inset ring-black focus:ring-[#00ff00] placeholder:text-black focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-[#aaaaaa]"
                   minLength="6"
-                  onChange={handleOnChange}
+                  value={password}
+                  onChange={handleChange("password")}
                 />
               </div>
             </div>
@@ -140,12 +149,12 @@ const handleSubmit = async (e) => {
             </div>
 
             <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-[#00ff00] px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-md hover:bg-[#00dd00] focus-visible:outline shadow-black hover:shadow-inner hover:shadow-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white font-Play"
-              >
-                Sign in
-              </button>
+                <button
+                  className="flex w-full justify-center rounded-md bg-[#00ff00] px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-md hover:bg-[#00dd00] focus-visible:outline shadow-black hover:shadow-inner hover:shadow-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white font-Play"
+                  onClick={onSubmit}
+                >
+                  Log-in
+                </button>
             </div>
           </form>
 
@@ -187,7 +196,7 @@ const handleSubmit = async (e) => {
           <p className="mt-10 text-center text-sm text-[#aaaaaa] font-Urbanist tracking-wider flex justify-center align-text-center">
             Not a member?{" "}
             <Link
-              to={"/user/register"}
+              to={"/register"}
               className="font-semibold leading-6 text-[#00ff00] hover:text-[#00dd00]"
             >
               <span>
@@ -196,7 +205,6 @@ const handleSubmit = async (e) => {
             </Link>
           </p>
         </div>
-        <ToastContainer />
       </div>
     </div>
   );

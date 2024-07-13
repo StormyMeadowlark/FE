@@ -14,7 +14,7 @@ function QuickLinks() {
     const PaymentAfterHover = PaymentAfter();
     return(
         <div className='hidden lg:flex lg:flex-1 lg:justify-end '>
-                <NavLink {...UserHoveringProps} to='/user/login' className='p-2 focus:outline focus:outline-[#00FF00]'>
+                <NavLink {...UserHoveringProps} to='/login' className='p-2 focus:outline focus:outline-[#00FF00]'>
                     <span className='sr-only'>Log-In or Create Account</span>
                     {UserHovering ? UserAfterHover : UserBeforeHover}
                 </NavLink>
@@ -72,7 +72,7 @@ export default QuickLinks;
 function MobileQuickLinks() {
     return(
         <div className='py-6 flex'>
-            <NavLink to='user/login' className='block rounded-lg px-4 py-4 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
+            <NavLink to='/login' className='block rounded-lg px-4 py-4 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
                 <span className='sr-only'>Log-in or create account</span>
                 <UserIcon className='h-7 w-7 hover:fill-[#00FF00]' aria-hidden='true' stroke='#00FF00' />
             </NavLink>
