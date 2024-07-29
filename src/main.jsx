@@ -5,21 +5,14 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import About from "./pages/About.jsx";
-import Services from "./pages/Services.jsx";
-import AutoSchool from "./pages/AutoSchool.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Contact from "./pages/Contact.jsx";
-import VIN from "./components/pageParts/Contact/VIN.jsx"
-import YMM from "./components/pageParts/Contact/YMM.jsx";
-import LPN from "./components/pageParts/Contact/LPN.jsx";
 import ErrorPage from "./pages/Error.jsx";
 import Home from "./pages/Home.jsx";
 import Experience from "./pages/Experience.jsx";
-import Makes from "./pages/Makes.jsx";
 import Legal from "./pages/Legal.jsx";
-import Login from "./pages/Login.jsx";
-import Register from "./pages/Register.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
+import Services from "./pages/Services.jsx";
+
 
 
 
@@ -51,25 +44,11 @@ const router = createBrowserRouter([
       },
       {
         path: "about",
-        element: <ErrorPage />,
+        element: <About />,
       },
       {
         path: "contact",
         element: <Contact />,
-        children: [
-          {
-            path: "contact",
-            element: <VIN />,
-          },
-          {
-            path: "contact",
-            element: <YMM />,
-          },
-          {
-            path: "contact",
-            element: <LPN />,
-          },
-        ],
       },
       {
         path: "auto-school",
@@ -95,15 +74,15 @@ const router = createBrowserRouter([
       },
       {
         path: "login",
-        element: <Login />,
+        element: <ErrorPage />,
       },
       {
         path: "register",
-        element: <Register />,
+        element: <ErrorPage />,
       },
       {
         path: "dashboard",
-        element: <Dashboard />,
+        element: <ErrorPage />,
       },
     ],
   },

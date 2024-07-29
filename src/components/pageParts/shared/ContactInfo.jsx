@@ -16,34 +16,47 @@ function ContactInfo() {
   const [SocialsHovering, SocialsHoveringProps] = useHover();
   const SocialsBeforeHovering =  SocialsBefore();
   const SocialsAfterHovering = SocialsAfter();
-    return(
-        <div className='flex gap-x-6 pb-8 -mt-10 justify-center text-[#eeeeee]'>
-            <button {...PhoneNumberHoveringProps} className='hidden lg:flex lg:items-center'>
-              {PhoneNumberHovering ? PhoneNumberAfterHovering : PhoneNumberBeforeHovering}
-              <address className='text-center'>
-                <span className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]'>785.730.2900</span>
-              </address>
-            </button>
-            <button {...HoursHoveringProps} className='hidden lg:flex lg:items-center'>
-                {HoursHovering ? HoursAfterHovering : HoursBeforeHovering}
-                <address className='text-center'>
-                  <span className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]'>Monday - Friday<br />8:00 am - 4:00 pm </span>
-                </address>
-            </button>
-            <button {...LocationHoveringProps} className='hidden lg:flex lg:items-center'>
-                {LocationHovering ? LocationAfterHovering : LocationBeforeHovering}
-                <address className='text-center'>
-                  <span className='not-italic text-[12px] focus:outline focus:outline-[#00FF00]'>315 SW 32nd Terrace<br />Topeka, KS 66611</span>
-                </address>
-            </button>
-            <button {...SocialsHoveringProps} className='hidden lg:flex text-center lg:items-center'>
-                {SocialsHovering ? SocialsAfterHovering : SocialsBeforeHovering}
-                <div className='text-[12px] focus:outline focus:outline-[#00FF00]'>
-                  Socials
-                </div>
-            </button>
-        </div>
-    )
+    return (
+      <div className="flex gap-x-6 pb-8 -mt-10 md:pt-6 justify-center text-[#eeeeee]">
+        <button
+          {...PhoneNumberHoveringProps}
+          className="hidden lg:flex lg:items-center focus-visible:outline-none"
+        >
+          {PhoneNumberHovering
+            ? PhoneNumberAfterHovering
+            : PhoneNumberBeforeHovering}
+          <address className="text-center">
+            <span className="not-italic text-[12px]">785.730.2900</span>
+          </address>
+        </button>
+        <button
+          {...HoursHoveringProps}
+          className="hidden lg:flex lg:items-center focus-visible:outline-none"
+        >
+          {HoursHovering ? HoursAfterHovering : HoursBeforeHovering}
+          <address className="text-center">
+            <span className="not-italic text-[12px] focus:outline focus:outline-[#00FF00]">
+              Monday - Friday
+              <br />
+              8:00 am - 4:00 pm{" "}
+            </span>
+          </address>
+        </button>
+        <button
+          {...LocationHoveringProps}
+          className="hidden lg:flex lg:items-center focus-visible:outline-none"
+        >
+          {LocationHovering ? LocationAfterHovering : LocationBeforeHovering}
+          <address className="text-balance">
+            <span className="not-italic text-[12px] focus:outline focus:outline-[#00FF00]">
+              315 SW 32nd Terrace
+              <br />
+              Topeka, KS 66611
+            </span>
+          </address>
+        </button>
+      </div>
+    );
 }
 
 

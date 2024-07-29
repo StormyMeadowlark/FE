@@ -16,7 +16,7 @@ export default function Hero() {
         </div>
         <div className="mx-auto max-w-6xl py-20">
           <div className="text-center">
-            <h2 className=" text-stroke text-stroke-fill-[#00ff00] text-stroke-[#333333] px-8 md:px-4 lg:px-0 text-3xl md:text-5xl lg:text-7xl uppercase font-Bungee font-black">
+            <h2 className=" text-stroke text-[#00ff00] text-stroke-[#333333] px-8 md:px-4 lg:px-0 text-3xl md:text-5xl lg:text-7xl uppercase font-Bungee">
               SERVICES
             </h2>
           </div>

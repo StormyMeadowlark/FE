@@ -7,9 +7,10 @@ import ContactInfo from "./ContactInfo";
 import MobileContactInfo from "./MobileContactInfo";
 import { Link } from "react-router-dom";
 const navigation = [
-  { name: "SERVICE", href: "services" },
+  { name: "SERVICES", href: "services" },
   { name: "FAQ", href: "faq" },
   { name: "ABOUT", href: "about" },
+  { name: "CAREERS", href: "careers"},
   { name: "CONTACT", href: "contact" },
   { name: "AUTO SCHOOL", href: "autoSchool" },
 ];
@@ -18,15 +19,12 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="flex absolute top-0 inset-x-0 z-50 bg-black/50 font-Play text-white align-middle justify-around">
-      <div className="lg:w-[60vw] w-[80vw]">
-        <nav
-          className="flex flex-1 items-center p-6 lg:mx-10 "
-          aria-label="Global"
-        >
+    <header className="flex absolute top-0 inset-x-0 z-50 bg-black/50 font-Play text-white align-middle justify-evenly">
+      <div className="w-[80vw] justify-items-center">
+        <nav className="flex flex-1 items-center p-6" aria-label="Global">
           <div className="flex flex-1 justify-between">
-            <div className="flex lg:flex-1">
-              <Link to="/" className="-m-1.5">
+            <div className="transition-transform duration-300 ease-in-out transform hover:scale-105">
+              <Link to="/" className="focus-visible:outline-none">
                 <span className="sr-only">H.E.M Automotive</span>
                 <Logo
                   className="h-40 w-auto"
@@ -46,18 +44,18 @@ export default function Example() {
               </button>
             </div>
           </div>
-          <div>
+          <div className="flex flex-1 flex-col justify-evenly">
             <ContactInfo className="hidden lg:flex" />
-            <div className="hidden lg:flex lg:gap-x-12 lg:justify-center">
+            <div className="hidden lg:flex lg:gap-x-2 lg:justify-center">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-sm font-semibold leading-6"
+                  className="text-sm font-semibold hover:text-[#00ff00] transition-colors focus-visible:outline-none p-2 text-nowrap"
                 >
                   {item.name}
                 </Link>
-              ))}
+              ))} 
             </div>
           </div>
           <QuickLinks className="lg:hidden" />

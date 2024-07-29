@@ -12,22 +12,34 @@ function QuickLinks() {
     const UserAfterHover = UserAfter();
     const AppointmentAfterHover = AppointmentAfter();
     const PaymentAfterHover = PaymentAfter();
-    return(
-        <div className='hidden lg:flex lg:flex-1 lg:justify-end '>
-                <NavLink {...UserHoveringProps} to='/login' className='p-2 focus:outline focus:outline-[#00FF00]'>
-                    <span className='sr-only'>Log-In or Create Account</span>
-                    {UserHovering ? UserAfterHover : UserBeforeHover}
-                </NavLink>
-                <NavLink {...AppointmentHoveringProps} to='schedule' className='p-2 focus:outline focus:outline-[#00FF00]'>
-                    <span className='sr-only'>Schedule an Appointment</span>
-                    {AppointmentHovering ? AppointmentAfterHover : AppointmentBeforeHover}
-                </NavLink>
-                <NavLink {...PaymentHoveringProps} to='payment' className='p-2 focus:outline focus:outline-[#00FF00]'>
-                    <span className='sr-only'>Online Payments</span>
-                    {PaymentHovering ? PaymentAfterHover : PaymentBeforeHover}
-                </NavLink>
-        </div>
-    )
+    return (
+      <div className="hidden lg:flex lg:flex-1 lg:justify-center">
+        <NavLink
+          {...UserHoveringProps}
+          to="/login"
+          className="p-2 focus-visible:outline-none"
+        >
+          <span className="sr-only">Log-In or Create Account</span>
+          {UserHovering ? UserAfterHover : UserBeforeHover}
+        </NavLink>
+        <NavLink
+          {...AppointmentHoveringProps}
+          to="schedule"
+          className="p-2 focus:outline focus-visible:outline-none"
+        >
+          <span className="sr-only">Schedule an Appointment</span>
+          {AppointmentHovering ? AppointmentAfterHover : AppointmentBeforeHover}
+        </NavLink>
+        <NavLink
+          {...PaymentHoveringProps}
+          to="payment"
+          className="p-2 focus-visible:outline-none"
+        >
+          <span className="sr-only">Online Payments</span>
+          {PaymentHovering ? PaymentAfterHover : PaymentBeforeHover}
+        </NavLink>
+      </div>
+    );
 }
 
 function UserBefore() {

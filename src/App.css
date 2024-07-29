@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Urbanist:wght@400;700&family=Road+Rage&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -63,3 +64,40 @@
   input[type=""] {
     font-family: Urbanist;
   }
+
+  /* Hide focus outline on mouse click, but show it for keyboard navigation */
+.focus-visible\:outline-none:focus:not(:focus-visible) {
+  outline: none; /* Remove outline on mouse click */
+}
+
+.focus-visible\:outline-none:focus-visible {
+  outline: 2px solid #00ff00 !important; /* Show custom focus outline for keyboard navigation */
+}
+
+/* Pseudo-element for the top and bottom outlines */
+.nav-link::before,
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 2px; /* Outline thickness */
+  background-color: blue; /* Outline color */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Top outline */
+.nav-link::before {
+  top: 0;
+}
+
+/* Bottom outline */
+.nav-link::after {
+  bottom: 0;
+}
+
+/* Show the outlines smoothly from left to right on hover */
+.nav-link:hover::before,
+.nav-link:hover::after {
+  left: 0;
+}
