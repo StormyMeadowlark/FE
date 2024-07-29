@@ -2,38 +2,32 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useSpring, animated } from "react-spring";
 import Engine from "../assets/images/Car.jpg"; // Ensure this path is correct
+import Holder from "../assets/images/default-user.jpg"
 
 const crewMembers = [
   {
     name: "Shawn - Service Advisor",
-    description:
-      "With over 10 years of experience in the automotive industry, Shawn ensures that all customer inquiries are handled with exceptional care and professionalism.",
-    favorite:
-      "Shawn loves the challenge of diagnosing complex car issues and ensuring customer satisfaction with every visit.",
-    imageUrl: "/images/shawn.jpg", // Ensure these images are correctly referenced
+    description: "",
+    favorite: "",
+    imageUrl: Holder, // Ensure these images are correctly referenced
   },
   {
     name: "Charles - Lead Technician",
-    description:
-      "Charles, known affectionately as 'Chuckie,' has been with HEM Automotive for over 15 years. His expertise lies in European luxury vehicles.",
-    favorite:
-      "He enjoys tweaking engine performance to squeeze out every bit of power while ensuring the cars run smoothly.",
-    imageUrl: "/images/charles.jpg",
+    description: "",
+    favorite: "",
+    imageUrl: Holder,
   },
   {
-    name: "Shane - Diagnostic Specialist",
-    description:
-      "Shane's ability to quickly identify and solve complex electronic issues is unparalleled.",
-    favorite:
-      "Shane loves the satisfaction that comes from solving problems that others find too challenging.",
-    imageUrl: "/images/shane.jpg",
+    name: "Richard - ",
+    description: "",
+    favorite: "",
+    imageUrl: Holder,
   },
   {
-    name: "Richard - Hybrid Systems Expert",
-    description: "Richard specializes in hybrid and electric vehicles.",
-    favorite:
-      "Richard takes pride in contributing to environmental sustainability through his work.",
-    imageUrl: "/images/richard.jpg",
+    name: "Shane - ",
+    description: "",
+    favorite: "",
+    imageUrl: Holder,
   },
 ];
 
@@ -51,7 +45,7 @@ const About = () => {
   });
 
   return (
-    <div className="bg-hemBlack text-white">
+    <div className="bg-HEMgray text-white">
       <Helmet>
         <title>
           About Us - Quality Automotive Services in Topeka | HEM Automotive
@@ -81,9 +75,6 @@ const About = () => {
               >
                 About HEM Automotive
               </animated.h1>
-              <p className="text-xl text-HEMgray font-bold tracking-wider">
-                Breakdowns won't break you down.
-              </p>
             </div>
           </div>
         </div>
@@ -91,41 +82,96 @@ const About = () => {
 
       <main className="max-w-7xl mx-auto p-5 font-urbanist">
         <animated.section style={fadeIn} className="mt-4">
-          <h2 className="text-2xl font-semibold">Who We Are</h2>
+          <h2 className="text-3xl font-semibold">Who We Are</h2>
           <p>
-            At HEM Automotive, we pride ourselves on delivering the high-end
-            experience for our valued customers and their vehicles.
+            HEM Automotive is a distinguished automotive repair and maintenance
+            shop committed to providing top-tier service with a unique blend of
+            professionalism and approachability. Our facility, equipped to
+            handle a broad range of automotive challenges, ensures reliable and
+            efficient service. While our expertise covers a wide spectrum of
+            vehicle types, our offerings include services that cater to the
+            intricate needs associated with general maintenance and advanced
+            diagnostics, which owners of high-end vehicles might find
+            particularly beneficial. Our workshop, functional and well-suited
+            for quality service, utilizes the latest automotive technologies and
+            repair techniques. We are also enhancing our customer experience
+            through the integration of digital solutions and improved
+            communication channels. At HEM Automotive, we strive to make every
+            interaction with our clients smooth and pleasant, delivering a
+            service experience that is approachable, professional, and engaging,
+            making automotive care accessible and less intimidating for all our
+            customers.
           </p>
         </animated.section>
 
         <animated.section style={fadeIn} className="mt-4">
-          <h2 className="text-2xl font-semibold">Our Mission</h2>
+          <h2 className="text-3xl font-semibold">Our Mission</h2>
           <p>
-            Our mission is to provide quality and convenient automotive repair
-            and maintenance.
+            HEM Automotive&apos;s mission is to provide top-notch automotive services
+            that exceed customer expectations. The focus is on keeping vehicles
+            in optimal condition using advanced diagnostic tools, cutting-edge
+            technology, and expert technicians. At HEM Automotive, the goal is
+            to ensure that breakdowns don&apos;t break you down, emphasizing
+            reliability, precision, and high-quality service to all customers.
           </p>
         </animated.section>
 
         <animated.section style={fadeIn} className="mt-4">
-          <h2 className="text-2xl font-semibold">Our Values</h2>
+          <h2 className="text-3xl font-semibold">Our Values</h2>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              <strong>Quality:</strong> Using top-tier equipment and highly
-              knowledgeable technicians.
+              <strong>Commitment to Quality At HEM Automotive</strong>
+              <br />
+              We&apos;re committed to quality in every aspect of our business.
+              From the parts we use to the hands that do the work, we ensure
+              that every detail is handled with care. We stand behind our work
+              with comprehensive warranties and our dedication to customer
+              satisfaction is unwavering. At HEM Automotive, we don&apos;t just
+              fix cars—we ensure they perform as beautifully as the day they
+              rolled off the showroom floor. Whether you need routine
+              maintenance or emergency repairs HEM Automotive are your local
+              high end mechanics making sure breakdowns don&apos;t break you
+              down. trusted partner for all your automotive needs.
             </li>
             <li>
-              <strong>Convenience:</strong> Flexible scheduling and efficient
-              services.
+              <strong>Your Convenience is Our Priority</strong>
+              <br />
+              We ensure our automotive services integrate seamlessly into your
+              busy lifestyle. Schedule appointments with ease via phone or in
+              person, choosing times that best suit your schedule, whether
+              it&apos;s early mornings or late evenings. We offer efficient
+              same-day services for most repairs, utilizing the latest
+              technology to ensure quick and accurate results. Our commitment to
+              excellent customer service includes providing timely updates
+              through your preferred communication method—email or direct calls.
+              For added convenience, take advantage of our vehicle pick-up and
+              drop-off options. While your car is serviced, relax in our
+              comfortable waiting area, where we offer complimentary beverages
+              to make your wait more enjoyable. At HEM Automotive, we make
+              managing your vehicle&apos;s maintenance effortless and
+              stress-free.
             </li>
             <li>
-              <strong>Innovation:</strong> Advanced technology and diagnostic
-              tools.
+              <strong>Dedicated to Innovation</strong>
+              <br />
+              We are continuously adapting and integrating effective
+              technologies and methods to enhance our repair and maintenance
+              capabilities. Our workshop is well-equipped, allowing us to
+              efficiently handle complex automotive challenges. We ensure our
+              technicians are trained with the latest automotive technologies
+              and repair techniques for precise diagnostics and reliable
+              repairs. Plans are underway to integrate digital solutions like an
+              online booking system and enhanced communication channels to
+              improve customer experience. At HEM Automotive, we strive to
+              combine practical technology with exceptional service, providing
+              superior automotive care and ensuring that every vehicle receives
+              the best possible attention.
             </li>
           </ul>
         </animated.section>
 
         <animated.section style={fadeIn} className="mt-4">
-          <h2 className="text-2xl font-semibold">Our Crew</h2>
+          <h2 className="text-4xl font-semibold text-center">Our Crew</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {crewMembers.map((member, idx) => (
               <animated.div key={idx} style={index === idx ? fadeIn : {}}>

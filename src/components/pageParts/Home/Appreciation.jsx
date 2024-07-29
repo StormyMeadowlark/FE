@@ -27,7 +27,7 @@ const AppreciationComponent = () => {
         <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-Bungee text-HEMgreen mb-10">
           We Truly Appreciate You!
         </h2>
-        <p className="text-center text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] mb-10">
+        <p className="text-center text-lg md:text-xl lg:text-2xl font-Urbanist text-[rgb(204,204,204)] mb-10">
           In 2022, thanks to your support, we were proud finalists for the Best
           of the Best Auto Repair in Topeka, KS. Let's aim for the top spot in
           2025! Keep being awesome and help us achieve that goal by leaving a

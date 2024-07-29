@@ -12,6 +12,8 @@ import Home from "./pages/Home.jsx";
 import Experience from "./pages/Experience.jsx";
 import Legal from "./pages/Legal.jsx";
 import Services from "./pages/Services.jsx";
+import Careers from "./pages/Careers.jsx";
+
 
 
 
@@ -49,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "careers",
+        element: <Careers />,
       },
       {
         path: "auto-school",
