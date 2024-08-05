@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import generateYearRange from "../utils/yearRange";
+import HemAutomotiveFooterMap from "../components/pageParts/shared/footermap";
 import HemAutomotiveMap from "../components/pageParts/Contact/map";
 
 
@@ -325,11 +326,6 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-
-
-
-
-
               </div>
               <div className="w-full lg:w-1/2 px-4">
                 <h3 className="text-[#00ff00] text-3xl md:text-5xl lg:text-5xl uppercase font-Bungee pt-10">
@@ -662,7 +658,9 @@ const Contact = () => {
                 </form>
               </div>
             </div>
-            <HemAutomotiveMap />
+            <div className="flex flex-1 justify-center">
+              <HemAutomotiveMap />
+            </div>
           </div>
         </div>
       </div>
