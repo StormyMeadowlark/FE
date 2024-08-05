@@ -1,6 +1,6 @@
 import axios from "axios";
 import "react";
-
+const apiUrl = {REACT_APP_API_URL};
 //USER AND AUTH ROUTES
 
 //LOGIN
@@ -8,7 +8,7 @@ export const login = (user) => {
   // API call to sign in a user
   return axios
     .post(
-      "http://localhost:2015/api/v1/auth/login",
+      `${apiUrl}/api/v1/auth/login`,
       JSON.stringify(user),
       {
         headers: {
@@ -30,7 +30,7 @@ export const register = (user) => {
   // API call to sign up a user
   return axios
     .post(
-      "http://localhost:2015/api/v1/auth/register",
+      `${apiUrl}/api/v1/auth/register`,
       JSON.stringify(user),
       {
         headers: {
@@ -64,7 +64,7 @@ export const logout = (next) => {
     localStorage.removeItem("jwt");
 
     axios
-      .get("http://localhost:2015/api/v1/auth/logout")
+      .get(`${apiUrl}/api/v1/auth/logout`)
       .then((response) => {
         console.log(response.data);
         next();
@@ -129,7 +129,7 @@ export const decodeVin = async (vin) => {
 
 export const sendEmail = async (emailData) => {
   try {
-    const response = await axios.post("/api/send-email", emailData);
+    const response = await axios.post(`${apiUrl}/api/send-email`, emailData);
     return response.data;
   } catch (error) {
     throw new Error("Error sending email:", error);

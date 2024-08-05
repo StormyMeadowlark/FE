@@ -12,6 +12,7 @@ const center = {
   lng: -95.685265,
 };
 
+
 const HemAutomotiveMap = () => {
   
       const [apiKey, setApiKey] = useState("");
@@ -19,7 +20,7 @@ const HemAutomotiveMap = () => {
   useEffect(() => {
     console.log(apiKey);
     // Fetch the API key from the backend
-    fetch("/api/v1/key/footer-map")
+    fetch(`https://my-garage-ed2e46b8c87b.herokuapp.com/api/v1/key/footer-map`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -33,7 +34,7 @@ const HemAutomotiveMap = () => {
       .then((data) => setApiKey(data.apiKey))
       .catch((error) => console.error("Error fetching API key:", error));
       
-  }, []);
+  });
 
 
   return (

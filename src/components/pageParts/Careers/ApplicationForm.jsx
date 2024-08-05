@@ -1,6 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import Engine from "../../../assets/images/Car.jpg"
+import  "dotenv";
+
+
 
 const ApplicationForm = () => {
   const [formData, setFormData] = useState({
@@ -12,17 +15,21 @@ const ApplicationForm = () => {
     expectedPay: "",
     education: "",
     jobHistory: "",
-    labels: "",
   });
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
+    
     e.preventDefault();
     try {
-      await axios.post("http://localhost:2015/api/v1/application/submit-application", formData);
+      await axios.post(
+        `https://my-garage-ed2e46b8c87b.herokuapp.com/api/v1/application/submit-application`,
+        formData
+      );
       alert("Application submitted successfully!");
     } catch (error) {
       console.error(error);

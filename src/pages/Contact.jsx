@@ -3,6 +3,7 @@ import axios from "axios";
 import generateYearRange from "../utils/yearRange";
 import HemAutomotiveMap from "../components/pageParts/Contact/map";
 
+
 import Engine from "../assets/images/Car.jpg";
 import { PhoneIcon, ClockIcon, MapPinIcon } from "@heroicons/react/24/outline";
 
@@ -14,7 +15,6 @@ import InstagramIcon from "../assets/PNGicons/InstagramIcon.png";
 import GoogleIcon from "../assets/PNGicons/GoogleIcon.png";
 import CarFaxIcon from "../assets/PNGicons/CarfaxIcon.png";
 import YelpIcon from "../assets/PNGicons/YelpIcon.png";
-
 
 const socials = [
   { title: "Facebook", href: "https://www.facebook.com/HEMautomotive/", icon: FacebookIcon },
@@ -135,7 +135,7 @@ const Contact = () => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:2015/api/v1/email/send-quote",
+        `https://my-garage-ed2e46b8c87b.herokuapp.com/api/v1/email/send-quote`,
         formData,
         {
           headers: { "Content-Type": "application/json" },
