@@ -30,7 +30,7 @@ const HemAutomotiveFooterMap = () => {
   return (
     <div className="h-[300px] w-[33%] mb-20" onClick={handleMapClick}>
       <APIProvider
-        apiKey={getGoogleMapsApiKey()}
+        apiKey= {getGoogleMapsApiKey}
         onLoad={() => console.log("Maps API has loaded.")}
       >
         <Map
