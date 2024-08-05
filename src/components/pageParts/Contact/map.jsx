@@ -1,6 +1,6 @@
 
-import { useState, useEffect } from "react";
 import { AdvancedMarker, APIProvider, Map, Pin} from "@vis.gl/react-google-maps";
+import { getGoogleMapsApiKey } from "../../../utils/getGoogleMapsApiKey";
 
 const containerStyle = {
   width: "",
@@ -13,34 +13,12 @@ const center = {
 };
 
 
+
 const HemAutomotiveMap = () => {
-  
-      const [apiKey, setApiKey] = useState("");
-
-  useEffect(() => {
-    console.log(apiKey);
-    // Fetch the API key from the backend
-    fetch(`https://my-garage-ed2e46b8c87b.herokuapp.com/api/v1/key/footer-map`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const contentType = response.headers.get("content-type");
-        if (!contentType || !contentType.includes("application/json")) {
-          throw new TypeError("Expected JSON but received " + contentType);
-        }
-        return response.json();
-      })
-      .then((data) => setApiKey(data.apiKey))
-      .catch((error) => console.error("Error fetching API key:", error));
-      
-  });
-
-
   return (
     <div className="h-[600px] mb-20">
       <APIProvider
-        apiKey={apiKey}
+        apiKey= {getGoogleMapsApiKey()}
         onLoad={() => console.log("Maps API has loaded.")}
       >
         <Map
