@@ -74,9 +74,9 @@ const reasons = [
       "We believe in honest communication and transparency, so you always know what’s happening with your vehicle.",
   },
   {
-    title: "FMP Partners Network Program",
+    title: "TechNet Professional Automotive Service Facility",
     description:
-      "Enjoy a 12,000 mile / 12 month warranty with the FMP Partners Network Program, providing peace of mind and assurance for your vehicle.",
+      "Enjoy a 24,000 mile / 24 month warranty with the TechNet Professional Nationwide Warranty, providing peace of mind and assurance for your vehicle.",
   },
   {
     title: "SNAP Financing",
@@ -417,6 +417,7 @@ const Home = () => {
           </section>
         </div>
       </Element>
+
       <Element name="benefits">
         <div className="py-20 px-10 bg-gradient-to-b from-zinc-500 via-zinc-500 to-HEMgray animate-fadeIn">
           <Helmet>
@@ -493,6 +494,147 @@ const Home = () => {
           </section>
         </div>
       </Element>
+      <Element name="offers">
+        <div className="bg-HEMgray text-white py-12 px-4 md:px-10 lg:px-16">
+          <Helmet>
+            <title>HEM Automotive | Exclusive Online Offers</title>
+            <meta
+              name="description"
+              content="Take advantage of HEM Automotive's limited time exclusive online offers. Experience premium car care at unbeatable rates. Induction cleaning, wheel alignment, and headlight refresh services available at special prices."
+            />
+            <meta
+              name="keywords"
+              content="HEM Automotive, exclusive offers, car services, induction cleaning, wheel alignment, headlight refresh, special pricing"
+            />
+            <meta name="robots" content="index, follow" />
+            <meta
+              property="og:title"
+              content="HEM Automotive | Exclusive Online Offers"
+            />
+            <meta
+              property="og:description"
+              content="Take advantage of HEM Automotive's limited time exclusive online offers. Experience premium car care at unbeatable rates. Induction cleaning, wheel alignment, and headlight refresh services available at special prices."
+            />
+            <meta property="og:url" content="https://www.hemautomotive.com" />
+            <meta property="og:type" content="website" />
+          </Helmet>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-Bungee text-HEMgreen mb-10">
+              Exclusive Online Offers
+            </h2>
+            <p className="text-center text-xl text-[#aaaaaa] font-bold mb-10 font-Urbanist tracking-wider">
+              Limited time special pricing on select services only through HEM
+              Automotive! Experience premium car care at unbeatable rates.
+            </p>
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {offers.map((offer, index) => (
+                <motion.div
+                  key={index}
+                  className="p-6 border bg-[#222222] border-HEMgreen rounded-lg"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.5 + index * 0.2 },
+                    },
+                  }}
+                >
+                  <h3 className="font-Bungee text-lg text-HEMgreen mb-2">
+                    {offer.title}
+                  </h3>
+                  <h4 className="text-white font-bold mb-2 text-xl">
+                    {offer.price}
+                  </h4>
+                  <p className="text-[#aabbaa]">{offer.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+            <p className="text-[#cccccc] italic mt-6 text-center">
+              *Prices are cash, do not include additional shop fees or taxes.
+            </p>
+          </div>
+        </div>
+      </Element>
+
+      <Element name="appreciation">
+        <div className="bg-[#333333]" data-aos="fade-up">
+          <Helmet>
+            <title>HEM Automotive | Appreciation</title>
+            <meta
+              name="description"
+              content="We truly appreciate your support. Help us achieve the top spot for Best Auto Repair in Topeka, KS by leaving a review. Your feedback drives us to excellence."
+            />
+            <meta
+              name="keywords"
+              content="HEM Automotive, customer appreciation, auto repair reviews, Topeka KS"
+            />
+            <meta name="robots" content="index, follow" />
+            <meta property="og:title" content="HEM Automotive | Appreciation" />
+            <meta
+              property="og:description"
+              content="We truly appreciate your support. Help us achieve the top spot for Best Auto Repair in Topeka, KS by leaving a review. Your feedback drives us to excellence."
+            />
+            <meta property="og:url" content="https://www.hemautomotive.com" />
+            <meta property="og:type" content="website" />
+          </Helmet>
+          <div className="text-white p-6 max-w-7xl mx-auto animate-fadeIn">
+            <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-Bungee text-HEMgreen mb-10">
+              We Truly Appreciate You!
+            </h2>
+            <div className="flex flex-col md:flex-row">
+              <div className="md:w-1/2">
+                <p className="text-center text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] mb-10">
+                  In 2022, thanks to your support, we were proud finalists for
+                  the Best of the Best Auto Repair in Topeka, KS. Let's aim for
+                  the top spot in 2025! Keep being awesome and help us achieve
+                  that goal by leaving a review. Your feedback keeps us striving
+                  for excellence!
+                </p>
+                <div className="flex flex-col md:flex-row mt-6 justify-center mb-20">
+                  <div className="mx-4 mb-10 md:mb-0">
+                    <Link
+                      to="https://www.google.com/search?q=hem+automotive"
+                      className="inline-flex items-center justify-center rounded-md silverbg px-6 py-3 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222] font-Play text-center text-white transform transition-transform duration-300 hover:scale-105"
+                      aria-label="Review on Google"
+                    >
+                      Review on Google
+                    </Link>
+                  </div>
+                  <div className="mx-4">
+                    <Link
+                      to="https://www.yelp.com/biz/hem-automotive-topeka"
+                      className="inline-flex items-center justify-center rounded-md silverbg px-6 py-3 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222] font-Play text-center text-white transform transition-transform duration-300 hover:scale-105"
+                      aria-label="Review on Yelp"
+                    >
+                      Review on Yelp
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <motion.div
+                className="md:w-1/4 flex m-2 pl-4"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img
+                  src={BestofBest}
+                  className="h-auto"
+                  alt="Best of Best Award"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </Element>
       <Element name="testimonials" className="">
         <div className="bg-HEMgray ">
           <Helmet>
@@ -565,146 +707,6 @@ const Home = () => {
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-      </Element>
-      <Element name="appreciation">
-        <div className="bg-[#333333]" data-aos="fade-up">
-          <Helmet>
-            <title>HEM Automotive | Appreciation</title>
-            <meta
-              name="description"
-              content="We truly appreciate your support. Help us achieve the top spot for Best Auto Repair in Topeka, KS by leaving a review. Your feedback drives us to excellence."
-            />
-            <meta
-              name="keywords"
-              content="HEM Automotive, customer appreciation, auto repair reviews, Topeka KS"
-            />
-            <meta name="robots" content="index, follow" />
-            <meta property="og:title" content="HEM Automotive | Appreciation" />
-            <meta
-              property="og:description"
-              content="We truly appreciate your support. Help us achieve the top spot for Best Auto Repair in Topeka, KS by leaving a review. Your feedback drives us to excellence."
-            />
-            <meta property="og:url" content="https://www.hemautomotive.com" />
-            <meta property="og:type" content="website" />
-          </Helmet>
-          <div className="text-white p-6 max-w-7xl mx-auto animate-fadeIn">
-            <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-Bungee text-HEMgreen mb-10">
-              We Truly Appreciate You!
-            </h2>
-            <div className="flex flex-col md:flex-row">
-              <div className="md:w-1/2">
-                <p className="text-center text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] mb-10">
-                  In 2022, thanks to your support, we were proud finalists for
-                  the Best of the Best Auto Repair in Topeka, KS. Let's aim for
-                  the top spot in 2025! Keep being awesome and help us achieve
-                  that goal by leaving a review. Your feedback keeps us striving
-                  for excellence!
-                </p>
-                <div className="flex flex-col md:flex-row mt-6 justify-center mb-20">
-                  <div className="mx-4 mb-10 md:mb-0">
-                    <Link
-                      to="https://www.google.com/search?q=hem+automotive"
-                      className="inline-flex items-center justify-center rounded-md silverbg px-6 py-3 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222] font-Play text-center text-white transform transition-transform duration-300 hover:scale-105"
-                      aria-label="Review on Google"
-                    >
-                      Review on Google
-                    </Link>
-                  </div>
-                  <div className="mx-4">
-                    <Link
-                      to="https://www.yelp.com/biz/hem-automotive-topeka"
-                      className="inline-flex items-center justify-center rounded-md silverbg px-6 py-3 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222] font-Play text-center text-white transform transition-transform duration-300 hover:scale-105"
-                      aria-label="Review on Yelp"
-                    >
-                      Review on Yelp
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <motion.div
-                className="md:w-1/4 flex m-2 pl-4"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <img
-                  src={BestofBest}
-                  className="h-auto"
-                  alt="Best of Best Award"
-                />
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </Element>
-      <Element name="offers">
-        <div className="bg-HEMgray text-white py-12 px-4 md:px-10 lg:px-16">
-          <Helmet>
-            <title>HEM Automotive | Exclusive Online Offers</title>
-            <meta
-              name="description"
-              content="Take advantage of HEM Automotive's limited time exclusive online offers. Experience premium car care at unbeatable rates. Induction cleaning, wheel alignment, and headlight refresh services available at special prices."
-            />
-            <meta
-              name="keywords"
-              content="HEM Automotive, exclusive offers, car services, induction cleaning, wheel alignment, headlight refresh, special pricing"
-            />
-            <meta name="robots" content="index, follow" />
-            <meta
-              property="og:title"
-              content="HEM Automotive | Exclusive Online Offers"
-            />
-            <meta
-              property="og:description"
-              content="Take advantage of HEM Automotive's limited time exclusive online offers. Experience premium car care at unbeatable rates. Induction cleaning, wheel alignment, and headlight refresh services available at special prices."
-            />
-            <meta property="og:url" content="https://www.hemautomotive.com" />
-            <meta property="og:type" content="website" />
-          </Helmet>
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-Bungee text-HEMgreen mb-10">
-              Exclusive Online Offers
-            </h2>
-            <p className="text-center text-xl text-[#aaaaaa] font-bold mb-10 font-Urbanist tracking-wider">
-              Limited time special pricing on select services only through HEM
-              Automotive! Experience premium car care at unbeatable rates.
-            </p>
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              {offers.map((offer, index) => (
-                <motion.div
-                  key={index}
-                  className="p-6 border bg-[#222222] border-HEMgreen rounded-lg"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  variants={{
-                    hidden: { opacity: 0, y: 50 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.5 + index * 0.2 },
-                    },
-                  }}
-                >
-                  <h3 className="font-Bungee text-lg text-HEMgreen mb-2">
-                    {offer.title}
-                  </h3>
-                  <h4 className="text-white font-bold mb-2 text-xl">
-                    {offer.price}
-                  </h4>
-                  <p className="text-[#aabbaa]">{offer.description}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-            <p className="text-[#cccccc] italic mt-6 text-center">
-              *Prices are cash, do not include additional shop fees or taxes.
-            </p>
           </div>
         </div>
       </Element>

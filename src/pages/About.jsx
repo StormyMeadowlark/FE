@@ -12,7 +12,7 @@ const crewMembers = [
     imageUrl: Holder, // Ensure these images are correctly referenced
   },
   {
-    name: "Charles - Lead Technician",
+    name: "Charles",
     description: "",
     favorite: "",
     imageUrl: Holder,
@@ -92,7 +92,7 @@ const About = () => {
             vehicle types, our offerings include services that cater to the
             intricate needs associated with general maintenance and advanced
             diagnostics, which owners of high-end vehicles might find
-            particularly beneficial. Our workshop, functional and well-suited
+            particularly beneficial. Our shop is functional and well-suited
             for quality service, utilizes the latest automotive technologies and
             repair techniques. We are also enhancing our customer experience
             through the integration of digital solutions and improved
@@ -131,7 +131,7 @@ const About = () => {
               rolled off the showroom floor. Whether you need routine
               maintenance or emergency repairs HEM Automotive are your local
               high end mechanics making sure breakdowns don&apos;t break you
-              down. trusted partner for all your automotive needs.
+              down. We&apos;re your trusted partner for all your automotive needs.
             </li>
             <li>
               <strong>Your Convenience is Our Priority</strong>
@@ -139,14 +139,13 @@ const About = () => {
               We ensure our automotive services integrate seamlessly into your
               busy lifestyle. Schedule appointments with ease via phone or in
               person, choosing times that best suit your schedule, whether
-              it&apos;s early mornings or late evenings. We offer efficient
-              same-day services for most repairs, utilizing the latest
+              it&apos;s early mornings or late evenings. We offer services for most repairs, utilizing the latest
               technology to ensure quick and accurate results. Our commitment to
               excellent customer service includes providing timely updates
               through your preferred communication method—email or direct calls.
               For added convenience, take advantage of our vehicle pick-up and
               drop-off options. While your car is serviced, relax in our
-              comfortable waiting area, where we offer complimentary beverages
+              comfortable waiting area, where we offer complimentary beverages and Wi-Fi
               to make your wait more enjoyable. At HEM Automotive, we make
               managing your vehicle&apos;s maintenance effortless and
               stress-free.
@@ -156,7 +155,7 @@ const About = () => {
               <br />
               We are continuously adapting and integrating effective
               technologies and methods to enhance our repair and maintenance
-              capabilities. Our workshop is well-equipped, allowing us to
+              capabilities. Our shop is well-equipped, allowing us to
               efficiently handle complex automotive challenges. We ensure our
               technicians are trained with the latest automotive technologies
               and repair techniques for precise diagnostics and reliable
