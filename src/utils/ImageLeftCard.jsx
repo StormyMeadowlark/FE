@@ -1,6 +1,6 @@
 import SilverButton from "./silverbutton";
 
-export default function ImageLeftCard({title, description, href, text, src}) {
+export default function ImageLeftCard({title, description, link, src}) {
   return (
     <div className="bg-[#333333] text-white flex justify-center pb-20">
       <div className="md:max-w-[55vw]">
@@ -9,6 +9,7 @@ export default function ImageLeftCard({title, description, href, text, src}) {
             <div className="lg:flex lg:justify-center lg:flex-col lg:basis-2/5 mx-10">
               <div className="py-6">
                 <p className="font-Urbanist tracking-wide text-lg text-[#eeeeee]">{description}</p>
+                <p>{link}</p>
               </div>
               
             </div>

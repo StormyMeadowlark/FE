@@ -17,6 +17,7 @@ import SilverButton from "../utils/silverbutton";
 import HeatAC from "../assets/images/HeatingAC.jpg";
 import Engine from "../assets/images/Engine.jpg";
 import BestofBest from "../assets/images/BestOfBest.png";
+import Hexagons from "../assets/images/Hexagons.jpg"
 
 const testimonials = [
   {
@@ -258,21 +259,25 @@ const Home = () => {
   return (
     <div className="bg-black overflow-hidden">
       <Helmet>
-        <title>HEM Automotive | Home</title>
+        <title>HEM Automotive | Your High-End Mechanic in Topeka, KS</title>
         <meta
           name="description"
-          content="Welcome to HEM Automotive. Explore our featured services, customer testimonials, and exclusive online offers. Experience the high-end mechanic difference in Topeka, KS."
+          content="Experience superior car repair and maintenance services at HEM Automotive in Topeka, KS. Trust our advanced technology and expert mechanics for all your vehicle needs."
         />
         <meta
           name="keywords"
-          content="HEM Automotive, car services, auto repair, Topeka KS, high-end mechanics, customer testimonials, online offers"
+          content="auto repair, car maintenance, vehicle diagnostics, wheel alignment, Topeka KS, HEM Automotive"
         />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="HEM Automotive | Home" />
+        <meta
+          property="og:title"
+          content="HEM Automotive | High-End Mechanic Services in Topeka, KS"
+        />
         <meta
           property="og:description"
-          content="Welcome to HEM Automotive. Explore our featured services, customer testimonials, and exclusive online offers. Experience the high-end mechanic difference in Topeka, KS."
+          content="Explore top-notch car services at HEM Automotive in Topeka, KS. From wheel alignment to diagnostics, our expert mechanics ensure your vehicle's optimal performance."
         />
+        <meta property="og:image" content={Engine} />
         <meta property="og:url" content="https://www.hemautomotive.com" />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -284,7 +289,7 @@ const Home = () => {
             className="absolute inset-0 -z-10 brightness-[30%] object-cover"
             loading="lazy"
           />
-          <div className="bg-gradient-to-b from-transparent to-zinc-900 via-transparent h-[100vh]">
+          <div className="bg-gradient-to-b from-transparent to-HEMgreen via-transparent h-[100vh] border-b-HEMgreen">
             <animated.div style={props} className="mx-auto max-w-6xl pt-2">
               <div className="text-center">
                 <h1>
@@ -319,10 +324,77 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Element className="relative isolate overflow-hidden bg-black text-white">
+        <Helmet>
+          <meta
+            name="description"
+            content="Join us for HEM Automotive's Customer Appreciation Day on September 14th, 2024. Enjoy free food and activities for the whole family in Topeka, KS!"
+          />
+          <meta
+            name="keywords"
+            content="HEM Automotive, customer appreciation day, auto repair event, Topeka Kansas, September 14"
+          />
+          <meta name="robots" content="index, follow" />
+          <meta
+            property="og:title"
+            content="HEM Automotive | Customer Appreciation Day - September 14th, 2024"
+          />
+          <meta
+            property="og:description"
+            content="Celebrate with us on September 14th, 2024, at HEM Automotive's Customer Appreciation Day. Enjoy exclusive offers, free services, and fun activities in Topeka, KS."
+          />
+          <meta
+            property="og:url"
+            content="https://www.hemautomotive.com/event-sept-14"
+          />
+          <meta property="og:type" content="website" />
+        </Helmet>
+
+        <img
+          src={Hexagons}
+          alt="Customer Appreciation Day at HEM Automotive"
+          className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
+          loading="lazy"
+        />
+
+        <div className="bg-gradient-to-b from-transparent to-zinc-900 via-transparent h-screen flex flex-col justify-center items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-Bungee uppercase leading-tight">
+              Customer Appreciation Day
+            </h1>
+            <p className="mt-6 text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] max-w-3xl mx-auto">
+              Join us on September 14th, 2024, for a day full of fun, free
+              vehicle inspections, exclusive discounts, giveaways, and more at
+              HEM Automotive in Topeka, KS.
+            </p>
+            <p className="mt-2 text-md md:text-lg lg:text-xl font-Urbanist text-[#cccccc]">
+              10:00 AM - 4:00 PM | 123 HEM Automotive Ave, Topeka, KS
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <GreenButton
+                href="/event-sept-14#rsvp"
+                textarea="RSVP Now"
+                className="transition-transform transform hover:scale-105"
+                aria-label="RSVP for the Event"
+              />
+              <Link
+                to="/event-sept-14"
+                className="text-sm lg:text-xl font-semibold leading-6 text-white transition-transform transform hover:scale-110"
+                aria-label="Learn More"
+              >
+                <span>Learn More</span>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </Element>
       <Element name="featured-services">
         <div className="relative min-h-[100vh] bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-500">
           <Helmet>
-            <title>HEM Automotive | Featured Services</title>
             <meta
               name="description"
               content="Explore HEM Automotive's featured services, including wheel alignment, routine maintenance, diagnostic services, and more. Experience unparalleled full-service repair and maintenance."
@@ -421,7 +493,6 @@ const Home = () => {
       <Element name="benefits">
         <div className="py-20 px-10 bg-gradient-to-b from-zinc-500 via-zinc-500 to-HEMgray animate-fadeIn">
           <Helmet>
-            <title>HEM Automotive | Why Choose Us</title>
             <meta
               name="description"
               content="Discover why HEM Automotive is the best choice for your vehicle's care, offering superior customer service, advanced technology, and transparency."
@@ -497,7 +568,6 @@ const Home = () => {
       <Element name="offers">
         <div className="bg-HEMgray text-white py-12 px-4 md:px-10 lg:px-16">
           <Helmet>
-            <title>HEM Automotive | Exclusive Online Offers</title>
             <meta
               name="description"
               content="Take advantage of HEM Automotive's limited time exclusive online offers. Experience premium car care at unbeatable rates. Induction cleaning, wheel alignment, and headlight refresh services available at special prices."
@@ -568,7 +638,6 @@ const Home = () => {
       <Element name="appreciation">
         <div className="bg-[#333333]" data-aos="fade-up">
           <Helmet>
-            <title>HEM Automotive | Appreciation</title>
             <meta
               name="description"
               content="We truly appreciate your support. Help us achieve the top spot for Best Auto Repair in Topeka, KS by leaving a review. Your feedback drives us to excellence."
@@ -638,7 +707,6 @@ const Home = () => {
       <Element name="testimonials" className="">
         <div className="bg-HEMgray ">
           <Helmet>
-            <title>HEM Automotive | Testimonials</title>
             <meta
               name="description"
               content="Read testimonials from satisfied customers of HEM Automotive. Discover why they consistently choose us for superior car repair and maintenance services."

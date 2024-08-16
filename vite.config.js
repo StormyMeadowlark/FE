@@ -4,17 +4,21 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), svgr({
-    svgrOptions: {
-      plugins:['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
-      svgoConfig: {
-        floatPrecision: 2,
+  assetsInclude: ["**/*.JPG"],
+  plugins: [
+    react(),
+    svgr({
+      svgrOptions: {
+        plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
+        svgoConfig: {
+          floatPrecision: 2,
+        },
       },
-    },
-  })],
+    }),
+  ],
   test: {
     globals: true,
-    environment: 'jsdom',
-    setupFiles: './tests/setup.js',
+    environment: "jsdom",
+    setupFiles: "./tests/setup.js",
   },
-})
+});
