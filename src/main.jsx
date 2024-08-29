@@ -23,6 +23,8 @@ import ACHeating from "./pages/ACHeating.jsx";
 import Electrical from "./pages/Electrical.jsx";
 import LightDutyDiesel from "./pages/LightDutyDiesel.jsx";
 import Inspections from "./pages/Inspections.jsx";
+import AutoSchool from "./pages/AutoSchool.jsx"
+import SingleBlog from "./pages/SingleBlogPost.jsx"
 import ScrollToTop from "./utils/ScrollTop"; // Import ScrollToTop
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -55,6 +57,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="careers" element={<Careers />} />
         <Route path="experience" element={<Experience />} />
         <Route path="legal" element={<Legal />} />
+        <Route path="autoSchool"  element={<AutoSchool />} />
+        <Route path="autoSchool/:id" element={<SingleBlog />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
