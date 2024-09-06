@@ -1,207 +1,118 @@
+import axiosInstance from "./axiosInstance.jsx"; // Import the Axios instance
+import Cookies from "js-cookie";
 import { Link, Navigate } from "react-router-dom";
 import Logo from "../components/limeGreenAndBlackLogo.svg?react";
 import { useState } from "react";
-import { login, authenticate} from "../Backend"
-
-
 
 export function SignInForm() {
+  const tenantId = "66d063ca0800f9ad017e7cfc"; // Define tenant ID here
 
   const [values, setValues] = useState({
-    email: "",
+    username: "",
     password: "",
     error: "",
     loading: false,
     success: false,
   });
 
-  const { email, password, error, loading, success} = values;
+  const { username, password, error, loading, success } = values;
 
-  const handleChange = name => event => {
+  const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
-  }
+  };
 
-  const onSubmit = async event => {
+  const onSubmit = async (event) => {
     event.preventDefault();
     setValues({ ...values, success: false, loading: true });
-    login({ email, password })
-      .then(data => {
-        if (data.error) {
-          setValues({ ...values, error: data.error, loading: false, success: false })
-        } else {
-          authenticate(data, () => {
-            setValues({ ...values, success: true });
-          })
-        }
-      })
-      .catch();
-  }
-  const errorMessage = () => {
-    return (<div className="error-message" style={{ display: error ? "" : "none", color: "red" }}>
-    {error}
-    </div>)
-  }
+    try {
+      const response = await axiosInstance.post(`/users/${tenantId}/login`, {
+        username,
+        password,
+      });
 
-  const loadingMessage = () => {
-    return (
-      loading && (
-        <div className="loading-message" style={{ display: error ? "" : "none", color: "red" }}>
-          <div className="loading-spinner"></div>
-          <p>Leading...</p>
-        </div>
-        
-      )
-    )
-  }
+      // Store the token in cookies
+      Cookies.set("token", response.data.token, { expires: 7 }); // Expires in 7 days
 
+      setValues({ ...values, success: true });
+    } catch (err) {
+      setValues({
+        ...values,
+        error: err.response?.data?.error || "Error during login",
+        loading: false,
+      });
+    }
+  };
 
+  const errorMessage = () =>
+    error && <div className="text-red-500">{error}</div>;
 
+  const loadingMessage = () =>
+    loading && <div className="text-green-500">Loading...</div>;
 
-  return (
-    success ? <Navigate to="/dashboard" /> :
+  return success ? (
+    <Navigate to="/profile" />
+  ) : (
     <div className="flex min-h-full flex-1 flex-col justify-center pb-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-[480px]">
         <div className="bg-[#333333] px-6 py-12 shadow-[#00ff00] shadow-md sm:rounded-lg sm:px-12 ring-black ring-inset ring-2">
-          <div className="sm:mx-auto sm:w-full sm:max-w-md ">
-            <Link to="/">
+          <div className="sm:mx-auto sm:w-full sm:max-w-md">
+            <Link to="/" className="">
               <Logo
-                className="mx-auto w-auto h-[12rem] "
+                className="mx-auto w-auto h-[12rem]"
                 alt="H.E.M Automotive"
               />
             </Link>
-            <h2 className="mb-6 text-center text-2xl text-stroke text-stroke-black text-stroke-fill-[#00ff00] tracking-widest  font-Bungee">
-              Sign into your account
+            <h2 className="mb-6 text-center text-2xl text-stroke text-stroke-black text-stroke-fill-[#00ff00] tracking-widest font-Bungee">
+              Sign in to your account
             </h2>
-            {loadingMessage()}
             {errorMessage()}
+            {loadingMessage()}
           </div>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={onSubmit}>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-base font-medium leading-6 text-white font-Urbanist tracking-wide"
-              >
-                Email address
+              <label className="block text-base font-medium leading-6 text-white font-Urbanist tracking-wide">
+                Username
               </label>
-              <div className="mt-2">
-                <input
-                  placeholder="HEMautomotive@example.com"
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 text-black shadow-md shadow-black ring-1 ring-inset ring-black focus:ring-[#00ff00] placeholder:text-black focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-[#aaaaaa] active:bg-[#aaaaaa]"
-                  value={email}
-                  onChange={handleChange("email")}
-                />
-              </div>
+              <input
+                type="text"
+                value={username}
+                onChange={handleChange("username")}
+                placeholder="Your Username"
+                className="block w-full p-2 mb-4 text-black rounded-md"
+                required
+              />
             </div>
 
             <div>
-              <label
-                htmlFor="password"
-                className="block text-base font-medium leading-6 text-white font-Urbanist tracking-wide"
-              >
+              <label className="block text-base font-medium leading-6 text-white font-Urbanist tracking-wide">
                 Password
               </label>
-              <div className="mt-2">
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  placeholder="••••••••••"
-                  className="block w-full rounded-md border-0 py-1.5 text-black shadow-md shadow-black ring-1 ring-inset ring-black focus:ring-[#00ff00] placeholder:text-black focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-[#aaaaaa]"
-                  minLength="6"
-                  value={password}
-                  onChange={handleChange("password")}
-                />
-              </div>
+              <input
+                type="password"
+                value={password}
+                onChange={handleChange("password")}
+                placeholder="••••••••••"
+                className="block w-full p-2 mb-4 text-black rounded-md"
+                required
+              />
             </div>
 
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  className="h-4 w-4 rounded border-black text-black focus:ring-[#00ff00]"
-                />
-                <label
-                  htmlFor="remember-me"
-                  className="ml-3 block text-sm leading-6 text-white font-urbanist tracking-wide"
-                >
-                  Remember me
-                </label>
-              </div>
-
-              <div className="text-sm leading-6">
-                <Link
-                  to="#"
-                  className="font-semibold text-[#00ff00] hover:text-[#00dd00] font-Play tracking-wide"
-                >
-                  Forgot password?
-                </Link>
-              </div>
-            </div>
-
-            <div>
-                <button
-                  className="flex w-full justify-center rounded-md bg-[#00ff00] px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-md hover:bg-[#00dd00] focus-visible:outline shadow-black hover:shadow-inner hover:shadow-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white font-Play"
-                  onClick={onSubmit}
-                >
-                  Log-in
-                </button>
-            </div>
+            <button
+              type="submit"
+              className="bg-[#00ff00] text-gray-800 px-4 py-2 rounded-full text-lg font-bold hover:bg-[#00dd00] transition"
+            >
+              Login
+            </button>
           </form>
 
-          <div>
-            <div className="relative mt-10">
-              <div
-                className="absolute inset-0 flex items-center"
-                aria-hidden="true"
-              >
-                <div className="w-full border-t border-gray-200" />
-              </div>
-              <div className="relative flex justify-center text-sm font-medium leading-6">
-                <span className="bg-[#333333] px-6 text-white">
-                  Or continue with
-                </span>
-              </div>
-            </div>
-
-            <div className="mt-6 grid grid-cols-2 gap-4">
-              <Link
-                to="#"
-                className="flex w-full items-center justify-center gap-3 rounded-md bg-[#aaaaaa] px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-md hover:bg-[#00dd00] focus-visible:outline shadow-black hover:shadow-inner hover:shadow-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                <span className="text-sm font-semibold leading-6 font-Play">
-                  Google
-                </span>
-              </Link>
-
-              <Link
-                to="#"
-                className="flex w-full items-center justify-center gap-3 rounded-md bg-[#aaaaaa] px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-md hover:bg-[#00dd00] focus-visible:outline shadow-black hover:shadow-inner hover:shadow-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                <span className="text-sm font-semibold leading-6 font-Play">
-                  Facebook
-                </span>
-              </Link>
-            </div>
-          </div>
-          <p className="mt-10 text-center text-sm text-[#aaaaaa] font-Urbanist tracking-wider flex justify-center align-text-center">
+          <p className="mt-10 text-center text-sm text-[#aaaaaa]">
             Not a member?{" "}
             <Link
-              to={"/register"}
-              className="font-semibold leading-6 text-[#00ff00] hover:text-[#00dd00]"
+              to="/register"
+              className="font-semibold text-[#00ff00] hover:text-[#00dd00]"
             >
-              <span>
-                <p className="ml-2">Register Here</p>
-              </span>
+              Register Here
             </Link>
           </p>
         </div>
@@ -210,5 +121,4 @@ export function SignInForm() {
   );
 }
 
-
-export default SignInForm
+export default SignInForm;

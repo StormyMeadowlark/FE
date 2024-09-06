@@ -1,6 +1,6 @@
 import axios from "axios";
 import "react";
-const apiUrl = {REACT_APP_API_URL};
+const apiUrl = "https://my-garage-ed2e46b8c87b.herokuapp.com";
 //USER AND AUTH ROUTES
 
 //LOGIN
