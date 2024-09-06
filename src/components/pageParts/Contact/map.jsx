@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   AdvancedMarker,
   APIProvider,
@@ -17,6 +18,21 @@ const containerStyle = {
 };
 
 const HemAutomotiveMap = () => {
+  const [apiKey, setApiKey] = useState(null); // State to store the API key
+
+  useEffect(() => {
+    const fetchApiKey = async () => {
+      try {
+        const key = await getGoogleMapsApiKey(); // Fetch the API key
+        setApiKey(key); // Set the fetched API key in state
+      } catch (error) {
+        console.error("Error fetching API key:", error);
+      }
+    };
+
+    fetchApiKey(); // Fetch the API key when the component mounts
+  }, []);
+
   const handleMapClick = () => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
@@ -26,10 +42,12 @@ const HemAutomotiveMap = () => {
     }
   };
 
+  if (!apiKey) return <div>Loading map...</div>; // Show loading message until the API key is fetched
+
   return (
     <div className="h-[600px] w-96 mb-20" onClick={handleMapClick}>
       <APIProvider
-        apiKey={getGoogleMapsApiKey}
+        apiKey={apiKey} // Use the fetched API key
         onLoad={() => console.log("Maps API has loaded.")}
       >
         <Map
