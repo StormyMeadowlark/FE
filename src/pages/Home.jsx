@@ -367,28 +367,14 @@ const Home = () => {
               Customer Appreciation Day
             </h1>
             <p className="mt-6 text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] max-w-3xl mx-auto">
-              Join us on September 14th, 2024, for a day full of fun, free
-              vehicle inspections, exclusive discounts, giveaways, and more at
-              HEM Automotive in Topeka, KS.
+ONLY 1 WEEK AWAY
+            </p>
+            <p className="mt-6 text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] max-w-3xl mx-auto">
+              Join us on September 14th, 2024, for a day full of fun, free food, giveaways, obstacle course and so much more!
             </p>
             <p className="mt-2 text-md md:text-lg lg:text-xl font-Urbanist text-[#cccccc]">
-              10:00 AM - 4:00 PM | 123 HEM Automotive Ave, Topeka, KS
+              10:00 AM - 4:00 PM | 315 SW 32nd Ter, Topeka, KS
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <GreenButton
-                href="/event-sept-14#rsvp"
-                textarea="RSVP Now"
-                className="transition-transform transform hover:scale-105"
-                aria-label="RSVP for the Event"
-              />
-              <Link
-                to="/event-sept-14"
-                className="text-sm lg:text-xl font-semibold leading-6 text-white transition-transform transform hover:scale-110"
-                aria-label="Learn More"
-              >
-                <span>Learn More</span>
-              </Link>
-            </div>
           </motion.div>
         </div>
       </Element>
