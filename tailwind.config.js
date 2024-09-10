@@ -25,6 +25,11 @@ module.exports = {
         HEMgreen: "#00FF00",
         HEMgray: "#333333",
       },
+      backgroundImage: {
+        // Define custom background images
+        engine: "url('/src/assets/images/Engine.webp')",
+        hexagons: "url('/src/assets/images/Hexagons.webp')",
+      },
     },
   },
   plugins: [
