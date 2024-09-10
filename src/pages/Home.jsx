@@ -113,37 +113,37 @@ const services = [
     title: "Wheel Alignment",
     description: "Precision alignment services for smooth driving",
     image: Alignment,
-    link: "services",
+    link: "services/alignments",
   },
   {
     title: "Routine Maintenance",
     description: "Keep your vehicle running like a well-oiled machine",
     image: CheckOil,
-    link: "services",
+    link: "services/preventative-maintenance",
   },
   {
     title: "Diagnostic Services",
     description: "Advanced diagnostics for all vehicle problems",
     image: Diagnostics,
-    link: "services",
+    link: "services/diagnostics",
   },
   {
     title: "Refresh & Upgrade",
     description: "Essential updates & improvements for a more enjoyable drive",
     image: RemoveReplace,
-    link: "services",
+    link: "services/remove-replace",
   },
   {
     title: "Used Vehicle Inspection",
     description: "Peace of mind when buying a used vehicle",
     image: Inspection,
-    link: "services",
+    link: "services/inspection",
   },
   {
     title: "A/C & Heating",
     description: "Repair & recharge all heating & cooling systems",
     image: HeatAC,
-    link: "services",
+    link: "services/ac-heating",
   },
 ];
 
@@ -264,8 +264,8 @@ const Home = () => {
               className="relative mx-auto max-w-6xl pt-20 z-10"
             >
               <h1 className="leading-tight font-bold font-sans">
-                Breakdowns won&apos;t break you down with your Topeka, KS High-End
-                Mechanics
+                Breakdowns won&apos;t break you down with your Topeka, KS
+                High-End Mechanics
               </h1>
               <div className="py-20 flex items-center justify-center gap-x-6 font-Play font-bold">
                 <GreenButton
@@ -417,9 +417,9 @@ const Home = () => {
                       </p>
                       <SilverButton
                         className="mt-4 bg-HEMgreen text-white py-2 px-4 rounded-full shadow-md hover:bg-[#00aa00] transition-transform transform hover:scale-105"
-                        text="Learn More"
+                        text={`Learn more about ${service.title}`}
                         href="services"
-                        aria-label={`Learn more about ${service.title}`}
+                        aria-label={`Learn more about ${service.title} services`}
                       />
                     </div>
                   </motion.div>
@@ -430,7 +430,7 @@ const Home = () => {
                   className={`bg-[#444444] text-white py-3 px-8 rounded-md shadow-lg border-b border-[#00ff00] text-lg font-Play font-semibold tracking-wide transition-transform transform hover:scale-105 ${
                     isKeyboardNavigation ? "focus:border-HEMgreen" : ""
                   }`}
-                  aria-label="View all services"
+                  aria-label="View all services available at HEM Automotive"
                 >
                   View All Services
                 </button>

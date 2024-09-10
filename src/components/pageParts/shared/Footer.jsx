@@ -1,7 +1,7 @@
 import { ClockIcon, PhoneIcon, MapPinIcon } from "@heroicons/react/24/outline";
-import Logo from "../../../components/limeGreenAndBlackLogo.svg?react";
+import Logo from "../../../components/limeGreenAndBlackLogo.svg?react"; // Use WebP format
 import List from "./Socials";
-import FacebookIcon from "../../../assets/PNGicons/FacebookIcon.png?react";
+import FacebookIcon from "../../../assets/PNGicons/FacebookIcon.png?react"; // Convert to WebP
 import YouTubeIcon from "../../../assets/PNGicons/YouTubeIcon.png?react";
 import TikTokIcon from "../../../assets/PNGicons/TikTokIcon.png?react";
 import XIcon from "../../../assets/PNGicons/XIcon.png?react";
@@ -15,47 +15,55 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   const socials = [
     {
-      title: 'Facebook',
-      href: 'https://www.facebook.com/HEMautomotive/',
+      title: "Facebook",
+      href: "https://www.facebook.com/HEMautomotive/",
       src: FacebookIcon,
+      alt: "Facebook logo", // Add descriptive alt text
     },
     {
-      title: 'Youtube',
-      href: 'https://www.youtube.com/@hemautomotive',
+      title: "YouTube",
+      href: "https://www.youtube.com/@hemautomotive",
       src: YouTubeIcon,
+      alt: "YouTube logo",
     },
     {
-      title: 'Tiktok',
-      href: 'https://www.tiktok.com/@hemautomotive',
+      title: "TikTok",
+      href: "https://www.tiktok.com/@hemautomotive",
       src: TikTokIcon,
+      alt: "TikTok logo",
     },
     {
-      title: 'X',
-      href: 'https://www.x.com/@hemautomotive',
+      title: "X (Twitter)",
+      href: "https://www.x.com/@hemautomotive",
       src: XIcon,
+      alt: "X (formerly Twitter) logo",
     },
     {
-      title: 'Instagram',
-      href: 'https://www.instagram.com/hemautomotive/',
+      title: "Instagram",
+      href: "https://www.instagram.com/hemautomotive/",
       src: InstagramIcon,
+      alt: "Instagram logo",
     },
   ];
 
   const reviews = [
     {
-      title: 'Google',
-      href: 'https://www.google.com/search?q=hem+automotive',
+      title: "Google",
+      href: "https://www.google.com/search?q=hem+automotive",
       src: GoogleIcon,
+      alt: "Google logo",
     },
     {
-      title: 'CarFax',
-      href: 'https://www.carfax.com/Reviews-HEM-Automotive-Topeka-KS_AUBYLTNNVJ',
+      title: "CarFax",
+      href: "https://www.carfax.com/Reviews-HEM-Automotive-Topeka-KS_AUBYLTNNVJ",
       src: CarFaxIcon,
+      alt: "CarFax logo",
     },
     {
-      title: 'Yelp',
-      href: 'https://www.yelp.com/biz/hem-automotive-topeka',
+      title: "Yelp",
+      href: "https://www.yelp.com/biz/hem-automotive-topeka",
       src: YelpIcon,
+      alt: "Yelp logo",
     },
   ];
 
@@ -71,28 +79,37 @@ export default function Footer() {
         <div className="flex flex-wrap justify-between items-center space-y-6 md:space-y-0">
           <div className="flex items-center space-x-6">
             <Link to="/">
-              {" "}
-              <Logo className="w-52 h-auto" />
+              <Logo
+                className="w-52 h-auto"
+                alt="H.E.M Automotive Logo: Lime green and black logo of half gear and wrenches"
+              />
             </Link>
             <div className="flex flex-col space-y-2 text-center">
               <Link
                 to="/services"
                 className="text-xl font-bold hover:text-HEMgreen"
+                aria-label="View our automotive services"
               >
-                SERVICE
+                SERVICES
               </Link>
-              <Link to="/faq" className="text-xl font-bold hover:text-HEMgreen">
+              <Link
+                to="/faq"
+                className="text-xl font-bold hover:text-HEMgreen"
+                aria-label="Frequently asked questions"
+              >
                 FAQ
               </Link>
               <Link
                 to="/contact"
                 className="text-xl font-bold hover:text-HEMgreen"
+                aria-label="Contact us"
               >
                 CONTACT
               </Link>
               <Link
-                to="/auto-school"
+                to="/autoSchool"
                 className="text-xl font-bold hover:text-HEMgreen"
+                aria-label="Learn more about Auto School"
               >
                 AUTO SCHOOL
               </Link>
@@ -146,7 +163,7 @@ export default function Footer() {
               <List socials={socials} />
             </div>
             <div>
-            <h5 className="pb-2">Leave Us a Review</h5>
+              <h5 className="pb-2">Leave Us a Review</h5>
               <List socials={reviews} />
             </div>
           </div>
@@ -157,6 +174,7 @@ export default function Footer() {
             <Link
               to="https://www.stormymeadowlark.com"
               className="font-Play text-[#00ff00] tracking-wide"
+              aria-label="Visit the Stormy Meadowlark Design Co. website"
             >
               Website Designed & Maintained by: Stormy Meadowlark Design Co.
             </Link>
@@ -164,6 +182,7 @@ export default function Footer() {
               <Link
                 to="/legal"
                 className="text-sm font-Play tracking-wide hover:text-HEMgreen"
+                aria-label="View legal information"
               >
                 Legal
               </Link>
