@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /login/
+Disallow: /register/
+Disallow: /search/
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.hemautomotive.com/sitemap.xml
