@@ -1,8 +1,9 @@
 User-agent: *
-Disallow: /admin/
 Disallow: /private/
+Disallow: /admin/
 Disallow: /login/
 Disallow: /register/
+Disallow: /profile/
 Disallow: /search/
 Allow: /
 
