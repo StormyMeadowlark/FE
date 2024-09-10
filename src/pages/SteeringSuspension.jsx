@@ -1,9 +1,13 @@
 import { Helmet } from "react-helmet";
 import GreenButton from "../utils/greenButton";
-import SteeringSuspensionTop from "../assets/images/SteeringSuspensionTop.jpg"
-import SuspensionInspection from "../assets/images/Suspension.jpg"
-import Steering from "../assets/images/Steering.jpg"
-import SuspensionCard from "../assets/images/SuspensionCard.jpg"
+import SteeringSuspensionTopJPG from "../assets/images/SteeringSuspensionTop.jpg";
+import SteeringSuspensionTopWEBP from "../assets/images/SteeringSuspensionTop.webp";
+import SuspensionInspectionJPG from "../assets/images/Suspension.jpg";
+import SuspensionInspectionWEBP from "../assets/images/Suspension.webp";
+import SteeringJPG from "../assets/images/Steering.jpg";
+import SteeringWEBP from "../assets/images/Steering.webp";
+import SuspensionCardJPG from "../assets/images/SuspensionCard.jpg";
+import SuspensionCardWEBP from "../assets/images/SuspensionCard.webp";
 
 const SteeringSuspension = () => {
   return (
@@ -37,20 +41,24 @@ const SteeringSuspension = () => {
       </Helmet>
 
       <div className="relative isolate overflow-hidden bg-black text-white">
-        <img
-          src={SteeringSuspensionTop}
-          alt="Steering and Suspension Services at HEM Automotive"
-          className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
-          loading="lazy"
-        />
+        <picture>
+          <source srcSet={SteeringSuspensionTopWEBP} type="image/webp" />
+          <source srcSet={SteeringSuspensionTopJPG} type="image/jpeg" />
+          <img
+            src={SteeringSuspensionTopWEBP}
+            alt="Steering and Suspension Services at HEM Automotive"
+            className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
+            loading="lazy"
+          />
+        </picture>
 
         <div className="bg-gradient-to-b from-transparent to-zinc-900 via-transparent h-[50vh] flex flex-col justify-center items-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-Bungee uppercase leading-tight">
             Steering & Suspension
           </h1>
           <p className="mt-6 text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] max-w-3xl mx-auto">
-            Your vehicle&apos;s steering and suspension systems are crucial for a
-            smooth, safe, and comfortable ride. At HEM Automotive, we offer
+            Your vehicle&apos;s steering and suspension systems are crucial for
+            a smooth, safe, and comfortable ride. At HEM Automotive, we offer
             comprehensive services to ensure your vehicle handles perfectly on
             the road.
           </p>
@@ -90,12 +98,16 @@ const SteeringSuspension = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={Steering}
-                alt="Steering System Services"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={SteeringWEBP} type="image/webp" />
+                <source srcSet={SteeringJPG} type="image/jpeg" />
+                <img
+                  src={SteeringWEBP}
+                  alt="Steering System Services"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Steering System Services
               </h3>
@@ -108,12 +120,16 @@ const SteeringSuspension = () => {
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={SuspensionCard}
-                alt="Suspension System Services"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={SuspensionCardWEBP} type="image/webp" />
+                <source srcSet={SuspensionCardJPG} type="image/jpeg" />
+                <img
+                  src={SuspensionCardWEBP}
+                  alt="Suspension System Services"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Suspension System Services
               </h3>
@@ -125,12 +141,16 @@ const SteeringSuspension = () => {
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={SuspensionInspection}
-                alt="Steering and Suspension Inspection"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={SuspensionInspectionWEBP} type="image/webp" />
+                <source srcSet={SuspensionInspectionJPG} type="image/jpeg" />
+                <img
+                  src={SuspensionInspectionWEBP}
+                  alt="Steering and Suspension Inspection"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Steering & Suspension Inspection
               </h3>

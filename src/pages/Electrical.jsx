@@ -1,12 +1,14 @@
 import { Helmet } from "react-helmet";
 import GreenButton from "../utils/greenButton";
-import Fuse from "../assets/images/Fuse.jpg"
-import CarBattery from "../assets/images/CarBattery.jpg"
-import InstrumentationWiring from "../assets/images/InstrumentationWiring.jpg"
-import HVACElectrical from "../assets/images/HVACElectrical.jpg"
-import ElectricalTop from "../assets/images/ElectricalTop.jpg"
-import VehicleLighting from "../assets/images/VehicleLighting.jpg"
-import SafetyElectrical from "../assets/images/SafetyElectrical.jpg"
+
+// Optimized images in modern formats
+import Fuse from "../assets/images/Fuse.webp";
+import CarBattery from "../assets/images/CarBattery.webp";
+import InstrumentationWiring from "../assets/images/InstrumentationWiring.webp";
+import HVACElectrical from "../assets/images/HVACElectrical.webp";
+import ElectricalTop from "../assets/images/ElectricalTop.webp";
+import VehicleLighting from "../assets/images/VehicleLighting.webp";
+import SafetyElectrical from "../assets/images/SafetyElectrical.webp";
 
 const ElectricalDiagnostics = () => {
   return (
@@ -40,12 +42,28 @@ const ElectricalDiagnostics = () => {
       </Helmet>
 
       <div className="relative isolate overflow-hidden bg-black text-white">
-        <img
-        src={ElectricalTop}
-          alt="Electrical Diagnostics and Repair Services at HEM Automotive"
-          className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
-          loading="lazy"
-        />
+        <picture>
+          <source
+            srcSet={`${ElectricalTop.replace(
+              ".jpg",
+              ".avif"
+            )} 1x, ${ElectricalTop.replace(".jpg", "@2x.avif")} 2x`}
+            type="image/avif"
+          />
+          <source
+            srcSet={`${ElectricalTop} 1x, ${ElectricalTop.replace(
+              ".jpg",
+              "@2x.jpg"
+            )} 2x`}
+            type="image/jpeg"
+          />
+          <img
+            src={ElectricalTop}
+            alt="Electrical Diagnostics and Repair Services at HEM Automotive"
+            className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
+            loading="lazy"
+          />
+        </picture>
 
         <div className="bg-gradient-to-b from-transparent to-zinc-900 via-transparent h-[50vh] flex flex-col justify-center items-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-Bungee uppercase leading-tight">
@@ -96,107 +114,68 @@ const ElectricalDiagnostics = () => {
             Our Electrical Diagnostics & Repair Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={CarBattery}
-                alt="Battery and Starting System"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
-              <h3 className="text-2xl font-Urbanist text-white mb-4">
-                Battery, Charging, and Starting System
-              </h3>
-              <p className="text-lg text-[#cccccc] font-Urbanist">
-                Issues such as battery drains, alternator problems, and starter
-                motor failures are diagnosed and repaired to ensure your vehicle
-                starts and charges reliably.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={VehicleLighting}
-                alt="Lighting and Power Accessories"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
-              <h3 className="text-2xl font-Urbanist text-white mb-4">
-                Lighting and Power Accessories
-              </h3>
-              <p className="text-lg text-[#cccccc] font-Urbanist">
-                From headlights and taillights to power windows and mirrors, we
-                repair all power accessories and lighting systems to keep your
-                vehicle functional and safe.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={InstrumentationWiring}
-                alt="Audio and Instrumentation"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
-              <h3 className="text-2xl font-Urbanist text-white mb-4">
-                Audio, Infotainment, and Instrumentation
-              </h3>
-              <p className="text-lg text-[#cccccc] font-Urbanist">
-                We diagnose and repair issues with your vehicle&apos;s radio,
-                infotainment system, and instrument cluster, ensuring that you
-                stay informed and entertained on the road.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={HVACElectrical}
-                alt="Engine Control and HVAC Systems"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
-              <h3 className="text-2xl font-Urbanist text-white mb-4">
-                Engine, HVAC, and Control Systems
-              </h3>
-              <p className="text-lg text-[#cccccc] font-Urbanist">
-                From engine control units to HVAC systems, we handle complex
-                electrical issues that affect your vehicle&apos;s performance,
-                comfort, and emissions.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={Fuse}
-                alt="Wiring and Grounding Issues"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
-              <h3 className="text-2xl font-Urbanist text-white mb-4">
-                Wiring, Connectors, and Grounding
-              </h3>
-              <p className="text-lg text-[#cccccc] font-Urbanist">
-                We fix shorts, open circuits, and grounding issues to ensure
-                that your vehicle&apos;s electrical systems operate without
-                interruption.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-              src={SafetyElectrical}
-                alt="Security and Safety Systems"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
-              <h3 className="text-2xl font-Urbanist text-white mb-4">
-                Security, Safety, and Other Systems
-              </h3>
-              <p className="text-lg text-[#cccccc] font-Urbanist">
-                We diagnose and repair issues with keyless entry, alarms,
-                airbags, and other safety systems to keep you and your vehicle
-                secure.
-              </p>
-            </div>
+            {[
+              {
+                src: CarBattery,
+                alt: "Battery and Starting System",
+                title: "Battery, Charging, and Starting System",
+                description:
+                  "Issues such as battery drains, alternator problems, and starter motor failures are diagnosed and repaired to ensure your vehicle starts and charges reliably.",
+              },
+              {
+                src: VehicleLighting,
+                alt: "Lighting and Power Accessories",
+                title: "Lighting and Power Accessories",
+                description:
+                  "From headlights and taillights to power windows and mirrors, we repair all power accessories and lighting systems to keep your vehicle functional and safe.",
+              },
+              {
+                src: InstrumentationWiring,
+                alt: "Audio and Instrumentation",
+                title: "Audio, Infotainment, and Instrumentation",
+                description:
+                  "We diagnose and repair issues with your vehicle's radio, infotainment system, and instrument cluster, ensuring that you stay informed and entertained on the road.",
+              },
+              {
+                src: HVACElectrical,
+                alt: "Engine Control and HVAC Systems",
+                title: "Engine, HVAC, and Control Systems",
+                description:
+                  "From engine control units to HVAC systems, we handle complex electrical issues that affect your vehicle&apos;s performance, comfort, and emissions.",
+              },
+              {
+                src: Fuse,
+                alt: "Wiring and Grounding Issues",
+                title: "Wiring, Connectors, and Grounding",
+                description:
+                  "We fix shorts, open circuits, and grounding issues to ensure that your vehicle&apos;s electrical systems operate without interruption.",
+              },
+              {
+                src: SafetyElectrical,
+                alt: "Security and Safety Systems",
+                title: "Security, Safety, and Other Systems",
+                description:
+                  "We diagnose and repair issues with keyless entry, alarms, airbags, and other safety systems to keep you and your vehicle secure.",
+              },
+            ].map((service) => (
+              <div
+                key={service.title}
+                className="flex flex-col items-center bg-[#222222] p-6 rounded-lg"
+              >
+                <img
+                  src={service.src}
+                  alt={service.alt}
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+                <h3 className="text-2xl font-Urbanist text-white mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-lg text-[#cccccc] font-Urbanist">
+                  {service.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

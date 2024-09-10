@@ -1,11 +1,11 @@
 import { Helmet } from "react-helmet";
 import GreenButton from "../utils/greenButton";
-import RemoveReplaceTop from "../assets/images/RemoveReplaceTop.jpg"
-import EngineForService from "../assets/images/EngineForService.jpg"
-import RemoveReplaceInspection from "../assets/images/RemoveReplaceInspection.jpg"
-import Transmission from "../assets/images/Transmission.jpg"
+import RemoveReplaceTop from "../assets/images/RemoveReplaceTop.jpg";
+import EngineForService from "../assets/images/EngineForService.jpg";
+import RemoveReplaceInspection from "../assets/images/RemoveReplaceInspection.jpg";
+import Transmission from "../assets/images/Transmission.jpg";
 
-const RemoveReplace= () => {
+const RemoveReplace = () => {
   return (
     <div className="bg-zinc-900 text-white pt-40">
       <Helmet>
@@ -37,12 +37,15 @@ const RemoveReplace= () => {
       </Helmet>
 
       <div className="relative isolate overflow-hidden bg-black text-white">
-        <img
-          src={RemoveReplaceTop}
-          alt="Engine and Transmission Services at HEM Automotive"
-          className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
-          loading="lazy"
-        />
+        <picture>
+          <source srcSet={RemoveReplaceTop} type="image/webp" />
+          <img
+            src={RemoveReplaceTop}
+            alt="Engine and Transmission Services at HEM Automotive"
+            className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
+            loading="lazy"
+          />
+        </picture>
 
         <div className="bg-gradient-to-b from-transparent to-zinc-900 via-transparent h-[50vh] flex flex-col justify-center items-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-Bungee uppercase leading-tight">
@@ -72,14 +75,14 @@ const RemoveReplace= () => {
           </h2>
           <p className="text-xl md:text-2xl text-[#cccccc] font-Urbanist mb-8">
             Your engine and transmission are the heart and soul of your vehicle.
-            When they start to fail, it can drastically affect your vehicle&apos;s
+            When they start to fail, it can drastically affect your vehicle's
             performance, reliability, and safety. Replacing these components
             ensures your vehicle continues to run smoothly and safely.
           </p>
           <p className="text-lg md:text-xl text-[#aaaaaa] font-Urbanist mb-8">
             At HEM Automotive, our expert technicians provide top-notch engine
             and transmission replacements, using only high-quality parts to
-            restore your vehicle&apos;s performance to its peak condition.
+            restore your vehicle's performance to its peak condition.
           </p>
         </div>
       </section>
@@ -91,30 +94,36 @@ const RemoveReplace= () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={EngineForService}
-                alt="Engine Replacement"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={EngineForService} type="image/webp" />
+                <img
+                  src={EngineForService}
+                  alt="Engine Replacement"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Engine Replacement
               </h3>
               <p className="text-lg text-[#cccccc] font-Urbanist">
-                Whether your engine is beyond repair or it&apos;s simply time for an
+                Whether your engine is beyond repair or it's simply time for an
                 upgrade, our engine replacement services ensure your vehicle
                 gets a new lease on life. We use top-quality engines to restore
-                your vehicle&apos;s performance.
+                your vehicle's performance.
               </p>
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={Transmission}
-                alt="Transmission Replacement"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={Transmission} type="image/webp" />
+                <img
+                  src={Transmission}
+                  alt="Transmission Replacement"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Transmission Replacement
               </h3>
@@ -126,19 +135,22 @@ const RemoveReplace= () => {
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={RemoveReplaceInspection}
-                alt="Engine & Transmission Inspection"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={RemoveReplaceInspection} type="image/webp" />
+                <img
+                  src={RemoveReplaceInspection}
+                  alt="Engine & Transmission Inspection"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Engine & Transmission Inspection
               </h3>
               <p className="text-lg text-[#cccccc] font-Urbanist">
                 Before considering a replacement, our thorough inspection
                 services diagnose the health of your engine and transmission,
-                ensuring that replacement is the right option for your vehicle&apos;s
+                ensuring that replacement is the right option for your vehicle's
                 longevity.
               </p>
             </div>
@@ -152,7 +164,7 @@ const RemoveReplace= () => {
             Schedule Your Engine or Transmission Replacement Today
           </h2>
           <p className="text-xl md:text-2xl text-[#cccccc] font-Urbanist mb-8">
-            Don&apos;t wait until it&apos;s too late. Contact HEM Automotive today to
+            Don’t wait until it's too late. Contact HEM Automotive today to
             schedule your engine or transmission replacement service and keep
             your vehicle running smoothly and safely.
           </p>

@@ -1,12 +1,13 @@
 import { Helmet } from "react-helmet";
 import GreenButton from "../utils/greenButton";
-import DieselTop from "../assets/images/LightDutyDieselTop.jpeg"
-import DieselMaintenance from "../assets/images/DieselOilChange.jpg"
-import DieselFuelLines from "../assets/images/DieselFuelLines.jpg"
-import DieselEmissions from "../assets/images/DieselEmissions.jpg"
-import BGService from "../assets/images/BGService.png"
-import DieselCoolant from "../assets/images/DieselCoolant.jpg"
-import DieselDrivetrain from "../assets/images/DieselDrivetrain.jpg"
+import DieselTop from "../assets/images/LightDutyDieselTop.webp";
+import DieselMaintenance from "../assets/images/DieselOilChange.webp";
+import DieselFuelLines from "../assets/images/DieselFuelLines.webp";
+import DieselEmissions from "../assets/images/DieselEmissions.webp";
+import BGService from "../assets/images/BGService.webp";
+import DieselCoolant from "../assets/images/DieselCoolant.webp";
+import DieselDrivetrain from "../assets/images/DieselDrivetrain.webp";
+
 const LightDutyDiesel = () => {
   return (
     <div className="bg-zinc-900 text-white pt-40">
@@ -39,12 +40,15 @@ const LightDutyDiesel = () => {
       </Helmet>
 
       <div className="relative isolate overflow-hidden bg-black text-white">
-        <img
-          src={DieselTop}
-          alt="Light-Duty Diesel Service and Repair at HEM Automotive"
-          className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
-          loading="lazy"
-        />
+        <picture>
+          <source srcSet={DieselTop} type="image/webp" />
+          <img
+            src={DieselTop}
+            alt="Light-Duty Diesel Service and Repair at HEM Automotive"
+            className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
+            loading="lazy"
+          />
+        </picture>
 
         <div className="bg-gradient-to-b from-transparent to-zinc-900 via-transparent h-[50vh] flex flex-col justify-center items-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-Bungee uppercase leading-tight">
@@ -95,12 +99,15 @@ const LightDutyDiesel = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={DieselMaintenance}
-                alt="Diesel Engine Maintenance"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={DieselMaintenance} type="image/webp" />
+                <img
+                  src={DieselMaintenance}
+                  alt="Diesel Engine Maintenance"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Diesel Engine Maintenance
               </h3>
@@ -113,12 +120,15 @@ const LightDutyDiesel = () => {
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={DieselFuelLines}
-                alt="Fuel System Services"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={DieselFuelLines} type="image/webp" />
+                <img
+                  src={DieselFuelLines}
+                  alt="Fuel System Services"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Fuel System Services
               </h3>
@@ -130,12 +140,15 @@ const LightDutyDiesel = () => {
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={DieselEmissions}
-                alt="Exhaust and Emissions Services"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={DieselEmissions} type="image/webp" />
+                <img
+                  src={DieselEmissions}
+                  alt="Exhaust and Emissions Services"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Exhaust and Emissions Services
               </h3>
@@ -148,12 +161,15 @@ const LightDutyDiesel = () => {
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={BGService}
-                alt="Turbocharger Maintenance and Repair"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={BGService} type="image/webp" />
+                <img
+                  src={BGService}
+                  alt="Turbocharger Maintenance and Repair"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Turbocharger Maintenance and Repair
               </h3>
@@ -166,12 +182,15 @@ const LightDutyDiesel = () => {
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={DieselCoolant}
-                alt="Cooling System Services"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={DieselCoolant} type="image/webp" />
+                <img
+                  src={DieselCoolant}
+                  alt="Cooling System Services"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Cooling System Services
               </h3>
@@ -184,12 +203,15 @@ const LightDutyDiesel = () => {
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={DieselDrivetrain}
-                alt="Transmission and Drivetrain Services"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={DieselDrivetrain} type="image/webp" />
+                <img
+                  src={DieselDrivetrain}
+                  alt="Transmission and Drivetrain Services"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Transmission and Drivetrain Services
               </h3>

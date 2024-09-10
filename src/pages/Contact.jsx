@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import generateYearRange from "../utils/yearRange";
-import HemAutomotiveFooterMap from "../components/pageParts/shared/footermap";
 import HemAutomotiveMap from "../components/pageParts/Contact/map";
 
 
@@ -64,7 +63,6 @@ const Contact = () => {
   const [filteredMakeOptions, setFilteredMakeOptions] = useState([]);
   const [modelOptions, setModelOptions] = useState([]);
   const [filteredModelOptions, setFilteredModelOptions] = useState([]);
-  const [decodedVin, setDecodedVin] = useState(null);
   const [status, setStatus] = useState("Submit");
   const [result, setResult] = useState("");
   const [searchMake, setSearchMake] = useState("");

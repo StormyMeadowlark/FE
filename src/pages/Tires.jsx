@@ -1,11 +1,11 @@
 import { Helmet } from "react-helmet";
 import GreenButton from "../utils/greenButton";
-import TiresTop from "../assets/images/TiresTop.jpeg"
-import TireSales from "../assets/images/TireSales.jpg"
-import TireRepair from "../assets/images/FlatTire.jpg"
-import TireRotation from "../assets/images/TireRotationTires.jpg"
-import TireAlignment from "../assets/images/TireAlignmentTires.png"
-import TireBalancing from "../assets/images/TireBalancing.jpg"
+import TiresTopWEBP from "../assets/images/TiresTop.webp";
+import TireSalesWEBP from "../assets/images/TireSales.webp";
+import TireRepairWEBP from "../assets/images/FlatTire.webp";
+import TireRotationWEBP from "../assets/images/TireRotationTires.webp";
+import TireAlignmentWEBP from "../assets/images/TireAlignmentTires.webp";
+import TireBalancingWEBP from "../assets/images/TireBalancing.webp";
 
 const Tires = () => {
   return (
@@ -29,18 +29,22 @@ const Tires = () => {
           property="og:description"
           content="Keep your vehicle safe and performing well with tire sales, repair, and services from HEM Automotive in Topeka, KS. Schedule your tire service today!"
         />
-
         <meta property="og:url" content="https://www.hemautomotive.com/tires" />
         <meta property="og:type" content="website" />
       </Helmet>
 
       <div className="relative isolate overflow-hidden bg-black text-white">
-        <img
-          src={TiresTop}
-          alt="Tire Sales & Services at HEM Automotive"
-          className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
-          loading="lazy"
-        />
+        <picture>
+          <source srcSet={TiresTopWEBP} type="image/webp" />
+          <img
+            src={TiresTopWEBP}
+            alt="Tire Sales & Services at HEM Automotive"
+            className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
+            loading="lazy"
+            width="1920" // Replace with actual width
+            height="1080" // Replace with actual height
+          />
+        </picture>
 
         <div className="bg-gradient-to-b from-transparent to-zinc-900 via-transparent h-[50vh] flex flex-col justify-center items-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-Bungee uppercase leading-tight">
@@ -89,12 +93,17 @@ const Tires = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={TireSales}
-                alt="Tire Sales"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={TireSalesWEBP} type="image/webp" />
+                <img
+                  src={TireSalesWEBP}
+                  alt="Tire Sales"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                  width="400" // Replace with actual width
+                  height="300" // Replace with actual height
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Tire Sales
               </h3>
@@ -106,12 +115,17 @@ const Tires = () => {
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={TireRepair}
-                alt="Tire Repair"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={TireRepairWEBP} type="image/webp" />
+                <img
+                  src={TireRepairWEBP}
+                  alt="Tire Repair"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                  width="400" // Replace with actual width
+                  height="300" // Replace with actual height
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Tire Repair
               </h3>
@@ -123,12 +137,17 @@ const Tires = () => {
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={TireRotation}
-                alt="Tire Rotation"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={TireRotationWEBP} type="image/webp" />
+                <img
+                  src={TireRotationWEBP}
+                  alt="Tire Rotation"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                  width="400" // Replace with actual width
+                  height="300" // Replace with actual height
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Tire Rotation
               </h3>
@@ -140,12 +159,17 @@ const Tires = () => {
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={TireAlignment}
-                alt="Tire Alignment"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={TireAlignmentWEBP} type="image/webp" />
+                <img
+                  src={TireAlignmentWEBP}
+                  alt="Tire Alignment"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                  width="400" // Replace with actual width
+                  height="300" // Replace with actual height
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Tire Alignment
               </h3>
@@ -158,12 +182,17 @@ const Tires = () => {
             </div>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
-              <img
-                src={TireBalancing}
-                alt="Tire Balancing"
-                className="h-48 w-full object-cover rounded-md mb-6"
-                loading="lazy"
-              />
+              <picture>
+                <source srcSet={TireBalancingWEBP} type="image/webp" />
+                <img
+                  src={TireBalancingWEBP}
+                  alt="Tire Balancing"
+                  className="h-48 w-full object-cover rounded-md mb-6"
+                  loading="lazy"
+                  width="400" // Replace with actual width
+                  height="300" // Replace with actual height
+                />
+              </picture>
               <h3 className="text-2xl font-Urbanist text-white mb-4">
                 Tire Balancing
               </h3>

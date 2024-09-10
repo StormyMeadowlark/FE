@@ -1,9 +1,12 @@
 import { Helmet } from "react-helmet";
 import GreenButton from "../utils/greenButton";
-import CheckEngine from "../assets/images/CheckEngineLight.jpeg";
-import ElectricalDiagnostics from "../assets/images/ElectricalDiagnostics.jpg"
-import DiagnosticsTop from "../assets/images/DiagnosticsTop.jpg"
-import EngineDiagnostics from "../assets/images/EngineDiagnostics.jpg"
+
+// Optimized image formats and responsive sizes
+import CheckEngine from "../assets/images/CheckEngineLight.webp";
+import ElectricalDiagnostics from "../assets/images/ElectricalDiagnostics.webp";
+import DiagnosticsTop from "../assets/images/DiagnosticsTop.webp";
+import EngineDiagnostics from "../assets/images/EngineDiagnostics.webp";
+
 const Diagnostics = () => {
   return (
     <div className="bg-zinc-900 text-white pt-40">
@@ -26,7 +29,6 @@ const Diagnostics = () => {
           property="og:description"
           content="Ensure your vehicle is running smoothly with professional and advanced diagnostics from HEM Automotive in Topeka, KS. Schedule your diagnostic service today!"
         />
-
         <meta
           property="og:url"
           content="https://www.hemautomotive.com/diagnostics"
@@ -35,12 +37,28 @@ const Diagnostics = () => {
       </Helmet>
 
       <div className="relative isolate overflow-hidden bg-black text-white">
-        <img
-          src={DiagnosticsTop}
-          alt="Advanced Diagnostics at HEM Automotive"
-          className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
-          loading="lazy"
-        />
+        <picture>
+          <source
+            srcSet={`${DiagnosticsTop.replace(
+              ".jpg",
+              ".avif"
+            )} 1x, ${DiagnosticsTop.replace(".jpg", "@2x.avif")} 2x`}
+            type="image/avif"
+          />
+          <source
+            srcSet={`${DiagnosticsTop} 1x, ${DiagnosticsTop.replace(
+              ".jpg",
+              "@2x.jpg"
+            )} 2x`}
+            type="image/jpeg"
+          />
+          <img
+            src={DiagnosticsTop}
+            alt="Advanced Diagnostics at HEM Automotive"
+            className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
+            loading="lazy"
+          />
+        </picture>
 
         <div className="bg-gradient-to-b from-transparent to-zinc-900 via-transparent h-[50vh] flex flex-col justify-center items-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-Bungee uppercase leading-tight">

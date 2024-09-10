@@ -1,12 +1,13 @@
 import { Helmet } from "react-helmet";
 import GreenButton from "../utils/greenButton";
-import InspectionTop from "../assets/images/InspectionTop.jpg"
-import InspectionEngine from "../assets/images/InspectionEngine.jpg"
-import BrakeInspection from "../assets/images/BrakeInspection.jpeg"
-import SteeringSuspensionInspection from "../assets/images/SteeringSuspensionInspection.jpg"
-import ElectricalInspection from "../assets/images/ElectricalInspection.jpg"
-import TireInspection from "../assets/images/TireInspection.jpg"
-import DamageInspection from "../assets/images/ProblemsInspection.jpg"
+import InspectionTop from "../assets/images/InspectionTop.webp"; // Use WebP format
+import InspectionEngine from "../assets/images/InspectionEngine.webp"; // Use WebP format
+import BrakeInspection from "../assets/images/BrakeInspection.webp"; // Use WebP format
+import SteeringSuspensionInspection from "../assets/images/SteeringSuspensionInspection.webp"; // Use WebP format
+import ElectricalInspection from "../assets/images/ElectricalInspection.webp"; // Use WebP format
+import TireInspection from "../assets/images/TireInspection.webp"; // Use WebP format
+import DamageInspection from "../assets/images/ProblemsInspection.webp"; // Use WebP format
+
 const Inspections = () => {
   return (
     <div className="bg-zinc-900 text-white pt-40">
