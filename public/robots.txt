@@ -8,4 +8,4 @@ Disallow: /search/
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.hemautomotive.com/sitemap.xml
+Sitemap: https://hemautomotive.com/sitemap.xml

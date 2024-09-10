@@ -1,13 +1,10 @@
-
-import Footer from './components/pageParts/shared/Footer.jsx';
-import { Outlet } from 'react-router-dom';
-import MobileNavigation from './components/pageParts/shared/MobileNavigation.jsx';
-
-
+import { Outlet } from "react-router-dom";
+import MobileNavigation from "./components/pageParts/shared/MobileNavigation.jsx";
+import Footer from "./components/pageParts/shared/Footer.jsx";
 
 const App = () => {
   return (
-    <div className='bg-black scroll-smooth'>
+    <div className="bg-black scroll-smooth">
       <div className="sticky inset-y-0 inset-x-0 z-50 bg-black/50 font-Play animate-fadeIn">
         <MobileNavigation />
       </div>
@@ -19,6 +16,6 @@ const App = () => {
       </div>
     </div>
   );
-  }
+};
 
-  export default App;
+export default App;

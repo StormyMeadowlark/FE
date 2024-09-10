@@ -3,69 +3,115 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hover effect for PhoneIcon */
 .PhoneIcon:hover {
-    fill: #00FF00;
+  fill: #00FF00;
 }
-.silverbg {
-    background: linear-gradient(170deg, rgba(57, 59, 60, 1) 0%, rgba(38, 39, 40, 1) 3%, rgba(19, 19, 20, 1) 6%, rgba(19, 19, 20, 1) 10%, rgba(38, 39, 40, 1) 16%, rgba(57, 59, 60, 1) 25%, rgba(76, 78, 80, 1) 33%, rgba(95, 98, 100, 1) 40%, rgba(113, 117, 119, 1) 45%, rgba(132, 137, 139, 1) 53%, rgba(151, 156, 159, 1) 59%, rgba(170, 176, 179, 1) 66%, rgba(170, 176, 179, 1) 69%, rgba(151, 156, 159, 1) 73%, rgba(132, 137, 139, 1) 78%, rgba(113, 117, 119, 1) 82%, rgba(95, 98, 100, 1) 86%, rgba(76, 78, 80, 1) 90%, rgba(57, 59, 60, 1) 93%, rgba(38, 39, 40, 1) 96%, rgba(19, 19, 20, 1) 98%, rgba(0, 0, 0, 1) 100%);
-}
-  
-.silverbg45 {
-    background: linear-gradient(170deg, rgba(57, 59, 60, 1) 0%, rgba(38, 39, 40, 1) 3%, rgba(19, 19, 20, 1) 6%, rgba(19, 19, 20, 1) 10%, rgba(38, 39, 40, 1) 16%, rgba(57, 59, 60, 1) 25%, rgba(76, 78, 80, 1) 33%, rgba(95, 98, 100, 1) 40%, rgba(113, 117, 119, 1) 45%, rgba(132, 137, 139, 1) 53%, rgba(151, 156, 159, 1) 59%, rgba(170, 176, 179, 1) 66%, rgba(170, 176, 179, 1) 69%, rgba(151, 156, 159, 1) 73%, rgba(132, 137, 139, 1) 78%, rgba(113, 117, 119, 1) 82%, rgba(95, 98, 100, 1) 86%, rgba(76, 78, 80, 1) 90%, rgba(57, 59, 60, 1) 93%, rgba(38, 39, 40, 1) 96%, rgba(19, 19, 20, 1) 98%, rgba(0, 0, 0, 1) 100%);
-}
-  
+
+/* Gradient Backgrounds */
+.silverbg,
+.silverbg45,
 .silverbg45:hover {
-      background: linear-gradient(173deg, rgba(57, 59, 60, 1) 0%, rgba(38, 39, 40, 1) 3%, rgba(19, 19, 20, 1) 6%, rgba(19, 19, 20, 1) 10%, rgba(38, 39, 40, 1) 16%, rgba(57, 59, 60, 1) 25%, rgba(76, 78, 80, 1) 33%, rgba(95, 98, 100, 1) 40%, rgba(113, 117, 119, 1) 45%, rgba(132, 137, 139, 1) 53%, rgba(151, 156, 159, 1) 59%, rgba(170, 176, 179, 1) 66%, rgba(170, 176, 179, 1) 69%, rgba(151, 156, 159, 1) 73%, rgba(132, 137, 139, 1) 78%, rgba(113, 117, 119, 1) 82%, rgba(95, 98, 100, 1) 86%, rgba(76, 78, 80, 1) 90%, rgba(57, 59, 60, 1) 93%, rgba(38, 39, 40, 1) 96%, rgba(19, 19, 20, 1) 98%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(
+    170deg,
+    rgba(57, 59, 60, 1) 0%,
+    rgba(38, 39, 40, 1) 3%,
+    rgba(19, 19, 20, 1) 6%,
+    rgba(19, 19, 20, 1) 10%,
+    rgba(38, 39, 40, 1) 16%,
+    rgba(57, 59, 60, 1) 25%,
+    rgba(76, 78, 80, 1) 33%,
+    rgba(95, 98, 100, 1) 40%,
+    rgba(113, 117, 119, 1) 45%,
+    rgba(132, 137, 139, 1) 53%,
+    rgba(151, 156, 159, 1) 59%,
+    rgba(170, 176, 179, 1) 66%,
+    rgba(170, 176, 179, 1) 69%,
+    rgba(151, 156, 159, 1) 73%,
+    rgba(132, 137, 139, 1) 78%,
+    rgba(113, 117, 119, 1) 82%,
+    rgba(95, 98, 100, 1) 86%,
+    rgba(76, 78, 80, 1) 90%,
+    rgba(57, 59, 60, 1) 93%,
+    rgba(38, 39, 40, 1) 96%,
+    rgba(19, 19, 20, 1) 98%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+.silverbg45:hover {
+  background: linear-gradient(
+    173deg,
+    rgba(57, 59, 60, 1) 0%,
+    rgba(38, 39, 40, 1) 3%,
+    rgba(19, 19, 20, 1) 6%,
+    rgba(19, 19, 20, 1) 10%,
+    rgba(38, 39, 40, 1) 16%,
+    rgba(57, 59, 60, 1) 25%,
+    rgba(76, 78, 80, 1) 33%,
+    rgba(95, 98, 100, 1) 40%,
+    rgba(113, 117, 119, 1) 45%,
+    rgba(132, 137, 139, 1) 53%,
+    rgba(151, 156, 159, 1) 59%,
+    rgba(170, 176, 179, 1) 66%,
+    rgba(170, 176, 179, 1) 69%,
+    rgba(151, 156, 159, 1) 73%,
+    rgba(132, 137, 139, 1) 78%,
+    rgba(113, 117, 119, 1) 82%,
+    rgba(95, 98, 100, 1) 86%,
+    rgba(76, 78, 80, 1) 90%,
+    rgba(57, 59, 60, 1) 93%,
+    rgba(38, 39, 40, 1) 96%,
+    rgba(19, 19, 20, 1) 98%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
-.hexagon{
-    position: relative;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+/* Hexagon Shape */
+.hexagon {
+  position: relative;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-.gallery{
-    position:relative;
-    width:300px;
-    height:100px;
-    transform-style:preserve-3d;
-    animation:rotate 120s linear infinite;
-  }
-  
-  @keyframes rotate{
-    from{
-      transform:perspective(1200px) rotateY(0deg);
-    }
-    
-    to{
-      transform:perspective(1200px) rotateY(-360deg);
-    }
-  }
-  
-  .gallery span{
-    position:absolute;
-    width:100%;
-    height:50%;
-    transform-origin:center;
-    transform-style:preserve-3d;
-    transform:rotateY(calc(var(--i) * 22.5deg)) translateZ(760px);
-  }
-  
-  .gallery span img{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-  }
+/* Rotating Gallery Animation */
+.gallery {
+  position: relative;
+  width: 300px;
+  height: 100px;
+  transform-style: preserve-3d;
+  animation: rotate 120s linear infinite;
+}
 
-  input[type="Radio"] {
-    color: #0f0;
+@keyframes rotate {
+  from {
+    transform: perspective(1200px) rotateY(0deg);
   }
-
-  input[type=""] {
-    font-family: Urbanist;
+  to {
+    transform: perspective(1200px) rotateY(-360deg);
   }
+}
 
-  /* Hide focus outline on mouse click, but show it for keyboard navigation */
+.gallery span {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(760px);
+}
+
+.gallery span img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Input Styles */
+input[type="radio"] {
+  color: #0f0;
+}
+
+/* Focus Outline Control */
 .focus-visible\:outline-none:focus:not(:focus-visible) {
   outline: none; /* Remove outline on mouse click */
 }
@@ -74,7 +120,7 @@
   outline: 2px solid #00ff00 !important; /* Show custom focus outline for keyboard navigation */
 }
 
-/* Pseudo-element for the top and bottom outlines */
+/* Navigation Link Outlines */
 .nav-link::before,
 .nav-link::after {
   content: '';
@@ -86,23 +132,20 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* Top outline */
 .nav-link::before {
-  top: 0;
+  top: 0; /* Top outline */
 }
 
-/* Bottom outline */
 .nav-link::after {
-  bottom: 0;
+  bottom: 0; /* Bottom outline */
 }
 
-/* Show the outlines smoothly from left to right on hover */
 .nav-link:hover::before,
 .nav-link:hover::after {
-  left: 0;
+  left: 0; /* Show the outlines smoothly from left to right on hover */
 }
 
-/* Styles for blog content */
+/* Styles for Blog Content */
 .markdown-content {
   line-height: 1.8; /* Increase line height for better readability */
 }

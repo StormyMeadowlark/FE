@@ -1,11 +1,10 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       animation: {
         fadeIn: "fadeIn 1.5s ease-in-out",
-        SlideUp: "slideUp 1.5s ease-in-out",
+        slideUp: "slideUp 1.5s ease-in-out",
       },
       keyframes: {
         fadeIn: {
@@ -17,23 +16,24 @@ export default {
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
-      container: {
-        center: true,
-      },
       fontFamily: {
         Play: ["Play", "sans-serif"],
         Urbanist: ["Urbanist", "sans-serif"],
         Bungee: ["Bungee", "sans-serif"],
       },
       colors: {
-        HEMgreen: '#00FF00',
-        HEMgray: '#333333'
-      }
+        HEMgreen: "#00FF00",
+        HEMgray: "#333333",
+      },
     },
-    plugins: [
-      require("@tailwindcss/forms"),
-      require("@designbycode/tailwindcss-text-stroke"),
-      require("@xpd/tailwind-3dtransforms"),
-    ],
+  },
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@designbycode/tailwindcss-text-stroke"),
+    require("@xpd/tailwind-3dtransforms"),
+  ],
+  purge: {
+    enabled: true,
+    content: ["./src/**/*.html", "./src/**/*.jsx", "./src/**/*.js"],
   },
 };
