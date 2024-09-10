@@ -256,15 +256,15 @@ const Home = () => {
         </Helmet>
 
         {/* Hero Section */}
-        <div className="relative isolate overflow-hidden min-h-[75vh] text-center text-5xl md:text-7xl lg:text-8xl font-Bungee text-white uppercase bg-engine bg-cover bg-center">
-          <div className="relative pt-60 min-h-[100vh] bg-gradient-to-b from-black/30 to-HEMgreen via-black/70 border-b-HEMgreen">
+        <div className="relative isolate overflow-hidden min-h-[100vh] text-center font-sans text-5xl md:text-7xl lg:text-8xl text-white uppercase bg-engine bg-cover bg-center bg-no-repeat">
+          <div className="relative pt-60 min-h-[100vh] bg-gradient-to-b from-black/70 to-HEMgreen via-black/70 border-b-HEMgreen">
             {/* Hero Content */}
             <animated.div
               style={props}
               className="relative mx-auto max-w-6xl pt-20 z-10"
             >
-              <h1 className="leading-tight">
-                Breakdowns won't break you down with your Topeka, KS High End
+              <h1 className="leading-tight font-bold font-sans">
+                Breakdowns won&apos;t break you down with your Topeka, KS High-End
                 Mechanics
               </h1>
               <div className="py-20 flex items-center justify-center gap-x-6 font-Play font-bold">
@@ -313,6 +313,12 @@ const Home = () => {
               content="https://www.hemautomotive.com/event-sept-14"
             />
             <meta property="og:type" content="website" />
+            <link
+              rel="preload"
+              href="/src/assets/images/Engine.webp"
+              as="image"
+              type="image/webp"
+            />
           </Helmet>
 
           <div className="bg-gradient-to-b from-transparent to-zinc-900 via-transparent h-screen flex flex-col justify-center items-center text-center">
