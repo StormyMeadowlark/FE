@@ -7,17 +7,17 @@ import { motion } from "framer-motion";
 import { useSpring, animated } from "@react-spring/web";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import CornerHexagons from "../components/CornerHexagons.svg?react";
-import CheckOil from "../assets/images/Maintenance.jpg";
-import Diagnostics from "../assets/images/Diagnostics.jpg";
-import Alignment from "../assets/images/Alignment2.jpg";
-import RemoveReplace from "../assets/images/EngineReplace.jpeg";
-import Inspection from "../assets/images/Inspection.jpg";
+import CheckOil from "../assets/images/Maintenance.webp";
+import Diagnostics from "../assets/images/Diagnostics.webp";
+import Alignment from "../assets/images/Alignment2.webp";
+import RemoveReplace from "../assets/images/EngineReplace.webp";
+import Inspection from "../assets/images/Inspection.webp";
+import HeatAC from "../assets/images/HeatingAC.webp";
+import Engine from "../assets/images/Engine.webp";
+import BestofBest from "../assets/images/BestOfBest.webp";
+import Hexagons from "../assets/images/Hexagons.webp";
 import SilverButton from "../utils/silverbutton";
-import HeatAC from "../assets/images/HeatingAC.jpg";
-import Engine from "../assets/images/Engine.jpg";
-import BestofBest from "../assets/images/BestOfBest.png";
-import Hexagons from "../assets/images/Hexagons.jpg"
+
 
 const testimonials = [
   {
@@ -231,31 +231,6 @@ const Home = () => {
     },
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 20,
-        duration: 0.8,
-      },
-    },
-  };
-
-  const hoverVariants = {
-    hover: {
-      scale: 1.05,
-      boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
-    },
-  };
-
   return (
     <div className="bg-black overflow-hidden">
       <Helmet>
@@ -281,49 +256,58 @@ const Home = () => {
         <meta property="og:url" content="https://www.hemautomotive.com" />
         <meta property="og:type" content="website" />
       </Helmet>
-      <div className="animate-fadeIn min-h-[75vh] text-center text-5xl md:text-7xl lg:text-8xl font-Bungee text-white uppercase">
-        <div className="relative isolate overflow-hidden pt-60 min-h-[75vh] ">
-          <img
-            src={Engine}
-            alt="Front side of an engine block"
-            className="absolute inset-0 -z-10 brightness-[30%] object-cover"
-            loading="lazy"
-          />
-          <div className="bg-gradient-to-b from-transparent to-HEMgreen via-transparent h-[100vh] border-b-HEMgreen">
-            <animated.div style={props} className="mx-auto max-w-6xl pt-2">
-              <div className="text-center">
-                <h1>
-                  Breakdowns won&apos;t break you down with your Topeka, KS High
-                  End Mechanics
-                </h1>
-                <div className="pt-20 flex items-center justify-center gap-x-6 font-Play font-bold">
-                  <GreenButton
-                    href={"contact"}
-                    textarea="Contact Today"
-                    className="transition-transform transform hover:scale-105"
-                    aria-label="Contact Today"
-                  />
-                  <Link
-                    to={"services"}
-                    className={`text-sm lg:text-xl font-semibold leading-6 text-white transition-transform transform hover:scale-110 ${
-                      isKeyboardNavigation ? "focus:border-HEMgreen" : ""
-                    }`}
-                    aria-label="View Services"
-                  >
-                    <span>View Services</span>
-                  </Link>
-                </div>
-              </div>
-            </animated.div>
-            <div
-              className="absolute inset-0 -z-10 transform-gpu overflow-hidden rotate-180"
-              aria-hidden="true"
-            >
-              <CornerHexagons className=" mt-[36rem] lg:aspect-[1155/678] overflow-auto" />
+
+      {/* Hero Section */}
+      <div className="relative isolate overflow-hidden min-h-[75vh] text-center text-5xl md:text-7xl lg:text-8xl font-Bungee text-white uppercase">
+        <div className="relative pt-60 min-h-[75vh] bg-gradient-to-b from-transparent to-HEMgreen via-transparent border-b-HEMgreen">
+          {/* Image with Picture Tag for Lazy Loading */}
+          <picture>
+            <source
+              srcSet={Engine.replace(".webp", ".avif")}
+              type="image/avif"
+            />
+            <source srcSet={Engine} type="image/webp" />
+            <img
+              src={Engine.replace(".webp", ".jpg")}
+              alt="Front side of an engine block"
+              className="absolute inset-0 -z-10 brightness-[30%] object-fill"
+              loading="lazy"
+            />
+          </picture>
+
+          {/* Hero Content */}
+          <animated.div
+            style={props}
+            className="relative mx-auto max-w-6xl pt-20 z-10"
+          >
+            <h1 className="leading-tight">
+              Breakdowns won't break you down with your Topeka, KS High End
+              Mechanics
+            </h1>
+            <div className="py-20 flex items-center justify-center gap-x-6 font-Play font-bold">
+              <GreenButton
+                href={"contact"}
+                textarea="Contact Today"
+                className="transition-transform transform hover:scale-105"
+                aria-label="Contact Today"
+              />
+              <Link
+                to={"services"}
+                className={`text-sm lg:text-xl font-semibold leading-6 text-white transition-transform transform hover:scale-110 ${
+                  isKeyboardNavigation ? "focus:border-HEMgreen" : ""
+                }`}
+                aria-label="View Services"
+              >
+                <span>View Services</span>
+              </Link>
             </div>
-          </div>
+          </animated.div>
+
+          {/* Decorative Hexagon Component */}
         </div>
       </div>
+
+      {/* Customer Appreciation Day Section */}
       <Element className="relative isolate overflow-hidden bg-black text-white">
         <Helmet>
           <meta
@@ -350,12 +334,19 @@ const Home = () => {
           <meta property="og:type" content="website" />
         </Helmet>
 
-        <img
-          src={Hexagons}
-          alt="Customer Appreciation Day at HEM Automotive"
-          className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
-          loading="lazy"
-        />
+        <picture>
+          <source
+            srcSet={Hexagons.replace(".webp", ".avif")}
+            type="image/avif"
+          />
+          <source srcSet={Hexagons} type="image/webp" />
+          <img
+            src={Hexagons.replace(".webp", ".jpg")}
+            alt="Customer Appreciation Day at HEM Automotive"
+            className="absolute inset-0 -z-10 brightness-[30%] object-cover h-full w-full"
+            loading="lazy"
+          />
+        </picture>
 
         <div className="bg-gradient-to-b from-transparent to-zinc-900 via-transparent h-screen flex flex-col justify-center items-center text-center">
           <motion.div
@@ -366,10 +357,12 @@ const Home = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-Bungee uppercase leading-tight">
               Customer Appreciation Day
             </h1>
-            <p className="mt-6 text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] max-w-3xl mx-auto">LESS THAN 1 WEEK AWAY
+            <p className="mt-6 text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] max-w-3xl mx-auto">
+              LESS THAN 1 WEEK AWAY
             </p>
             <p className="mt-6 text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] max-w-3xl mx-auto">
-              Join us on September 14th, 2024, for a day full of fun, free food, giveaways, obstacle course and so much more!
+              Join us on September 14th, 2024, for a day full of fun, free food,
+              giveaways, obstacle course, and so much more!
             </p>
             <p className="mt-2 text-md md:text-lg lg:text-xl font-Urbanist text-[#cccccc]">
               11:00 AM - 3:00 PM | 315 SW 32nd Ter, Topeka, KS
@@ -401,9 +394,7 @@ const Home = () => {
             <meta property="og:url" content="https://www.hemautomotive.com" />
             <meta property="og:type" content="website" />
           </Helmet>
-          <div className="absolute bottom-0 w-[50%]">
-            <CornerHexagons aria-hidden="true" />
-          </div>
+        
           <section className="py-16 px-4 mx-auto max-w-7xl">
             <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-Bungee text-[#00ff00] mb-10 uppercase">
               Our Featured Services
@@ -550,6 +541,7 @@ const Home = () => {
           </section>
         </div>
       </Element>
+
       <Element name="offers">
         <div className="bg-HEMgray text-white py-12 px-4 md:px-10 lg:px-16">
           <Helmet>
@@ -655,22 +647,26 @@ const Home = () => {
                 </p>
                 <div className="flex flex-col md:flex-row mt-6 justify-center mb-20">
                   <div className="mx-4 mb-10 md:mb-0">
-                    <Link
-                      to="https://www.google.com/search?q=hem+automotive"
+                    <a
+                      href="https://www.google.com/search?q=hem+automotive"
                       className="inline-flex items-center justify-center rounded-md silverbg px-6 py-3 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222] font-Play text-center text-white transform transition-transform duration-300 hover:scale-105"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label="Review on Google"
                     >
                       Review on Google
-                    </Link>
+                    </a>
                   </div>
                   <div className="mx-4">
-                    <Link
-                      to="https://www.yelp.com/biz/hem-automotive-topeka"
+                    <a
+                      href="https://www.yelp.com/biz/hem-automotive-topeka"
                       className="inline-flex items-center justify-center rounded-md silverbg px-6 py-3 text-xl font-black shadow-xl border-b border-[#00ff00] shadow-[#222222] font-Play text-center text-white transform transition-transform duration-300 hover:scale-105"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label="Review on Yelp"
                     >
                       Review on Yelp
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -683,14 +679,16 @@ const Home = () => {
                   src={BestofBest}
                   className="h-auto"
                   alt="Best of Best Award"
+                  loading="lazy"
                 />
               </motion.div>
             </div>
           </div>
         </div>
       </Element>
-      <Element name="testimonials" className="">
-        <div className="bg-HEMgray ">
+
+      <Element name="testimonials">
+        <div className="bg-HEMgray">
           <Helmet>
             <meta
               name="description"
@@ -739,6 +737,7 @@ const Home = () => {
                     src={testimonials[current].image}
                     alt={`Photo of ${testimonials[current].name}`}
                     className="w-24 h-24 rounded-full mx-auto"
+                    loading="lazy"
                   />
                   <div
                     ref={refs.current[current]}
