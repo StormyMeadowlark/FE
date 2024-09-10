@@ -366,8 +366,7 @@ const Home = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-Bungee uppercase leading-tight">
               Customer Appreciation Day
             </h1>
-            <p className="mt-6 text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] max-w-3xl mx-auto">
-ONLY 1 WEEK AWAY
+            <p className="mt-6 text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] max-w-3xl mx-auto">LESS THAN 1 WEEK AWAY
             </p>
             <p className="mt-6 text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] max-w-3xl mx-auto">
               Join us on September 14th, 2024, for a day full of fun, free food, giveaways, obstacle course and so much more!
