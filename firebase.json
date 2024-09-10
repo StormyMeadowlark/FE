@@ -1,18 +1,25 @@
 {
   "hosting": {
-    "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "public": "dist", // Make sure this matches your build output directory
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|avif|js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
     ],
     "rewrites": [
       {
-        "source": "public/robots.txt",
+        "source": "robots.txt",
         "destination": "/robots.txt"
       },
       {
-        "source": "public/sitemap.xml",
+        "source": "sitemap.xml",
         "destination": "/sitemap.xml"
       },
       {
