@@ -373,7 +373,7 @@ ONLY 1 WEEK AWAY
               Join us on September 14th, 2024, for a day full of fun, free food, giveaways, obstacle course and so much more!
             </p>
             <p className="mt-2 text-md md:text-lg lg:text-xl font-Urbanist text-[#cccccc]">
-              10:00 AM - 4:00 PM | 315 SW 32nd Ter, Topeka, KS
+              11:00 AM - 3:00 PM | 315 SW 32nd Ter, Topeka, KS
             </p>
           </motion.div>
         </div>
