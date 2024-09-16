@@ -244,14 +244,13 @@ const Home = () => {
           <meta name="robots" content="index, follow" />
           <meta
             property="og:title"
-            content="HEM Automotive | High-End Mechanic Services in Topeka, KS"
+            content="High-End Mechanic Services in Topeka, KS | HEM Automotive"
           />
           <meta
             property="og:description"
-            content="Explore top-notch car services at HEM Automotive in Topeka, KS. From wheel alignment to diagnostics, our expert mechanics ensure your vehicle's optimal performance."
+            content="Explore top-notch car repair at HEM Automotive in Topeka, KS. From wheel alignment to diagnostics, our expert mechanics ensure your vehicle's optimal driving condition."
           />
-          <meta property="og:image" content="/path/to/engine.jpg" />
-          <meta property="og:url" content="https://www.hemautomotive.com" />
+          <meta property="og:url" content="https://hemautomotive.com" />
           <meta property="og:type" content="website" />
         </Helmet>
 
@@ -287,62 +286,6 @@ const Home = () => {
             </animated.div>
           </div>
         </div>
-
-        {/* Customer Appreciation Day Section */}
-        <Element className="relative isolate overflow-hidden bg-black text-white bg-hexagons bg-cover bg-center">
-          <Helmet>
-            <meta
-              name="description"
-              content="Join us for HEM Automotive's Customer Appreciation Day on September 14th, 2024. Enjoy free food and activities for the whole family in Topeka, KS!"
-            />
-            <meta
-              name="keywords"
-              content="HEM Automotive, customer appreciation day, auto repair event, Topeka Kansas, September 14"
-            />
-            <meta name="robots" content="index, follow" />
-            <meta
-              property="og:title"
-              content="HEM Automotive | Customer Appreciation Day - September 14th, 2024"
-            />
-            <meta
-              property="og:description"
-              content="Celebrate with us on September 14th, 2024, at HEM Automotive's Customer Appreciation Day. Enjoy exclusive offers, free services, and fun activities in Topeka, KS."
-            />
-            <meta
-              property="og:url"
-              content="https://www.hemautomotive.com/event-sept-14"
-            />
-            <meta property="og:type" content="website" />
-            <link
-              rel="preload"
-              href="/src/assets/images/Engine.webp"
-              as="image"
-              type="image/webp"
-            />
-          </Helmet>
-
-          <div className="bg-gradient-to-b from-transparent to-zinc-900 via-transparent h-screen flex flex-col justify-center items-center text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-Bungee uppercase leading-tight">
-                Customer Appreciation Day
-              </h1>
-              <p className="mt-6 text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] max-w-3xl mx-auto">
-                LESS THAN 1 WEEK AWAY
-              </p>
-              <p className="mt-6 text-lg md:text-xl lg:text-2xl font-Urbanist text-[#cccccc] max-w-3xl mx-auto">
-                Join us on September 14th, 2024, for a day full of fun, free
-                food, giveaways, obstacle course, and so much more!
-              </p>
-              <p className="mt-2 text-md md:text-lg lg:text-xl font-Urbanist text-[#cccccc]">
-                11:00 AM - 3:00 PM | 315 SW 32nd Ter, Topeka, KS
-              </p>
-            </motion.div>
-          </div>
-        </Element>
         <Element name="featured-services">
           <div className="relative min-h-[100vh] bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-500">
             <Helmet>
@@ -357,14 +300,14 @@ const Home = () => {
               <meta name="robots" content="index, follow" />
               <meta
                 property="og:title"
-                content="HEM Automotive | Featured Services"
+                content="Featured Services | HEM Automotive"
               />
               <meta
                 property="og:description"
                 content="Explore HEM Automotive's featured services, including wheel alignment, routine maintenance, diagnostic services, and more. Experience unparalleled full-service repair and maintenance."
               />
               <meta property="og:image" content={Alignment} />
-              <meta property="og:url" content="https://www.hemautomotive.com" />
+              <meta property="og:url" content="https://hemautomotive.com" />
               <meta property="og:type" content="website" />
             </Helmet>
 
