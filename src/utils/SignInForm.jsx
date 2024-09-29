@@ -13,9 +13,10 @@ export function SignInForm() {
     error: "",
     loading: false,
     success: false,
+    role: "", // Added to capture the user's role
   });
 
-  const { username, password, error, loading, success } = values;
+  const { username, password, error, loading, success, role } = values;
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -33,7 +34,9 @@ export function SignInForm() {
       // Store the token in cookies
       Cookies.set("token", response.data.token, { expires: 7 }); // Expires in 7 days
 
-      setValues({ ...values, success: true });
+      // Get the user's role from the response
+      const userRole = response.data.role;
+      setValues({ ...values, success: true, role: userRole });
     } catch (err) {
       setValues({
         ...values,
@@ -49,8 +52,15 @@ export function SignInForm() {
   const loadingMessage = () =>
     loading && <div className="text-green-500">Loading...</div>;
 
+  // Role-based redirection logic
+  const getRedirectPath = () => {
+    if (role === "Admin" || role === "SuperAdmin") return "/admin-dashboard";
+    if (role === "Mechanic") return "/mechanic-dashboard";
+    return "/profile"; // Default user profile
+  };
+
   return success ? (
-    <Navigate to="/profile" />
+    <Navigate to={getRedirectPath()} /> // Redirect based on role
   ) : (
     <div className="flex min-h-full flex-1 flex-col justify-center pb-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-[480px]">
@@ -101,10 +111,21 @@ export function SignInForm() {
             <button
               type="submit"
               className="bg-[#00ff00] text-gray-800 px-4 py-2 rounded-full text-lg font-bold hover:bg-[#00dd00] transition"
+              disabled={loading}
             >
-              Login
+              {loading ? "Logging in..." : "Login"}
             </button>
           </form>
+
+          {/* Add Forgot Password link */}
+          <div className="text-center mt-4">
+            <Link
+              to="/forgot-password"
+              className="text-[#00ff00] hover:text-[#00dd00]"
+            >
+              Forgot your password?
+            </Link>
+          </div>
 
           <p className="mt-10 text-center text-sm text-[#aaaaaa]">
             Not a member?{" "}

@@ -113,6 +113,13 @@ export default function Footer() {
               >
                 AUTO SCHOOL
               </Link>
+              <Link
+                to="/sales"
+                className="text-xl font-bold hover:text-HEMgreen"
+                aria-label="Learn more about Auto School"
+              >
+                SALES
+              </Link>
             </div>
           </div>
 

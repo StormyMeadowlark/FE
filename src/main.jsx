@@ -32,11 +32,27 @@ const SingleBlog = lazy(() => import("./pages/SingleBlogPost.jsx"));
 const Login = lazy(() => import("./pages/Login.jsx"));
 const Register = lazy(() => import("./pages/Register.jsx"));
 const Profile = lazy(() => import("./pages/Profile.jsx"));
+const InventoryPage = lazy(() => import("./pages/Inventory.jsx"));
+const ProductDetailPage = lazy(() => import("./pages/VehicleDetail.jsx"));
+const SuperAdminDashboard = lazy(() =>
+  import("./pages/SuperAdminDashboard.jsx")
+);
+const VehicleManagement = lazy(() => import("./pages/VehicleManagement.jsx"));
+import AddVehicle from "./pages/AddVehicle";
+const MediaManagement = lazy(() => import("./pages/MediaManagement.jsx"));
+const UserManagement = lazy(() => import("./pages/UserManagement.jsx"));
+import EditVehicle from "./pages/EditVehicle";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
     <ScrollToTop />
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div className="flex justify-center items-center h-screen">
+          <div className="loader">Loading...</div>
+        </div>
+      }
+    >
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
@@ -69,6 +85,34 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="profile" element={<Profile />} />
+
+          {/* New Sales/Inventory Routes */}
+          <Route path="sales" element={<InventoryPage />} />
+          <Route path="sales/:vehicleId" element={<ProductDetailPage />} />
+
+          {/* Super Admin Routes */}
+          <Route path="superadmin" element={<SuperAdminDashboard />} />
+          <Route
+            path="superadmin/vehicle-management"
+            element={<VehicleManagement />}
+          />
+          <Route
+            path="superadmin/media-management"
+            element={<MediaManagement />}
+          />
+          <Route
+            path="superadmin/user-management"
+            element={<UserManagement />}
+          />
+          <Route
+            path="/superadmin/vehicle-management/add"
+            element={<AddVehicle />}
+          />
+          <Route
+            path="/superadmin/vehicle-management/edit/:vehicleId"
+            element={<EditVehicle />}
+          />
+
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
