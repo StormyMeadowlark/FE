@@ -14,6 +14,7 @@ const navigation = [
   { name: "CAREERS", href: "careers" },
   { name: "CONTACT", href: "contact" },
   { name: "AUTO SCHOOL", href: "autoSchool" },
+  { name: "SALES", href: "sales" },
 ];
 
 export default function Example() {
