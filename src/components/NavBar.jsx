@@ -12,13 +12,13 @@ function NavBar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <div className='absolute top-0 inset-x-0 z-50 bg-black/50 font-Play'>
+        <div className='absolute top-0 inset-x-0 z-50 bg-black/50 font-Play '>
             <header className='px-3'>
                 <nav className='flex flex-1 items-center justify-evenly
                 ' aria-label='Global'>
                     <div className=''>
                         <Link to='/' className='flex flex-1'>
-                            <span className='sr-only'>H.E.M Automotive</span>
+                            <span className='sr-only'>H.E.M. Automotive</span>
                             <Logo className='scale-75' />
                         </Link>
                     </div>

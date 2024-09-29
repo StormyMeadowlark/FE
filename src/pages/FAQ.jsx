@@ -1,10 +1,13 @@
 
-const Faq = () => {
-    return(
-        <div>
-            <h1>Hello from FAQ page!</h1>
-            <p>This will HEM AUTO FAQ</p>
-      </div>
-    );
-  };
-export default Faq;
+import Hero from "../components/pageParts/Faq/Hero";
+import Faq from "../components/pageParts/Faq/FAQ";
+
+const FAQ = () => {
+  return (
+    <div>
+      <Hero />
+      <Faq />
+    </div>
+  );
+};
+export default FAQ;

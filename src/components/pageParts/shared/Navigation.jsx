@@ -55,13 +55,13 @@ function MobileNavigation() {
   return(
         <div className="py-4 space-y-4">
           {navigation.map((item) => (
-            <Link
+            <NavLink
               key={item.name}
               to={item.href}
               className="block rounded-lg px-4 text-lg font-semibold text-[#eeeeee]"
             >
               {item.name}
-          </Link>
+          </NavLink>
         ))}
       </div>
   )

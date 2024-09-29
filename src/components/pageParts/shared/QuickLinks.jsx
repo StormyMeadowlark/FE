@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import useHover from '../../../hooks/useHover';
 import { UserIcon, CalendarIcon, BanknotesIcon } from '@heroicons/react/24/outline'
 
@@ -12,22 +12,34 @@ function QuickLinks() {
     const UserAfterHover = UserAfter();
     const AppointmentAfterHover = AppointmentAfter();
     const PaymentAfterHover = PaymentAfter();
-    return(
-        <div className='hidden lg:flex lg:flex-1 lg:justify-end '>
-                <Link {...UserHoveringProps} to='user' className='p-2 focus:outline focus:outline-[#00FF00]'>
-                    <span className='sr-only'>Log-In or Create Account</span>
-                    {UserHovering ? UserAfterHover : UserBeforeHover}
-                </Link>
-                <Link {...AppointmentHoveringProps} to='schedule' className='p-2 focus:outline focus:outline-[#00FF00]'>
-                    <span className='sr-only'>Log-In or Create Account</span>
-                    {AppointmentHovering ? AppointmentAfterHover : AppointmentBeforeHover}
-                </Link>
-                <Link {...PaymentHoveringProps} to='payment' className='p-2 focus:outline focus:outline-[#00FF00]'>
-                    <span className='sr-only'>Log-In or Create Account</span>
-                    {PaymentHovering ? PaymentAfterHover : PaymentBeforeHover}
-                </Link>
-        </div>
-    )
+    return (
+      <div className="hidden lg:flex lg:flex-1 lg:justify-center">
+        <NavLink
+          {...UserHoveringProps}
+          to="/login"
+          className="p-2 focus-visible:outline-none"
+        >
+          <span className="sr-only">Log-In or Create Account</span>
+          {UserHovering ? UserAfterHover : UserBeforeHover}
+        </NavLink>
+        <NavLink
+          {...AppointmentHoveringProps}
+          to="schedule"
+          className="p-2 focus:outline focus-visible:outline-none"
+        >
+          <span className="sr-only">Schedule an Appointment</span>
+          {AppointmentHovering ? AppointmentAfterHover : AppointmentBeforeHover}
+        </NavLink>
+        <NavLink
+          {...PaymentHoveringProps}
+          to="payment"
+          className="p-2 focus-visible:outline-none"
+        >
+          <span className="sr-only">Online Payments</span>
+          {PaymentHovering ? PaymentAfterHover : PaymentBeforeHover}
+        </NavLink>
+      </div>
+    );
 }
 
 function UserBefore() {
@@ -72,18 +84,18 @@ export default QuickLinks;
 function MobileQuickLinks() {
     return(
         <div className='py-6 flex'>
-            <a href='#' className='block rounded-lg px-4 py-4 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
+            <NavLink to='/login' className='block rounded-lg px-4 py-4 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
                 <span className='sr-only'>Log-in or create account</span>
                 <UserIcon className='h-7 w-7 hover:fill-[#00FF00]' aria-hidden='true' stroke='#00FF00' />
-            </a>
-            <a href='#' className='block rounded-lg px-4 py-4 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
+            </NavLink>
+            <NavLink to='payment' className='block rounded-lg px-4 py-4 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
                 <span className='sr-only'>Schedule an online appointment</span>
                 <CalendarIcon className='h-7 w-7 hover:fill-[#00FF00]' aria-hidden='true' stroke='#00FF00' />
-            </a>
-            <a href='#' className='block rounded-lg px-4 py-4 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
-                <span className='sr-only'>Log-in or create account</span>
+            </NavLink>
+            <NavLink to='schedule' className='block rounded-lg px-4 py-4 text-base font-semibold leading-7 text-white focus:outline focus:outline-[#00FF00]'>  
+                <span className='sr-only'>Online payments</span>
                 <BanknotesIcon className='h-7 w-7 hover:fill-[#00FF00]' aria-hidden='true' stroke='#00FF00' />
-            </a>
+            </NavLink>
         </div>
     )
 }

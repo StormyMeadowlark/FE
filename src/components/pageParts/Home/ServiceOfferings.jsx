@@ -78,19 +78,24 @@ function ServiceOfferings() {
   ]
 
 
-    return(
-      <div className="relative bg-[#00ff00]">
-        <div className="bg-[#333333] py-20 px-10">
-        <div className="relative mx-auto max-w-7xl ">
-          <HeaderOne textOne='We offer You' />
-          <p className="relative max-w-7xl text-xl text-[#eeeeee] py-4 font-Urbanist tracking-wider">Full service repair & maintenance for most models manufactured after 2000. Just call us for older vehicles or other items with wheels, it isn&apos;t like we can&apos;t work on them... you just have to draw the line somewhere. </p>
+    return (
+      <div className="relative bg-[#333333]">
+        <div className="bg-[#00ff00] py-20 px-10">
+          <div className="relative mx-auto max-w-7xl ">
+            <HeaderOne textOne="We offer You" />
+            <p className="relative max-w-7xl text-xl text-[#333333] font-bold py-4 font-Urbanist tracking-wider">
+              Full service repair & maintenance for most models manufactured
+              after 2000. Just call us for older vehicles or other items with
+              wheels, it isn&apos;t like we can&apos;t work on them... you just
+              have to draw the line somewhere.{" "}
+            </p>
+          </div>
         </div>
-        </div>
-        <section className="relative mx-auto max-w-7xl bg-[#00ff00] -mb-20 font-Play">
-          <ListServices services={services}/>
+        <section className="relative mx-auto max-w-7xl -mb-20 font-Play">
+          <ListServices services={services} />
         </section>
-        </div>
-    )
+      </div>
+    );
   }
 
 export default ServiceOfferings

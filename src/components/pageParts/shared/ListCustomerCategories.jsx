@@ -1,7 +1,7 @@
  import SilverButton from "../../../utils/silverbutton"
 export default function ListCustomerCategories(props) {
     return(
-        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8 md:-translate-y-20 -translate-y-36">
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8 -translate-y-24 lg:-translate-y-36 gap-y-10">
         {props.supportLinks.map((link) => (
           <div key={link.name} className=''>
           <div>

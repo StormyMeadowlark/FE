@@ -1,17 +1,21 @@
 import { Link } from "react-router-dom";
 
 export default function ImageLinkOne({href, icon, title}) {
-    return(
+    return (
+      <div className="">
         <Link to={`services/${href}`}>
-            <img  
-                src={icon}
-                alt=""
-                aria-hidden="true"
-                className= "hexagon brightness-[50%] blur-[2px] object-fill px-3 top-4"
+          <div className="flex flex-col my-2">
+            <img
+              src={icon}
+              alt=""
+              aria-hidden="true"
+              className="hexagon aspect-[6/5] brightness-[50%] blur-[2px] object-fill md:h-45 md:w-45 self-center"
             />
-                <div className="px-4 lg:mx-auto xl:text-2xl lg:text-xl md:text-lg sm:text-md z-50 lg:-translate-y-24  md:-translate-y-[4.5rem] -translate-y-16">
-                    {title}
-                </div>
+            <div className="px-3 lg:px-0 z-50 md:-translate-y-[8rem] -translate-y-20 text-center  font-bold">
+              {title}
+            </div>
+          </div>
         </Link>
-    )
+      </div>
+    );
 }
