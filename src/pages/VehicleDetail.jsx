@@ -1,74 +1,68 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
-// Mock data (Replace this with actual data fetching logic)
-const cars = [
-  {
-    id: 1,
-    make: "Infiniti",
-    model: "SedanX50",
-    year: 2018,
-    price: "$25,000",
-    exteriorColor: "Black",
-    interiorColor: "Tan",
-    vehicleType: "Sedan",
-    motor: "V6",
-    mileage: 35000,
-    images: [
-      "/path/to/image1.jpg",
-      "/path/to/image2.jpg",
-      "/path/to/image3.jpg",
-    ],
-    description:
-      "This luxurious Infiniti SedanX50 offers unparalleled comfort and performance...",
-    features: [
-      "Leather Seats",
-      "Sunroof",
-      "Navigation System",
-      "Bluetooth Connectivity",
-      "Backup Camera",
-    ],
-  },
-  {
-    id: 2,
-    make: "Tesla",
-    model: "Model S",
-    year: 2020,
-    price: "$70,000",
-    exteriorColor: "White",
-    interiorColor: "Black",
-    vehicleType: "Sedan",
-    motor: "Electric",
-    mileage: 15000,
-    images: [
-      "/path/to/tesla1.jpg",
-      "/path/to/tesla2.jpg",
-      "/path/to/tesla3.jpg",
-    ],
-    description:
-      "Experience the future with this Tesla Model S featuring cutting-edge technology...",
-    features: [
-      "Autopilot",
-      "Panoramic Sunroof",
-      "Premium Sound System",
-      "Heated Seats",
-      "Wireless Charging",
-    ],
-  },
-  // Add more car objects as needed
-];
+import axiosInstance from "../utils/axiosInstance";
 
 export default function ProductDetailPage() {
-  const { vehicleId } = useParams();
-  console.log('vehicleId:', vehicleId);
-  const [car, setCar] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const { vehicleId } = useParams(); // Get vehicle ID from the URL
+  const tenantId = "66d063ca0800f9ad017e7cfc"; // Hardcoded tenantId for now
+  const [car, setCar] = useState(null); // State to store vehicle and sale data
+  const [selectedImage, setSelectedImage] = useState(null); // For image modal
+  const [loading, setLoading] = useState(true); // Loading state
+  const [error, setError] = useState(null); // Error state
 
   useEffect(() => {
-    // Parse vehicleId to integer and find the car with matching id
-    const selectedCar = cars.find((c) => c.id === parseInt(vehicleId, 10));
-    setCar(selectedCar);
-  }, [vehicleId]);
+    const fetchCarDetails = async () => {
+      setLoading(true);
+      try {
+        // Fetch vehicle data from the vehicle service
+        const vehicleResponse = await axiosInstance.get(
+          `/vehicles/${tenantId}/${vehicleId}`
+        );
+        const vehicleData = vehicleResponse.data.vehicle;
+
+        // Fetch sales data related to the vehicle
+        const salesResponse = await axiosInstance.get(
+          `/sales/${tenantId}/${vehicleId}`
+        );
+        const saleData = salesResponse.data;
+
+        // Fetch media data related to the vehicle
+        const mediaResponse = await axiosInstance.get(
+          `/vehicle-media/${tenantId}/${vehicleId}`
+        );
+        const mediaData = mediaResponse.data.media;
+
+        // Combine vehicle, sales, and media into one object
+        setCar({
+          ...saleData,
+          vehicle: vehicleData,
+          images: mediaData[0]?.photos || [], // Get images or an empty array if no media
+        });
+      } catch (err) {
+        setError("Error fetching vehicle details");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCarDetails();
+  }, [vehicleId, tenantId]);
+
+  if (loading) {
+    return (
+      <div className="bg-HEMgray text-white min-h-screen flex items-center justify-center">
+        <p>Loading vehicle details...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="bg-HEMgray text-white min-h-screen flex items-center justify-center">
+        <p>{error}</p>
+      </div>
+    );
+  }
 
   if (!car) {
     return (
@@ -84,15 +78,17 @@ export default function ProductDetailPage() {
       <section className="relative bg-black text-white">
         <img
           src={car.images[0]} // Display the first image
-          alt={`${car.make} ${car.model}`}
+          alt={`${car.vehicle.make} ${car.vehicle.model}`}
           className="w-full h-96 object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="absolute inset-0 flex flex-col justify-center items-center z-10 px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-Bungee mb-2">
-            {car.year} {car.make} {car.model}
+            {car.vehicle.year} {car.vehicle.make} {car.vehicle.model}
           </h1>
-          <p className="text-2xl md:text-3xl font-semibold">{car.price}</p>
+          <p className="text-2xl md:text-3xl font-semibold">
+            ${car.salePrice?.toLocaleString()}
+          </p>
         </div>
       </section>
 
@@ -102,15 +98,21 @@ export default function ProductDetailPage() {
           {/* Image Gallery */}
           <div>
             <div className="flex flex-col gap-4">
-              {car.images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`${car.make} ${car.model} Image ${index + 1}`}
-                  className="w-full h-64 object-cover rounded-lg cursor-pointer"
-                  onClick={() => setSelectedImage(image)}
-                />
-              ))}
+              {car.images && car.images.length > 0 ? (
+                car.images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image}
+                    alt={`${car.vehicle.make} ${car.vehicle.model} Image ${
+                      index + 1
+                    }`}
+                    className="w-full h-64 object-cover rounded-lg cursor-pointer"
+                    onClick={() => setSelectedImage(image)}
+                  />
+                ))
+              ) : (
+                <p>No images available</p>
+              )}
             </div>
           </div>
 
@@ -119,48 +121,44 @@ export default function ProductDetailPage() {
             <h2 className="text-2xl md:text-3xl font-Urbanist mb-4">
               Vehicle Details
             </h2>
-            <p className="mb-6">{car.description}</p>
+            <p className="mb-6">
+              {car.description || "No description available"}
+            </p>
 
             <ul className="space-y-2">
               <li>
-                <strong>Make:</strong> {car.make}
+                <strong>Make:</strong> {car.vehicle.make}
               </li>
               <li>
-                <strong>Model:</strong> {car.model}
+                <strong>Model:</strong> {car.vehicle.model}
               </li>
               <li>
-                <strong>Year:</strong> {car.year}
+                <strong>Year:</strong> {car.vehicle.year}
               </li>
               <li>
-                <strong>Price:</strong> {car.price}
+                <strong>Price:</strong> ${car.salePrice?.toLocaleString()}
               </li>
               <li>
-                <strong>Exterior Color:</strong> {car.exteriorColor}
+                <strong>Exterior Color:</strong> {car.vehicle.exteriorColor}
               </li>
               <li>
-                <strong>Interior Color:</strong> {car.interiorColor}
+                <strong>Interior Color:</strong> {car.vehicle.interiorColor}
               </li>
               <li>
-                <strong>Vehicle Type:</strong> {car.vehicleType}
+                <strong>Vehicle Type:</strong>{" "}
+                {car.vehicle.vehicleType || "N/A"}
               </li>
               <li>
-                <strong>Motor:</strong> {car.motor}
+                <strong>Motor:</strong> {car.vehicle.engine || "N/A"}
               </li>
               <li>
-                <strong>Mileage:</strong> {car.mileage.toLocaleString()} miles
+                <strong>Mileage:</strong>{" "}
+                {car.vehicle.mileage?.toLocaleString()} miles
               </li>
             </ul>
 
             {/* Features */}
-            <h3 className="text-xl md:text-2xl font-Urbanist mt-8 mb-4">
-              Features
-            </h3>
-            <ul className="list-disc list-inside space-y-1">
-              {car.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
-              ))}
-            </ul>
-
+            
             {/* Call to Action */}
             <div className="mt-8">
               <button className="bg-HEMgreen text-black py-3 px-8 rounded-lg text-lg font-semibold shadow-md hover:bg-black hover:text-HEMgreen transition-all">

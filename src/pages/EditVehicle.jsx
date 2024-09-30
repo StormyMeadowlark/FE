@@ -5,60 +5,82 @@ import { useParams, useNavigate } from "react-router-dom";
 const EditVehicle = () => {
   const { vehicleId } = useParams(); // Get vehicle ID from URL
   const tenantId = "66d063ca0800f9ad017e7cfc"; // Hardcoded tenantId for now
+
+  // Separate states for vehicle and sales data
   const [vehicleData, setVehicleData] = useState({
     VIN: "",
     make: "",
     model: "",
     year: "",
-    price: "",
-    mileage: "",
-    trim: "",
-    engine: "",
-    transmission: "",
-    drivetrain: "",
-    fuelType: "",
-    bodyType: "",
     exteriorColor: "",
     interiorColor: "",
-    saleStatus: "available",
+    mileage: "",
+  });
+
+  const [salesData, setSalesData] = useState({
+    saleId: "", // New field to hold the sale ID
+    salePrice: "",
+    status: "available",
     condition: "used", // Default to "used"
     previousOwners: 0,
     isCertified: false,
     description: "",
     marketingChannels: [], // To store multiple channels like 'online', 'social media'
-    salePrice: "", // Sale price for the vehicle
+    listedBy: "",
     listedOn: "",
-    soldOn: "",
   });
-  const [mediaFiles, setMediaFiles] = useState([]);
+
+  // Media state
+  const [existingMedia, setExistingMedia] = useState([]); // Existing media files
+  const [newMediaFiles, setNewMediaFiles] = useState([]); // New media files to upload
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Fetch vehicle and sales data when the component loads
+  // Fetch vehicle, sales, and media data when the component loads
   useEffect(() => {
     const fetchVehicleAndSales = async () => {
       try {
-        const vehicleResponse = await axiosInstance.get(
-          `/vehicles/${tenantId}/${vehicleId}`
-        );
+        // Fetch sales data which includes vehicle data
         const salesResponse = await axiosInstance.get(
           `/sales/${tenantId}/${vehicleId}`
         );
+        const sales = salesResponse.data;
+
+        // Extract vehicle data from nested vehicleId
         setVehicleData({
-          ...vehicleResponse.data.vehicle,
-          salePrice: salesResponse.data.sale.salePrice,
-          saleStatus: salesResponse.data.sale.status,
-          condition: salesResponse.data.sale.condition,
-          previousOwners: salesResponse.data.sale.previousOwners,
-          isCertified: salesResponse.data.sale.isCertified,
-          marketingChannels: salesResponse.data.sale.marketingChannels,
-          listedOn: salesResponse.data.sale.listedOn,
-          soldOn: salesResponse.data.sale.soldOn,
+          VIN: sales.vehicleId.VIN,
+          make: sales.vehicleId.make,
+          model: sales.vehicleId.model,
+          year: sales.vehicleId.year,
+          exteriorColor: sales.vehicleId.exteriorColor,
+          interiorColor: sales.vehicleId.interiorColor,
+          mileage: sales.vehicleId.mileage,
         });
+
+        // Set sales data including the sale ID
+        setSalesData({
+          saleId: sales._id, // Store the sale ID for future patch requests
+          salePrice: sales.salePrice,
+          status: sales.status,
+          condition: sales.condition,
+          previousOwners: sales.previousOwners,
+          isCertified: sales.isCertified,
+          description: sales.description,
+          marketingChannels: sales.marketingChannels,
+          listedBy: sales.listedBy,
+          listedOn: sales.listedOn,
+        });
+
+        // Fetch media data
+        const mediaResponse = await axiosInstance.get(
+          `/vehicle-media/${tenantId}/${vehicleId}`
+        );
+        setExistingMedia(mediaResponse.data.media); // Ensure response structure matches
       } catch (err) {
         setError(
-          err.response?.data?.message || "Error fetching vehicle and sales data"
+          err.response?.data?.message ||
+            "Error fetching vehicle, sales, or media data."
         );
       }
     };
@@ -67,18 +89,43 @@ const EditVehicle = () => {
   }, [vehicleId, tenantId]);
 
   // Handle input change for vehicle details
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    const newValue = type === "checkbox" ? checked : value;
-    setVehicleData({ ...vehicleData, [name]: newValue });
+  const handleVehicleInputChange = (e) => {
+    const { name, value } = e.target;
+    setVehicleData({ ...vehicleData, [name]: value });
   };
 
-  // Handle media file selection
+  // Handle input change for sales details
+  const handleSalesInputChange = (e) => {
+    const { name, value } = e.target;
+    setSalesData({ ...salesData, [name]: value });
+  };
+
+  // Handle media file selection for new files
   const handleMediaChange = (e) => {
-    setMediaFiles([...e.target.files]);
+    setNewMediaFiles([...e.target.files]);
   };
 
-  // Handle form submission for both vehicle and sales data
+  // Handle deleting an existing media file
+  const handleDeleteMedia = async (index) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this image?"
+    );
+    if (!confirmDelete) return;
+
+    try {
+      const updatedMedia = existingMedia.filter((_, i) => i !== index);
+      setExistingMedia(updatedMedia);
+
+      // Update backend by removing the file
+      await axiosInstance.delete(`/vehicle-media/${tenantId}/${vehicleId}`, {
+        data: { index }, // Specify which photo to remove by index
+      });
+    } catch (err) {
+      setError("Error deleting media. Please try again.");
+    }
+  };
+
+  // Handle form submission for both vehicle, sales, and media data
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -90,24 +137,25 @@ const EditVehicle = () => {
         vehicleData
       );
 
-      // Step 2: Update sales data
-      await axiosInstance.patch(`/sales/${tenantId}/${vehicleId}`, {
-        salePrice: vehicleData.salePrice,
-        status: vehicleData.saleStatus,
-        condition: vehicleData.condition,
-        previousOwners: vehicleData.previousOwners,
-        isCertified: vehicleData.isCertified,
-        marketingChannels: vehicleData.marketingChannels,
-        listedOn: vehicleData.listedOn,
-        soldOn: vehicleData.soldOn,
+      // Step 2: Update sales data using the sale ID
+      await axiosInstance.patch(`/sales/${tenantId}/${vehicleId}/${salesData.saleId}`, {
+        price: salesData.salePrice,
+        status: salesData.status,
+        condition: salesData.condition,
+        previousOwners: salesData.previousOwners,
+        isCertified: salesData.isCertified,
+        description: salesData.description,
+        marketingChannels: salesData.marketingChannels,
+        listedBy: salesData.listedBy,
+        listedOn: salesData.listedOn,
       });
 
-      // Step 3: Update media files if any
-      if (mediaFiles.length > 0) {
+      // Step 3: Update media files if any new media is added
+      if (newMediaFiles.length > 0) {
         const formData = new FormData();
-        mediaFiles.forEach((file) => formData.append("media", file));
-        await axiosInstance.put(
-          `/vehicle-media/${tenantId}/assign/${vehicleId}`,
+        newMediaFiles.forEach((file) => formData.append("media", file));
+        await axiosInstance.post(
+          `/vehicle-media/${tenantId}/${vehicleId}`,
           formData,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -118,11 +166,8 @@ const EditVehicle = () => {
       // Navigate to the vehicle management page after successful edit
       navigate("/superadmin/vehicle-management");
     } catch (err) {
-      console.error(
-        "Error response data:",
-        err.response ? err.response.data : err
-      );
-      setError("Error updating vehicle and sales data. Please try again.");
+      console.error(err);
+      setError("Error updating vehicle, sales, or media. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -130,34 +175,105 @@ const EditVehicle = () => {
 
   return (
     <div className="container mx-auto py-40 text-white">
-      <h1 className="text-3xl font-bold mb-6">Edit Vehicle and Sales Data</h1>
+      <h1 className="text-3xl font-bold mb-6">
+        Edit Vehicle, Sales, and Media
+      </h1>
 
       {error && <div className="text-red-500">{error}</div>}
       {loading && <div className="text-green-500">Loading...</div>}
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Vehicle Details */}
+        {/* Vehicle Fields */}
         <div>
           <label className="block text-sm font-medium">VIN</label>
           <input
             type="text"
             name="VIN"
             value={vehicleData.VIN}
-            onChange={handleInputChange}
+            onChange={handleVehicleInputChange}
             required
             className="block w-full p-2 border rounded-md text-black"
           />
         </div>
 
-        {/* All other vehicle details like make, model, year, etc... */}
+        <div>
+          <label className="block text-sm font-medium">Make</label>
+          <input
+            type="text"
+            name="make"
+            value={vehicleData.make}
+            onChange={handleVehicleInputChange}
+            required
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
 
+        <div>
+          <label className="block text-sm font-medium">Model</label>
+          <input
+            type="text"
+            name="model"
+            value={vehicleData.model}
+            onChange={handleVehicleInputChange}
+            required
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium">Year</label>
+          <input
+            type="number"
+            name="year"
+            value={vehicleData.year}
+            onChange={handleVehicleInputChange}
+            required
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium">Mileage</label>
+          <input
+            type="number"
+            name="mileage"
+            value={vehicleData.mileage}
+            onChange={handleVehicleInputChange}
+            required
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium">Exterior Color</label>
+          <input
+            type="text"
+            name="exteriorColor"
+            value={vehicleData.exteriorColor}
+            onChange={handleVehicleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium">Interior Color</label>
+          <input
+            type="text"
+            name="interiorColor"
+            value={vehicleData.interiorColor}
+            onChange={handleVehicleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+
+        {/* Sale Fields */}
         <div>
           <label className="block text-sm font-medium">Sale Price</label>
           <input
             type="number"
             name="salePrice"
-            value={vehicleData.salePrice}
-            onChange={handleInputChange}
+            value={salesData.salePrice}
+            onChange={handleSalesInputChange}
             required
             className="block w-full p-2 border rounded-md text-black"
           />
@@ -166,9 +282,9 @@ const EditVehicle = () => {
         <div>
           <label className="block text-sm font-medium">Sale Status</label>
           <select
-            name="saleStatus"
-            value={vehicleData.saleStatus}
-            onChange={handleInputChange}
+            name="status"
+            value={salesData.status}
+            onChange={handleSalesInputChange}
             className="block w-full p-2 border rounded-md text-black"
           >
             <option value="available">Available</option>
@@ -182,8 +298,8 @@ const EditVehicle = () => {
           <label className="block text-sm font-medium">Condition</label>
           <select
             name="condition"
-            value={vehicleData.condition}
-            onChange={handleInputChange}
+            value={salesData.condition}
+            onChange={handleSalesInputChange}
             className="block w-full p-2 border rounded-md text-black"
           >
             <option value="new">New</option>
@@ -197,8 +313,8 @@ const EditVehicle = () => {
           <input
             type="number"
             name="previousOwners"
-            value={vehicleData.previousOwners}
-            onChange={handleInputChange}
+            value={salesData.previousOwners}
+            onChange={handleSalesInputChange}
             className="block w-full p-2 border rounded-md text-black"
           />
         </div>
@@ -208,30 +324,77 @@ const EditVehicle = () => {
           <input
             type="checkbox"
             name="isCertified"
-            checked={vehicleData.isCertified}
-            onChange={handleInputChange}
+            checked={salesData.isCertified}
+            onChange={handleSalesInputChange}
             className="block"
           />
         </div>
 
-        {/* Marketing Channels */}
         <div>
-          <label className="block text-sm font-medium">
-            Marketing Channels
-          </label>
+          <label className="block text-sm font-medium">Description</label>
+          <textarea
+            name="description"
+            value={salesData.description}
+            onChange={handleSalesInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium">Listed By</label>
           <input
             type="text"
-            name="marketingChannels"
-            value={vehicleData.marketingChannels.join(", ")} // Display as comma-separated
-            onChange={(e) =>
-              setVehicleData({
-                ...vehicleData,
-                marketingChannels: e.target.value
-                  .split(",")
-                  .map((item) => item.trim()),
-              })
-            }
+            name="listedBy"
+            value={salesData.listedBy}
+            onChange={handleSalesInputChange}
             className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium">Listed On</label>
+          <input
+            type="date"
+            name="listedOn"
+            value={salesData.listedOn.split("T")[0]} // Assuming date format is ISO string
+            onChange={handleSalesInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+
+        {/* Media Section */}
+        <h2 className="text-2xl font-semibold">Manage Media</h2>
+        <div className="grid grid-cols-3 gap-4">
+          {existingMedia.length > 0 ? (
+            existingMedia.map((mediaUrl, index) => (
+              <div key={index} className="relative">
+                <img
+                  src={mediaUrl}
+                  alt={`media-${index}`}
+                  className="w-full h-auto"
+                />
+                <button
+                  type="button"
+                  onClick={() => handleDeleteMedia(index)}
+                  className="absolute top-0 right-0 bg-red-500 text-white p-1 rounded"
+                >
+                  Delete
+                </button>
+              </div>
+            ))
+          ) : (
+            <p>No media available</p>
+          )}
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium">Add More Media</label>
+          <input
+            type="file"
+            name="media"
+            multiple
+            onChange={handleMediaChange}
+            className="block w-full p-2 border rounded-md"
           />
         </div>
 
@@ -239,7 +402,7 @@ const EditVehicle = () => {
           type="submit"
           className="bg-green-500 text-white px-4 py-2 rounded"
         >
-          Update Vehicle and Sales
+          Update Vehicle, Sales, and Media
         </button>
       </form>
     </div>

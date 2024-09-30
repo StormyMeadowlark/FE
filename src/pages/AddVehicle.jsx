@@ -4,17 +4,34 @@ import { useNavigate } from "react-router-dom";
 
 const AddVehicle = () => {
   const [vehicleData, setVehicleData] = useState({
+    VIN: "",
     make: "",
     model: "",
     year: "",
-    price: "",
-    VIN: "",
+    trim: "",
+    engine: "",
+    transmission: "",
+    drivetrain: "",
+    fuelType: "",
+    bodyType: "",
+    exteriorColor: "",
+    interiorColor: "",
     mileage: "",
-    saleStatus: "available", // Default sale status
-    condition: "used", // Default condition (for sale)
-    description: "",
-    salePrice: "",
   });
+
+  const [saleData, setSaleData] = useState({
+    salePrice: "",
+    status: "available",
+    condition: "used",
+    marketingChannels: ["online", "social media"], // Example channels
+    description: "",
+    soldOn: "",
+    previousOwners: 0,
+    soldBy: "",
+    isCertified: false,
+    buyer: "",
+  });
+
   const [mediaFiles, setMediaFiles] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -23,8 +40,13 @@ const AddVehicle = () => {
   const tenantId = "66d063ca0800f9ad017e7cfc"; // Hardcoded tenant ID for now
 
   // Handle input change for vehicle details
-  const handleInputChange = (e) => {
+  const handleVehicleInputChange = (e) => {
     setVehicleData({ ...vehicleData, [e.target.name]: e.target.value });
+  };
+
+  // Handle input change for sale details
+  const handleSaleInputChange = (e) => {
+    setSaleData({ ...saleData, [e.target.name]: e.target.value });
   };
 
   // Handle media file selection
@@ -32,7 +54,7 @@ const AddVehicle = () => {
     setMediaFiles([...e.target.files]);
   };
 
-  // Submit vehicle data and sales to the backend
+  // Submit vehicle data, sales, and media to the backend
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -47,21 +69,18 @@ const AddVehicle = () => {
       const vehicleId = vehicleResponse.data.vehicle._id;
 
       // Step 2: Submit sale data for the vehicle
-      const saleData = {
-        vehicleId: vehicleId, // Attach the vehicle ID
-        salePrice: vehicleData.salePrice,
-        condition: vehicleData.condition,
-        status: vehicleData.saleStatus,
-        description: vehicleData.description,
-        marketingChannels: ["online", "social media"], // Example marketing channels
+      
+      const fullSaleData = {
+        ...saleData,
+        vehicleId, // Attach the vehicle ID
       };
-
-      await axiosInstance.post(`/sales/${tenantId}/${vehicleId}`, saleData);
+console.log(fullSaleData);
+      await axiosInstance.post(`/sales/${tenantId}`, fullSaleData); // No need to append vehicleId in URL, it's in the payload
 
       // Step 3: Submit media files if any
       if (mediaFiles.length > 0) {
         const formData = new FormData();
-        mediaFiles.forEach((file) => formData.append("media", file));
+        mediaFiles.forEach((file) => formData.append("media", file)); // Ensure photos is the correct field name as per your schema
 
         await axiosInstance.post(`/vehicle-media/${tenantId}/${vehicleId}`, formData, {
           headers: {
@@ -73,8 +92,8 @@ const AddVehicle = () => {
       // Navigate to the vehicle management page after successful addition
       navigate("/superadmin/vehicle-management");
     } catch (err) {
-      console.error("Error:", err.response.data);
-      setError("Error adding vehicle or sales. Please try again.");
+      console.error("Error:", err.response?.data || err.message);
+      setError("Error adding vehicle, sales, or media. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -90,59 +109,126 @@ const AddVehicle = () => {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Vehicle Fields */}
         <div>
-          <label className="block text-sm font-medium">Make</label>
-          <input
-            type="text"
-            name="make"
-            value={vehicleData.make}
-            onChange={handleInputChange}
-            required
-            className="block w-full p-2 border rounded-md text-black"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium">Model</label>
-          <input
-            type="text"
-            name="model"
-            value={vehicleData.model}
-            onChange={handleInputChange}
-            required
-            className="block w-full p-2 border rounded-md text-black"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium">Year</label>
-          <input
-            type="number"
-            name="year"
-            value={vehicleData.year}
-            onChange={handleInputChange}
-            required
-            className="block w-full p-2 border rounded-md text-black"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium">Price</label>
-          <input
-            type="number"
-            name="price"
-            value={vehicleData.price}
-            onChange={handleInputChange}
-            required
-            className="block w-full p-2 border rounded-md text-black"
-          />
-        </div>
-
-        {/* VIN and Mileage */}
-        <div>
-          <label className="block text-sm font-medium">VIN</label>
+          <label className="block text-sm font-medium">VIN (required)</label>
           <input
             type="text"
             name="VIN"
             value={vehicleData.VIN}
-            onChange={handleInputChange}
+            onChange={handleVehicleInputChange}
             required
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Year (required)</label>
+          <input
+            type="number"
+            name="year"
+            value={vehicleData.year}
+            onChange={handleVehicleInputChange}
+            required
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Make (required)</label>
+          <input
+            type="text"
+            name="make"
+            value={vehicleData.make}
+            onChange={handleVehicleInputChange}
+            required
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Model (required)</label>
+          <input
+            type="text"
+            name="model"
+            value={vehicleData.model}
+            onChange={handleVehicleInputChange}
+            required
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Trim</label>
+          <input
+            type="text"
+            name="trim"
+            value={vehicleData.trim}
+            onChange={handleVehicleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Engine</label>
+          <input
+            type="text"
+            name="engine"
+            value={vehicleData.engine}
+            onChange={handleVehicleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Transmission</label>
+          <input
+            type="text"
+            name="transmission"
+            value={vehicleData.transmission}
+            onChange={handleVehicleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Drivetrain</label>
+          <input
+            type="text"
+            name="drivetrain"
+            value={vehicleData.drivetrain}
+            onChange={handleVehicleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Fuel Type</label>
+          <input
+            type="text"
+            name="fuelType"
+            value={vehicleData.fuelType}
+            onChange={handleVehicleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Body Style</label>
+          <input
+            type="text"
+            name="bodyType"
+            value={vehicleData.bodyType}
+            onChange={handleVehicleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Exterior Color</label>
+          <input
+            type="text"
+            name="exteriorColor"
+            value={vehicleData.exteriorColor}
+            onChange={handleVehicleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Interior Color</label>
+          <input
+            type="text"
+            name="interiorColor"
+            value={vehicleData.interiorColor}
+            onChange={handleVehicleInputChange}
             className="block w-full p-2 border rounded-md text-black"
           />
         </div>
@@ -152,37 +238,103 @@ const AddVehicle = () => {
             type="number"
             name="mileage"
             value={vehicleData.mileage}
-            onChange={handleInputChange}
+            onChange={handleVehicleInputChange}
             required
             className="block w-full p-2 border rounded-md text-black"
           />
         </div>
 
-        {/* Sale Price */}
+        {/* Sale Fields */}
         <div>
-          <label className="block text-sm font-medium">Sale Price</label>
+          <label className="block text-sm font-medium">
+            Sale Price (required)
+          </label>
           <input
             type="number"
             name="salePrice"
-            value={vehicleData.salePrice}
-            onChange={handleInputChange}
+            value={saleData.salePrice}
+            onChange={handleSaleInputChange}
             required
             className="block w-full p-2 border rounded-md text-black"
           />
         </div>
-
-        {/* Description */}
         <div>
-          <label className="block text-sm font-medium">Description</label>
+          <label className="block text-sm font-medium">Condition</label>
+          <select
+            name="condition"
+            value={saleData.condition}
+            onChange={handleSaleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          >
+            <option value="new">New</option>
+            <option value="used">Used</option>
+            <option value="certified_preowned">Certified Pre-Owned</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-medium">
+            Description (required)
+          </label>
           <textarea
             name="description"
-            value={vehicleData.description}
-            onChange={handleInputChange}
+            value={saleData.description}
+            onChange={handleSaleInputChange}
             required
             className="block w-full p-2 border rounded-md text-black"
           />
         </div>
-
+        <div>
+          <label className="block text-sm font-medium">Sold On</label>
+          <input
+            type="Date"
+            name="soldOn"
+            value={saleData.soldOn}
+            onChange={handleSaleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">
+            Number of Previous Owners
+          </label>
+          <input
+            type="number"
+            name="previousOwners"
+            value={saleData.previousOwners}
+            onChange={handleSaleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Sold By</label>
+          <input
+            type="text"
+            name="soldBy"
+            value={saleData.soldBy}
+            onChange={handleSaleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Certified</label>
+          <input
+            type="text"
+            name="isCertified"
+            value={saleData.isCertified}
+            onChange={handleSaleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">Buyer</label>
+          <input
+            type="text"
+            name="buyer"
+            value={saleData.buyer}
+            onChange={handleSaleInputChange}
+            className="block w-full p-2 border rounded-md text-black"
+          />
+        </div>
         {/* Media Upload */}
         <div>
           <label className="block text-sm font-medium">Upload Media</label>
