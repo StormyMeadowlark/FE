@@ -1,8 +1,8 @@
 import { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import App from "./App";
 import ScrollToTop from "./utils/ScrollTop"; // Import ScrollToTop
+import App from "./App.jsx"; // Import the Layout component
 
 // Dynamically import components for code splitting
 const About = lazy(() => import("./pages/About.jsx"));
@@ -54,6 +54,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       }
     >
       <Routes>
+        {/* Wrap all main routes within the Layout component */}
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
