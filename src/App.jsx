@@ -5,15 +5,20 @@ import Footer from "./components/pageParts/shared/Footer.jsx";
 const App = () => {
   return (
     <div className="bg-black scroll-smooth">
-      <div className="sticky inset-y-0 inset-x-0 z-50 bg-black/50 font-Play animate-fadeIn">
+      {/* Sticky Header */}
+      <header className="sticky top-0 inset-x-0 z-50 bg-black/50 font-Play animate-fadeIn">
         <MobileNavigation />
-      </div>
-      <div>
+      </header>
+
+      {/* Main content that scrolls */}
+      <main>
         <Outlet />
-      </div>
-      <div>
+      </main>
+
+      {/* Footer */}
+      <footer>
         <Footer />
-      </div>
+      </footer>
     </div>
   );
 };
