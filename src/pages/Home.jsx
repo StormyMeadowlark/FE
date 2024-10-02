@@ -91,15 +91,15 @@ const reasons = [
 
 const offers = [
   {
-    title: "Induction Cleaning",
-    price: "$190",
-    description:
-      "Improve your engine's performance with our intensive induction cleaning from BG.",
+    title: "Wheel Alignment",
+    price: "$115",
+    description: "Ensure your ride is smooth and your tires wear evenly.",
   },
   {
-    title: "Wheel Alignment",
-    price: "$100",
-    description: "Ensure your ride is smooth and your tires wear evenly.",
+    title: "Flash Sale",
+    price: "10% off",
+    description:
+      "induction cleaning and oil changes! Book between now and 10/8/24 to lock in your price. We do diesel oil changes too!",
   },
   {
     title: "3M Headlight Refresh",
