@@ -25,6 +25,8 @@ module.exports = {
       colors: {
         HEMgreen: "#00FF00",
         HEMgray: "#333333",
+        silver: "#C0C0C0",
+        dark: "#000000",
       },
       backgroundImage: {
         // Define custom background images

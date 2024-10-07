@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Logo from "../../../components/limeGreenAndBlackLogo.svg?react"; // Use WebP format for improved performance
+import Logo from "../../../components/limeGreenAndBlackLogo.svg?react";
 import QuickLinks, { MobileQuickLinks } from "./QuickLinks";
 import ContactInfo from "./ContactInfo";
 import MobileContactInfo from "./MobileContactInfo";
@@ -19,20 +19,43 @@ const navigation = [
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlHeader = () => {
+    if (window.scrollY > lastScrollY) {
+      // Scrolling down
+      setIsVisible(false);
+    } else {
+      // Scrolling up
+      setIsVisible(true);
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlHeader);
+    return () => {
+      window.removeEventListener("scroll", controlHeader);
+    };
+  }, [lastScrollY]);
 
   return (
-    <header className="flex absolute top-0 inset-x-0 z-50 bg-black/50 font-Play text-white align-middle justify-evenly">
+    <header
+      className={`flex absolute top-0 inset-x-0 z-50 bg-black/50 font-Play text-white align-middle justify-evenly transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="w-[80vw] justify-items-center">
         <nav className="flex flex-1 items-center p-6" aria-label="Global">
           <div className="flex flex-1 justify-between">
             <div className="transition-transform duration-300 ease-in-out transform hover:scale-105">
               <Link to="/" className="focus-visible:outline-none">
-                <span className="sr-only">H.E.M Automotive Home</span>{" "}
-                {/* Improved alt text for SEO */}
+                <span className="sr-only">H.E.M Automotive Home</span>
                 <Logo
                   className="h-40 w-auto"
                   alt="H.E.M Automotive Logo: Half of a gear with wrenches and the text 'H.E.M Automotive'"
-                  loading="lazy" // Enable lazy loading
+                  loading="lazy"
                 />
               </Link>
             </div>
@@ -56,14 +79,14 @@ export default function Example() {
                   key={item.name}
                   to={item.href}
                   className="text-sm font-semibold hover:text-[#00ff00] transition-colors focus-visible:outline-none p-2 text-nowrap"
-                  aria-label={`Go to the ${item.name} page`} // Improved link text for SEO
+                  aria-label={`Go to the ${item.name} page`}
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
           </div>
-          <QuickLinks className="lg:hidden" />
+          <QuickLinks className="hidden lg:flex" />
         </nav>
       </div>
       <Dialog
@@ -74,7 +97,11 @@ export default function Example() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 w-full overflow-y-auto bg-[#333333] px-6 py-6 sm:max-w-sm z-[150]">
           <div className="flex items-center justify-between">
-            <Link to="/" className="-m-1.5 p-1.5">
+            <Link
+              to="/"
+              className="-m-1.5 p-1.5"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <span className="sr-only">H.E.M Automotive Home</span>
               <Logo
                 className="h-40 w-auto"
@@ -99,13 +126,14 @@ export default function Example() {
                     key={item.name}
                     to={item.href}
                     className="block px-3 py-2 text-white font-semibold leading-7 text-lg hover:border-y hover:border-[#00ff00] border-y border-transparent"
-                    aria-label={`Navigate to the ${item.name} page`} // Improved link text for SEO
+                    aria-label={`Navigate to the ${item.name} page`}
+                    onClick={() => setMobileMenuOpen(false)} // Close menu on click
                   >
                     {item.name}
                   </Link>
                 ))}
               </div>
-              <MobileQuickLinks />
+              <MobileQuickLinks onCloseMenu={() => setMobileMenuOpen(false)} />
               <MobileContactInfo />
             </div>
           </div>

@@ -1,0 +1,235 @@
+/* luxury.css */
+
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.luxury-bg {
+  background-color: #000;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('../assets/images/luxury-car-bg.webp') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  padding: 50px 20px;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+  z-index: 10;
+  text-align: center;
+}
+
+.hero-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-cta {
+  margin-top: 20px;
+}
+
+.hero-cta a {
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #ffd700;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-cta a:hover {
+  background-color: #ffd700;
+  color: #000;
+}
+
+/* Services Section */
+.services-section {
+  background-color: #1a1a1a;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #ffd700;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.luxury-service-card {
+  position: relative;
+  background-color: #000;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+  background-size: cover;
+}
+
+.luxury-service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 25px rgba(255, 215, 0, 0.8);
+}
+
+.luxury-service-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.luxury-service-card:hover .luxury-service-overlay {
+  opacity: 1;
+}
+
+.luxury-service-overlay h3 {
+  font-size: 1.8rem;
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+.luxury-service-overlay p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.luxury-service-overlay a {
+  padding: 10px 20px;
+  color: #000;
+  background-color: #ffd700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.luxury-service-overlay a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Testimonials Section */
+.luxury-testimonials {
+  background-color: #0d0d0d;
+  padding: 80px 20px;
+}
+
+.luxury-testimonial-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.luxury-testimonial-card img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.testimonial-content {
+  text-align: center;
+  max-width: 500px;
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+.luxury-testimonial-card p {
+  font-style: italic;
+  margin-top: 15px;
+}
+
+.luxury-nav-button {
+  background: none;
+  border: none;
+  color: #ffd700;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.luxury-nav-button:hover {
+  color: #fff;
+}
+
+/* Footer Section */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #ffd700;
+}
+
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .luxury-service-card {
+    margin-bottom: 20px;
+  }
+}
