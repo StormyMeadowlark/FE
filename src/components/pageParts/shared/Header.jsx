@@ -44,12 +44,8 @@ export default function Header() {
               <span className="sr-only">H.E.M. Automotive</span>
               <Logo className="scale-75" />
             </Link>
-          </div>
-          <div>
             <ContactInfo />
             <Navigation />
-          </div>
-          <div>
             <QuickLinks />
           </div>
         </nav>

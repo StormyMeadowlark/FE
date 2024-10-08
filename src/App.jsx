@@ -1,6 +1,8 @@
 import { Outlet } from "react-router-dom";
 import MobileNavigation from "./components/pageParts/shared/MobileNavigation.jsx";
 import Footer from "./components/pageParts/shared/Footer.jsx";
+import "./App.css";
+
 
 const App = () => {
   return (

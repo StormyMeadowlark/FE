@@ -1,4 +1,3 @@
-import "../../../App.css";
 import { PhoneIcon, ClockIcon, MapPinIcon } from "@heroicons/react/24/outline";
 import useHover from "../../../hooks/useHover";
 import { useEffect, useState } from "react";
@@ -16,20 +15,16 @@ function ContactInfo() {
 
   const [mapsLink, setMapsLink] = useState("");
 
-  // Detect device type and set the appropriate maps link
   useEffect(() => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
     if (/android/i.test(userAgent)) {
-      // Android device -> Google Maps
       setMapsLink("https://maps.app.goo.gl/poof47736HkKffnB9");
     } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-      // iOS device -> Apple Maps
       setMapsLink(
         "http://maps.apple.com/?q=315+SW+32nd+Terrace,+Topeka,+KS+66611"
       );
     } else {
-      // Default to Google Maps if device is unknown
       setMapsLink(
         "https://maps.google.com/?q=315+SW+32nd+Terrace,+Topeka,+KS+66611"
       );
@@ -38,134 +33,87 @@ function ContactInfo() {
 
   return (
     <div className="flex gap-x-6 pb-8 -mt-10 md:pt-6 justify-center text-[#eeeeee]">
-      {/* Phone Number: Opens dialer when clicked */}
-      <a
-        href="tel:7857302900" // "tel:" link to open phone dialer
+      <ContactItem
+        href="tel:7857302900"
+        IconComponent={
+          PhoneNumberHovering
+            ? PhoneNumberAfterHovering
+            : PhoneNumberBeforeHovering
+        }
+        text="785.730.2900"
         {...PhoneNumberHoveringProps}
-        className="hidden lg:flex lg:items-center focus-visible:outline-none"
-      >
-        {PhoneNumberHovering
-          ? PhoneNumberAfterHovering
-          : PhoneNumberBeforeHovering}
-        <address className="text-center">
-          <span className="not-italic text-[12px]">785.730.2900</span>
-        </address>
-      </a>
-
-      {/* Hours */}
-      <button
+      />
+      <ContactItem
+        href="#"
+        IconComponent={HoursHovering ? HoursAfterHovering : HoursBeforeHovering}
+        text="Monday - Friday 8:00 am - 4:00 pm"
         {...HoursHoveringProps}
-        className="hidden lg:flex lg:items-center focus-visible:outline-none"
-      >
-        {HoursHovering ? HoursAfterHovering : HoursBeforeHovering}
-        <address className="text-center">
-          <span className="not-italic text-[12px] focus:outline focus:outline-[#00FF00]">
-            Monday - Friday
-            <br />
-            8:00 am - 4:00 pm
-          </span>
-        </address>
-      </button>
-
-      {/* Address: Automatically opens correct maps app */}
-      <a
-        href={mapsLink} // Dynamically set the correct maps link based on device type
-        target="_blank"
-        rel="noopener noreferrer"
+      />
+      <ContactItem
+        href={mapsLink}
+        IconComponent={
+          LocationHovering ? LocationAfterHovering : LocationBeforeHovering
+        }
+        text="315 SW 32nd Terrace Topeka, KS 66611"
         {...LocationHoveringProps}
-        className="hidden lg:flex lg:items-center focus-visible:outline-none"
-      >
-        {LocationHovering ? LocationAfterHovering : LocationBeforeHovering}
-        <address className="text-center">
-          <span className="not-italic text-[12px] focus:outline focus:outline-[#00FF00]">
-            315 SW 32nd Terrace
-            <br />
-            Topeka, KS 66611
-          </span>
-        </address>
-      </a>
+      />
     </div>
+  );
+}
+
+function ContactItem({ href, IconComponent, text, ...hoverProps }) {
+  return (
+    <a
+      href={href}
+      className="flex items-center py-4 focus-visible:outline-none"
+      {...hoverProps}
+    >
+      {IconComponent}
+      <address className="text-center not-italic text-[12px]">
+        {text.split("\n").map((line, idx) => (
+          <span key={idx}>{line}</span>
+        ))}
+      </address>
+    </a>
   );
 }
 
 function PhoneNumberBefore() {
-  return (
-    <div>
-      <PhoneIcon
-        className="w-6 h-6 mr-3 ease-linear duration-150"
-        aria-hidden="true"
-        stroke="#00FF00"
-        opacity={0.7}
-      />
-    </div>
-  );
+  return <PhoneIcon className="w-6 h-6 text-[#00FF00]" aria-hidden="true" />;
 }
 
 function PhoneNumberAfter() {
   return (
-    <div>
-      <PhoneIcon
-        className="w-6 h-6 mr-3 ease-linear duration-150"
-        aria-hidden="true"
-        stroke="#00FF00"
-        opacity={0.7}
-        fill="#00FF00"
-      />
-    </div>
+    <PhoneIcon
+      className="w-6 h-6 text-[#00FF00] fill-current"
+      aria-hidden="true"
+    />
   );
 }
 
 function HoursBefore() {
-  return (
-    <div>
-      <ClockIcon
-        className="w-6 h-6 mr-3 justify-center"
-        aria-hidden="true"
-        stroke="#00FF00"
-        opacity={0.7}
-      />
-    </div>
-  );
+  return <ClockIcon className="w-6 h-6 text-[#00FF00]" aria-hidden="true" />;
 }
 
 function HoursAfter() {
   return (
-    <div>
-      <ClockIcon
-        className="w-6 h-6 mr-3 justify-center"
-        aria-hidden="true"
-        stroke="#00FF00"
-        opacity={0.7}
-        fill="#00FF00"
-      />
-    </div>
+    <ClockIcon
+      className="w-6 h-6 text-[#00FF00] fill-current"
+      aria-hidden="true"
+    />
   );
 }
 
 function LocationBefore() {
-  return (
-    <div>
-      <MapPinIcon
-        className="w-6 h-6 mr-3 justify-center"
-        aria-hidden="true"
-        stroke="#00FF00"
-        opacity={0.7}
-      />
-    </div>
-  );
+  return <MapPinIcon className="w-6 h-6 text-[#00FF00]" aria-hidden="true" />;
 }
 
 function LocationAfter() {
   return (
-    <div>
-      <MapPinIcon
-        className="w-6 h-6 mr-3 justify-center"
-        aria-hidden="true"
-        stroke="#00FF00"
-        opacity={0.7}
-        fill="#00FF00"
-      />
-    </div>
+    <MapPinIcon
+      className="w-6 h-6 text-[#00FF00] fill-current"
+      aria-hidden="true"
+    />
   );
 }
 
