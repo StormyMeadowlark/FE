@@ -3,28 +3,25 @@ import axiosInstance from "../utils/axiosInstance";
 import { Link } from "react-router-dom";
 
 const VehicleManagement = () => {
-  const [vehicles, setVehicles] = useState([]); // Initialize vehicles as an array
+  const [vehicles, setVehicles] = useState([]);
   const [error, setError] = useState(null);
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [vehicleToDelete, setVehicleToDelete] = useState(null);
 
-  const tenantId = "66d063ca0800f9ad017e7cfc"; // Example tenantId
+  const tenantId = "66d063ca0800f9ad017e7cfc";
 
-  // Fetch data from all relevant endpoints
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch vehicles, sales, and media
         const [vehicleRes, salesRes, mediaRes] = await Promise.all([
           axiosInstance.get(`/vehicles/${tenantId}`),
           axiosInstance.get(`/sales/${tenantId}`),
           axiosInstance.get(`/vehicle-media/${tenantId}`),
         ]);
 
-        // Get docs from responses
         const vehiclesData = vehicleRes.data.vehicles.docs;
         const salesData = salesRes.data.sales.docs;
-        const mediaData = mediaRes.data.media; // Assuming the structure here
+        const mediaData = mediaRes.data.media;
 
         // Combine vehicle, sales, and media data
         const combinedData = vehiclesData.map((vehicle) => {
@@ -35,15 +32,22 @@ const VehicleManagement = () => {
             (media) => media.vehicleId === vehicle._id
           );
 
+          // Handle media data based on old and new schema
+          const photos = mediaInfo
+            ? mediaInfo.photos?.length > 0 // Check if 'photos' exists in the old schema
+              ? mediaInfo.photos
+              : mediaInfo.media?.filter((m) => m.mediaType.startsWith("image")) // Use 'media' from the new schema
+            : [];
+
           return {
             ...vehicle,
             saleStatus: saleInfo ? saleInfo.status : "Unknown",
             salePrice: saleInfo ? saleInfo.salePrice : "N/A",
             listedOn: saleInfo ? saleInfo.listedOn : "N/A",
-            photosCount: mediaInfo ? mediaInfo.photos.length : 0,
+            photosCount: photos.length,
             thumbnail:
-              mediaInfo && mediaInfo.photos.length > 0
-                ? mediaInfo.photos[0]
+              photos.length > 0
+                ? photos[0].mediaUrl || photos[0]
                 : "default-thumbnail-url",
           };
         });
@@ -57,7 +61,6 @@ const VehicleManagement = () => {
     fetchData();
   }, [tenantId]);
 
-  // Delete vehicle with confirmation popup
   const deleteVehicle = async () => {
     if (!vehicleToDelete) return;
 
@@ -147,7 +150,6 @@ const VehicleManagement = () => {
         )}
       </div>
 
-      {/* Delete confirmation popup */}
       {showDeleteConfirmation && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg text-black">
