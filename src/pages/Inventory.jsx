@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import{ useState, useEffect } from "react";
 import axiosInstance from "../utils/axiosInstance";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import InventoryHeader from "../assets/images/InventoryHeader.webp"
 
 const InventoryPage = () => {
   const [cars, setCars] = useState([]);
@@ -77,15 +79,24 @@ const InventoryPage = () => {
 
   return (
     <div className="bg-HEMgray text-white min-h-screen">
-      <section className="relative bg-black text-white py-80">
+      <Helmet>
+        <title>
+          Used Vehicles in Topeka | Find Your Perfect Used Car | HEM Automotive
+        </title>
+        <meta
+          name="description"
+          content="Find your next reliable used car at HEM Automotive in Topeka, KS. Browse our updated inventory with transparent pricing, detailed vehicle histories, and options for all needs, from sedans to SUVs. Call to schedule a test drive today."
+        />
+      </Helmet>
+      <section className="relative bg-black  py-52">
         <img
-          src="/path/to/hero-image.jpg"
+          src={InventoryHeader}
           alt="Car Hero"
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
         <div className="relative container mx-auto px-4 text-center z-10">
-          <h1 className="text-5xl font-Bungee mb-4">
-            FIND YOUR PERFECT USED CAR
+          <h1 className="text-5xl font-Bungee mb-4 text-HEMgreen">
+            FIND YOUR NEXT RELIABLE USED CAR
           </h1>
           <p className="text-xl mb-6">Which Vehicle Are You Looking For?</p>
         </div>
