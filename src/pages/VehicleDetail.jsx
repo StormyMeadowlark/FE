@@ -37,6 +37,7 @@ export default function ProductDetailPage() {
         setCar({
           ...saleData,
           vehicle: vehicleData,
+          features: vehicleData.features, // Correctly accessing the features from vehicleId
           images:
             mediaData[0]?.photos ||
             mediaData[0]?.media?.map((m) => m.mediaUrl) ||
@@ -77,16 +78,16 @@ export default function ProductDetailPage() {
   }
 
   // Dynamic Meta Information for SEO and Social Sharing
-  const pageTitle = `${car.vehicle.year} ${car.vehicle.make} ${
+  const pageTitle = `Used ${car.vehicle.year} ${car.vehicle.make} ${
     car.vehicle.model
   } ${car.vehicle.trim || ""} | Topeka, KS | HEM Automotive`;
-  const pageDescription = `Explore our ${car.vehicle.year} ${
+  const pageDescription = `Explore our used ${car.vehicle.year} ${
     car.vehicle.make
   } ${
     car.vehicle.model
   } with ${car.vehicle.mileage?.toLocaleString()} miles. Available now at HEM Automotive in Topeka, KS for ${car.salePrice?.toLocaleString()}. Schedule a test drive today!`;
   const pageImage = car.images[0] || "/path/to/default-image.jpg"; // Default image if no media available
-  const pageUrl = `https://example.com/vehicles/${car.vehicle._id}`;
+  const pageUrl = `https://hemautomotive.com/sales/${car.vehicle._id}`;
 
   return (
     <>
@@ -149,7 +150,8 @@ export default function ProductDetailPage() {
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           <div className="absolute inset-0 flex flex-col justify-center items-center z-10 px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-Bungee mb-2">
-              {car.vehicle.year} {car.vehicle.make} {car.vehicle.model} {car.vehicle.trim}
+              {car.vehicle.year} {car.vehicle.make} {car.vehicle.model}{" "}
+              {car.vehicle.trim}
             </h1>
             <p className="text-2xl md:text-3xl font-semibold">
               ${car.salePrice?.toLocaleString()}
@@ -214,8 +216,7 @@ export default function ProductDetailPage() {
                   <strong>Interior Color:</strong> {car.vehicle.interiorColor}
                 </li>
                 <li>
-                  <strong>Vehicle Type:</strong>{" "}
-                  {car.vehicle.bodyType || "N/A"}
+                  <strong>Vehicle Type:</strong> {car.vehicle.bodyType || "N/A"}
                 </li>
                 <li>
                   <strong>Motor:</strong> {car.vehicle.engine || "N/A"}
@@ -225,6 +226,20 @@ export default function ProductDetailPage() {
                   {car.vehicle.mileage?.toLocaleString()} miles
                 </li>
               </ul>
+
+              {/* Features Section */}
+              {car.features && car.features.length > 0 && (
+                <div className="mt-6">
+                  <h3 className="text-xl md:text-2xl font-Urbanist mb-4">
+                    Features
+                  </h3>
+                  <ul className="list-disc list-inside space-y-2">
+                    {car.features.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               {/* Call to Action */}
               <div className="mt-8">
