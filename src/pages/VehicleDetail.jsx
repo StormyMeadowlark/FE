@@ -1,47 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Helmet } from "react-helmet"; // For managing document head
+import { Helmet } from "react-helmet";
 import axiosInstance from "../utils/axiosInstance";
 
 export default function ProductDetailPage() {
-  const { vehicleId } = useParams(); // Get vehicle ID from the URL
-  const tenantId = "66d063ca0800f9ad017e7cfc"; // Hardcoded tenantId for now
-  const [car, setCar] = useState(null); // State to store vehicle and sale data
-  const [selectedImage, setSelectedImage] = useState(null); // For image modal
-  const [loading, setLoading] = useState(true); // Loading state
-  const [error, setError] = useState(null); // Error state
+  const { vehicleId } = useParams();
+  const tenantId = "66d063ca0800f9ad017e7cfc";
+  const [car, setCar] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchCarDetails = async () => {
       setLoading(true);
       try {
-        // Fetch vehicle data from the vehicle service
         const vehicleResponse = await axiosInstance.get(
           `/vehicles/${tenantId}/${vehicleId}`
         );
         const vehicleData = vehicleResponse.data.vehicle;
 
-        // Fetch sales data related to the vehicle
         const salesResponse = await axiosInstance.get(
           `/sales/${tenantId}/${vehicleId}`
         );
         const saleData = salesResponse.data;
 
-        // Fetch media data related to the vehicle
         const mediaResponse = await axiosInstance.get(
           `/vehicle-media/${tenantId}/${vehicleId}`
         );
         const mediaData = mediaResponse.data.media;
 
-        // Combine vehicle, sales, and media into one object
         setCar({
           ...saleData,
           vehicle: vehicleData,
-          features: vehicleData.features, // Correctly accessing the features from vehicleId
+          features: vehicleData.features,
           images:
             mediaData[0]?.photos ||
             mediaData[0]?.media?.map((m) => m.mediaUrl) ||
-            [], // Check both `photos` and `media`
+            [],
         });
       } catch (err) {
         setError("Error fetching vehicle details");
@@ -52,6 +48,14 @@ export default function ProductDetailPage() {
 
     fetchCarDetails();
   }, [vehicleId, tenantId]);
+
+  const closeImage = () => setSelectedImageIndex(null);
+  const nextImage = () =>
+    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % car.images.length);
+  const prevImage = () =>
+    setSelectedImageIndex(
+      (prevIndex) => (prevIndex - 1 + car.images.length) % car.images.length
+    );
 
   if (loading) {
     return (
@@ -77,7 +81,6 @@ export default function ProductDetailPage() {
     );
   }
 
-  // Dynamic Meta Information for SEO and Social Sharing
   const pageTitle = `Used ${car.vehicle.year} ${car.vehicle.make} ${
     car.vehicle.model
   } ${car.vehicle.trim || ""} | Topeka, KS | HEM Automotive`;
@@ -86,31 +89,24 @@ export default function ProductDetailPage() {
   } ${
     car.vehicle.model
   } with ${car.vehicle.mileage?.toLocaleString()} miles. Available now at HEM Automotive in Topeka, KS for ${car.salePrice?.toLocaleString()}. Schedule a test drive today!`;
-  const pageImage = car.images[0] || "/path/to/default-image.jpg"; // Default image if no media available
+  const pageImage = car.images[0] || "/path/to/default-image.jpg";
   const pageUrl = `https://hemautomotive.com/sales/${car.vehicle._id}`;
 
   return (
     <>
-      {/* Helmet for setting metadata */}
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <link rel="canonical" href={pageUrl} />
-
-        {/* Open Graph / Facebook */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content={pageImage} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
-
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content={pageImage} />
-
-        {/* Structured Data (JSON-LD for Search Engines) */}
         <script type="application/ld+json">
           {`
             {
@@ -138,14 +134,12 @@ export default function ProductDetailPage() {
         </script>
       </Helmet>
 
-      {/* The rest of your component */}
       <div className="bg-HEMgray text-white min-h-screen">
-        {/* Hero Section with Car Image */}
         <section className="relative bg-black text-white">
           <img
-            src={car.images[0]} // Display the first image
+            src={car.images[0]}
             alt={`${car.vehicle.make} ${car.vehicle.model}`}
-            className="w-full h-auto max-h-[40rem] object-cover" // Enforce 1080x720 (3:2 aspect ratio)
+            className="w-full h-auto max-h-[40rem] object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           <div className="absolute inset-0 flex flex-col justify-center items-center z-10 px-4 text-center">
@@ -159,13 +153,11 @@ export default function ProductDetailPage() {
           </div>
         </section>
 
-        {/* Car Details Section */}
         <section className="container mx-auto px-4 py-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Image Gallery */}
             <div className="image-gallery">
               <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4">
-                {car.images && car.images.length > 0 ? (
+                {car.images.length > 0 ? (
                   car.images.map((image, index) => (
                     <img
                       key={index}
@@ -174,8 +166,8 @@ export default function ProductDetailPage() {
                         index + 1
                       }`}
                       className="w-full h-auto object-cover rounded-lg cursor-pointer"
-                      style={{ aspectRatio: "3 / 2" }} // Maintain the aspect ratio of 1080x720
-                      onClick={() => setSelectedImage(image)}
+                      style={{ aspectRatio: "3 / 2" }}
+                      onClick={() => setSelectedImageIndex(index)}
                     />
                   ))
                 ) : (
@@ -184,7 +176,6 @@ export default function ProductDetailPage() {
               </div>
             </div>
 
-            {/* Car Information */}
             <div>
               <h2 className="text-2xl md:text-3xl font-Urbanist mb-4">
                 Vehicle Details
@@ -192,7 +183,6 @@ export default function ProductDetailPage() {
               <p className="mb-6">
                 {car.description || "No description available"}
               </p>
-
               <ul className="space-y-2">
                 <li>
                   <strong>Make:</strong> {car.vehicle.make}
@@ -227,8 +217,7 @@ export default function ProductDetailPage() {
                 </li>
               </ul>
 
-              {/* Features Section */}
-              {car.features && car.features.length > 0 && (
+              {car.features && (
                 <div className="mt-6">
                   <h3 className="text-xl md:text-2xl font-Urbanist mb-4">
                     Features
@@ -241,41 +230,66 @@ export default function ProductDetailPage() {
                 </div>
               )}
 
-              {/* Call to Action */}
-              <div className="mt-8">
-                <button className="bg-HEMgreen text-black py-3 px-8 rounded-lg text-lg font-semibold shadow-md hover:bg-black hover:text-HEMgreen transition-all">
+              <div className="mt-8 flex items-center gap-4">
+                {/* CARFAX Button with Animation */}
+                <a
+                  href={`http://www.carfax.com/VehicleHistory/p/Report.cfx?partner=DVW_1&vin=${car.vehicle.VIN}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
+                >
+                  <img
+                    src="http://www.carfaxonline.com/assets/subscriber/carfax_free_button.gif"
+                    alt="Free CARFAX Report"
+                    className="rounded-lg h-20"
+                  />
+                </a>
+
+                {/* Schedule a Test Drive Button */}
+                <button className="bg-HEMgreen text-black py-3 px-8 rounded-lg text-lg font-semibold shadow-md transition hover:bg-black hover:text-HEMgreen">
                   Schedule a Test Drive
                 </button>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Image Modal for Full-Size Viewing */}
-        {selectedImage && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-            onClick={() => setSelectedImage(null)}
-          >
-            <div
-              className="relative"
-              onClick={(e) => e.stopPropagation()} // Prevent click from closing modal when clicking on the image
-            >
-              <img
-                src={selectedImage}
-                alt="Enlarged Image"
-                className="max-w-full max-h-screen object-contain rounded-lg"
-              />
-              <button
-                className="absolute top-2 right-2 text-white text-3xl font-bold"
-                onClick={() => setSelectedImage(null)}
-              >
-                &times;
-              </button>
-            </div>
-          </div>
-        )}
       </div>
+
+      {selectedImageIndex !== null && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+          onClick={closeImage}
+        >
+          <div
+            className="relative max-w-5xl w-full p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-2 right-2 p-2 text-HEMgreen bg-HEMgray rounded-full focus:outline-none transform transition duration-300 hover:scale-110 hover:shadow-lg"
+              onClick={closeImage}
+            >
+              &times;
+            </button>
+            <img
+              src={car.images[selectedImageIndex]}
+              alt="Selected Vehicle"
+              className="w-full h-auto object-contain"
+            />
+            <button
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 text-HEMgray bg-HEMgreen rounded-full focus:outline-none transition hover:bg-black hover:text-HEMgreen hover:scale-110 hover:shadow-lg"
+              onClick={prevImage}
+            >
+              &#8249;
+            </button>
+            <button
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 text-HEMgray bg-HEMgreen rounded-full focus:outline-none transition hover:bg-black hover:text-HEMgreen hover:scale-110 hover:shadow-lg"
+              onClick={nextImage}
+            >
+              &#8250;
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
