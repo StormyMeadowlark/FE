@@ -343,6 +343,89 @@ const Legal = () => {
           </ul>
         </div>
       </div>
+      <div className="pt-52 px-10 justify-center flex">
+        <div className="max-w-7xl">
+          <p className="text-center font-Bungee text-7xl text-stroke text-stroke-fill-[#00ff00] text-stroke-[#222222] pt-10">
+            Vehicle Sales Return Policy
+          </p>
+          <ul className="px-10 font-Play text-xl tracking-wider">
+            <li className="pt-8">
+              <h3 className="text-5xl font-bold pb-4">Introduction</h3>
+              <p>
+                At HEM Automotive, we strive to ensure your satisfaction with
+                your vehicle purchase. However, as all vehicle sales are final,
+                please carefully review the following policy:
+              </p>
+            </li>
+            <li className="pt-8">
+              <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                1. All Sales Are Final
+              </h4>
+              <p>
+                Once a vehicle purchase is completed, it is considered final.
+                Kansas law does not provide a cooling-off period or right to
+                return a vehicle once the contract is signed.
+              </p>
+            </li>
+            <li className="pt-8">
+              <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                2. Warranty Coverage
+              </h4>
+              <p>
+                Any applicable warranties provided at the time of sale will
+                detail specific repair or replacement coverage. Please review
+                your warranty agreement for more information.
+              </p>
+              <p>
+                If no warranty is provided, the vehicle is sold "as-is," meaning
+                all repairs and maintenance become the buyer’s responsibility.
+              </p>
+            </li>
+            <li className="pt-8">
+              <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                3. Pre-Purchase Inspection Encouraged
+              </h4>
+              <p>
+                We encourage all customers to conduct a thorough pre-purchase
+                inspection or bring a trusted mechanic to review the vehicle
+                before purchase.
+              </p>
+            </li>
+            <li className="pt-8">
+              <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                4. Disclosure and Transparency
+              </h4>
+              <p>
+                HEM Automotive commits to full transparency in all vehicle
+                sales. Customers will receive a detailed history report and
+                disclosure of any known issues before purchase.
+              </p>
+            </li>
+            <li className="pt-8">
+              <h4 className="text-2xl font-bold pb-4 text-[#00ff00]">
+                Contact Us
+              </h4>
+              <p>
+                If you have any questions about this Return Policy, please
+                contact us. Within your email please include your name so we can
+                easily identify you
+              </p>
+            </li>
+            <li className="pt-8">
+              <p className="text-xl font-bold">Ashlee Herken</p>
+              <p className="text-lg font-bold">HEM Automotive</p>
+              <br />
+              <p>Address: 315 SW 32nd Terrace Topeka, KS 66611</p>
+              <p>Email: hemautomotivegroup@gmail.com</p>
+              <br />
+              <p className="pb-10">
+                Thank you for choosing HEM Automotive. We are committed to
+                ensuring breakdowns won&apos;t break you down.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
