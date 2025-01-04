@@ -17,7 +17,7 @@ const crewMembers = [
     imageUrl: JasonHeadshot, // Ensure these images are correctly referenced
   },
   {
-    name: "Jason - Service Advisor",
+    name: "Shawn - Service Advisor",
     description: "",
     favorite: "",
     imageUrl: ShawnHeadshot, // Ensure these images are correctly referenced
