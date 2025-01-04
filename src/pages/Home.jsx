@@ -59,10 +59,10 @@ const offers = [
       "Improve driving comfort and extend tire life with precise alignment. A smooth ride starts with balanced wheels.",
   },
   {
-    title: "Flash Sale - 10% Off",
-    price: "Save 10%",
+    title: "Induction Cleaning",
+    price: "$190",
     description:
-      "Limited-time offer! Save 10% on induction cleaning and oil changes. Book by 10/8/24 to secure your savings, including diesel oil changes.",
+      "Restore your engine’s performance with professional induction cleaning. This service removes carbon build-up from the intake system, improving fuel efficiency, power, and overall engine health.",
   },
   {
     title: "3M Headlight Restoration",
