@@ -136,7 +136,7 @@ const Home = () => {
     <div className="bg-black text-white font-Urbanist">
       <Helmet>
         <title>
-          Expert Auto Repair Shop | Serving Topeka, KS | HEM Automotive
+          Expert Auto Repair Shop for Oil Change, Tires & More in Topeka, KS | HEM Automotive
         </title>
         <meta
           name="description"
