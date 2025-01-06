@@ -136,11 +136,12 @@ const Home = () => {
     <div className="bg-black text-white font-Urbanist">
       <Helmet>
         <title>
-          Expert Auto Repair Shop for Oil Change, Tires & More in Topeka, KS | HEM Automotive
+          Expert Auto Repair Shop for Oil Change, Tires & More in Topeka, KS |
+          HEM Automotive
         </title>
         <meta
           name="description"
-          content="Top auto repair shop in Topeka, KS. Specializing in car maintenance and repairs, offering quality without dealership prices."
+          content="Expert auto repair shop in Topeka. Comprehensive service includes oil change, tires, and diagnostics. Schedule today for unparalleled automotive care."
         />
       </Helmet>
 
