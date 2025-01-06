@@ -172,7 +172,7 @@ export default function Footer() {
                 Legal
               </Link>
               <h3 className="text-sm font-Play tracking-wide mt-2">
-                &copy; 2024 HEM AUTO LLC
+                &copy; 2025 HEM AUTO LLC
               </h3>
             </div>
           </div>

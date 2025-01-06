@@ -136,11 +136,11 @@ const Home = () => {
     <div className="bg-black text-white font-Urbanist">
       <Helmet>
         <title>
-          Expert Auto Repair & Maintenance | Serving Topeka, KS | HEM Automotive
+          Expert Auto Repair Shop | Serving Topeka, KS | HEM Automotive
         </title>
         <meta
           name="description"
-          content="Top auto repair in Topeka, KS. Specializing in diagnostics, maintenance, and repairs for vehicles 2000 and newer, offering quality without dealership prices."
+          content="Top auto repair shop in Topeka, KS. Specializing in car maintenance and repairs, offering quality without dealership prices."
         />
       </Helmet>
 
