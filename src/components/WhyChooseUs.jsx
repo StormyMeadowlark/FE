@@ -17,9 +17,9 @@ const reasons = [
       "Our team uses advanced diagnostic equipment to pinpoint problems fast and accurately. Whether it's engine issues or electrical system repairs, we have the technology and expertise to get you back on the road quickly.",
   },
   {
-    title: "Honest, Transparent Auto Repair",
+    title: "Your Trusted Auto Repair Shop",
     description:
-      "We believe in full transparency with our customers. You’ll always know what's going on with your vehicle before we make any repairs. No hidden fees, just honest service at fair prices for the best auto repair experience in Topeka.",
+      "Located conveniently in Topeka, KS, we are your reliable auto repair shop for all your vehicle needs, including oil change services and tires solutions."
   },
   {
     title: "Nationwide Warranty Coverage",
