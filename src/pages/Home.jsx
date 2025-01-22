@@ -53,6 +53,11 @@ const testimonials = [
 
 const offers = [
   {
+    title: "BG Oil Change + Free T-Shirt",
+    price: "starting at $121.48",
+    description: "Upgrade your oil change and refresh your wardrobe with a free T-shirt! Better for your vehicle, better for your wallet."
+  },
+  {
     title: "Wheel Alignment",
     price: "$115",
     description:
@@ -63,13 +68,7 @@ const offers = [
     price: "$190",
     description:
       "Restore your engine’s performance with professional induction cleaning. This service removes carbon build-up from the intake system, improving fuel efficiency, power, and overall engine health.",
-  },
-  {
-    title: "3M Headlight Restoration",
-    price: "$170",
-    description:
-      "Restore clarity to your headlights for better visibility and safer driving. Get that factory finish back with our 3M Headlight service.",
-  },
+  }
 ];
 
 // Moved outside Home component
