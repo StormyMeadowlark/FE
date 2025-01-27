@@ -130,9 +130,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               element={<EditVehicle />}
             />
             {/* Catch-all route for 404 */}
-            <Route path="*" element={<Link to="/error" />} />
+            <Route path="*" element={<ErrorPage />} />
             {/* Separate route for the error page */}
-            <Route path="/error" element={<ErrorPage />} />
+            <Route path="error" element={<ErrorPage />} />
           </Route>
         </Routes>
       </Suspense>
