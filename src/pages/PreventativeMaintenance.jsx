@@ -1,10 +1,10 @@
-import React from "react";
 import { Helmet } from "react-helmet";
 import GreenButton from "../utils/greenButton";
 import PreventativeMaintenance from "../assets/images/PreventativeMaintenanceTop.webp";
 import OilChange from "../assets/images/OilChange.webp";
 import TireRotation from "../assets/images/TireRotation.webp";
 import BrakeInspection from "../assets/images/BrakeInspection.webp";
+import { Link } from "react-router-dom";
 
 const PreventiveMaintenance = () => {
   return (
@@ -96,12 +96,14 @@ const PreventiveMaintenance = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {/* Card Component */}
-            <ServiceCard
-              src={OilChange}
-              alt="Oil Change Service"
-              title="Oil Change"
-              description="Regular oil changes are essential to keep your engine running smoothly. Our oil change service includes a comprehensive check of your vehicle’s vital components."
-            />
+            <Link to="oil-change">
+              <ServiceCard
+                src={OilChange}
+                alt="Oil Change Service"
+                title="Oil Change"
+                description="Regular oil changes are essential to keep your engine running smoothly. Our oil change service includes a comprehensive check of your vehicle’s vital components."
+              />
+            </Link>
             {/* Card Component */}
             <ServiceCard
               src={TireRotation}

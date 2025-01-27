@@ -1,10 +1,6 @@
-import { useRouteError } from 'react-router-dom';
 import CornerHexagons from '../components/CornerHexagons.svg?react'
 import GreenButton from '../utils/greenButton';
 export default function ErrorPage() {
-    const error = useRouteError();
-    console.error(error);
-    
     return(
         <div id="error-page">
             <div className='relative isolate overflow-hidden py-[13%] bg-black'>
