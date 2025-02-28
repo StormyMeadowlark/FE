@@ -41,7 +41,7 @@ const crewMembers = [
 ];
 
 const About = () => {
-  const [index, setIndex] = useState(0);
+  const [index] = useState(0);
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
