@@ -2,32 +2,41 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useSpring, animated } from "react-spring";
 import Engine from "../assets/images/Car.jpg"; // Ensure this path is correct
-import Holder from "../assets/images/default-user.jpg"
-
+import Charles from "../assets/images/Charles.png?react"
+import Shane from "../assets/images/Shane.png?react"
+import Shawn from "../assets/images/Shawn.png?react"
+import Richard from "../assets/images/Richard.png?react"
+import Jason from "../assets/images/Jason.png?react"
 const crewMembers = [
+  {
+    name: "Jason - Owner",
+    description: "",
+    favorite: "",
+    imageUrl: Jason,
+  },
   {
     name: "Shawn - Service Advisor",
     description: "",
     favorite: "",
-    imageUrl: Holder, // Ensure these images are correctly referenced
+    imageUrl: Shawn, // Ensure these images are correctly referenced
   },
   {
-    name: "Charles",
+    name: "Charles - Tech",
     description: "",
     favorite: "",
-    imageUrl: Holder,
+    imageUrl: Charles,
   },
   {
-    name: "Richard - ",
+    name: "Richard - Tech",
     description: "",
     favorite: "",
-    imageUrl: Holder,
+    imageUrl: Richard,
   },
   {
-    name: "Shane - ",
+    name: "Shane - Tech ",
     description: "",
     favorite: "",
-    imageUrl: Holder,
+    imageUrl: Shane,
   },
 ];
 
@@ -86,21 +95,29 @@ const About = () => {
           <p>
             HEM Automotive is a distinguished automotive repair and maintenance
             shop committed to providing top-tier service with a unique blend of
-            professionalism and approachability. Our facility, equipped to
+            professionalism and approachability. 
+            <p>Our facility, equipped to
             handle a broad range of automotive challenges, ensures reliable and
-            efficient service. While our expertise covers a wide spectrum of
+            efficient service. </p>
+            <p>Our expertise covers a wide spectrum of
             vehicle types, our offerings include services that cater to the
             intricate needs associated with general maintenance and advanced
             diagnostics, which owners of high-end vehicles might find
-            particularly beneficial. Our shop is functional and well-suited
+            particularly beneficial.</p>
+            
+            <p>Our shop is functional and well-suited
             for quality service, utilizes the latest automotive technologies and
-            repair techniques. We are also enhancing our customer experience
+            repair techniques. 
+            </p>
+            <p>
+            We are also enhancing our customer experience
             through the integration of digital solutions and improved
             communication channels. At HEM Automotive, we strive to make every
             interaction with our clients smooth and pleasant, delivering a
             service experience that is approachable, professional, and engaging,
             making automotive care accessible and less intimidating for all our
             customers.
+            </p>
           </p>
         </animated.section>
 
