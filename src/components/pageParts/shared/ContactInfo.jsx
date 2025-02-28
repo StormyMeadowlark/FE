@@ -1,128 +1,120 @@
-import '../../../App.css'
-import { PhoneIcon, ClockIcon, MapPinIcon, HandThumbUpIcon } from '@heroicons/react/24/outline'
-import useHover from '../../../hooks/useHover';
-import { Link } from 'react-router-dom';
+import { PhoneIcon, ClockIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import useHover from "../../../hooks/useHover";
+import { useEffect, useState } from "react";
 
 function ContactInfo() {
   const [PhoneNumberHovering, PhoneNumberHoveringProps] = useHover();
-  const PhoneNumberBeforeHovering =  PhoneNumberBefore();
+  const PhoneNumberBeforeHovering = PhoneNumberBefore();
   const PhoneNumberAfterHovering = PhoneNumberAfter();
   const [HoursHovering, HoursHoveringProps] = useHover();
-  const HoursBeforeHovering =  HoursBefore();
+  const HoursBeforeHovering = HoursBefore();
   const HoursAfterHovering = HoursAfter();
   const [LocationHovering, LocationHoveringProps] = useHover();
-  const LocationBeforeHovering =  LocationBefore();
+  const LocationBeforeHovering = LocationBefore();
   const LocationAfterHovering = LocationAfter();
-  const [SocialsHovering, SocialsHoveringProps] = useHover();
-  const SocialsBeforeHovering =  SocialsBefore();
-  const SocialsAfterHovering = SocialsAfter();
-    return (
-      <div className="flex gap-x-6 pb-8 -mt-10 md:pt-6 justify-center text-[#eeeeee]">
-        <button
-          {...PhoneNumberHoveringProps}
-          className="hidden lg:flex lg:items-center focus-visible:outline-none"
-        >
-          {PhoneNumberHovering
+
+  const [mapsLink, setMapsLink] = useState("");
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android/i.test(userAgent)) {
+      setMapsLink("https://maps.app.goo.gl/poof47736HkKffnB9");
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      setMapsLink(
+        "http://maps.apple.com/?q=315+SW+32nd+Terrace,+Topeka,+KS+66611"
+      );
+    } else {
+      setMapsLink(
+        "https://maps.google.com/?q=315+SW+32nd+Terrace,+Topeka,+KS+66611"
+      );
+    }
+  }, []);
+
+  return (
+    <div className="flex gap-x-6 pb-8 -mt-10 md:pt-6 justify-center text-[#eeeeee]">
+      <ContactItem
+        href="tel:7857302900"
+        IconComponent={
+          PhoneNumberHovering
             ? PhoneNumberAfterHovering
-            : PhoneNumberBeforeHovering}
-          <address className="text-center">
-            <span className="not-italic text-[12px]">785.730.2900</span>
-          </address>
-        </button>
-        <button
-          {...HoursHoveringProps}
-          className="hidden lg:flex lg:items-center focus-visible:outline-none"
-        >
-          {HoursHovering ? HoursAfterHovering : HoursBeforeHovering}
-          <address className="text-center">
-            <span className="not-italic text-[12px] focus:outline focus:outline-[#00FF00]">
-              Monday - Friday
-              <br />
-              8:00 am - 4:00 pm{" "}
-            </span>
-          </address>
-        </button>
-        <button
-          {...LocationHoveringProps}
-          className="hidden lg:flex lg:items-center focus-visible:outline-none"
-        >
-          {LocationHovering ? LocationAfterHovering : LocationBeforeHovering}
-          <address className="text-balance">
-            <span className="not-italic text-[12px] focus:outline focus:outline-[#00FF00]">
-              315 SW 32nd Terrace
-              <br />
-              Topeka, KS 66611
-            </span>
-          </address>
-        </button>
-      </div>
-    );
+            : PhoneNumberBeforeHovering
+        }
+        text="785.730.2900"
+        {...PhoneNumberHoveringProps}
+      />
+      <ContactItem
+        href="#"
+        IconComponent={HoursHovering ? HoursAfterHovering : HoursBeforeHovering}
+        text="Monday - Friday 8:00 am - 4:00 pm"
+        {...HoursHoveringProps}
+      />
+      <ContactItem
+        href={mapsLink}
+        IconComponent={
+          LocationHovering ? LocationAfterHovering : LocationBeforeHovering
+        }
+        text="315 SW 32nd Terrace Topeka, KS 66611"
+        {...LocationHoveringProps}
+      />
+    </div>
+  );
 }
 
+function ContactItem({ href, IconComponent, text, ...hoverProps }) {
+  return (
+    <a
+      href={href}
+      className="flex items-center py-4 focus-visible:outline-none"
+      {...hoverProps}
+    >
+      {IconComponent}
+      <address className="text-center not-italic text-[12px]">
+        {text.split("\n").map((line, idx) => (
+          <span key={idx}>{line}</span>
+        ))}
+      </address>
+    </a>
+  );
+}
 
 function PhoneNumberBefore() {
-  return(
-    <div>
-      <PhoneIcon className=' w-6 h-6 mr-3 ease-linear duration-150' aria-hidden='true' stroke='#00FF00' opacity={.7} />
-    </div>
-  )
+  return <PhoneIcon className="w-6 h-6 text-[#00FF00]" aria-hidden="true" />;
 }
+
 function PhoneNumberAfter() {
-  return(
-    <div>
-      <PhoneIcon className=' w-6 h-6 mr-3 ease-linear duration-150' aria-hidden='true' stroke='#00FF00' opacity={.7} fill='#00FF00' />
-    </div>
-  )
+  return (
+    <PhoneIcon
+      className="w-6 h-6 text-[#00FF00] fill-current"
+      aria-hidden="true"
+    />
+  );
 }
 
 function HoursBefore() {
-  return(
-    <div>
-      <ClockIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} />
-    </div>
-  )
+  return <ClockIcon className="w-6 h-6 text-[#00FF00]" aria-hidden="true" />;
 }
 
 function HoursAfter() {
-  return(
-    <div>
-      <ClockIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} fill='#00FF00' />
-    </div>
-  )
+  return (
+    <ClockIcon
+      className="w-6 h-6 text-[#00FF00] fill-current"
+      aria-hidden="true"
+    />
+  );
 }
 
 function LocationBefore() {
-  return(
-    <div>
-      <MapPinIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} />
-    </div>
-  )
+  return <MapPinIcon className="w-6 h-6 text-[#00FF00]" aria-hidden="true" />;
 }
 
 function LocationAfter() {
-  return(
-    <div>
-      <MapPinIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} fill='#00FF00' />
-    </div>
-  )
+  return (
+    <MapPinIcon
+      className="w-6 h-6 text-[#00FF00] fill-current"
+      aria-hidden="true"
+    />
+  );
 }
-function SocialsBefore() {
-  return(
-    <div>
-      <HandThumbUpIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} />
-    </div>
-  )
-}
-
-function SocialsAfter() {
-  return(
-    <div>
-      <HandThumbUpIcon className='w-6 h-6 mr-3 justify-center' aria-hidden='true' stroke='#00FF00' opacity={.7} fill='#00FF00' />
-    </div>
-  )
-}
-
-
-
 
 export default ContactInfo;

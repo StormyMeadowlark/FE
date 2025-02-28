@@ -123,65 +123,69 @@ const About = () => {
 
         <animated.section style={fadeIn} className="mt-4">
           <h2 className="text-3xl font-semibold">Our Mission</h2>
-          <p>
-            HEM Automotive&apos;s mission is to provide top-notch automotive services
-            that exceed customer expectations. The focus is on keeping vehicles
-            in optimal condition using advanced diagnostic tools, cutting-edge
-            technology, and expert technicians. At HEM Automotive, the goal is
-            to ensure that breakdowns don&apos;t break you down, emphasizing
-            reliability, precision, and high-quality service to all customers.
+          <p className="mt-2 text-white">
+            At HEM Automotive, our mission is to ensure that breakdowns don’t
+            break you down. We’re committed to keeping your vehicle in top shape
+            with expert care, advanced diagnostics, and cutting-edge technology.
+            From routine maintenance to complex repairs, we deliver reliable,
+            high-quality service that gets you back on the road with confidence.
+            Your trust and satisfaction drive everything we do.
           </p>
         </animated.section>
 
         <animated.section style={fadeIn} className="mt-4">
           <h2 className="text-3xl font-semibold">Our Values</h2>
           <ul className="list-disc pl-5 space-y-2">
-            <li>
+            <li className="text-HEMgreen">
               <strong>Commitment to Quality At HEM Automotive</strong>
-              <br />
-              We&apos;re committed to quality in every aspect of our business.
-              From the parts we use to the hands that do the work, we ensure
-              that every detail is handled with care. We stand behind our work
-              with comprehensive warranties and our dedication to customer
-              satisfaction is unwavering. At HEM Automotive, we don&apos;t just
-              fix cars—we ensure they perform as beautifully as the day they
-              rolled off the showroom floor. Whether you need routine
-              maintenance or emergency repairs HEM Automotive are your local
-              high end mechanics making sure breakdowns don&apos;t break you
-              down. We&apos;re your trusted partner for all your automotive needs.
+              <p className="mt-2 text-white">
+                At HEM Automotive, quality isn’t just a promise—it’s our
+                standard. From the parts we use to the hands that do the work,
+                every detail is handled with precision and care. We specialize
+                in keeping your trusted vehicle running smoothly for years to
+                come, delivering reliable, long-lasting solutions you can count
+                on.
+              </p>
+              <p className="mt-2 text-white">
+                Whether it’s routine maintenance or unexpected repairs, we take
+                pride in providing the kind of service that keeps our customers
+                coming back. At HEM Automotive, your car is more than just a
+                machine—it’s what keeps your life moving, and we’re here to
+                ensure it’s always ready for the road ahead.
+              </p>
             </li>
-            <li>
+            <li className="text-HEMgreen">
               <strong>Your Convenience is Our Priority</strong>
-              <br />
-              We ensure our automotive services integrate seamlessly into your
-              busy lifestyle. Schedule appointments with ease via phone or in
-              person, choosing times that best suit your schedule, whether
-              it&apos;s early mornings or late evenings. We offer services for most repairs, utilizing the latest
-              technology to ensure quick and accurate results. Our commitment to
-              excellent customer service includes providing timely updates
-              through your preferred communication method—email or direct calls.
-              For added convenience, take advantage of our vehicle pick-up and
-              drop-off options. While your car is serviced, relax in our
-              comfortable waiting area, where we offer complimentary beverages and Wi-Fi
-              to make your wait more enjoyable. At HEM Automotive, we make
-              managing your vehicle&apos;s maintenance effortless and
-              stress-free.
+              <p className="mt-2 text-white">
+                We know life gets busy, so we’ve designed our services to fit
+                your schedule. With after-hours pick-up and drop-off options,
+                you can leave or retrieve your vehicle at a time that works best
+                for you. Scheduling appointments is simple—just give us a call
+                or stop by during business hours.{" "}
+              </p>
+              <p className="mt-2 text-white">
+                While we work on your car, you can stay informed with timely
+                updates through your preferred communication method, whether
+                that’s text message or a direct call. At HEM Automotive, we make
+                managing your vehicle’s maintenance as convenient and
+                stress-free as possible.
+              </p>
             </li>
-            <li>
+            <li className="text-HEMgreen">
               <strong>Dedicated to Innovation</strong>
-              <br />
-              We are continuously adapting and integrating effective
-              technologies and methods to enhance our repair and maintenance
-              capabilities. Our shop is well-equipped, allowing us to
-              efficiently handle complex automotive challenges. We ensure our
-              technicians are trained with the latest automotive technologies
-              and repair techniques for precise diagnostics and reliable
-              repairs. Plans are underway to integrate digital solutions like an
-              online booking system and enhanced communication channels to
-              improve customer experience. At HEM Automotive, we strive to
-              combine practical technology with exceptional service, providing
-              superior automotive care and ensuring that every vehicle receives
-              the best possible attention.
+              <p className="mt-2 text-white">
+                We believe in staying ahead of the curve. Our shop is equipped
+                with the latest tools and technology, and our technicians are
+                trained in advanced repair techniques to handle even the most
+                complex challenges.
+              </p>
+              <p className="mt-2 text-white">
+                To enhance your experience, we’re planning to roll out digital
+                solutions like an online booking system and streamlined
+                communication channels. At HEM Automotive, innovation drives our
+                commitment to providing reliable, high-quality care for every
+                vehicle that comes through our doors.
+              </p>
             </li>
           </ul>
         </animated.section>

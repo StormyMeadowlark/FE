@@ -125,7 +125,7 @@ For Road Hazard Tire Protection information, <a href="https://www.technetprofess
     },
     {
       question:
-        "What is the 'With your local high-end mechanics, breakdowns won&apos;t break you down' slogan about?",
+        "What is the 'With your local high-end mechanics, breakdowns won't break you down' slogan about?",
       answer: `Our slogan reflects our commitment to providing high-quality, reliable services that keep your vehicle running smoothly. We aim to make auto repairs and maintenance as hassle-free as possible, so breakdowns won't break you down.`,
     },
     {
@@ -140,6 +140,22 @@ For Road Hazard Tire Protection information, <a href="https://www.technetprofess
     {
       question: "Can I get updates on my vehicle's service status via text?",
       answer: `At this time, we do not provide updates via text. Please feel free to contact us by phone for the latest information on your vehicle's service status.`,
+    },
+    {
+      question: "Do you work with CarShield Extended Warranty?",
+      answer: `At this time, we do not work with Car Shield. Please call us for other Extended Warranty providers.`,
+    },
+    {
+      question: "Can you repair my upholstery?",
+      answer: `At this time, we do not repair vehicle upholstery.`,
+    },
+    {
+      question: "Does your shop tint windows?",
+      answer: `At this time, we do not tint windows.`,
+    },
+    {
+      question: "Do you do rim repair?",
+      answer: `At this time, we do not have the capabilities to do rim repair.`,
     },
   ];
 

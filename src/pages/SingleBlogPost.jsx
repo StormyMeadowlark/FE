@@ -29,11 +29,11 @@ const SingleBlog = () => {
         if (response.status === 200) {
           setPost(response.data);
         } else {
-          setError("Failed to load the post. Please try again later.");
+          setError("We had trouble loading this post. Please try again later.");
         }
       } catch (error) {
         console.error("Error fetching post:", error);
-        setError("Failed to load the post. Please try again later.");
+        setError("We had trouble loading this post. Please try again later.");
       } finally {
         setLoading(false);
       }
@@ -44,14 +44,13 @@ const SingleBlog = () => {
 
   if (loading) return <p>Loading post...</p>;
   if (error) return <p>{error}</p>;
-  if (!post) return <p>Post not found.</p>;
+  if (!post) return <p>We couldn't find this post. Please check back later.</p>;
 
   const htmlContent = mdParser.render(post.content);
   const formattedDate = formatDistanceToNow(new Date(post.publishDate), {
     addSuffix: true,
   });
 
-  // Function to toggle the visibility of each extended content section
   const toggleExtendedContent = (index) => {
     setShowExtendedContent((prev) => ({
       ...prev,
@@ -61,7 +60,7 @@ const SingleBlog = () => {
 
   return (
     <div className="container mx-auto px-4 text-white">
-      {/* Meta Information Section */}
+      {/* Post Title and Meta Information */}
       <header className="mb-6 pt-60">
         <h1 className="text-4xl font-bold mb-2">
           {post.metaTitle || post.title}
@@ -83,27 +82,25 @@ const SingleBlog = () => {
         </div>
       </header>
 
-      {/* Display Blog Content */}
+      {/* Blog Content */}
       <div
         className="text-2xl mb-6 markdown-content"
         dangerouslySetInnerHTML={{ __html: htmlContent }}
       ></div>
 
-      {/* Render Extended Content Sections */}
+      {/* Extended Content Sections */}
       {post.extendedContent &&
         post.extendedContent.map((section, index) => (
           <div key={index} className="mb-6">
-            {/* Button to toggle visibility of the extended content section */}
             <button
               className="bg-green-500 text-gray-800 px-4 py-2 rounded-full text-xl font-bold hover:bg-green-600 transition"
               onClick={() => toggleExtendedContent(index)}
             >
               {showExtendedContent[index]
                 ? "Hide Details"
-                : `Read More: ${section.title}`}
+                : `Learn More: ${section.title}`}
             </button>
 
-            {/* Collapsible Box for Extended Content */}
             {showExtendedContent[index] && (
               <div className="bg-gray-800 text-white p-4 rounded-lg mt-4 shadow-md">
                 <h4 className="text-2xl font-bold mb-2">{section.title}</h4>
@@ -117,7 +114,7 @@ const SingleBlog = () => {
           </div>
         ))}
 
-      {/* Display Categories and Tags */}
+      {/* Categories and Tags */}
       <div className="mt-8">
         {post.categories && post.categories.length > 0 && (
           <div className="mb-4">
@@ -147,7 +144,8 @@ const SingleBlog = () => {
         )}
       </div>
 
-      {/* Additional sections like social sharing, related posts, etc. */}
+      {/* Encouragement to Contact or Book Service */}
+
     </div>
   );
 };

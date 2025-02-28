@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import ImageLeftCard from "../../../utils/ImageLeftCard";
-import ImageRightCard from "../../../utils/ImageRightCard";
 import MaintenanceWebP from "../../../assets/images/Maintenance.webp";
 import DiagnosticsWebP from "/src/assets/images/Diagnostics.webp";
 import TiresWebP from "/src/assets/images/Tires.webp";
@@ -19,75 +17,77 @@ const services = [
   {
     title: "Preventative Maintenance",
     description:
-      "Preventative car maintenance is like taking your car to the spa...",
+      "Keep your car running like new with our reliable preventative maintenance. From oil changes to thorough check-ups, HEM has got you covered for all your regular upkeep.",
     src: MaintenanceWebP,
     link: "/services/preventative-maintenance",
   },
   {
-    title: "Diagnostics",
+    title: "Advanced Diagnostics",
     description:
-      "When that pesky 'check engine' light pops on, it's your car's way of sending an SOS...",
+      "Trouble with your car? Our advanced diagnostics help you uncover and solve vehicle issues quickly, keeping you on the road.",
     src: DiagnosticsWebP,
     link: "/services/diagnostics",
   },
   {
-    title: "Tires",
+    title: "Tire Services",
     description:
-      "Imagine your car strutting down the street like it's on a fashion runway...",
+      "Professional tire replacement, balancing, and rotation services to ensure a smooth ride and lasting safety.",
     src: TiresWebP,
     link: "/services/tires",
   },
   {
-    title: "Alignments",
+    title: "Wheel Alignments",
     description:
-      "Picture this: your car's wheels are its feet, and just like you, it needs to walk straight...",
+      "Precision alignments for enhanced safety and performance. Keep your vehicle's handling on point with our expert alignments.",
     src: AlignmentWebP,
     link: "/services/alignments",
   },
   {
-    title: "Brakes",
-    description: "Regular brake service is crucial because, let's face it...",
+    title: "Brake Repair & Maintenance",
+    description:
+      "Our premium brake services ensure you stay safe on the road—brake checks, replacements, and repairs to keep you driving confidently.",
     src: BrakesWebP,
     link: "/services/brakes",
   },
   {
     title: "Steering & Suspension",
     description:
-      "Signs you need steering and suspension service are as obvious as a squeaky wheel...",
+      "Get the smooth ride you deserve. Our expert steering and suspension services make driving feel effortless.",
     src: SteeringSuspensionWebP,
     link: "/services/steering-suspension",
   },
   {
-    title: "Remove & Replace",
-    description: "When your engine or transmission starts acting up...",
+    title: "Engine Replacement & Upgrades",
+    description:
+      "Expertly replace or upgrade your engine and transmission for optimal performance and reliability. HEM delivers quality when it matters most.",
     src: RemoveReplaceWebP,
     link: "/services/remove-replace",
   },
   {
-    title: "A/C & Heating",
+    title: "A/C & Heating Repairs",
     description:
-      "When your car's air conditioning decides to go on vacation...",
+      "Whether it’s the summer heat or winter chill, we’ll keep your vehicle's A/C & heating systems running efficiently, all year long.",
     src: HeatACWebP,
     link: "/services/ac-heating",
   },
   {
-    title: "Electrical",
+    title: "Electrical Repairs",
     description:
-      "Automotive electrical services are like giving your car a brain upgrade...",
+      "We solve electrical issues and keep everything from headlights to your car's control systems working smoothly.",
     src: ElectricalWebP,
     link: "/services/electrical",
   },
   {
-    title: "Economy & Light Duty Diesel",
+    title: "Light Duty Diesel Services",
     description:
-      "Light duty diesel services at an automotive repair shop are about giving your diesel-powered vehicle the TLC it deserves...",
+      "Maintain and service your light-duty diesel with our specialized care. We make sure you get optimal performance from your vehicle.",
     src: EconomyDieselWebP,
     link: "/services/diesel",
   },
   {
     title: "Used Vehicle Inspection",
     description:
-      "Used vehicle inspections at an automotive repair shop are like sending a detective...",
+      "Make a confident purchase with our thorough pre-owned car inspections. We take the stress out of buying used vehicles.",
     src: InspectionWebP,
     link: "/services/inspection",
   },
@@ -102,73 +102,76 @@ export default function Service() {
       transition: { duration: 0.8 },
     },
     whileHover: {
-      scale: 1.05,
-      transition: { duration: 0.3 },
+      scale: 1.08,
+      boxShadow: "0 30px 60px rgba(0, 255, 0, 0.15)", // Green shadow to align with HEM’s brand
+      transition: { duration: 0.4, ease: "easeInOut" },
     },
   };
 
   return (
     <>
       <Helmet>
-        <title>HEM Automotive | Services</title>
+        <title>
+          Premium Auto Repair & Maintenance in Topeka, KS | HEM Automotive
+        </title>
         <meta
           name="description"
-          content="Explore HEM Automotive's comprehensive range of services, including preventative maintenance, diagnostics, tire services, alignments, and more. Experience high-end car care with our professional team."
+          content="HEM Automotive provides quality auto repair and maintenance services in Topeka, KS. From preventative maintenance to detailed diagnostics, trust our expert team."
         />
-        <meta
-          name="keywords"
-          content="HEM Automotive, car services, preventative maintenance, diagnostics, tire services, alignments, brakes, steering, suspension, engine replacement, A/C repair, electrical services, diesel services, vehicle inspection"
-        />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="HEM Automotive | Services" />
-        <meta
-          property="og:description"
-          content="Explore HEM Automotive's comprehensive range of services, including preventative maintenance, diagnostics, tire services, alignments, and more. Experience high-end car care with our professional team."
-        />
-        <meta property="og:url" content="https://www.hemautomotive.com" />
-        <meta property="og:type" content="website" />
       </Helmet>
-      <div className="bg-[#333333]">
-        <div className="space-y-10 px-4 py-10 max-w-7xl mx-auto">
-          {services.map((service, index) => (
+
+      <div className="bg-[#000000] text-white min-h-screen py-16">
+        {/* Main Title */}
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-5xl font-bold text-white mb-8">
+            Quality Auto Care You Can Rely On
+          </h2>
+          <p className="text-xl font-light mb-12 text-gray-400">
+            At HEM Automotive, we offer premium car care with a personal touch,
+            right here in Topeka. Our experienced technicians provide everything
+            from routine maintenance to advanced diagnostics—all with the
+            reliability and attention to detail you'd expect, but without the
+            high dealership cost. Trust us to keep your car running smoothly, so
+            you can enjoy the road ahead.
+          </p>
+        </div>
+
+        {/* Service Grid */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 px-4 lg:px-0">
+          {services.map((service) => (
             <motion.div
               key={service.title}
-              className="overflow-hidden"
+              className="relative group overflow-hidden rounded-lg shadow-lg bg-[#1c1c1c] hover:shadow-xl transition-all duration-500"
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.5 }}
               variants={cardVariants}
               whileHover="whileHover"
             >
-              {index % 2 === 0 ? (
-                <ImageLeftCard
-                  title={service.title}
-                  description={service.description}
+              {/* Service Image */}
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img
                   src={service.src}
-                  link={
-                    <Link
-                      to={service.link}
-                      className="text-HEMgreen hover:underline"
-                    >
-                      Learn More Here
-                    </Link>
-                  }
+                  alt={service.title}
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-              ) : (
-                <ImageRightCard
-                  title={service.title}
-                  description={service.description}
-                  src={service.src}
-                  link={
-                    <Link
-                      to={service.link}
-                      className="text-HEMgreen hover:underline"
-                    >
-                      Learn More Here
-                    </Link>
-                  }
-                />
-              )}
+              </div>
+
+              {/* Service Info */}
+              <div className="p-6 text-center">
+                <h3 className="text-2xl font-semibold text-[#00ff00] mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-gray-300 mb-6">
+                  {service.description}
+                </p>
+                <Link
+                  to={service.link}
+                  className="text-white text-lg font-semibold hover:underline"
+                >
+                  Learn More
+                </Link>
+              </div>
             </motion.div>
           ))}
         </div>

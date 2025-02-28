@@ -139,7 +139,7 @@ const EditVehicle = () => {
 
       // Step 2: Update sales data using the sale ID
       await axiosInstance.patch(`/sales/${tenantId}/${vehicleId}/${salesData.saleId}`, {
-        price: salesData.salePrice,
+        salePrice: salesData.salePrice,
         status: salesData.status,
         condition: salesData.condition,
         previousOwners: salesData.previousOwners,

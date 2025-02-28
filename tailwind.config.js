@@ -1,6 +1,12 @@
 module.exports = {
   mode: "jit",
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx},",
+    "./src/**/*.html",
+    "./src/**/*.jsx",
+    "./src/**/*.js",
+  ],
   theme: {
     extend: {
       animation: {
@@ -25,6 +31,8 @@ module.exports = {
       colors: {
         HEMgreen: "#00FF00",
         HEMgray: "#333333",
+        silver: "#C0C0C0",
+        dark: "#000000",
       },
       backgroundImage: {
         // Define custom background images
@@ -38,8 +46,4 @@ module.exports = {
     require("@designbycode/tailwindcss-text-stroke"),
     require("@xpd/tailwind-3dtransforms"),
   ],
-  purge: {
-    enabled: true,
-    content: ["./src/**/*.html", "./src/**/*.jsx", "./src/**/*.js"],
-  },
 };

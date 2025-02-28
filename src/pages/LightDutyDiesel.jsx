@@ -7,6 +7,7 @@ import DieselEmissions from "../assets/images/DieselEmissions.webp";
 import BGService from "../assets/images/BGService.webp";
 import DieselCoolant from "../assets/images/DieselCoolant.webp";
 import DieselDrivetrain from "../assets/images/DieselDrivetrain.webp";
+import { Link } from "react-router-dom";
 
 const LightDutyDiesel = () => {
   return (
@@ -160,6 +161,7 @@ const LightDutyDiesel = () => {
               </p>
             </div>
 
+            <Link to="diesel-oil-change/" >
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
               <picture>
                 <source srcSet={BGService} type="image/webp" />
@@ -179,7 +181,8 @@ const LightDutyDiesel = () => {
                 turbochargers to prevent performance issues and extend the life
                 of your engine.
               </p>
-            </div>
+              </div>
+            </Link>
 
             <div className="flex flex-col items-center bg-[#222222] p-6 rounded-lg">
               <picture>

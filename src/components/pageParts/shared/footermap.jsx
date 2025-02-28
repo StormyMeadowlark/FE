@@ -13,7 +13,7 @@ const center = {
 };
 
 const containerStyle = {
-  width: "33%",
+  width: "100%",
   height: "300px",
 };
 
@@ -41,7 +41,7 @@ const HemAutomotiveFooterMap = () => {
   if (!apiKey) return <div>Loading map...</div>; // Show loading message while the API key is being fetched
 
   return (
-    <div className="h-[300px] w-[33%] mb-20" onClick={handleMapClick}>
+    <div className="h-[300px] w-[100%] md:w-[75%] " onClick={handleMapClick}>
       <APIProvider
         apiKey={apiKey} // Use the fetched API key
         onLoad={() => console.log("Maps API has loaded.")}

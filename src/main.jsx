@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./utils/ScrollTop"; // Import ScrollToTop
 import App from "./App.jsx"; // Import the Layout component
+import { AuthProvider } from "./context/AuthContext"; // Import AuthProvider
+import { Link } from "react-router-dom";
 
 // Dynamically import components for code splitting
 const About = lazy(() => import("./pages/About.jsx"));
@@ -26,6 +28,7 @@ const RemoveReplace = lazy(() => import("./pages/RemoveReplace.jsx"));
 const ACHeating = lazy(() => import("./pages/ACHeating.jsx"));
 const Electrical = lazy(() => import("./pages/Electrical.jsx"));
 const LightDutyDiesel = lazy(() => import("./pages/LightDutyDiesel.jsx"));
+const DieselOilChange = lazy(() => import("./pages/DieselOilChange.jsx"));
 const Inspections = lazy(() => import("./pages/Inspections.jsx"));
 const AutoSchool = lazy(() => import("./pages/AutoSchool.jsx"));
 const SingleBlog = lazy(() => import("./pages/SingleBlogPost.jsx"));
@@ -38,85 +41,101 @@ const SuperAdminDashboard = lazy(() =>
   import("./pages/SuperAdminDashboard.jsx")
 );
 const VehicleManagement = lazy(() => import("./pages/VehicleManagement.jsx"));
-import AddVehicle from "./pages/AddVehicle";
+const AddVehicle = lazy(() => import("./pages/AddVehicle.jsx"));
 const MediaManagement = lazy(() => import("./pages/MediaManagement.jsx"));
 const UserManagement = lazy(() => import("./pages/UserManagement.jsx"));
-import EditVehicle from "./pages/EditVehicle";
+const EditVehicle = lazy(() => import("./pages/EditVehicle.jsx"));
+const OilChange = lazy(() => import("./pages/OilChange.jsx"));
+const LifetimeProtection = lazy(() => import("./pages/LifetimeBGProtectionPlan.jsx"));
+
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Router>
-    <ScrollToTop />
-    <Suspense
-      fallback={
-        <div className="flex justify-center items-center h-screen">
-          <div className="loader">Loading...</div>
-        </div>
-      }
-    >
-      <Routes>
-        {/* Wrap all main routes within the Layout component */}
-        <Route path="/" element={<App />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="faq" element={<FAQ />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="experience" element={<Experience />} />
-          <Route path="legal" element={<Legal />} />
-          <Route path="services" element={<Services />} />
-          <Route path="careers" element={<Careers />} />
-          <Route
-            path="services/preventative-maintenance"
-            element={<PreventativeMaintenance />}
-          />
-          <Route path="services/diagnostics" element={<Diagnostics />} />
-          <Route path="services/tires" element={<Tires />} />
-          <Route path="services/alignments" element={<Alignments />} />
-          <Route path="services/brakes" element={<Brakes />} />
-          <Route
-            path="services/steering-suspension"
-            element={<SteeringSuspension />}
-          />
-          <Route path="services/remove-replace" element={<RemoveReplace />} />
-          <Route path="services/ac-heating" element={<ACHeating />} />
-          <Route path="services/electrical" element={<Electrical />} />
-          <Route path="services/diesel" element={<LightDutyDiesel />} />
-          <Route path="services/inspection" element={<Inspections />} />
-          <Route path="autoSchool" element={<AutoSchool />} />
-          <Route path="autoSchool/:id" element={<SingleBlog />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="profile" element={<Profile />} />
+  <AuthProvider>
+    {" "}
+    {/* Wrap everything with AuthProvider */}
+    <Router>
+      <ScrollToTop />
+      <Suspense
+        fallback={
+          <div className="flex justify-center items-center h-screen">
+            <div className="loader">Loading...</div>
+          </div>
+        }
+      >
+        <Routes>
+          {/* Wrap all main routes within the Layout component */}
+          <Route path="/" element={<App />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="faq" element={<FAQ />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="experience" element={<Experience />} />
+            <Route path="legal" element={<Legal />} />
+            <Route path="services" element={<Services />} />
+            <Route path="lifetime-protection" element={<LifetimeProtection />} />
+            <Route path="careers" element={<Careers />} />
+            <Route
+              path="services/preventative-maintenance"
+              element={<PreventativeMaintenance />}
+            />
+            <Route
+              path="services/preventative-maintenance/oil-change"
+              element={<OilChange />}
+            />
+            <Route path="services/diagnostics" element={<Diagnostics />} />
+            <Route path="services/tires" element={<Tires />} />
+            <Route path="services/alignments" element={<Alignments />} />
+            <Route path="services/brakes" element={<Brakes />} />
+            <Route
+              path="services/steering-suspension"
+              element={<SteeringSuspension />}
+            />
+            <Route path="services/remove-replace" element={<RemoveReplace />} />
+            <Route path="services/ac-heating" element={<ACHeating />} />
+            <Route path="services/electrical" element={<Electrical />} />
+            <Route path="services/diesel" element={<LightDutyDiesel />} />
+            <Route path="services/diesel/diesel-oil-change" element={<DieselOilChange />} />
+            <Route path="services/inspection" element={<Inspections />} />
+            <Route path="autoSchool" element={<AutoSchool />} />
+            <Route path="autoSchool/:id" element={<SingleBlog />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="profile" element={<Profile />} />
 
-          {/* New Sales/Inventory Routes */}
-          <Route path="sales" element={<InventoryPage />} />
-          <Route path="sales/:vehicleId" element={<ProductDetailPage />} />
+            {/* New Sales/Inventory Routes */}
+            <Route path="sales" element={<InventoryPage />} />
+            <Route path="sales/:vehicleId" element={<ProductDetailPage />} />
 
-          {/* Super Admin Routes */}
-          <Route path="superadmin" element={<SuperAdminDashboard />} />
-          <Route
-            path="superadmin/vehicle-management"
-            element={<VehicleManagement />}
-          />
-          <Route
-            path="superadmin/media-management"
-            element={<MediaManagement />}
-          />
-          <Route
-            path="superadmin/user-management"
-            element={<UserManagement />}
-          />
-          <Route
-            path="/superadmin/vehicle-management/add"
-            element={<AddVehicle />}
-          />
-          <Route
-            path="/superadmin/vehicle-management/edit/:vehicleId"
-            element={<EditVehicle />}
-          />
-
-          <Route path="*" element={<ErrorPage />} />
-        </Route>
-      </Routes>
-    </Suspense>
-  </Router>
+            {/* Super Admin Routes */}
+            <Route path="superadmin" element={<SuperAdminDashboard />} />
+            <Route
+              path="superadmin/vehicle-management"
+              element={<VehicleManagement />}
+            />
+            <Route
+              path="superadmin/media-management"
+              element={<MediaManagement />}
+            />
+            <Route
+              path="superadmin/user-management"
+              element={<UserManagement />}
+            />
+            <Route
+              path="/superadmin/vehicle-management/add"
+              element={<AddVehicle />}
+            />
+            <Route
+              path="/superadmin/vehicle-management/edit/:vehicleId"
+              element={<EditVehicle />}
+            />
+            {/* Catch-all route for 404 */}
+            <Route path="*" element={<ErrorPage />} />
+            {/* Separate route for the error page */}
+            <Route path="error" element={<ErrorPage />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </Router>
+  </AuthProvider>
 );

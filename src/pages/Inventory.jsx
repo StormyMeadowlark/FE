@@ -1,57 +1,74 @@
-import React, { useState, useEffect } from "react";
+import{ useState, useEffect } from "react";
 import axiosInstance from "../utils/axiosInstance";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import InventoryHeader from "../assets/images/InventoryHeader.webp"
 
 const InventoryPage = () => {
-  const [cars, setCars] = useState([]); // Initialize cars array
-  const [error, setError] = useState(null); // Error handling
-  const [loading, setLoading] = useState(false); // Loading state
+  const [cars, setCars] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const tenantId = "66d063ca0800f9ad017e7cfc"; // Example tenantId
 
-  // Fetch vehicle, sales, and media information when the component loads
   useEffect(() => {
     const fetchVehiclesWithSalesAndMedia = async () => {
       setLoading(true);
       try {
-        // Fetch available vehicles from the sales service
-        const salesResponse = await axiosInstance.get(`/sales/${tenantId}/status/available`);
+        const salesResponse = await axiosInstance.get(
+          `/sales/${tenantId}/status/available`
+        );
         const availableSales = salesResponse.data.sales || [];
 
-        // For each sale, fetch the vehicle and media details
         const vehiclesWithDetails = await Promise.all(
           availableSales.map(async (sale) => {
-            const vehicleId = sale.vehicleId?._id; // Ensure vehicleId exists
+            const vehicleId = sale.vehicleId?._id;
             if (!vehicleId) {
-              return null; // Skip if no vehicleId
+              return null;
             }
 
             try {
-              // Fetch vehicle details from the vehicle service
-              const vehicleResponse = await axiosInstance.get(`/vehicles/${tenantId}/${vehicleId}`);
+              const vehicleResponse = await axiosInstance.get(
+                `/vehicles/${tenantId}/${vehicleId}`
+              );
               const vehicleData = vehicleResponse.data.vehicle;
 
-              // Fetch media for the vehicle from the media service
-              const mediaResponse = await axiosInstance.get(`/vehicle-media/${tenantId}/${vehicleId}`);
+              const mediaResponse = await axiosInstance.get(
+                `/vehicle-media/${tenantId}/${vehicleId}`
+              );
               const mediaData = mediaResponse.data.media;
-              const primaryImage = mediaData[0]?.photos[0] || "/path/to/default/image.jpg";
 
-              // Combine vehicle, sales, and media information
+              const photos =
+                mediaData[0]?.photos?.length > 0
+                  ? mediaData[0].photos
+                  : mediaData[0]?.media?.filter((m) =>
+                      m.mediaType.startsWith("image")
+                    ) || [];
+
+              const primaryImage =
+                photos[0]?.mediaUrl ||
+                photos[0] ||
+                "/path/to/default/image.jpg";
+
               return {
                 ...sale,
                 vehicle: vehicleData,
-                primaryImage, // Use the first media image as the primary image
+                primaryImage,
               };
             } catch (vehicleError) {
-              console.error(`Error fetching details for vehicleId: ${vehicleId}`, vehicleError);
-              return null; // Skip this vehicle if there's an error fetching details
+              console.error(
+                `Error fetching details for vehicleId: ${vehicleId}`,
+                vehicleError
+              );
+              return null;
             }
           })
         );
 
-        // Filter out any `null` values (where vehicle or sales data couldn't be fetched)
         setCars(vehiclesWithDetails.filter(Boolean));
       } catch (err) {
-        setError(err.response?.data?.message || "Error fetching vehicle or sales data");
+        setError(
+          err.response?.data?.message || "Error fetching vehicle or sales data"
+        );
       } finally {
         setLoading(false);
       }
@@ -62,24 +79,36 @@ const InventoryPage = () => {
 
   return (
     <div className="bg-HEMgray text-white min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-black text-white py-80">
+      <Helmet>
+        <title>
+          Used Vehicles in Topeka | Find Your Perfect Used Car | HEM Automotive
+        </title>
+        <meta
+          name="description"
+          content="Find your next reliable used car at HEM Automotive in Topeka, KS. Browse our updated inventory with transparent pricing, detailed vehicle histories, and options for all needs, from sedans to SUVs. Call to schedule a test drive today."
+        />
+      </Helmet>
+      <section className="relative bg-black  py-52">
         <img
-          src="/path/to/hero-image.jpg"
+          src={InventoryHeader}
           alt="Car Hero"
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
         <div className="relative container mx-auto px-4 text-center z-10">
-          <h1 className="text-5xl font-Bungee mb-4">FIND YOUR PERFECT USED CAR</h1>
+          <h1 className="text-5xl font-Bungee mb-4 text-HEMgreen">
+            FIND YOUR NEXT RELIABLE USED CAR
+          </h1>
           <p className="text-xl mb-6">Which Vehicle Are You Looking For?</p>
         </div>
       </section>
 
-      {/* Error and Loading States */}
       {error && <div className="text-red-500 text-center mt-4">{error}</div>}
-      {loading && <div className="text-center text-HEMgreen mt-4">Loading vehicles...</div>}
+      {loading && (
+        <div className="text-center text-HEMgreen mt-4">
+          Loading vehicles...
+        </div>
+      )}
 
-      {/* Product Listing Section */}
       {!loading && !error && cars.length > 0 && (
         <section className="container mx-auto px-4 py-10">
           <h2 className="text-3xl font-Urbanist mb-6">Available Inventory</h2>
@@ -89,19 +118,31 @@ const InventoryPage = () => {
                 key={car.vehicle._id}
                 className="bg-HEMgray text-white p-4 rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 relative group"
               >
-                <img
-                  src={car.primaryImage}
-                  alt={`${car.vehicle.make} ${car.vehicle.model}`}
-                  className="w-full h-40 object-cover rounded-lg mb-4 transition-transform duration-300 ease-in-out group-hover:scale-110"
-                />
+                <div className="w-full h-auto">
+                  <img
+                    src={car.primaryImage}
+                    alt={`${car.vehicle.make} ${car.vehicle.model} ${car.vehicle.trim}`}
+                    className="w-full object-contain rounded-lg mb-4"
+                    style={{ aspectRatio: "3/2" }} // Enforcing the 1080x720 aspect ratio
+                  />
+                </div>
                 <h3 className="text-xl font-bold">
-                  {car.vehicle.make} {car.vehicle.model}
+                  {car.vehicle.make} {car.vehicle.model} {car.vehicle.trim}
                 </h3>
                 <p className="text-sm">{car.vehicle.year}</p>
-                <p className="text-lg font-semibold">${car.salePrice}</p>
-                <p className="text-sm">Mileage: {car.vehicle.mileage} miles</p>
+
+                {/* Format sale price and mileage with commas */}
+                <p className="text-lg font-semibold">
+                  ${Number(car.salePrice).toLocaleString()}
+                </p>
+                <p className="text-sm">
+                  Mileage: {Number(car.vehicle.mileage).toLocaleString()} miles
+                </p>
+
                 <Link to={`/sales/${car.vehicle._id}`}>
-                  <button className="mt-4 bg-HEMgreen text-black py-2 px-4 rounded-lg">View Details</button>
+                  <button className="mt-4 bg-HEMgreen text-black py-2 px-4 rounded-lg">
+                    View Details
+                  </button>
                 </Link>
               </div>
             ))}

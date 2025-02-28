@@ -55,5 +55,13 @@ function processImages(inputDir) {
   });
 }
 
+function convertSingleImageToWebP(filePath) {
+  const outputPathWebP = filePath.replace(/\.[^/.]+$/, ".webp");
+  convertImageToWebP(filePath, outputPathWebP);
+}
+
+const singleFilePath = "./src/assets/images/InventoryHeader.jpg";
+convertSingleImageToWebP(singleFilePath);
+
 // Start processing images
-processImages(inputDir);
+//processImages(inputDir);
