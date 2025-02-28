@@ -1,8 +1,12 @@
-module.exports = {
+import forms from "@tailwindcss/forms";
+import textStroke from "@designbycode/tailwindcss-text-stroke";
+import transforms from "@xpd/tailwind-3dtransforms";
+
+export default {
   mode: "jit",
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx},",
+    "./src/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.html",
     "./src/**/*.jsx",
     "./src/**/*.js",
@@ -35,15 +39,10 @@ module.exports = {
         dark: "#000000",
       },
       backgroundImage: {
-        // Define custom background images
-        engine: "url('/src/assets/images/Engine.webp')",
+        engine: "url('/src/assets/images/HEM-Automotive-Front-of-Building.jpg')",
         hexagons: "url('/src/assets/images/Hexagons.webp')",
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/forms"),
-    require("@designbycode/tailwindcss-text-stroke"),
-    require("@xpd/tailwind-3dtransforms"),
-  ],
+  plugins: [forms, textStroke, transforms],
 };

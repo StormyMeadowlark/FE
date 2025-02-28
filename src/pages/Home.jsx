@@ -135,37 +135,36 @@ const Home = () => {
     <div className="bg-black text-white font-Urbanist">
       <Helmet>
         <title>
-          Expert Auto Repair Shop for Oil Change, Tires & More in Topeka, KS |
-          HEM Automotive
+          Expert Auto Repair in Topeka, KS. Oil Changes, Brakes, Alignments, Diagnostics, & More | HEM Automotive
         </title>
         <meta
           name="description"
-          content="Expert auto repair shop in Topeka. Comprehensive service includes oil change, tires, and diagnostics. Schedule today for unparalleled automotive care."
+          content="Expert auto repair shop in Topeka. Comprehensive service includes oil change, tires, and diagnostics. Schedule today for auto repair in Topeka, KS."
         />
       </Helmet>
 
       {/* Hero Section */}
       <section className="relative bg-HEMgray min-h-screen flex items-center justify-center bg-engine bg-cover bg-center pt-20">
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-Bungee text-HEMgreen uppercase tracking-wider animate-fadeIn">
-            Expert Auto Repair and Maintenance Services in Topeka, KS
+            Quality Auto Repair in Topeka, KS
           </h1>
           <p className="text-2xl font-light mt-4 mb-8 animate-slideUp">
-            Comprehensive Car Care with Honest Service and Expert Diagnostics
+            Comprehensive Maintenance and Repair with Honest Service and Expert Diagnostics
           </p>
           <div className="flex justify-center space-x-4 p-5">
             <Link
               to="/contact"
               className="bg-HEMgreen text-black py-3 px-8 rounded-lg md:text-xl hover:bg-white hover:text-black transition-transform transform hover:scale-105"
             >
-              Schedule Your Service Today
+              Book Your Appointment Now—Spots Fill Fast
             </Link>
             <Link
               to="/services"
               className="border border-HEMgreen text-HEMgreen py-3 px-8 rounded-lg md:text-xl hover:bg-HEMgreen hover:text-black transition-transform transform hover:scale-105"
             >
-              Check Our Services
+              Find the Right Service for You
             </Link>
           </div>
         </div>

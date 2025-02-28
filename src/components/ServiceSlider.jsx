@@ -5,41 +5,41 @@ import { useSwipeable } from "react-swipeable";
 import "aos/dist/aos.css";
 
 // Import images (these should be imported at the top)
-import CheckOil from "../assets/images/Maintenance.webp";
-import Diagnostics from "../assets/images/Diagnostics.webp";
-import Alignment from "../assets/images/Alignment2.webp";
-import RemoveReplace from "../assets/images/EngineReplace.webp";
-import Inspection from "../assets/images/Inspection.webp";
-import HeatAC from "../assets/images/HeatingAC.webp";
+import CheckOil from "../assets/images/HEM-Automotive-Maintenance.jpg";
+import Diagnostics from "../assets/images/HEM-Automotive-Diagnostics.jpg";
+import Alignment from "../assets/images/HEM-Automotive-Alignments.jpg";
+import RemoveReplace from "../assets/images/HEM-Automotive-Engine-Repair-and-Replacement.jpg";
+import Inspection from "../assets/images/HEM-Automotive-Pre-Purchase-Vehicle-Inspection.webp";
+import HeatAC from "../assets/images/HEM-Automotive-Heating-AC.jpg";
 
 const wordsPerMinute = 140; // Average reading speed
 
 const servicesData = [
   {
-    title: "Wheel Alignment",
+    title: "Alignments",
     description:
-      "Get precision wheel alignment for smoother driving and better tire wear. Our team ensures your car stays balanced and safe on the road.",
+      "Keep your ride smooth and your tires lasting longer! Our expert alignment ensures your car stays balanced and easy to handle—no more pulling or uneven wear.",
     image: Alignment,
     link: "services/alignments",
   },
   {
-    title: "Routine Vehicle Maintenance",
+    title: "Maintenance",
     description:
-      "Keep your car in top shape with regular maintenance, including oil changes, tire rotations, and more. Trusted service to keep your vehicle running smoothly.",
+      "A little maintenance goes a long way! Stay ahead of breakdowns with regular oil changes, tire rotations, and more. We’ll help keep your car running smoothly, mile after mile.",
     image: CheckOil,
     link: "services/preventative-maintenance",
   },
   {
-    title: "Car Diagnostics",
+    title: "Diagnostics",
     description:
-      "We use advanced tools to quickly diagnose vehicle issues, from check engine lights to complex repairs. Get reliable solutions to keep your car in peak condition.",
+      "We don’t guess—we test. From check engine lights to complex electrical issues, our advanced diagnostics get to the root of the problem, so you get the right fix fast.",
     image: Diagnostics,
     link: "services/diagnostics",
   },
   {
     title: "Engine Repair & Replacement",
     description:
-      "Whether you need a simple engine fix or a full replacement, we’ve got you covered. Trust our expertise to keep your vehicle running smoothly and reliably.",
+      "From minor engine fixes to full replacements, we do it right. Get the power and reliability your car deserves.",
     image: RemoveReplace,
     link: "services/engine-repair",
   },
@@ -103,7 +103,7 @@ const Slider = () => {
   return (
     <section className="py-20 bg-dark px-4 md:px-16 max-w-7xl mx-auto">
       <h2 className="text-center text-4xl font-semibold text-HEMgreen animate-slideUp font-Bungee">
-        Essential Auto Repair Services for Your Vehicle
+        Expert Auto Services that Keep You on the Road
       </h2>
 
       {/* Grid Layout for Larger Screens */}
@@ -122,7 +122,7 @@ const Slider = () => {
             <h3 className="text-xl mt-4 font-semibold">{service.title}</h3>
             <p className="text-sm mt-2">{service.description}</p>
             <Link to={`/${service.link}`} className="block mt-4">
-              Learn More
+              Learn More about {service.title}
             </Link>
           </motion.div>
         ))}
