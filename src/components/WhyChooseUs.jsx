@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import { motion } from "framer-motion";
-import EngineImage from "../assets/images/Engine.webp";
+import EngineImage from "../assets/images/HEM-Automotive-Shop-Interior.webp";
 
 
 // Inside the Home component, replace the Why Choose Us section with the following:

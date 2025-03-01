@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import AOS from "aos";
+import profileImage from "../assets/images/HEM-Automotive-Profile-Image.png"
 import "aos/dist/aos.css";
 
 import WhyChooseUs from "../components/WhyChooseUs";
@@ -16,37 +17,37 @@ const testimonials = [
     name: "Catfish S.",
     quote:
       "HEM Automotive never disappoints. They repair in a timely manner to keep with a fair price. Anytime I've taken my vehicle there, Jason and crew have been upfront about the cost and kept me up to date with progress. Took my vehicle there to fix what I thought was a suspension type issue; HEM figured out it was the transmission before any work was done. We were able to get warranty work taken care of because of their attention to detail.",
-    image: "https://via.placeholder.com/150",
+    image: profileImage,
   },
   {
     name: "Gordan Haight",
     quote:
       "Jason worked on my 1993 Lexus ES300, gave me a great deal and the car has been running flawlessly ever since he put his hands on it. 10/10 thank you.",
-    image: "https://via.placeholder.com/150",
+    image: profileImage,
   },
   {
     name: "Chad Nelson",
     quote:
       "Took my son's Jeep to HEM Automotive to find out what was going wrong with it. They didn't overcharge me like another shop was trying to do. They found the problem and repaired it. It came out cheaper than the estimate. Would recommend and will be back.",
-    image: "https://via.placeholder.com/150",
+    image: profileImage,
   },
   {
     name: "Joe Hawkinson",
     quote:
       "We've had many things done on our vehicles with HEM, from routine oil changes and tires to diagnosing and fixing a broken car horn, even rebuilding the top of one of our truck's 5.7 HEMI engine. The people here have always been very kind, courteous, patient, and professional.",
-    image: "https://via.placeholder.com/150",
+    image: profileImage,
   },
   {
     name: "Shelby Shaw",
     quote:
       "Jason did great work on my car when it was having multiple issues! He is affordable and honest, along with getting it fixed in a timely manner!!",
-    image: "https://via.placeholder.com/150",
+    image: profileImage,
   },
   {
     name: "Christina Alley",
     quote:
       "Jason has done a wonderful job on both of my vehicles. He has been straightforward and honest about the price and whether it is worth fixing or not. I absolutely love this place and I would recommend it to everyone if you want an honest mechanic.",
-    image: "https://via.placeholder.com/150",
+    image: profileImage,
   },
 ];
 
