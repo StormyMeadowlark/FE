@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import Engine from "../../../assets/images/Car.jpg"
+import Engine from "../../../assets/images/HEM-Automotive-Crew-Candid.jpg"
 import  "dotenv";
 
 
@@ -43,7 +43,7 @@ const ApplicationForm = () => {
         <img
           src={Engine}
           alt="Front side of an engine block"
-          className="absolute inset-0 -z-10 h-[36rem] w-full object-cover object-scale brightness-[30%] lazyload"
+          className="absolute inset-0 -z-10 h-[36rem] w-full object-cover object-scale object-top brightness-[30%] lazyload"
           loading="lazy"
         />
         <div className="mx-auto max-w-[100rem] px-4 md:px-8 lg:px-16">

@@ -1,5 +1,5 @@
 import CornerHexagons from "../../../components/CornerHexagons.svg?react";
-import Engine from "../../../assets/images/Engine.jpg?react";
+import Engine from "../../../assets/images/HEM-Automotive-Engine-Block.jpg?react";
 
 export default function Hero() {
   return (

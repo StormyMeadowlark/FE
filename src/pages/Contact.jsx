@@ -3,7 +3,7 @@ import axios from "axios";
 import HemAutomotiveMap from "../components/pageParts/Contact/map";
 
 
-import Engine from "../assets/images/Car.jpg";
+import Engine from "../assets/images/HEM-Automotive-Front-Desk.jpg";
 import { PhoneIcon, ClockIcon, MapPinIcon } from "@heroicons/react/24/outline";
 
 import FacebookIcon from "../assets/PNGicons/FacebookIcon.png";

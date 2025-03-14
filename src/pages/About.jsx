@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useSpring, animated } from "react-spring";
-import Engine from "../assets/images/Car.jpg"; // Ensure this path is correct
+import Engine from "../assets/images/HEM-Automotive-Crew.jpg"; // Ensure this path is correct
 import Charles from "../assets/images/Charles.png?react"
 import Shane from "../assets/images/Shane.png?react"
 import Shawn from "../assets/images/Shawn.png?react"

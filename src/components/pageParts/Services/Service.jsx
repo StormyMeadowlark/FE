@@ -1,28 +1,29 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import MaintenanceWebP from "../../../assets/images/Maintenance.webp";
-import DiagnosticsWebP from "/src/assets/images/Diagnostics.webp";
+
+import MaintenanceWebP from "/src/assets/images/HEM-Automotive-Maintenance.jpg";
+import DiagnosticsWebP from "/src/assets/images/HEM-Automotive-Diagnostics.jpg";
 import TiresWebP from "/src/assets/images/Tires.webp";
-import AlignmentWebP from "/src/assets/images/Alignment2.webp";
+import AlignmentWebP from "/src/assets/images/HEM-Automotive-Alignments.jpg";
 import BrakesWebP from "/src/assets/images/Brake3.webp";
 import SteeringSuspensionWebP from "/src/assets/images/SteeringSuspension.webp";
-import RemoveReplaceWebP from "/src/assets/images/EngineReplace.webp";
-import HeatACWebP from "/src/assets/images/HeatingAC.webp";
+import RemoveReplaceWebP from "/src/assets/images/HEM-Automotive-Engine-Repair-and-Replacement.jpg";
+import HeatACWebP from "/src/assets/images/HEM-Automotive-Heating-AC.jpg";
 import ElectricalWebP from "/src/assets/images/Electrical.webp";
 import EconomyDieselWebP from "/src/assets/images/EconomyLightDuty.webp";
-import InspectionWebP from "/src/assets/images/Inspection.webp";
+import InspectionWebP from "/src/assets/images/HEM-Automotive-Pre-Purchase-Vehicle-Inspection.webp";
 
 const services = [
   {
-    title: "Preventative Maintenance",
+    title: "Maintenance",
     description:
       "Keep your car running like new with our reliable preventative maintenance. From oil changes to thorough check-ups, HEM has got you covered for all your regular upkeep.",
     src: MaintenanceWebP,
     link: "/services/preventative-maintenance",
   },
   {
-    title: "Advanced Diagnostics",
+    title: "Diagnostics",
     description:
       "Trouble with your car? Our advanced diagnostics help you uncover and solve vehicle issues quickly, keeping you on the road.",
     src: DiagnosticsWebP,
@@ -36,14 +37,14 @@ const services = [
     link: "/services/tires",
   },
   {
-    title: "Wheel Alignments",
+    title: "Alignments",
     description:
       "Precision alignments for enhanced safety and performance. Keep your vehicle's handling on point with our expert alignments.",
     src: AlignmentWebP,
     link: "/services/alignments",
   },
   {
-    title: "Brake Repair & Maintenance",
+    title: "Brakes",
     description:
       "Our premium brake services ensure you stay safe on the road—brake checks, replacements, and repairs to keep you driving confidently.",
     src: BrakesWebP,
@@ -57,7 +58,7 @@ const services = [
     link: "/services/steering-suspension",
   },
   {
-    title: "Engine Replacement & Upgrades",
+    title: "Engine Repair & Replacement",
     description:
       "Expertly replace or upgrade your engine and transmission for optimal performance and reliability. HEM delivers quality when it matters most.",
     src: RemoveReplaceWebP,
@@ -85,7 +86,7 @@ const services = [
     link: "/services/diesel",
   },
   {
-    title: "Used Vehicle Inspection",
+    title: "Pre-Purchase Vehicle Inspection",
     description:
       "Make a confident purchase with our thorough pre-owned car inspections. We take the stress out of buying used vehicles.",
     src: InspectionWebP,
@@ -110,15 +111,28 @@ export default function Service() {
 
   return (
     <>
-      <Helmet>
-        <title>
-          Premium Auto Repair & Maintenance in Topeka, KS | HEM Automotive
-        </title>
-        <meta
-          name="description"
-          content="HEM Automotive provides quality auto repair and maintenance services in Topeka, KS. From preventative maintenance to detailed diagnostics, trust our expert team."
-        />
-      </Helmet>
+<Helmet>
+  <title>
+    Quality Auto Repair in Topeka, KS. Oil Changes, Brakes, Alignments, Diagnostics, & More | HEM Automotive
+  </title>
+  <meta 
+    name="description" 
+    content="Quality auto repair shop in Topeka. Comprehensive service includes oil change, tires, and diagnostics. Schedule today for auto repair in Topeka, KS." 
+  />
+  
+  {/* Open Graph Tags */}
+  <meta property="og:title" content="Quality Auto Repair in Topeka, KS | HEM Automotive" />
+  <meta property="og:description" content="Looking for a trusted auto repair shop in Topeka? HEM Automotive offers expert diagnostics, oil changes, brakes, and alignments. Book an appointment today!" />
+  <meta property="og:image" content="https://yourwebsite.com/path-to-image.jpg" />
+  <meta property="og:url" content="https://yourwebsite.com/" />
+  <meta property="og:type" content="website" />
+
+  {/* Twitter Card (for Twitter previews) */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Quality Auto Repair in Topeka, KS | HEM Automotive" />
+  <meta name="twitter:description" content="Need auto repair in Topeka? HEM Automotive provides professional maintenance and repair services. Schedule your appointment today!" />
+  <meta name="twitter:image" content="https://yourwebsite.com/path-to-image.jpg" />
+</Helmet>
 
       <div className="bg-[#000000] text-white min-h-screen py-16">
         {/* Main Title */}
@@ -169,7 +183,7 @@ export default function Service() {
                   to={service.link}
                   className="text-white text-lg font-semibold hover:underline"
                 >
-                  Learn More
+                  Learn More about {service.title}
                 </Link>
               </div>
             </motion.div>
