@@ -1,8 +1,13 @@
+import HEMAutomotiveInspection from "./assets/images/HEM-Automotive-Pre-Purchase-Vehicle-Inspection.webp"
+import HEMAutomotiveBuilding from "./assets/images/HEM-Automotive-Front-of-Building.jpg"
+import Logo from "./components/limeGreenAndBlackLogo.svg"
+import HEMAutomotiveDesk from "./assets/images/HEM-Automotive-Front-Desk.jpg"
+
 const metadata = {
   siteName: "HEM Automotive",
   siteUrl: "https://hemautomotive.com",
   defaultImage:
-    "https://hemautomotive.com/assets/images/HEM-automotive-Pre-Purchase-Vehicle-Inspection.webp",
+    HEMAutomotiveInspection,
   pages: {
     home: {
       title: "Quality Auto Repair in Topeka, KS | HEM Automotive",
@@ -15,7 +20,7 @@ const metadata = {
       openGraph: {
         type: "website",
         image:
-          "https://hemautomotive.com/assets/images/HEM-Automotive-Front-of-Building.jpg",
+          HEMAutomotiveBuilding,
         url: "https://hemautomotive.com",
       },
       twitter: {
@@ -26,9 +31,9 @@ const metadata = {
         "@type": "AutoRepair",
         name: "HEM Automotive",
         url: "https://hemautomotive.com",
-        logo: "https://hemautomotive.com/components/limeGreenAndBlackLogo.svg",
+        logo: Logo,
         image:
-          "https://hemautomotive.com/assets/images/HEM-Automotive-Front-of-Building.jpg",
+          HEMAutomotiveBuilding,
         description:
           "Comprehensive maintenance and expert auto repair in Topeka, KS.",
         telephone: "+1-785-730-2900",
@@ -59,7 +64,7 @@ const metadata = {
       openGraph: {
         type: "article",
         image:
-          "https://hemautomotive.com/assets/images/HEM-Automotive-Pre-Purchase-Vehicle-Inspection.webp",
+          HEMAutomotiveInspection,
         url: "https://hemautomotive.com/services",
       },
       twitter: {
@@ -80,8 +85,7 @@ const metadata = {
           "Wheel Alignment",
         ],
         url: "https://hemautomotive.com/services",
-        image:
-          "https://hemautomotive.com/assets/images//HEM-Automotive-Pre-Purchase-Vehicle-Inspection.webp",
+        image: HEMAutomotiveInspection,
         description:
           "Get quality auto repair services at HEM Automotive, from oil changes to engine diagnostics & more.",
       },
@@ -97,7 +101,7 @@ const metadata = {
       openGraph: {
         type: "website",
         image:
-          "https://hemautomotive.com/assets/images/HEM-Automotive-Front-Desk.jpg",
+          HEMAutomotiveDesk,
         url: "https://hemautomotive.com/contact",
       },
       twitter: {
@@ -111,7 +115,7 @@ const metadata = {
           "Need auto repairs? Contact HEM Automotive for expert diagnostics and service in Topeka, KS.",
         url: "https://hemautomotive.com/contact",
         image:
-          "https://hemautomotive.com/assets/images/HEM-Automotive-Front-Desk.jpg",
+          HEMAutomotiveDesk,
         contactPoint: {
           "@type": "ContactPoint",
           telephone: "+1-785-730-2900",
