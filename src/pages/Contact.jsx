@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import HemAutomotiveMap from "../components/pageParts/Contact/map";
-
+import SEO from "../components/SEO";
 
 import Engine from "../assets/images/HEM-Automotive-Front-Desk.jpg";
 import { PhoneIcon, ClockIcon, MapPinIcon } from "@heroicons/react/24/outline";
@@ -119,6 +119,7 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="bg-[#333333] font-Urbanist">
+    <SEO page="contact" />
       <div className="relative isolate overflow-hidden pt-60">
         <img
           src={Engine}

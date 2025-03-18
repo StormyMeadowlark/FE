@@ -111,29 +111,6 @@ export default function Service() {
 
   return (
     <>
-<Helmet>
-  <title>
-    Quality Auto Repair in Topeka, KS. Oil Changes, Brakes, Alignments, Diagnostics, & More | HEM Automotive
-  </title>
-  <meta 
-    name="description" 
-    content="Quality auto repair shop in Topeka. Comprehensive service includes oil change, tires, and diagnostics. Schedule today for auto repair in Topeka, KS." 
-  />
-  
-  {/* Open Graph Tags */}
-  <meta property="og:title" content="Quality Auto Repair in Topeka, KS | HEM Automotive" />
-  <meta property="og:description" content="Looking for a trusted auto repair shop in Topeka? HEM Automotive offers expert diagnostics, oil changes, brakes, and alignments. Book an appointment today!" />
-  <meta property="og:image" content="https://yourwebsite.com/path-to-image.jpg" />
-  <meta property="og:url" content="https://yourwebsite.com/" />
-  <meta property="og:type" content="website" />
-
-  {/* Twitter Card (for Twitter previews) */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Quality Auto Repair in Topeka, KS | HEM Automotive" />
-  <meta name="twitter:description" content="Need auto repair in Topeka? HEM Automotive provides professional maintenance and repair services. Schedule your appointment today!" />
-  <meta name="twitter:image" content="https://yourwebsite.com/path-to-image.jpg" />
-</Helmet>
-
       <div className="bg-[#000000] text-white min-h-screen py-16">
         {/* Main Title */}
         <div className="max-w-7xl mx-auto text-center">

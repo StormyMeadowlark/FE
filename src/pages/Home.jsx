@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import AOS from "aos";
 import profileImage from "../assets/images/HEM-Automotive-Profile-Image.png"
 import "aos/dist/aos.css";
+import SEO from "../components/SEO";
 
 import WhyChooseUs from "../components/WhyChooseUs";
 
@@ -134,15 +135,7 @@ const Home = () => {
 
   return (
     <div className="bg-black text-white font-Urbanist">
-      <Helmet>
-        <title>
-          Quality Auto Repair in Topeka, KS. Oil Changes, Brakes, Alignments, Diagnostics, & More | HEM Automotive
-        </title>
-        <meta
-          name="description"
-          content="Quality auto repair shop in Topeka. Comprehensive service includes oil change, tires, and diagnostics. Schedule today for auto repair in Topeka, KS."
-        />
-      </Helmet>
+    <SEO page="home" />
 
       {/* Hero Section */}
       <section className="relative bg-HEMgray min-h-screen flex items-center justify-center bg-engine bg-cover bg-center pt-20">

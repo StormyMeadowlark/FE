@@ -96,15 +96,40 @@ const LifetimeProtection = () => {
             Vehicle must be no more than 20 years old at the time of the initial
             service
           </p>
-          <div className="flex flex-1 justify-evenly items-center text-center text-lg md:text-xl text-[#aaaaaa] font-Urbanist">
-            <p>Plan 1: 0-50,000 miles</p>
-            <p>Plan 2: 50,001-75,000 miles</p>
-          </div>
-          <p className="text-center text-lg md:text-xl text-[#aaaaaa] font-Urbanist">
-            Plan 2 High Mileage (gasoline engines only): 75,001-125,000 miles
+          <p className="text-xl md:text-2xl text-[#cccccc] font-Urbanist mb-4">
+            Oil Change Plans
           </p>
+          <p className="text-xl md:text-2xl text-[#cccccc] font-Urbanist mb-4">
+            Service Interval: 10,000 miles
+          </p>
+          <div className="flex flex-1 justify-evenly items-center text-center text-lg md:text-xl text-[#aaaaaa] font-Urbanist">
+            <div>
+              <p>Plan 1: 0-50,000 miles</p>
+              <p>Maximum Coverage: $6,000</p>
+            </div>
+            <div>
+              <p>Plan 2: 50,001-75,000 miles</p>
+              <p>Maximum Coverage: $4,000</p>
+            </div>
+          </div>
+          <p className="text-xl md:text-2xl text-[#cccccc] font-Urbanist mb-4">
+            BG Platinum® Fuel System Service Plans
+          </p>
+          <p className="text-xl md:text-2xl text-[#cccccc] font-Urbanist mb-4">
+            Service Interval: 15,000 miles
+          </p>
+          <div className="flex flex-1 justify-evenly items-center text-center text-lg md:text-xl text-[#aaaaaa] font-Urbanist">
+            <div>
+              <p>Plan 1: 0-50,000 miles</p>
+              <p>Maximum Coverage: $4,000</p>
+            </div>
+            <div>
+              <p>Plan 2: 50,001-75,000 miles</p>
+              <p>Maximum Coverage: $2,000</p>
+            </div>
+          </div>
           <p className="text-xs text-[#aaaaaa] font-Urbanist mt-8">
-            This Plan is an added benefit when qualified BG services are
+            This plan is an added benefit when qualified BG services are
             purchased. All services must be performed by a professional
             technician at a licensed service center using an approved BG
             maintenance procedure with proper BG products and equipment.
@@ -115,46 +140,47 @@ const LifetimeProtection = () => {
       <section className="py-16 px-4 md:px-10 lg:px-16 bg-zinc-900">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-Bungee text-HEMgreen mb-10 text-center">
-            Plan Details
+            Oil Change Plan Details
           </h2>
-          <div>
-            Stay tuned! We're gearing up to bring you all the details about the
-            Lifetime BG Protection Plan®. Thanks for your patience as we get
-            this page rolling
-          </div>
-          {/*
-          <div>
-            <p>Engine Services</p>
-            <p>
-              Engine oil grade and weight must meet vehicle manufacturer's
-              recommendations. Timing belt and air and oil filter must be
-              replaced and emission control system maintained in accordance with
-              vehicle manufacturer's recommendations.{" "}
-              <b>
-                To remain eligible, return to a BG shop to have service
-                performed within required service interval.
-              </b>{" "}
-              All BG products must be applied in accordance with stated
-              directions for use.
-            </p>
-            <div className="flex flex-1 justify-evenly">
-              <div>
-                <p>SERVICE INTERVAL</p>
-                <ul>
-                  <li>10,000 miles for gasoline</li>
-                  <li> 7,500 miles for diesel</li>
-                </ul>
-              </div>
-              <div>
-                <p>MAXIMUM COVERAGE</p>
-                <ul>
-                  <li>Plan 1: $4,000</li>
-                  <li>Plan 2: $2,000</li>
-                </ul>
-              </div>
+          <p className="text-xl md:text-2xl text-[#cccccc] font-Urbanist mb-4">
+            Engine oil grade and weight must meet vehicle manufacturer's
+            recommendations. Timing belt and air and oil filter must be replaced
+            and emission control system maintained in accordance with vehicle
+            manufacturer's recommendations.{" "}
+            <b>
+              to remain eligible, return to a BG shop to have service performed
+              within required service interval.
+            </b>{" "}
+            All BG products must be applied in accordance with stated directions
+            for use
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-col-3 justify-center text-center text-lg md:text-xl text-[#aaaaaa] font-Urbanist gap-8">
+            <div>
+              <p>
+                <b>Best Value Oil Change Coverage: </b>
+              </p>
+              <p className="text-left">
+                Pistons and rings (oil consumption not covered), wrist pins and
+                bushings, rods and rod bearings, camshafts and bearings,
+                pushrods, intake valves and guides (grinding adjustments
+                excluded), turbo bearings, crankshaft nd bearings, cylinder
+                liners or bores, valve lifters, timing chains (stretched timing
+                chains are excluded)(timing belts and damage to engine parts due
+                to broken timing belts excluded), rocker arms and pivots, oil
+                pump, timing gears or sprockets, distributor drive gear.
+              </p>
+            </div>
+            <div>
+              <p>
+                <b>Best Performance Oil Change Coverage: </b>
+              </p>
+              <p className="text-left">
+                Everything from Best Value Oil Change Coverage plus, oxygen
+                sensors, PCV, injectors (deposit-related malfunctions only) for
+                gasoline and diesel. MAF sensor for gasoline only.
+              </p>
             </div>
           </div>
-          */}
         </div>
       </section>
 
@@ -417,6 +443,16 @@ const LifetimeProtection = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="text-xl md:text-2xl text-[#cccccc] font-Urbanist mb-4">
+            <p>
+              <b>BG Platinum® Fuel System Service Coverage: </b>
+            </p>
+            <p className="text-left">
+              Oxygen sensors, PCV, injectors (deposit-related malfunctions only)
+              for gasoline and diesel. MAF sensor for gasoline only. Throttle
+              body and intake valves (deposit-related malfunctions only).
+            </p>
           </div>
         </div>
       </section>
