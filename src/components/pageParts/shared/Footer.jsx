@@ -33,12 +33,6 @@ export default function Footer() {
       alt: "TikTok logo",
     },
     {
-      title: "X (Twitter)",
-      href: "https://www.x.com/@hemautomotive",
-      src: XIcon,
-      alt: "X (formerly Twitter) logo",
-    },
-    {
       title: "Instagram",
       href: "https://www.instagram.com/hemautomotive/",
       src: InstagramIcon,
