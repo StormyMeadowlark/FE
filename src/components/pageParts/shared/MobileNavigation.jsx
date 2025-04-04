@@ -13,7 +13,6 @@ const navigation = [
   { name: "ABOUT", href: "about" },
   { name: "CAREERS", href: "careers" },
   { name: "CONTACT", href: "contact" },
-  { name: "AUTO SCHOOL", href: "autoSchool" },
   { name: "SALES", href: "sales" },
 ];
 
@@ -53,7 +52,7 @@ export default function Header() {
 
       {/* Main Header with Logo and Navigation */}
       <div className="max-w-7xl mx-auto flex justify-center items-center p-4">
-        <nav className="flex justify-between items-center w-full lg:max-w-screen-lg">
+        <nav className="flex justify-center items-center w-full lg:max-w-screen-lg">
           {/* Logo Section */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
@@ -81,9 +80,6 @@ export default function Header() {
           </div>
 
           {/* Desktop Quick Links */}
-          <div className="hidden lg:flex">
-            <QuickLinks />
-          </div>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -140,7 +136,6 @@ export default function Header() {
           </nav>
 
           {/* Mobile Quick Links */}
-          <MobileQuickLinks />
 
           {/* Mobile Contact Info */}
           <MobileContactInfo />

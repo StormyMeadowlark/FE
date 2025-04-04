@@ -142,23 +142,24 @@ const Home = () => {
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-Bungee text-HEMgreen uppercase tracking-wider animate-fadeIn">
-            Quality Auto Repair in Topeka, KS
+            Precision Repairs. Trusted Results.
           </h1>
-          <p className="text-2xl font-light mt-4 mb-8 animate-slideUp">
-            Comprehensive Maintenance and Repair with Honest Service and Expert Diagnostics
+          <h2 className="text-6xl font-black mt-2 mb-2 animate-slideUp text-HEMgreen font-Play">High Quality Auto Service Done Right</h2>
+          <p className="text-2xl mt-4 mb-8 animate-slideUp">
+          Your time matters. Our crew delivers expert diagnostics and dependable repairs. Without the guess work.
           </p>
           <div className="flex justify-center space-x-4 p-5">
             <Link
               to="/contact"
               className="bg-HEMgreen text-black py-3 px-8 rounded-lg md:text-xl hover:bg-white hover:text-black transition-transform transform hover:scale-105"
             >
-              Book Your Appointment Now—Spots Fill Fast
+              Spots Fill Fast—Book Now
             </Link>
             <Link
               to="/services"
               className="border border-HEMgreen text-HEMgreen py-3 px-8 rounded-lg md:text-xl hover:bg-HEMgreen hover:text-black transition-transform transform hover:scale-105"
             >
-              Find the Right Service for You
+              View Services
             </Link>
           </div>
         </div>

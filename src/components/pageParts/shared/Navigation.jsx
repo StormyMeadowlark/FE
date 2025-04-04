@@ -7,7 +7,6 @@ const navigation = [
   { name: "FAQ", href: "faq" },
   { name: "ABOUT", href: "about" },
   { name: "CONTACT", href: "contact" },
-  { name: "AUTO SCHOOL", href: "auto-school" },
   { name: "SALES", href: "sales" }, // Add Sales here
 ];
 
@@ -15,7 +14,6 @@ const service = { name: "SERVICE", href: "services" };
 const factAnswerQuestion = { name: "FAQ", href: "faq" };
 const about = { name: "ABOUT", href: "about" };
 const contact = { name: "CONTACT", href: "contact" };
-const autoSchool = { name: "AUTO SCHOOL", href: "auto-school" };
 const sales = { name: "SALES", href: "sales" }; // Define Sales
 
 function Navigation() {

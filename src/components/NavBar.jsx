@@ -26,9 +26,6 @@ function NavBar() {
                         <ContactInfo />
                         <Navigation />
                     </div>
-                    <div>
-                        <QuickLinks />
-                    </div>
                     <div className='flex lg:hidden'>
                         <button type="button" 
                             onClick={() => {setMobileMenuOpen(true);}}
