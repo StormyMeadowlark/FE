@@ -5,6 +5,7 @@ import ScrollToTop from "./utils/ScrollTop"; // Import ScrollToTop
 import App from "./App.jsx"; // Import the Layout component
 import { AuthProvider } from "./context/AuthContext"; // Import AuthProvider
 import { Link } from "react-router-dom";
+const ReserveVehiclePage = lazy(() =>import("./pages/ReserveVehicle.jsx"));
 
 // Dynamically import components for code splitting
 const About = lazy(() => import("./pages/About.jsx"));
@@ -106,6 +107,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             {/* New Sales/Inventory Routes */}
             <Route path="sales" element={<InventoryPage />} />
             <Route path="sales/:vehicleId" element={<ProductDetailPage />} />
+            <Route path="reserve/:vehicleId" element={<ReserveVehiclePage />} />
 
             {/* Super Admin Routes */}
             <Route path="superadmin" element={<SuperAdminDashboard />} />

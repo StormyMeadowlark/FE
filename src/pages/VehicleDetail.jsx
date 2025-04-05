@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import axiosInstance from "../utils/axiosInstance";
+import { Link } from "react-router-dom";
 
 export default function ProductDetailPage() {
   const { vehicleId } = useParams();
@@ -246,9 +247,11 @@ export default function ProductDetailPage() {
                 </a>
 
                 {/* Schedule a Test Drive Button */}
-                <button className="bg-HEMgreen text-black py-3 px-8 rounded-lg text-lg font-semibold shadow-md transition hover:bg-black hover:text-HEMgreen">
-                  Schedule a Test Drive
-                </button>
+                <Link to={`/reserve/${car.vehicle._id}`} className="bg-HEMgreen text-black py-3 px-8 rounded-lg text-lg font-semibold shadow-md transition hover:bg-black hover:text-HEMgreen">
+                <p className="text-center">Reserve this</p>
+                  <p className="text-center">{car.vehicle.year} {car.vehicle.make} {car.vehicle.model}</p>
+                </Link>
+                
               </div>
             </div>
           </div>

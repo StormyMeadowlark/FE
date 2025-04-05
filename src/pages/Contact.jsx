@@ -9,7 +9,6 @@ import { PhoneIcon, ClockIcon, MapPinIcon } from "@heroicons/react/24/outline";
 import FacebookIcon from "../assets/PNGicons/FacebookIcon.png";
 import YouTubeIcon from "../assets/PNGicons/YouTubeIcon.png";
 import TikTokIcon from "../assets/PNGicons/TikTokIcon.png";
-import TwitterIcon from "../assets/PNGicons/XIcon.png";
 import InstagramIcon from "../assets/PNGicons/InstagramIcon.png";
 import GoogleIcon from "../assets/PNGicons/GoogleIcon.png";
 import CarFaxIcon from "../assets/PNGicons/CarfaxIcon.png";
@@ -19,7 +18,6 @@ const socials = [
   { title: "Facebook", href: "https://www.facebook.com/HEMautomotive/", icon: FacebookIcon },
   { title: "Youtube", href: "https://www.youtube.com/@hemautomotive", icon: YouTubeIcon },
   { title: "Tiktok", href: "https://www.tiktok.com/@hemautomotive", icon: TikTokIcon },
-  { title: "X", href: "https://www.x.com/@hemautomotive", icon: TwitterIcon },
   { title: "Instagram", href: "https://www.instagram.com/hemautomotive/", icon: InstagramIcon },
 ];
 
