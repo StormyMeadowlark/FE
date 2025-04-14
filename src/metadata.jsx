@@ -36,7 +36,6 @@ const metadata = {
           HEMAutomotiveBuilding,
         description:
           "Comprehensive maintenance and expert auto repair in Topeka, KS.",
-        telephone: "+1-785-730-2900",
         address: {
           "@type": "PostalAddress",
           streetAddress: "315 SW 32nd Ter.",
@@ -45,7 +44,6 @@ const metadata = {
           postalCode: "66611",
           addressCountry: "US",
         },
-        openingHours: "Mo-Fr 08:00-16:00",
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: "4.5",

@@ -4,7 +4,6 @@ import List from "./Socials";
 import FacebookIcon from "../../../assets/PNGicons/FacebookIcon.png?react";
 import YouTubeIcon from "../../../assets/PNGicons/YouTubeIcon.png?react";
 import TikTokIcon from "../../../assets/PNGicons/TikTokIcon.png?react";
-import XIcon from "../../../assets/PNGicons/XIcon.png?react";
 import InstagramIcon from "../../../assets/PNGicons/InstagramIcon.png?react";
 import GoogleIcon from "../../../assets/PNGicons/GoogleIcon.png?react";
 import CarFaxIcon from "../../../assets/PNGicons/CarfaxIcon.png?react";
@@ -84,8 +83,9 @@ export default function Footer() {
               {[
                 { to: "/services", label: "SERVICES" },
                 { to: "/faq", label: "FAQ" },
+                { to: "/about", label: "ABOUT"},
+                { to: "/careers", label: "CAREERS"},
                 { to: "/contact", label: "CONTACT" },
-                { to: "/autoSchool", label: "AUTO SCHOOL" },
                 { to: "/sales", label: "SALES" },
               ].map((link) => (
                 <Link
@@ -108,8 +108,7 @@ export default function Footer() {
           {/* Contact Info */}
           <div className="text-center text-[#eeeeee] space-y-4">
             {[
-              { Icon: PhoneIcon, label: "785.730.2900" },
-              { Icon: ClockIcon, label: "Monday - Friday\n8:00 am - 4:00 pm" },
+              { Icon: ClockIcon, label: "Temporarily Closed" },
               {
                 Icon: MapPinIcon,
                 label: "315 SW 32nd Terrace\nTopeka, KS 66611",

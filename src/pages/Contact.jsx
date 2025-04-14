@@ -162,27 +162,7 @@ const handleSubmit = async (e) => {
                         Hours
                       </h4>
                       <address className="text-left text-xl text-white">
-                        Monday - Friday
-                        <br />
-                        8:00 am - 4:00 pm
-                      </address>
-                    </div>
-                  </div>
-                  <div className="hidden lg:flex items-center py-4">
-                    <div className="hexagon bg-[#00ff00] h-20 flex items-center justify-center aspect-[6/5]">
-                      <PhoneIcon
-                        className="w-12 h-12"
-                        aria-hidden="true"
-                        stroke="black"
-                        opacity={0.7}
-                      />
-                    </div>
-                    <div className="px-8">
-                      <h4 className="font-Urbanist font-black tracking-wide text-3xl text-stroke-black text-stroke pb-2 text-left text-[#aabbaa]">
-                        Phone
-                      </h4>
-                      <address className="text-left text-xl text-white">
-                        785.730.2900
+                        Temporarily Closed
                       </address>
                     </div>
                   </div>

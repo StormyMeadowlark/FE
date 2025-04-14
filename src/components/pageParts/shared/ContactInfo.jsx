@@ -1,11 +1,8 @@
-import { PhoneIcon, ClockIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import { ClockIcon, MapPinIcon } from "@heroicons/react/24/outline";
 import useHover from "../../../hooks/useHover";
 import { useEffect, useState } from "react";
 
 function ContactInfo() {
-  const [PhoneNumberHovering, PhoneNumberHoveringProps] = useHover();
-  const PhoneNumberBeforeHovering = PhoneNumberBefore();
-  const PhoneNumberAfterHovering = PhoneNumberAfter();
   const [HoursHovering, HoursHoveringProps] = useHover();
   const HoursBeforeHovering = HoursBefore();
   const HoursAfterHovering = HoursAfter();
@@ -34,19 +31,9 @@ function ContactInfo() {
   return (
     <div className="flex gap-x-6 pb-8 -mt-10 md:pt-6 justify-center text-[#eeeeee]">
       <ContactItem
-        href="tel:7857302900"
-        IconComponent={
-          PhoneNumberHovering
-            ? PhoneNumberAfterHovering
-            : PhoneNumberBeforeHovering
-        }
-        text="785.730.2900"
-        {...PhoneNumberHoveringProps}
-      />
-      <ContactItem
         href="#"
         IconComponent={HoursHovering ? HoursAfterHovering : HoursBeforeHovering}
-        text="Monday - Friday 8:00 am - 4:00 pm"
+        text="Temporarily Closed"
         {...HoursHoveringProps}
       />
       <ContactItem
@@ -78,18 +65,6 @@ function ContactItem({ href, IconComponent, text, ...hoverProps }) {
   );
 }
 
-function PhoneNumberBefore() {
-  return <PhoneIcon className="w-6 h-6 text-[#00FF00]" aria-hidden="true" />;
-}
-
-function PhoneNumberAfter() {
-  return (
-    <PhoneIcon
-      className="w-6 h-6 text-[#00FF00] fill-current"
-      aria-hidden="true"
-    />
-  );
-}
 
 function HoursBefore() {
   return <ClockIcon className="w-6 h-6 text-[#00FF00]" aria-hidden="true" />;

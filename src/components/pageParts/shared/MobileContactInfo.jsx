@@ -1,11 +1,8 @@
-import { PhoneIcon, ClockIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import { ClockIcon, MapPinIcon } from "@heroicons/react/24/outline";
 import useHover from "../../../hooks/useHover";
 import { useEffect, useState } from "react";
 
 function MobileContactInfo() {
-  const [PhoneNumberHovering, PhoneNumberHoveringProps] = useHover();
-  const PhoneNumberBeforeHovering = PhoneNumberBefore();
-  const PhoneNumberAfterHovering = PhoneNumberAfter();
   const [HoursHovering, HoursHoveringProps] = useHover();
   const HoursBeforeHovering = HoursBefore();
   const HoursAfterHovering = HoursAfter();
@@ -34,28 +31,11 @@ function MobileContactInfo() {
 
   return (
     <div className="justify-center text-[#eeeeee]">
-      <a
-        href="tel:7857302900"
-        {...PhoneNumberHoveringProps}
-        className="flex items-center py-4"
-      >
-        {PhoneNumberHovering
-          ? PhoneNumberAfterHovering
-          : PhoneNumberBeforeHovering}
-        <address className="flex text-center">
-          <span className="not-italic text-[12px] focus:outline focus:outline-[#00FF00]">
-            785.730.2900
-          </span>
-        </address>
-      </a>
-
       <div {...HoursHoveringProps} className="flex items-center py-4">
         {HoursHovering ? HoursAfterHovering : HoursBeforeHovering}
         <address className="text-center">
           <span className="not-italic text-[12px] focus:outline focus:outline-[#00FF00]">
-            Monday - Friday
-            <br />
-            8:00 am - 4:00 pm
+            Temporarily Closed
           </span>
         </address>
       </div>
@@ -81,21 +61,6 @@ function MobileContactInfo() {
 }
 
 // Define the missing helper functions
-function PhoneNumberBefore() {
-  return (
-    <PhoneIcon className="w-6 h-6 mr-3 text-[#00FF00]" aria-hidden="true" />
-  );
-}
-
-function PhoneNumberAfter() {
-  return (
-    <PhoneIcon
-      className="w-6 h-6 mr-3 text-[#00FF00] fill-current"
-      aria-hidden="true"
-    />
-  );
-}
-
 function HoursBefore() {
   return (
     <ClockIcon className="w-6 h-6 mr-3 text-[#00FF00]" aria-hidden="true" />
